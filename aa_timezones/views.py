@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required, permission_required
+from . import __title__
 
 
 @login_required
@@ -7,6 +8,6 @@ from django.contrib.auth.decorators import login_required, permission_required
 def index(request):
 
     context = {
-        'text': 'Hello, World!'
+        'title': __title__
     }
     return render(request, 'aa_timezones/index.html', context)
