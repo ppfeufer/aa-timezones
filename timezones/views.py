@@ -4,10 +4,10 @@ from . import __title__
 
 
 @login_required
-@permission_required('aa_timezones.basic_access')
+@permission_required('timezones.basic_access')
 def index(request):
 
     context = {
         'title': __title__
     }
-    return render(request, 'aa_timezones/index.html', context)
+    return render(request, 'timezones/index.html', context)

@@ -1,4 +1,4 @@
-{% extends 'aa_timezones/base.html' %}
+{% extends 'timezones/base.html' %}
 {% load i18n %}
 {% load humanize %}
 {% load static %}
@@ -492,15 +492,15 @@
 {% endblock %}
 
 {% block extra_javascript %}
-    <script type="text/javascript" src="{% static 'aa_timezones/js/clock-timezones.min.js' %}"></script>
-    <script type="text/javascript" src="{% static 'aa_timezones/js/moment.min.js' %}"></script>
-    <script type="text/javascript" src="{% static 'aa_timezones/js/jquery.timeago.min.js' %}"></script>
-    <script type="text/javascript" src="{% static 'aa_timezones/js/moment-timezone-with-data-2012-2022.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'timezones/js/clock-timezones.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'timezones/js/moment.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'timezones/js/jquery.timeago.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'timezones/js/moment-timezone-with-data-2012-2022.min.js' %}"></script>
 {% endblock %}
 
 {% block extra_css %}
-    <link rel="stylesheet" href="{% static 'aa_timezones/css/weather-icons/css/weather-icons.min.css' %}" type="text/css">
-    <link rel="stylesheet" href="{% static 'aa_timezones/css/time-zones.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'timezones/css/weather-icons/css/weather-icons.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'timezones/css/time-zones.min.css' %}" type="text/css">
 {% endblock %}
 
 {% block extra_script %}

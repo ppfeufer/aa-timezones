@@ -1,6 +1,6 @@
 include LICENSE
 include README.md
-recursive-include aa_timezones *.py
-recursive-include aa_timezones/static *
-recursive-include aa_timezones/templates *
+recursive-include timezones *.py
+recursive-include timezones/static *
+recursive-include timezones/templates *
 

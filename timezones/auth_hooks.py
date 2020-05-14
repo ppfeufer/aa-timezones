@@ -14,12 +14,12 @@ class AaTimezonesMenuItem(MenuItemHook):
             self,
             _(__title__),
             'fa fa-clock-o fa-fw',
-            'aa_timezones:index',
-            navactive=['aa_timezones:index']
+            'timezones:index',
+            navactive=['timezones:index']
         )
 
     def render(self, request):
-        if request.user.has_perm('aa_timezones.basic_access'):
+        if request.user.has_perm('timezones.basic_access'):
             return MenuItemHook.render(self, request)
         return ''
 
@@ -31,4 +31,4 @@ def register_menu():
 
 @hooks.register('url_hook')
 def register_urls():
-    return UrlHook(urls, 'aa_timezones', r'^aa_timezones/')
+    return UrlHook(urls, 'timezones', r'^timezones/')

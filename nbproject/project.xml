@@ -3,9 +3,9 @@
     <type>org.netbeans.modules.python.project</type>
     <configuration>
         <data xmlns="http://nbpython.dev.java.net/ns/php-project/1">
-            <name>(AllianceAuth) AA Timezones</name>
+            <name>AA Time Zones</name>
             <sources>
-                <root id="src.aa-timezones.dir"/>
+                <root id="aa-timezones.dir"/>
             </sources>
             <tests/>
         </data>
