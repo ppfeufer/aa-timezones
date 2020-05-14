@@ -4,6 +4,13 @@ App for displaying different time zones with Alliance Auth
 
 ![Time Zones](timezones/docs/time-zones.jpg)
 
+## Contents
+
+- [Installation](#installation)
+- [Updating](#updating)
+- [Change Log](CHANGELOG.md)
+
+
 ## Installation
 
 **Important**: This app is a plugin for Alliance Auth. If you don't have Alliance Auth running already, please install it first before proceeding. (see the official [AA installation guide](https://allianceauth.readthedocs.io/en/latest/installation/auth/allianceauth/) for details)
