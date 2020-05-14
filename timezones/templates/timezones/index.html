@@ -5,193 +5,189 @@
 
 {% block details %}
 
-<div class="col-lg-12 col-md-12 col-sm-12 col-12 content-wrapper">
-    <div class="content content-inner content-full-width content-page content-page-timezones">
-        <div class="row">
-            <div class="col-sm-6 col-md-4 col-lg-3">
-                <div class="panel panel-warning">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">
-                            Local Time <span class="pull-right"><i id="icon-loc"></i></span>
-                        </h3>
-                    </div>
-
-                    <div class="panel-body text-center">
-                        <b id="time-loc" style="font-size:140%;">--:--:--</b><br>
-                        <span id="date-loc">(loading)</span>
-                    </div>
-                </div>
+<div class="row">
+    <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="panel panel-warning">
+            <div class="panel-heading">
+                <h3 class="panel-title">
+                    Local Time <span class="pull-right"><i id="icon-loc"></i></span>
+                </h3>
             </div>
 
-            <div class="col-sm-6 col-md-4 col-lg-3">
-                <div class="panel panel-success">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">
-                            EVE Time <span class="pull-right"><i id="icon-utc"></i></span>
-                        </h3>
-                    </div>
-
-                    <div class="panel-body text-center">
-                        <b id="time-utc" style="font-size:140%;">--:--:--</b><br>
-                        <span id="date-utc">(loading)</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-sm-6 col-md-4 col-lg-3">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">
-                            US Pacific <span class="pull-right"><i id="icon-usp"></i></span>
-                        </h3>
-                    </div>
-
-                    <div class="panel-body text-center">
-                        <b id="time-usp" style="font-size:140%;">--:--:--</b><br>
-                        <span id="date-usp">(loading)</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-sm-6 col-md-4 col-lg-3">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">
-                            US Mountain <span class="pull-right"><i id="icon-usm"></i></span>
-                        </h3>
-                    </div>
-
-                    <div class="panel-body text-center">
-                        <b id="time-usm" style="font-size:140%;">--:--:--</b><br>
-                        <span id="date-usm">(loading)</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-sm-6 col-md-4 col-lg-3">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">
-                            US Central <span class="pull-right"><i id="icon-usc"></i></span>
-                        </h3>
-                    </div>
-
-                    <div class="panel-body text-center">
-                        <b id="time-usc" style="font-size:140%;">--:--:--</b><br>
-                        <span id="date-usc">(loading)</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-sm-6 col-md-4 col-lg-3">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">
-                            US Eastern <span class="pull-right"><i id="icon-use"></i></span>
-                        </h3>
-                    </div>
-
-                    <div class="panel-body text-center">
-                        <b id="time-use" style="font-size:140%;">--:--:--</b><br>
-                        <span id="date-use">(loading)</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-sm-6 col-md-4 col-lg-3">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">
-                            EU Western <span class="pull-right"><i id="icon-euw"></i></span>
-                        </h3>
-                    </div>
-
-                    <div class="panel-body text-center">
-                        <b id="time-euw" style="font-size:140%;">--:--:--</b><br>
-                        <span id="date-euw">(loading)</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-sm-6 col-md-4 col-lg-3">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">
-                            EU Central <span class="pull-right"><i id="icon-euc"></i></span>
-                        </h3>
-                    </div>
-
-                    <div class="panel-body text-center">
-                        <b id="time-euc" style="font-size:140%;">--:--:--</b><br>
-                        <span id="date-euc">(loading)</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-sm-6 col-md-4 col-lg-3">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">
-                            EU Eastern <span class="pull-right"><i id="icon-eue"></i></span>
-                        </h3>
-                    </div>
-
-                    <div class="panel-body text-center">
-                        <b id="time-eue" style="font-size:140%;">--:--:--</b><br>
-                        <span id="date-eue">(loading)</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-sm-6 col-md-4 col-lg-3">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">
-                            Russia / Moscow <span class="pull-right"><i id="icon-rus"></i></span>
-                        </h3>
-                    </div>
-
-                    <div class="panel-body text-center">
-                        <b id="time-rus" style="font-size:140%;">--:--:--</b><br>
-                        <span id="date-rus">(loading)</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-sm-6 col-md-4 col-lg-3">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">
-                            China / Shanghai <span class="pull-right"><i id="icon-cn"></i></span>
-                        </h3>
-                    </div>
-
-                    <div class="panel-body text-center">
-                        <b id="time-cn" style="font-size:140%;">--:--:--</b><br>
-                        <span id="date-cn">(loading)</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-sm-6 col-md-4 col-lg-3">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">
-                            Australia / Sydney <span class="pull-right"><i id="icon-aus"></i></span>
-                        </h3>
-                    </div>
-
-                    <div class="panel-body text-center">
-                        <b id="time-aus" style="font-size:140%;">--:--:--</b><br>
-                        <span id="date-aus">(loading)</span>
-                    </div>
-                </div>
+            <div class="panel-body text-center">
+                <b id="time-loc" style="font-size:140%;">--:--:--</b><br>
+                <span id="date-loc">(loading)</span>
             </div>
         </div>
+    </div>
 
-        {% include 'timezones/adjust-time.html' %}
+    <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="panel panel-success">
+            <div class="panel-heading">
+                <h3 class="panel-title">
+                    EVE Time <span class="pull-right"><i id="icon-utc"></i></span>
+                </h3>
+            </div>
+
+            <div class="panel-body text-center">
+                <b id="time-utc" style="font-size:140%;">--:--:--</b><br>
+                <span id="date-utc">(loading)</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">
+                    US Pacific <span class="pull-right"><i id="icon-usp"></i></span>
+                </h3>
+            </div>
+
+            <div class="panel-body text-center">
+                <b id="time-usp" style="font-size:140%;">--:--:--</b><br>
+                <span id="date-usp">(loading)</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">
+                    US Mountain <span class="pull-right"><i id="icon-usm"></i></span>
+                </h3>
+            </div>
+
+            <div class="panel-body text-center">
+                <b id="time-usm" style="font-size:140%;">--:--:--</b><br>
+                <span id="date-usm">(loading)</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">
+                    US Central <span class="pull-right"><i id="icon-usc"></i></span>
+                </h3>
+            </div>
+
+            <div class="panel-body text-center">
+                <b id="time-usc" style="font-size:140%;">--:--:--</b><br>
+                <span id="date-usc">(loading)</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">
+                    US Eastern <span class="pull-right"><i id="icon-use"></i></span>
+                </h3>
+            </div>
+
+            <div class="panel-body text-center">
+                <b id="time-use" style="font-size:140%;">--:--:--</b><br>
+                <span id="date-use">(loading)</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">
+                    EU Western <span class="pull-right"><i id="icon-euw"></i></span>
+                </h3>
+            </div>
+
+            <div class="panel-body text-center">
+                <b id="time-euw" style="font-size:140%;">--:--:--</b><br>
+                <span id="date-euw">(loading)</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">
+                    EU Central <span class="pull-right"><i id="icon-euc"></i></span>
+                </h3>
+            </div>
+
+            <div class="panel-body text-center">
+                <b id="time-euc" style="font-size:140%;">--:--:--</b><br>
+                <span id="date-euc">(loading)</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">
+                    EU Eastern <span class="pull-right"><i id="icon-eue"></i></span>
+                </h3>
+            </div>
+
+            <div class="panel-body text-center">
+                <b id="time-eue" style="font-size:140%;">--:--:--</b><br>
+                <span id="date-eue">(loading)</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">
+                    Russia / Moscow <span class="pull-right"><i id="icon-rus"></i></span>
+                </h3>
+            </div>
+
+            <div class="panel-body text-center">
+                <b id="time-rus" style="font-size:140%;">--:--:--</b><br>
+                <span id="date-rus">(loading)</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">
+                    China / Shanghai <span class="pull-right"><i id="icon-cn"></i></span>
+                </h3>
+            </div>
+
+            <div class="panel-body text-center">
+                <b id="time-cn" style="font-size:140%;">--:--:--</b><br>
+                <span id="date-cn">(loading)</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">
+                    Australia / Sydney <span class="pull-right"><i id="icon-aus"></i></span>
+                </h3>
+            </div>
+
+            <div class="panel-body text-center">
+                <b id="time-aus" style="font-size:140%;">--:--:--</b><br>
+                <span id="date-aus">(loading)</span>
+            </div>
+        </div>
     </div>
 </div>
+
+{% include 'timezones/adjust-time.html' %}
 
 {% endblock %}
 
