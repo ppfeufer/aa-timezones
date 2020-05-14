@@ -1,7 +1,7 @@
 import os
 from setuptools import find_packages, setup
 
-from aa_timezones import __version__
+from timezones import __version__
 
 
 # read the contents of your README file
