@@ -1,4 +1,4 @@
-/* global moment */
+/* global moment, timezoneOptions */
 
 var clockTarget = 0;
 var clockTickId = 0;
@@ -14,7 +14,7 @@ function showAdjust() {
     jQuery('#tatday').val(mom.format('DD'));
     jQuery('#tatmonth').val(mom.format('MM'));
     jQuery('#tatyear').val(mom.format('YYYY'));
-} // function showAdjust()
+}
 
 function setdate(str, tz) {
     if(tz !== '') {
@@ -22,11 +22,11 @@ function setdate(str, tz) {
     } else {
         window.location.hash = moment(str).unix();
     }
-} // function setdate(str, tz)
+}
 
 function updatePanel(mom, id) {
-//    jQuery('#time-' + id).html(mom.format('HH:mm:ss z'));
     jQuery('#time-' + id).html(mom.format('HH:mm:ss'));
+    jQuery('#utc-offset-' + id).html('(UTC ' + mom.format('Z') + ')');
     jQuery('#date-' + id).html(mom.format('dddd DD MMM YYYY'));
 
 //    3 06-09 sunrise
@@ -78,23 +78,18 @@ function updatePanel(mom, id) {
 }
 
 function updatePanels(now) {
+    // local time
     updatePanel(moment(now), 'loc');
-    updatePanel(moment.tz(now, 'Etc/UTC'), 'utc');
-    updatePanel(moment.tz(now, 'US/Pacific'), 'usp');
-    updatePanel(moment.tz(now, 'US/Mountain'), 'usm');
-    updatePanel(moment.tz(now, 'US/Central'), 'usc');
-    updatePanel(moment.tz(now, 'US/Eastern'), 'use');
-    updatePanel(moment.tz(now, 'Australia/ACT'), 'aus');
-    updatePanel(moment.tz(now, 'Europe/London'), 'euw');
-    updatePanel(moment.tz(now, 'Europe/Berlin'), 'euc');
-    updatePanel(moment.tz(now, 'Europe/Istanbul'), 'eue');
-    updatePanel(moment.tz(now, 'Europe/Moscow'), 'rus');
-    updatePanel(moment.tz(now, 'Asia/Shanghai'), 'cn');
+
+    // panels
+    jQuery.each(timezoneOptions, function(index, value) {
+        updatePanel(moment.tz(now, value.timezoneName), value.timezoneId);
+    });
 }
 
 function clockTick() {
     updatePanels(new Date());
-} // function clockTick()
+}
 
 function switchto(mode) {
     if(clockTickId !== 0) {

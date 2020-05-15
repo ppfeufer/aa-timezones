@@ -7,18 +7,18 @@
 
 <div class="row">
     {% include "timezones/timezone-panel.html" with panelTitle="Local Time" panelType="warning" panelId="loc" %}
-    {% include "timezones/timezone-panel.html" with panelTitle="EVE Time" panelType="success" panelId="utc" %}
+    {% include "timezones/timezone-panel.html" with timezoneName="Etc/UTC" panelTitle="EVE Time" panelType="success" panelId="utc" %}
 
-    {% include "timezones/timezone-panel.html" with panelTitle="US Pacific" panelType="default" panelId="usp" %}
-    {% include "timezones/timezone-panel.html" with panelTitle="US Mountain" panelType="default" panelId="usm" %}
-    {% include "timezones/timezone-panel.html" with panelTitle="US Central" panelType="default" panelId="usc" %}
-    {% include "timezones/timezone-panel.html" with panelTitle="US Eastern" panelType="default" panelId="use" %}
-    {% include "timezones/timezone-panel.html" with panelTitle="EU Western" panelType="default" panelId="euw" %}
-    {% include "timezones/timezone-panel.html" with panelTitle="EU Central" panelType="default" panelId="euc" %}
-    {% include "timezones/timezone-panel.html" with panelTitle="EU Eastern" panelType="default" panelId="eue" %}
-    {% include "timezones/timezone-panel.html" with panelTitle="Russia / Moscow" panelType="default" panelId="rus" %}
-    {% include "timezones/timezone-panel.html" with panelTitle="Russia / Siberia & China / Shanghai" panelType="default" panelId="cn" %}
-    {% include "timezones/timezone-panel.html" with panelTitle="Australia / Sydney" panelType="default" panelId="aus" %}
+    {% include "timezones/timezone-panel.html" with timezoneName="US/Pacific" panelTitle="US Pacific" panelType="default" panelId="usp" %}
+    {% include "timezones/timezone-panel.html" with timezoneName="US/Mountain" panelTitle="US Mountain" panelType="default" panelId="usm" %}
+    {% include "timezones/timezone-panel.html" with timezoneName="US/Central" panelTitle="US Central" panelType="default" panelId="usc" %}
+    {% include "timezones/timezone-panel.html" with timezoneName="US/Eastern" panelTitle="US Eastern" panelType="default" panelId="use" %}
+    {% include "timezones/timezone-panel.html" with timezoneName="Europe/London" panelTitle="EU Western" panelType="default" panelId="euw" %}
+    {% include "timezones/timezone-panel.html" with timezoneName="Europe/Berlin" panelTitle="EU Central" panelType="default" panelId="euc" %}
+    {% include "timezones/timezone-panel.html" with timezoneName="Europe/Istanbul" panelTitle="EU Eastern" panelType="default" panelId="eue" %}
+    {% include "timezones/timezone-panel.html" with timezoneName="Europe/Moscow" panelTitle="Russia / Moscow" panelType="default" panelId="rus" %}
+    {% include "timezones/timezone-panel.html" with timezoneName="Asia/Shanghai" panelTitle="Russia / Siberia & China / Shanghai" panelType="default" panelId="cn" %}
+    {% include "timezones/timezone-panel.html" with timezoneName="Australia/ACT" panelTitle="Australia / Sydney" panelType="default" panelId="aus" %}
 </div>
 
 {% include 'timezones/adjust-time.html' %}
