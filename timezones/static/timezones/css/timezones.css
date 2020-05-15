@@ -3,4 +3,16 @@
         margin-bottom: 8px;
         margin-bottom: 0.5rem;
     }
+
+    .timezone-panel-section {
+        display: block;
+    }
+
+    .timezone-panel-time {
+        font-size: 140%;
+    }
+
+    .timezone-panel-utc-offset {
+        font-size: 85%;
+    }
 }

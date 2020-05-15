@@ -6,10 +6,10 @@
             </h3>
         </div>
 
-        <div class="panel-body text-center">
-            <b id="time-{{ panelId }}" style="font-size:140%;">--:--:--</b>
-            <span id="utc-offset-{{ panelId }}"></span><br>
-            <span id="date-{{ panelId }}">(loading)</span>
+        <div class="panel-body text-center timezone-panel">
+            <b id="time-{{ panelId }}" class="timezone-panel-section timezone-panel-time">--:--:--</b>
+            <span id="date-{{ panelId }}" class="timezone-panel-section timezone-panel-date">(loading)</span>
+            <span id="utc-offset-{{ panelId }}" class="timezone-panel-section timezone-panel-utc-offset"></span>
         </div>
     </div>
 
