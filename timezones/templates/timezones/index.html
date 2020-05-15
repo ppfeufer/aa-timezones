@@ -26,15 +26,15 @@
 {% endblock %}
 
 {% block extra_javascript %}
-    <script type="text/javascript" src="{% static 'timezones/js/clock-timezones.min.js' %}"></script>
-    <script type="text/javascript" src="{% static 'timezones/js/moment.min.js' %}"></script>
-    <script type="text/javascript" src="{% static 'timezones/js/jquery.timeago.min.js' %}"></script>
-    <script type="text/javascript" src="{% static 'timezones/js/moment-timezone-with-data-2012-2022.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'timezones/js/timeago/jquery.timeago.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'timezones/js/moment/moment.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'timezones/js/moment/moment-timezone-with-data-1970-2030.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'timezones/js/timezones.min.js' %}"></script>
 {% endblock %}
 
 {% block extra_css %}
     <link rel="stylesheet" href="{% static 'timezones/css/weather-icons/css/weather-icons.min.css' %}" type="text/css">
-    <link rel="stylesheet" href="{% static 'timezones/css/time-zones.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'timezones/css/timezones.min.css' %}" type="text/css">
 {% endblock %}
 
 {% block extra_script %}
