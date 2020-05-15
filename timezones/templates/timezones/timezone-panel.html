@@ -7,8 +7,22 @@
         </div>
 
         <div class="panel-body text-center">
-            <b id="time-{{ panelId }}" style="font-size:140%;">--:--:--</b><br>
+            <b id="time-{{ panelId }}" style="font-size:140%;">--:--:--</b>
+            <span id="utc-offset-{{ panelId }}"></span><br>
             <span id="date-{{ panelId }}">(loading)</span>
         </div>
     </div>
+
+    {% if timezoneName %}
+        <script type="text/javascript">
+            if((timezoneOptions instanceof Array) === false) {
+                var timezoneOptions = [];
+            }
+
+            timezoneOptions.push({
+                'timezoneName': '{{ timezoneName }}',
+                'timezoneId': '{{ panelId }}'
+            });
+        </script>
+    {% endif %}
 </div>
