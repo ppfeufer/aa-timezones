@@ -1,27 +1,27 @@
 <div class="col-sm-6 col-md-4 col-lg-3">
-    <div class="panel panel-{{ panelType|default:"default" }}">
+    <div class="panel panel-{{ panelData.panelType|default:"default" }}">
         <div class="panel-heading">
             <h3 class="panel-title">
-                {{ panelTitle }} <span class="pull-right"><i id="icon-{{ panelId }}"></i></span>
+                {{ panelData.panelTitle }} <span class="pull-right"><i id="icon-{{ panelData.panelId }}"></i></span>
             </h3>
         </div>
 
         <div class="panel-body text-center timezone-panel">
-            <b id="time-{{ panelId }}" class="timezone-panel-section timezone-panel-time">--:--:--</b>
-            <span id="date-{{ panelId }}" class="timezone-panel-section timezone-panel-date">(loading)</span>
-            <span id="utc-offset-{{ panelId }}" class="timezone-panel-section timezone-panel-utc-offset"></span>
+            <b id="time-{{ panelData.panelId }}" class="timezone-panel-section timezone-panel-section-time">--:--:--</b>
+            <span id="date-{{ panelData.panelId }}" class="timezone-panel-section timezone-panel-section-date">(loading)</span>
+            <span id="utc-offset-{{ panelData.panelId }}" class="timezone-panel-section timezone-panel-section-utc-offset"></span>
         </div>
     </div>
 
-    {% if timezoneName %}
+    {% if panelData.timezoneName %}
         <script type="text/javascript">
             if((timezoneOptions instanceof Array) === false) {
                 var timezoneOptions = [];
             }
 
             timezoneOptions.push({
-                'timezoneName': '{{ timezoneName }}',
-                'timezoneId': '{{ panelId }}'
+                'timezoneName': '{{ panelData.timezoneName }}',
+                'timezoneId': '{{ panelData.panelId }}'
             });
         </script>
     {% endif %}

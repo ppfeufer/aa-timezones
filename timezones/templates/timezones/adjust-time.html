@@ -222,18 +222,11 @@
 
                 <div class="input-group input-group-sm">
                     <select class="form-control" id="tatzone">
-                        <option value="Etc/UTC" selected>EVE Time</option>
                         <option value="">Local Time</option>
-                        <option value="US/Pacific">US Pacific</option>
-                        <option value="US/Mountain">US Mountain</option>
-                        <option value="US/Central">US Central</option>
-                        <option value="US/Eastern">US Eastern</option>
-                        <option value="Europe/London">EU Western / England</option>
-                        <option value="Europe/Berlin">EU Central / Berlin</option>
-                        <option value="Europe/Istanbul">EU Eastern / Turkey</option>
-                        <option value="Europe/Moscow">Russia / Moscow</option>
-                        <option value="Asia/Shanghai">China / Shanghai</option>
-                        <option value="Australia/ACT">Australia / Sydney</option>
+                        <option value="Etc/UTC" selected>EVE Time</option>
+                        {% for optionData in timezonePanelData %}
+                            <option value="{{ optionData.timezoneName }}">{{ optionData.panelTitle }}</option>
+                        {% endfor %}
                     </select>
                 </div>
 

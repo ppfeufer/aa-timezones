@@ -8,11 +8,11 @@
         display: block;
     }
 
-    .timezone-panel-time {
+    .timezone-panel-section-time {
         font-size: 140%;
     }
 
-    .timezone-panel-utc-offset {
+    .timezone-panel-section-utc-offset {
         font-size: 85%;
     }
 }

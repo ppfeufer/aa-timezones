@@ -79,7 +79,7 @@ function updatePanel(mom, id) {
 
 function updatePanels(now) {
     // local time
-    updatePanel(moment(now), 'loc');
+    updatePanel(moment(now), 'local-time');
 
     // panels
     jQuery.each(timezoneOptions, function(index, value) {
