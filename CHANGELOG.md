@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [0.1.4] - 2020-05-16
+### Changed
+- Button labels to better reflect what they are doing
+- Month numbers into names in Adjust Time section
+- Adjust time buttons are now a bit larger
+- Order of information in the time zone panels
+
 ## [0.1.3] - 2020-05-15
 ### Added
 - UTC offset

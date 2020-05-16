@@ -1,9 +1,9 @@
 <!-- // adjust time -->
 <p class="text-right">
-    <button id="btnadjust" class="btn btn-info btn-xs hidden" onclick="showAdjust();">Adjust Time</button>
-    <button id="btnclear" class="btn btn-danger btn-xs hidden" onclick="window.location.hash = '';">Remove</button>
-    <button id="btnshowcurrent" class="btn btn-primary btn-xs hidden" onclick="switchto(0);">Switch to Current Time</button>
-    <button id="btnshowfixed" class="btn btn-primary btn-xs hidden" onclick="switchto(1);">Switch to Timestamp</button>
+    <button id="btnadjust" class="btn btn-info btn-sm hidden" onclick="showAdjust();">Adjust Time</button>
+    <button id="btnclear" class="btn btn-danger btn-sm hidden" onclick="window.location.hash = '';">Remove</button>
+    <button id="btnshowcurrent" class="btn btn-primary btn-sm hidden" onclick="switchto(0);">Switch to current time</button>
+    <button id="btnshowfixed" class="btn btn-primary btn-sm hidden" onclick="switchto(1);">Switch to adjusted time</button>
 </p>
 
 <div id="adjust" class="hidden eve-online-time-zones-time-adjust">
@@ -222,38 +222,32 @@
 
                 <div class="input-group input-group-sm">
                     <select class="form-control" id="tatzone">
-                        <option value="Etc/UTC" selected>EVE Time</option>
                         <option value="">Local Time</option>
-                        <option value="US/Pacific">US Pacific</option>
-                        <option value="US/Mountain">US Mountain</option>
-                        <option value="US/Central">US Central</option>
-                        <option value="US/Eastern">US Eastern</option>
-                        <option value="Europe/London">EU Western / England</option>
-                        <option value="Europe/Berlin">EU Central / Berlin</option>
-                        <option value="Europe/Istanbul">EU Eastern / Turkey</option>
-                        <option value="Europe/Moscow">Russia / Moscow</option>
-                        <option value="Asia/Shanghai">China / Shanghai</option>
-                        <option value="Australia/ACT">Australia / Sydney</option>
+                        <option value="Etc/UTC" selected>EVE Time</option>
+                        {% for optionData in timezonePanelData %}
+                            <option value="{{ optionData.timezoneName }}">{{ optionData.panelTitle }}</option>
+                        {% endfor %}
                     </select>
                 </div>
 
+                <label>on</label>
                 <div class="input-group input-group-sm">
                     <select class="form-control" id="tatyear">
                     </select>
                     <div class="input-group-addon">-</div>
                     <select class="form-control" id="tatmonth">
-                        <option>01</option>
-                        <option>02</option>
-                        <option>03</option>
-                        <option>04</option>
-                        <option>05</option>
-                        <option>06</option>
-                        <option>07</option>
-                        <option>08</option>
-                        <option>09</option>
-                        <option>10</option>
-                        <option>11</option>
-                        <option>12</option>
+                        <option value="01">January</option>
+                        <option value="02">February</option>
+                        <option value="04">March</option>
+                        <option value="04">April</option>
+                        <option value="05">May</option>
+                        <option value="06">June</option>
+                        <option value="07">July</option>
+                        <option value="08">August</option>
+                        <option value="09">September</option>
+                        <option value="10">October</option>
+                        <option value="11">November</option>
+                        <option value="12">December</option>
                     </select>
                     <div class="input-group-addon">-</div>
                     <select class="form-control" id="tatday">

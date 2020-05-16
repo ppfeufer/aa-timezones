@@ -8,8 +8,8 @@ App for displaying different time zones with Alliance Auth
 
 - [Installation](#installation)
 - [Updating](#updating)
+- [Adjusting Time](#adjusting-time)
 - [Change Log](CHANGELOG.md)
-
 
 ## Installation
 
@@ -64,3 +64,15 @@ python manage.py migrate
 ```
 
 Finally restart your AA supervisor services.
+
+## Adjusting Time
+
+You can easiely adjust the time that is displayed for all timezones. This is useful for reinforcement timers or pre-planned fleets. To do so, click on the "Adjust Time" button below the time zone panels and you will see 2 different ways to set a new time.
+
+![Adjusting Time](timezones/docs/adjust-time.jpg)
+
+The first one is meant for timers, like reinforcement timers, anchoring timers or the like. It's maximum is 7 day, 59 minutes and 59 seconds into the future. That should cover pretty much all timers you can find in Eve Online.
+
+The second one is best suited for pre-planned fleets. Here you can set a fixed date and time based on the selected time zone. The default selected time zone is "EVE Time" but you can change it to all the available options. Keep in mind, the selected time zone is the one the time and date will be adjusted to. So if you are going to use it to plan fleets it is recommanded to keep this set to "EVE Time".
+
+To set the adjusted time, simply click on "Set Time" in the row you altered. This will than adjust all time zone panels to the time you selected and will also alter the link in your browser, so you can share it with others directly.
