@@ -5,6 +5,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [0.1.5] - 2020-05-17
+### Added
+- Set up your own additional time zone panels via `local.py` (see readme)
+
 ## [0.1.4] - 2020-05-16
 ### Changed
 - Button labels to better reflect what they are doing
