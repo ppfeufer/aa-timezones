@@ -8,7 +8,7 @@ App for displaying different time zones with Alliance Auth
 
 - [Installation](#installation)
 - [Updating](#updating)
-- [Additional Tinezone Panels](#additional-tinezone-panels)
+- [Additional Timezone Panels](#additional-timezone-panels)
 - [Adjusting Time](#adjusting-time)
 - [Change Log](CHANGELOG.md)
 
@@ -66,7 +66,7 @@ python manage.py migrate
 
 Finally restart your AA supervisor services.
 
-## Additional Tinezone Panels
+## Additional Timezone Panels
 Per default there are 10 additional time zone panels that are displayed (see first image). If you want to change those, you can do so by editing your `local-py` and override the default behaviour this way. So lets say you only want `US/Pacific` and `US/Mountain` as an example, here's how you do this.
 
 Open your `local.py` in an editor of your choice and add the following at the end.
