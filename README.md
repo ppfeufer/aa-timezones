@@ -21,7 +21,7 @@ App for displaying different time zones with Alliance Auth
 Make sure you are in the virtual environment (venv) of your Alliance Auth installation. Then install the latest version:
 
 ```bash
-pip install git+https://github.com/ppfeufer/aa-timezones.git
+pip install aa-timezones
 ```
 
 ### Step 2 - Update your AA settings
@@ -53,7 +53,7 @@ To update your existing installation of AA Time Zones first enable your virtual 
 Then run the following commands from your AA project directory (the one that contains `manage.py`).
 
 ```bash
-pip install git+https://github.com/ppfeufer/aa-timezones.git --upgrade
+pip install -U aa-timezones
 ```
 
 ```bash
