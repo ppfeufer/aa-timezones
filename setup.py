@@ -21,6 +21,7 @@ setup(
     description='Time Zones Overview for Alliance Auth',
     long_description=long_description,
     long_description_content_type='text/markdown',
+    url="https://github.com/ppfeufer/aa-timezones",
     author='Peter Pfeufer',
     author_email='development@ppfeufer.de',
     classifiers=[
