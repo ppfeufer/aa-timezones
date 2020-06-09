@@ -18,20 +18,20 @@ App for displaying different time zones with Alliance Auth
 
 ### Step 1 - Install app
 
-Make sure you are in the virtual environment (venv) of your Alliance Auth installation. Then install the newest release from PyPI:
+Make sure you are in the virtual environment (venv) of your Alliance Auth installation. Then install the latest version:
 
 ```bash
 pip install git+https://github.com/ppfeufer/aa-timezones.git
 ```
 
-### Step 2 - Update Eve Online app
+### Step 2 - Update your AA settings
 
 Configure your AA settings (`local.py`) as follows:
 
 - Add `'timezones'` to `INSTALLED_APPS`
 
 
-### Step 3 - Finalize installation into AA
+### Step 3 - Finalize the installation
 
 Run migrations & copy static files
 
