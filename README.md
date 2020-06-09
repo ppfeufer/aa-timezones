@@ -2,7 +2,7 @@
 
 App for displaying different time zones with Alliance Auth
 
-![Time Zones](timezones/docs/time-zones.jpg)
+![Time Zones](https://raw.githubusercontent.com/ppfeufer/aa-timezones/master/timezones/docs/time-zones.jpg)
 
 ## Contents
 
@@ -21,7 +21,7 @@ App for displaying different time zones with Alliance Auth
 Make sure you are in the virtual environment (venv) of your Alliance Auth installation. Then install the latest version:
 
 ```bash
-pip install git+https://github.com/ppfeufer/aa-timezones.git
+pip install aa-timezones
 ```
 
 ### Step 2 - Update your AA settings
@@ -53,7 +53,7 @@ To update your existing installation of AA Time Zones first enable your virtual 
 Then run the following commands from your AA project directory (the one that contains `manage.py`).
 
 ```bash
-pip install git+https://github.com/ppfeufer/aa-timezones.git --upgrade
+pip install -U aa-timezones
 ```
 
 ```bash
@@ -98,7 +98,7 @@ Now there will be only these two defined paned be displayed, additionally to Loc
 
 You can easiely adjust the time that is displayed for all timezones. This is useful for reinforcement timers or pre-planned fleets. To do so, click on the "Adjust Time" button below the time zone panels and you will see 2 different ways to set a new time.
 
-![Adjusting Time](timezones/docs/adjust-time.jpg)
+![Adjusting Time](https://raw.githubusercontent.com/ppfeufer/aa-timezones/master/timezones/docs/adjust-time.jpg)
 
 The first one is meant for timers, like reinforcement timers, anchoring timers or the like. It's maximum is 7 day, 59 minutes and 59 seconds into the future. That should cover pretty much all timers you can find in Eve Online.
 

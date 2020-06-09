@@ -3,7 +3,6 @@ from setuptools import find_packages, setup
 
 from timezones import __version__
 
-
 # read the contents of your README file
 this_directory = os.path.abspath(os.path.dirname(__file__))
 with open(os.path.join(this_directory, 'README.md'), encoding='utf-8') as f:
@@ -40,6 +39,6 @@ setup(
     ],
     python_requires='~=3.6',
     install_requires=[
-        'django>=2.2,<3.0'
+        'allianceauth>=2.6.5'
     ]
 )
