@@ -13,7 +13,7 @@ class AaTimezonesMenuItem(MenuItemHook):
         MenuItemHook.__init__(
             self,
             _(__title__),
-            'fa fa-clock-o fa-fw',
+            'far fa-clock fa-fw',
             'timezones:index',
             navactive=['timezones:index']
         )
