@@ -28,7 +28,7 @@ pip install aa-timezones
 
 Configure your AA settings (`local.py`) as follows:
 
-- Add `'timezones'` to `INSTALLED_APPS`
+- Add `'timezones',` to `INSTALLED_APPS`
 
 
 ### Step 3 - Finalize the installation
