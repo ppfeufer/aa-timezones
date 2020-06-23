@@ -7,10 +7,8 @@ from .app_settings import (
 )
 
 
-
 @login_required
 @permission_required('timezones.basic_access')
-
 def index(request):
     context = {
         'title': __title__,

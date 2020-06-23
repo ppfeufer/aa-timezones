@@ -2,6 +2,7 @@
 
 var clockTarget = 0;
 var clockTickId = 0;
+var countdownIntervalId = 0;
 
 function showAdjust() {
     jQuery('#btnadjust').addClass('hidden');
@@ -87,6 +88,26 @@ function updatePanels(now) {
     });
 }
 
+function timeUntil(timestamp) {
+    var timestampDifference = timestamp - Date.now();
+    var timeDifferenceInSeconds = timestampDifference / 1000; // from ms to seconds
+
+    // set the interval
+    countdownIntervalId = setInterval(function() { // execute code each second
+        timeDifferenceInSeconds--; // decrement timestamp with one second each second
+
+        var days    = Math.floor(timeDifferenceInSeconds / (24 * 60 * 60));      // calculate days from timestamp
+        var hours   = Math.floor(timeDifferenceInSeconds / (60 * 60)) % 24; // hours
+        var minutes = Math.floor(timeDifferenceInSeconds / 60) % 60; // minutes
+        var seconds = Math.floor(timeDifferenceInSeconds / 1) % 60; // seconds
+
+        // display
+        $('.aa-timezones-time-until-countdown').html(days + " days, " + hours + ":" + minutes + ":" + seconds);
+    }, 1000);
+
+    console.log(countdownIntervalId);
+}
+
 function clockTick() {
     updatePanels(new Date());
 }
@@ -96,12 +117,19 @@ function switchto(mode) {
         clearInterval(clockTickId);
     }
 
+    if(countdownIntervalId !== 0) {
+        clearInterval(countdownIntervalId);
+    }
+
+    $('.aa-timezones-time-until-countdown').html('');
+
     if(mode === 0) {
         jQuery('#headlineCurrent').removeClass('hidden');
         jQuery('#headlineFixed').addClass('hidden');
         jQuery('#adjust').addClass('hidden');
         jQuery('#btnadjust').removeClass('hidden');
         jQuery('#btnshowcurrent').addClass('hidden');
+        jQuery('.aa-timezones-time-until').addClass('hidden');
 
         if(clockTarget !== 0) {
             jQuery('#btnshowfixed').removeClass('hidden');
@@ -120,8 +148,10 @@ function switchto(mode) {
         jQuery('#btnshowcurrent').removeClass('hidden');
         jQuery('#btnshowfixed').addClass('hidden');
         jQuery('#btnclear').removeClass('hidden');
+        jQuery('.aa-timezones-time-until').removeClass('hidden');
 
         updatePanels(new Date(clockTarget));
+        timeUntil(clockTarget);
     }
 }
 
