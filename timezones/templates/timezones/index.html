@@ -5,59 +5,62 @@
 
 {% block details %}
 
-<div class="row">
-    <!-- // Local Time -->
-    <div class="col-sm-6 col-md-4 col-lg-3">
-        <div class="panel panel-warning">
-            <div class="panel-heading">
-                <h3 class="panel-title">
-                    Local Time <span class="pull-right"><i id="icon-local-time"></i></span>
-                </h3>
-            </div>
+<div class="aa-timezones">
+    <div class="row">
+        <!-- // Local Time -->
+        <div class="col-sm-6 col-md-4 col-lg-3">
+            <div class="panel panel-warning">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        Local Time <span class="pull-right"><i id="icon-local-time"></i></span>
+                    </h3>
+                </div>
 
-            <div class="panel-body text-center timezone-panel">
-                <b id="time-local-time" class="timezone-panel-section timezone-panel-section-time">--:--:--</b>
-                <span id="date-local-time" class="timezone-panel-section timezone-panel-section-date">(loading)</span>
-                <span id="utc-offset-local-time" class="timezone-panel-section timezone-panel-section-utc-offset"></span>
-            </div>
-        </div>
-    </div>
-
-    <!-- // EVE Time -->
-    <div class="col-sm-6 col-md-4 col-lg-3">
-        <div class="panel panel-success">
-            <div class="panel-heading">
-                <h3 class="panel-title">
-                    EVE Time <span class="pull-right"><i id="icon-eve-time"></i></span>
-                </h3>
-            </div>
-
-            <div class="panel-body text-center timezone-panel">
-                <b id="time-eve-time" class="timezone-panel-section timezone-panel-section-time">--:--:--</b>
-                <span id="date-eve-time" class="timezone-panel-section timezone-panel-section-date">(loading)</span>
-                <span id="utc-offset-eve-time" class="timezone-panel-section timezone-panel-section-utc-offset"></span>
+                <div class="panel-body text-center timezone-panel">
+                    <b id="time-local-time" class="timezone-panel-section timezone-panel-section-time">--:--:--</b>
+                    <span id="date-local-time" class="timezone-panel-section timezone-panel-section-date">(loading)</span>
+                    <span id="utc-offset-local-time" class="timezone-panel-section timezone-panel-section-utc-offset"></span>
+                </div>
             </div>
         </div>
 
-        <script type="text/javascript">
-            if((timezoneOptions instanceof Array) === false) {
-                var timezoneOptions = [];
-            }
+        <!-- // EVE Time -->
+        <div class="col-sm-6 col-md-4 col-lg-3">
+            <div class="panel panel-success">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        EVE Time <span class="pull-right"><i id="icon-eve-time"></i></span>
+                    </h3>
+                </div>
 
-            timezoneOptions.push({
-                'timezoneName': 'Etc/UTC',
-                'timezoneId': 'eve-time'
-            });
-        </script>
+                <div class="panel-body text-center timezone-panel">
+                    <b id="time-eve-time" class="timezone-panel-section timezone-panel-section-time">--:--:--</b>
+                    <span id="date-eve-time" class="timezone-panel-section timezone-panel-section-date">(loading)</span>
+                    <span id="utc-offset-eve-time" class="timezone-panel-section timezone-panel-section-utc-offset"></span>
+                </div>
+            </div>
+
+            <script type="text/javascript">
+                if((timezoneOptions instanceof Array) === false) {
+                    var timezoneOptions = [];
+                }
+
+                timezoneOptions.push({
+                    'timezoneName': 'Etc/UTC',
+                    'timezoneId': 'eve-time'
+                });
+            </script>
+        </div>
+
+        {% for panelData in timezonePanelData %}
+            <!-- // {{ panelData.timezoneName }} -->
+            {% include "timezones/timezone-panel.html" with type="panelData" %}
+        {% endfor %}
     </div>
 
-    {% for panelData in timezonePanelData %}
-        <!-- // {{ panelData.timezoneName }} -->
-        {% include "timezones/timezone-panel.html" with type="panelData" %}
-    {% endfor %}
+    {% include 'timezones/time-until.html' %}
+    {% include 'timezones/adjust-time.html' %}
 </div>
-
-{% include 'timezones/adjust-time.html' %}
 
 {% endblock %}
 

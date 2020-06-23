@@ -5,6 +5,11 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+
+## [0.1.8] - 2020-06-23
+### Added
+- Time until in "Set Time" mode (#19)
+
 ## [0.1.7] - 2020-06-11
 ### Changed
 - Menu icon updated to FontAwesome v5, which allianceauth uses since 2.7.2
