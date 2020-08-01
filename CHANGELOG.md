@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [0.1.9] - 2020-08-01
+### Fixed
+- hours, minutes and seconds now have leading 0 when below 10
+- when countdown is over it no longer counts into negative
+
+### Changed
+- Countdown text "Time left" instead of "Time until"
 
 ## [0.1.8] - 2020-06-23
 ### Added
