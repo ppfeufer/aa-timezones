@@ -96,13 +96,23 @@ function timeUntil(timestamp) {
     countdownIntervalId = setInterval(function() { // execute code each second
         timeDifferenceInSeconds--; // decrement timestamp with one second each second
 
-        var days    = Math.floor(timeDifferenceInSeconds / (24 * 60 * 60));      // calculate days from timestamp
-        var hours   = Math.floor(timeDifferenceInSeconds / (60 * 60)) % 24; // hours
-        var minutes = Math.floor(timeDifferenceInSeconds / 60) % 60; // minutes
-        var seconds = Math.floor(timeDifferenceInSeconds / 1) % 60; // seconds
+        if(timeDifferenceInSeconds >= 0) {
+            var days    = Math.floor(timeDifferenceInSeconds / (24 * 60 * 60)); // calculate days from timestamp
+            var hours   = Math.floor(timeDifferenceInSeconds / (60 * 60)) % 24; // hours
+            var minutes = Math.floor(timeDifferenceInSeconds / 60) % 60; // minutes
+            var seconds = Math.floor(timeDifferenceInSeconds / 1) % 60; // seconds
 
-        // display
-        $('.aa-timezones-time-until-countdown').html(days + " days, " + hours + ":" + minutes + ":" + seconds);
+            // leading zero ...
+            if(hours < 10) {hours = '0' + hours;}
+            if(minutes < 10) {minutes = '0' + minutes;}
+            if(seconds < 10) {seconds = '0' + seconds;}
+
+            var countdown = days + " days, " + hours + ":" + minutes + ":" + seconds;
+        } else {
+            var countdown = 'Already over, you missed it!';
+        }
+
+        $('.aa-timezones-time-until-countdown').html(countdown);
     }, 1000);
 
     console.log(countdownIntervalId);
