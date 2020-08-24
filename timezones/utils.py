@@ -1,12 +1,14 @@
 from django.conf import settings
 
+from timezones.tasks import logger
+
 
 def clean_setting(
     name: str,
     default_value: object,
     min_value: int = None,
     max_value: int = None,
-    required_type: type = None
+    required_type: type = None,
 ):
     """cleans the input for a custom setting
 
@@ -20,7 +22,7 @@ def clean_setting(
     Returns cleaned value for setting
     """
     if default_value is None and not required_type:
-        raise ValueError('You must specify a required_type for None defaults')
+        raise ValueError("You must specify a required_type for None defaults")
 
     if not required_type:
         required_type = type(default_value)
@@ -31,18 +33,16 @@ def clean_setting(
     if not hasattr(settings, name):
         cleaned_value = default_value
     else:
-        if (isinstance(getattr(settings, name), required_type)
+        if (
+            isinstance(getattr(settings, name), required_type)
             and (min_value is None or getattr(settings, name) >= min_value)
             and (max_value is None or getattr(settings, name) <= max_value)
         ):
             cleaned_value = getattr(settings, name)
         else:
             logger.warn(
-                'You setting for {} it not valid. Please correct it. '
-                'Using default for now: {}'.format(
-                    name,
-                    default_value
-                )
+                "You setting for {} it not valid. Please correct it. "
+                "Using default for now: {}".format(name, default_value)
             )
             cleaned_value = default_value
     return cleaned_value
