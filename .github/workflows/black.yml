@@ -1,12 +1,20 @@
-  
 name: Black Code Formatter
 
-on: [push, pull_request]
+on:
+  push:
+    branches:
+      - master
+      - development
+    tags-ignore:
+      - v*
 
 jobs:
-  lint:
+  black-format:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-python@v2
-      - uses: lgeiger/black-action@v1.0.1
+        name: Checkout
+      - uses: Ahuge/black-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BLACK_ARGS: "."
