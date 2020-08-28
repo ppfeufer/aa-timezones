@@ -1,0 +1,20 @@
+name: Black Code Formatter
+
+on:
+  push:
+    branches:
+      - master
+      - development
+    tags-ignore:
+      - v*
+
+jobs:
+  black-format:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        name: Checkout
+      - uses: Ahuge/black-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BLACK_ARGS: "."
