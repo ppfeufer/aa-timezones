@@ -1,5 +1,13 @@
 # AA Time Zones
 
+[![Version](https://img.shields.io/pypi/v/aa-timezones?label=release)](https://pypi.org/project/aa-timezones/)
+[![License](https://img.shields.io/badge/license-GPLv3-green)](https://pypi.org/project/aa-timezones/)
+[![Python](https://img.shields.io/pypi/pyversions/aa-timezones)](https://pypi.org/project/aa-timezones/)
+[![Django](https://img.shields.io/pypi/djversions/aa-timezones?label=django)](https://pypi.org/project/aa-timezones/)
+[![PyPI Downloads](https://img.shields.io/pypi/dm/aa-timezones)](https://pypi.org/project/aa-timezones/)
+[![Code Style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](http://black.readthedocs.io/en/latest/)
+
+
 App for displaying different time zones with Alliance Auth
 
 ![Time Zones](https://raw.githubusercontent.com/ppfeufer/aa-timezones/master/timezones/docs/time-zones.jpg)
