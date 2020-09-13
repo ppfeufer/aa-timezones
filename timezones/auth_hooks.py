@@ -1,4 +1,9 @@
 # -*- coding: utf-8 -*-
+
+"""
+hooks to AA
+"""
+
 from django.utils.translation import ugettext_lazy as _
 
 from allianceauth import hooks
@@ -21,16 +26,30 @@ class AaTimezonesMenuItem(MenuItemHook):
         )
 
     def render(self, request):
+        """
+        only if the user has access to this app
+        :param request:
+        :return:
+        """
         if request.user.has_perm("timezones.basic_access"):
             return MenuItemHook.render(self, request)
+
         return ""
 
 
 @hooks.register("menu_item_hook")
 def register_menu():
+    """
+    register our menu item
+    :return:
+    """
     return AaTimezonesMenuItem()
 
 
 @hooks.register("url_hook")
 def register_urls():
+    """
+    register our base url
+    :return:
+    """
     return UrlHook(urls, "timezones", r"^timezones/")

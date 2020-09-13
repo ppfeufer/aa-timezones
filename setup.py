@@ -1,4 +1,9 @@
 # -*- coding: utf-8 -*-
+
+"""
+app setup
+"""
+
 import os
 
 from setuptools import find_packages, setup

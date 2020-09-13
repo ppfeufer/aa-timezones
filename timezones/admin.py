@@ -1,4 +1,9 @@
 # -*- coding: utf-8 -*-
-from django.contrib import admin
+
+"""
+admin backend config
+"""
+
+# from django.contrib import admin
 
 # Register your models here.

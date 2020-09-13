@@ -1,4 +1,9 @@
 # -*- coding: utf-8 -*-
+
+"""
+the views
+"""
+
 from django.contrib.auth.decorators import login_required, permission_required
 from django.shortcuts import render
 

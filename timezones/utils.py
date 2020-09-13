@@ -1,4 +1,9 @@
 # -*- coding: utf-8 -*-
+
+"""
+utilities
+"""
+
 from django.conf import settings
 
 from timezones.tasks import logger
@@ -46,4 +51,5 @@ def clean_setting(
                 "Using default for now: {}".format(name, default_value)
             )
             cleaned_value = default_value
+
     return cleaned_value
