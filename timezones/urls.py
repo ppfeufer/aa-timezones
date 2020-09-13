@@ -3,7 +3,7 @@ from django.urls import path
 from . import views
 
 
-APP_NAME = "timezones"
+app_name = "timezones"
 
 urlpatterns = [
     path("", views.index, name="index"),
