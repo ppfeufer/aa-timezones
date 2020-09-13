@@ -35,6 +35,7 @@ msgid "in"
 msgstr ""
 
 #: timezones/templates/timezones/adjust-time.html:28
+#: timezones/templates/timezones/index.html:68
 msgid "Days"
 msgstr ""
 
@@ -73,6 +74,10 @@ msgstr ""
 #: timezones/templates/timezones/index.html:39
 #: timezones/templates/timezones/timezone-panel.html:13
 msgid "loading"
+msgstr ""
+
+#: timezones/templates/timezones/index.html:69
+msgid "Already over, you missed it!"
 msgstr ""
 
 #: timezones/templates/timezones/time-until.html:5

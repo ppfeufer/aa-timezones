@@ -41,7 +41,7 @@
                 </div>
             </div>
 
-            <script type="text/javascript">
+            <script type="application/javascript">
                 if((timezoneOptions instanceof Array) === false) {
                     var timezoneOptions = [];
                 }
@@ -61,16 +61,23 @@
 
     {% include 'timezones/time-until.html' %}
     {% include 'timezones/adjust-time.html' %}
-</div>
 
+    <!-- share translations with JS part -->
+    <script type="application/javascript">
+        var aaTimezonesTranslations = {
+            days: '{% trans "Days" %}',
+            alreadyOver: '{% trans "Already over, you missed it!" %}'
+        };
+    </script>
+</div>
 {% endblock %}
 
 {% block extra_javascript %}
     {% include 'bundles/moment-js.html' with locale=True %}
 
-    <script type="text/javascript" src="{% static 'timezones/js/timeago/jquery.timeago.min.js' %}"></script>
-    <script type="text/javascript" src="{% static 'timezones/js/moment/moment-timezone-with-data-1970-2030.min.js' %}"></script>
-    <script type="text/javascript" src="{% static 'timezones/js/timezones.min.js' %}"></script>
+    <script type="application/javascript" src="{% static 'timezones/js/timeago/jquery.timeago.min.js' %}"></script>
+    <script type="application/javascript" src="{% static 'timezones/js/moment/moment-timezone-with-data-1970-2030.min.js' %}"></script>
+    <script type="application/javascript" src="{% static 'timezones/js/timezones.min.js' %}"></script>
 {% endblock %}
 
 {% block extra_css %}
