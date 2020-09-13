@@ -1,3 +1,9 @@
+# -*- coding: utf-8 -*-
+
+"""
+page urls config
+"""
+
 from django.urls import path
 from . import views
 

@@ -65,8 +65,9 @@
 {% endblock %}
 
 {% block extra_javascript %}
+    {% include 'bundles/moment-js.html' with locale=True %}
+
     <script type="text/javascript" src="{% static 'timezones/js/timeago/jquery.timeago.min.js' %}"></script>
-    <script type="text/javascript" src="{% static 'timezones/js/moment/moment.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'timezones/js/moment/moment-timezone-with-data-1970-2030.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'timezones/js/timezones.min.js' %}"></script>
 {% endblock %}

@@ -1,8 +1,13 @@
-from setuptools import find_packages, setup
+# -*- coding: utf-8 -*-
 
-from timezones import __version__
+"""
+app setup
+"""
 
 import os
+
+from setuptools import find_packages, setup
+from timezones import __version__
 
 # read the contents of your README file
 this_directory = os.path.abspath(os.path.dirname(__file__))
