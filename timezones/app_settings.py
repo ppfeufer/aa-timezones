@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from .utils import clean_setting
 
 # set default panels if none are set in local.py

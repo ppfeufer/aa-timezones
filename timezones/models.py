@@ -1,9 +1,8 @@
+# -*- coding: utf-8 -*-
 from django.db import models
 
 
 # Create your models here.
-
-
 class AaTimezones(models.Model):
     """Meta model for app permissions"""
 
