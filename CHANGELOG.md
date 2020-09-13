@@ -5,6 +5,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [1.0.0] - 2020-09-13
+### Changed
+- use moment.js provided by AA. No need to provide our own when AA does that for us. If you are concerned about using the coudflare CDN, try using the [AA GDPR](https://gitlab.com/soratidus999/aa-gdpr) package
+
 ## [0.1.9] - 2020-08-01
 ### Fixed
 - hours, minutes and seconds now have leading 0 when below 10

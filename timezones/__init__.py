@@ -6,5 +6,5 @@ application init
 
 default_app_config = "timezones.apps.AaTimezonesConfig"
 
-__version__ = "0.1.9"
+__version__ = "1.0.0"
 __title__ = "Time Zones"
