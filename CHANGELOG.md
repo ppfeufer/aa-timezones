@@ -10,7 +10,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Compatibility with the upcoming changes in Alliance Auth v2.8.0 (Django 3)
 
 ### Added
-- German translation to UI (Pings will remain in english)
+- German translation to UI
 - Translations for Russian, Spansih, Korean and Chines prepared, need translators though :-)
 
 
