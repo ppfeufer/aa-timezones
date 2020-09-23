@@ -1,9 +1,11 @@
+{% load i18n %}
+
 <!-- // adjust time -->
 <p class="aa-timezones-adjust-time text-right">
-    <button id="btnadjust" class="btn btn-info btn-sm hidden" onclick="showAdjust();">Adjust Time</button>
-    <button id="btnclear" class="btn btn-danger btn-sm hidden" onclick="window.location.hash = '';">Remove</button>
-    <button id="btnshowcurrent" class="btn btn-primary btn-sm hidden" onclick="switchto(0);">Switch to current time</button>
-    <button id="btnshowfixed" class="btn btn-primary btn-sm hidden" onclick="switchto(1);">Switch to adjusted time</button>
+    <button id="btnadjust" class="btn btn-info btn-sm hidden" onclick="showAdjust();">{% trans "Adjust Time" %}</button>
+    <button id="btnclear" class="btn btn-danger btn-sm hidden" onclick="window.location.hash = '';">{% trans "Remove" %}</button>
+    <button id="btnshowcurrent" class="btn btn-primary btn-sm hidden" onclick="switchto(0);">{% trans "Switch to current time" %}</button>
+    <button id="btnshowfixed" class="btn btn-primary btn-sm hidden" onclick="switchto(1);">{% trans "Switch to adjusted time" %}</button>
 </p>
 
 <div id="adjust" class="hidden eve-online-time-zones-time-adjust">
@@ -11,7 +13,7 @@
     <span class="pull-right text-right">
         <form class="form-inline">
             <div class="form-group">
-                <label>in</label>
+                <label>{% trans "in" %}</label>
                 <div class="input-group input-group-sm">
                     <select class="form-control" id="tind">
                         <option>0</option>
@@ -23,7 +25,7 @@
                         <option>6</option>
                         <option>7</option>
                     </select>
-                    <div class="input-group-addon">Days</div>
+                    <div class="input-group-addon">{% trans "Days" %}</div>
                 </div>
 
                 <div class="input-group input-group-sm">
@@ -53,7 +55,7 @@
                         <option>22</option>
                         <option>23</option>
                     </select>
-                    <div class="input-group-addon">Hours</div>
+                    <div class="input-group-addon">{% trans "Hours" %}</div>
                 </div>
 
                 <div class="input-group input-group-sm">
@@ -119,15 +121,15 @@
                         <option>58</option>
                         <option>59</option>
                     </select>
-                    <div class="input-group-addon">Minutes</div>
+                    <div class="input-group-addon">{% trans "Minutes" %}</div>
                 </div>
-                <button class="btn btn-info btn-sm" onclick="window.location.hash = (parseInt(new Date().getTime() / 1000) + jQuery('#tind').val() * 24 * 60 * 60 + jQuery('#tinh').val() * 60 * 60 + jQuery('#tinm').val() * 60);">Set Time</button>
+                <button class="btn btn-info btn-sm" onclick="window.location.hash = (parseInt(new Date().getTime() / 1000) + jQuery('#tind').val() * 24 * 60 * 60 + jQuery('#tinh').val() * 60 * 60 + jQuery('#tinm').val() * 60);">{% trans "Set Time" %}</button>
             </div>
         </form>
 
         <form class="form-inline">
             <div class="form-group">
-                <label>at</label>
+                <label>{% trans "at" %}</label>
                 <div class="input-group input-group-sm">
                     <select class="form-control" id="tathour">
                         <option>00</option>
@@ -222,32 +224,32 @@
 
                 <div class="input-group input-group-sm">
                     <select class="form-control" id="tatzone">
-                        <option value="">Local Time</option>
-                        <option value="Etc/UTC" selected>EVE Time</option>
+                        <option value="">{% trans "Local Time" %}</option>
+                        <option value="Etc/UTC" selected>{% trans "EVE Time" %}</option>
                         {% for optionData in timezonePanelData %}
                             <option value="{{ optionData.timezoneName }}">{{ optionData.panelTitle }}</option>
                         {% endfor %}
                     </select>
                 </div>
 
-                <label>on</label>
+                <label>{% trans "on" %}</label>
                 <div class="input-group input-group-sm">
                     <select class="form-control" id="tatyear">
                     </select>
                     <div class="input-group-addon">-</div>
                     <select class="form-control" id="tatmonth">
-                        <option value="01">January</option>
-                        <option value="02">February</option>
-                        <option value="04">March</option>
-                        <option value="04">April</option>
-                        <option value="05">May</option>
-                        <option value="06">June</option>
-                        <option value="07">July</option>
-                        <option value="08">August</option>
-                        <option value="09">September</option>
-                        <option value="10">October</option>
-                        <option value="11">November</option>
-                        <option value="12">December</option>
+                        <option value="01">{% trans "January" %}</option>
+                        <option value="02">{% trans "February" %}</option>
+                        <option value="04">{% trans "March" %}</option>
+                        <option value="04">{% trans "April" %}</option>
+                        <option value="05">{% trans "May" %}</option>
+                        <option value="06">{% trans "June" %}</option>
+                        <option value="07">{% trans "July" %}</option>
+                        <option value="08">{% trans "August" %}</option>
+                        <option value="09">{% trans "September" %}</option>
+                        <option value="10">{% trans "October" %}</option>
+                        <option value="11">{% trans "November" %}</option>
+                        <option value="12">{% trans "December" %}</option>
                     </select>
                     <div class="input-group-addon">-</div>
                     <select class="form-control" id="tatday">
@@ -284,7 +286,7 @@
                         <option>31</option>
                     </select>
                 </div>
-                <button class="btn btn-info btn-sm" onclick="setdate(jQuery('#tatyear').val() + '-' + jQuery('#tatmonth').val() + '-' + jQuery('#tatday').val() + ' ' + jQuery('#tathour').val() + ':' + jQuery('#tatminute').val(), jQuery('#tatzone').val());">Set Time</button>
+                <button class="btn btn-info btn-sm" onclick="setdate(jQuery('#tatyear').val() + '-' + jQuery('#tatmonth').val() + '-' + jQuery('#tatday').val() + ' ' + jQuery('#tathour').val() + ':' + jQuery('#tatminute').val(), jQuery('#tatzone').val());">{% trans "Set Time" %}</button>
             </div>
         </form>
     </span>

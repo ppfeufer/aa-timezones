@@ -1,4 +1,4 @@
-/* global moment, timezoneOptions */
+/* global moment, timezoneOptions, aaTimezonesTranslations */
 
 var clockTarget = 0;
 var clockTickId = 0;
@@ -107,15 +107,13 @@ function timeUntil(timestamp) {
             if(minutes < 10) {minutes = '0' + minutes;}
             if(seconds < 10) {seconds = '0' + seconds;}
 
-            var countdown = days + " days, " + hours + ":" + minutes + ":" + seconds;
+            var countdown = days + ' ' + aaTimezonesTranslations.days + ', ' + hours + ':' + minutes + ':' + seconds;
         } else {
-            var countdown = 'Already over, you missed it!';
+            var countdown = aaTimezonesTranslations.alreadyOver;
         }
 
         $('.aa-timezones-time-until-countdown').html(countdown);
     }, 1000);
-
-    console.log(countdownIntervalId);
 }
 
 function clockTick() {

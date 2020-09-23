@@ -1,0 +1,89 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-09-13 14:16+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: timezones/templates/timezones/adjust-time.html:5
+msgid "Adjust Time"
+msgstr ""
+
+#: timezones/templates/timezones/adjust-time.html:7
+msgid "Switch to current time"
+msgstr ""
+
+#: timezones/templates/timezones/adjust-time.html:8
+msgid "Switch to adjusted time"
+msgstr ""
+
+#: timezones/templates/timezones/adjust-time.html:16
+msgid "in"
+msgstr ""
+
+#: timezones/templates/timezones/adjust-time.html:28
+#: timezones/templates/timezones/index.html:68
+msgid "Days"
+msgstr ""
+
+#: timezones/templates/timezones/adjust-time.html:58
+msgid "Hours"
+msgstr ""
+
+#: timezones/templates/timezones/adjust-time.html:124
+msgid "Minutes"
+msgstr ""
+
+#: timezones/templates/timezones/adjust-time.html:126
+#: timezones/templates/timezones/adjust-time.html:289
+msgid "Set Time"
+msgstr ""
+
+#: timezones/templates/timezones/adjust-time.html:132
+msgid "at"
+msgstr ""
+
+#: timezones/templates/timezones/adjust-time.html:228
+#: timezones/templates/timezones/index.html:33
+msgid "EVE Time"
+msgstr ""
+
+#: timezones/templates/timezones/adjust-time.html:235
+msgid "on"
+msgstr ""
+
+#: timezones/templates/timezones/base.html:5
+#: timezones/templates/timezones/base.html:9
+msgid "Time Zones"
+msgstr ""
+
+#: timezones/templates/timezones/index.html:22
+#: timezones/templates/timezones/index.html:39
+#: timezones/templates/timezones/timezone-panel.html:13
+msgid "loading"
+msgstr ""
+
+#: timezones/templates/timezones/index.html:69
+msgid "Already over, you missed it!"
+msgstr ""
+
+#: timezones/templates/timezones/time-until.html:5
+msgid "Time left"
+msgstr ""
+
+#: timezones/templates/timezones/time-until.html:5
+msgid "Time left"
+msgstr ""
