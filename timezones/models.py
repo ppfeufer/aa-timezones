@@ -36,6 +36,9 @@ class TimezoneData(models.Model):
         help_text=_("ID of the timezone panel in frontend"),
     )
 
+    def __str__(self) -> str:
+        return str(self.timezone_name)
+
     class Meta:
         """
         TimezoneData :: Meta
@@ -60,6 +63,14 @@ class Timezones(models.Model):
         blank=False,
         help_text=_("Selected timezone"),
     )
+
+    is_enabled = models.BooleanField(
+        default=True,
+        help_text=_("Whether this timezone is enabled or not"),
+    )
+
+    def __str__(self) -> str:
+        return str(self.panel_name)
 
     class Meta:
         """
