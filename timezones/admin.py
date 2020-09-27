@@ -14,7 +14,6 @@ from timezones.models import Timezones
 class TimezonesAdmin(admin.ModelAdmin):
     list_display = ("_panel_name", "_timezone", "is_enabled")
     ordering = ("panel_name",)
-    filter_horizontal = ("timezone",)
     list_filter = ("is_enabled",)
 
     def _panel_name(self, obj):
