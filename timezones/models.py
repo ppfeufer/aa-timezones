@@ -5,6 +5,7 @@ our models
 """
 
 from django.db import models
+from django.utils.translation import gettext_lazy as _
 
 
 # Create your models here.
@@ -17,3 +18,54 @@ class AaTimezones(models.Model):
         managed = False
         default_permissions = ()
         permissions = (("basic_access", "Can access this app"),)
+
+
+class TimezoneData(models.Model):
+    timezone_name = models.CharField(
+        max_length=255, blank=False, unique=True, help_text=_("Name of the timezone")
+    )
+
+    utc_offset = models.CharField(
+        max_length=255, blank=False, unique=False, help_text=_("UTC of the timezone")
+    )
+
+    panel_id = models.CharField(
+        max_length=255,
+        blank=False,
+        unique=True,
+        help_text=_("ID of the timezone panel in frontend"),
+    )
+
+    class Meta:
+        """
+        TimezoneData :: Meta
+        """
+
+        verbose_name = _("Timezone Data")
+        verbose_name_plural = _("Timezone Data")
+        default_permissions = ()
+
+
+class Timezones(models.Model):
+    panel_name = models.CharField(
+        max_length=255,
+        blank=False,
+        unique=True,
+        help_text=_("Name of the timezone panel"),
+    )
+
+    timezone = models.ForeignKey(
+        TimezoneData,
+        on_delete=models.CASCADE,
+        blank=False,
+        help_text=_("Selected timezone"),
+    )
+
+    class Meta:
+        """
+        TimezoneData :: Meta
+        """
+
+        verbose_name = _("Timezone")
+        verbose_name_plural = _("Timezones")
+        default_permissions = ()
