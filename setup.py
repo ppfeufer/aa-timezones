@@ -22,7 +22,7 @@ setup(
     version=__version__,
     packages=find_packages(),
     include_package_data=True,
-    license="MIT",
+    license="GPLv3",
     description="Time Zones Overview for Alliance Auth",
     long_description=long_description,
     long_description_content_type="text/markdown",
