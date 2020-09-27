@@ -1,7 +1,6 @@
 {% extends 'timezones/base.html' %}
 
 {% load i18n %}
-{% load humanize %}
 {% load static %}
 
 {% block details %}
@@ -42,7 +41,7 @@
             </div>
 
             <script type="application/javascript">
-                if((timezoneOptions instanceof Array) === false) {
+                if(!(timezoneOptions instanceof Array)) {
                     var timezoneOptions = [];
                 }
 
@@ -53,10 +52,12 @@
             </script>
         </div>
 
-        {% for panelData in timezonePanelData %}
-            <!-- // {{ panelData.timezoneName }} -->
-            {% include "timezones/timezone-panel.html" with type="panelData" %}
-        {% endfor %}
+        {% if timezones %}
+            {% for timezone in timezones %}
+                <!-- // {{ timezone.panel_name }} -->
+                {% include "timezones/timezone-panel.html" %}
+            {% endfor %}
+        {% endif %}
     </div>
 
     {% include 'timezones/time-until.html' %}

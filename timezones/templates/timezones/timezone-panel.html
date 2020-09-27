@@ -1,29 +1,29 @@
 {% load i18n %}
 
 <div class="col-sm-6 col-md-4 col-lg-3">
-    <div class="panel panel-{{ panelData.panelType|default:'default' }}">
+    <div class="panel panel-{{ timezone.panelType|default:'default' }}">
         <div class="panel-heading">
             <h3 class="panel-title">
-                {{ panelData.panelTitle }} <span class="pull-right"><i id="icon-{{ panelData.panelId }}"></i></span>
+                {{ timezone.panel_name }} <span class="pull-right"><i id="icon-{{ timezone.timezone.panel_id }}"></i></span>
             </h3>
         </div>
 
         <div class="panel-body text-center timezone-panel">
-            <b id="time-{{ panelData.panelId }}" class="timezone-panel-section timezone-panel-section-time">--:--:--</b>
-            <span id="date-{{ panelData.panelId }}" class="timezone-panel-section timezone-panel-section-date">({% trans "loading" %})</span>
-            <span id="utc-offset-{{ panelData.panelId }}" class="timezone-panel-section timezone-panel-section-utc-offset"></span>
+            <b id="time-{{ timezone.timezone.panel_id }}" class="timezone-panel-section timezone-panel-section-time">--:--:--</b>
+            <span id="date-{{ timezone.timezone.panel_id }}" class="timezone-panel-section timezone-panel-section-date">({% trans "loading" %})</span>
+            <span id="utc-offset-{{ timezone.timezone.panel_id }}" class="timezone-panel-section timezone-panel-section-utc-offset"></span>
         </div>
     </div>
 
-    {% if panelData.timezoneName %}
+    {% if timezone.timezone.timezone_name %}
         <script type="application/javascript">
             if((timezoneOptions instanceof Array) === false) {
                 var timezoneOptions = [];
             }
 
             timezoneOptions.push({
-                'timezoneName': '{{ panelData.timezoneName }}',
-                'timezoneId': '{{ panelData.panelId }}'
+                'timezoneName': '{{ timezone.timezone.timezone_name }}',
+                'timezoneId': '{{ timezone.timezone.panel_id }}'
             });
         </script>
     {% endif %}

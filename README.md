@@ -12,25 +12,32 @@ App for displaying different time zones with Alliance Auth
 
 ![Time Zones](https://raw.githubusercontent.com/ppfeufer/aa-timezones/master/timezones/docs/time-zones.jpg)
 
+
 ## Contents
 
 - [Installation](#installation)
 - [Updating](#updating)
-- [Additional Timezone Panels](#additional-timezone-panels)
+- [Configure Timezone Panels](#configure-timezone-panels)
 - [Adjusting Time](#adjusting-time)
 - [Change Log](CHANGELOG.md)
 
+
 ## Installation
 
-**Important**: This app is a plugin for Alliance Auth. If you don't have Alliance Auth running already, please install it first before proceeding. (see the official [AA installation guide](https://allianceauth.readthedocs.io/en/latest/installation/allianceauth.html) for details)
+**Important**: This app is a plugin for Alliance Auth. If you don't have 
+Alliance Auth running already, please install it first before proceeding. 
+(see the official [AA installation guide](https://allianceauth.readthedocs.io/en/latest/installation/allianceauth.html) for details)
+
 
 ### Step 1 - Install app
 
-Make sure you are in the virtual environment (venv) of your Alliance Auth installation. Then install the latest version:
+Make sure you are in the virtual environment (venv) of your Alliance Auth installation. 
+Then install the latest version:
 
 ```bash
 pip install aa-timezones
 ```
+
 
 ### Step 2 - Update your AA settings
 
@@ -50,9 +57,20 @@ python manage.py migrate
 
 Restart your supervisor services for AA
 
+Once done, it's time to add all the time zone informations, so you can define your 
+own set of panels later. To do so, simply run: 
+
+```bash
+python manage.py timezones_load_tz_data
+```
+
+
 ### Step 4 - Setup permissions
 
-Now you can setup permissions in Alliance Auth for your users. Add ``timezones|aa timezones|Can access ths app`` to the states and/or groups you would like to have access.
+Now you can setup permissions in Alliance Auth for your users. 
+Add ``timezones|aa timezones|Can access ths app`` to the states and/or groups you would 
+like to have access.
+
 
 ## Updating
 
@@ -72,35 +90,16 @@ python manage.py collectstatic
 python manage.py migrate
 ```
 
-Finally restart your AA supervisor services.
+Now restart your AA supervisor services.
 
-## Additional Timezone Panels
-Per default there are 10 additional time zone panels that are displayed (see first image). If you want to change those, you can do so by editing your `local-py` and override the default behaviour this way. So lets say you only want `US/Pacific` and `US/Mountain` as an example, here's how you do this.
 
-Open your `local.py` in an editor of your choice and add the following at the end.
+## Configure Timezone Panels
+Per default there are 10 additional time zone panels that are displayed (see first image). 
+If you want to change those, you can create your own set of panels in your admin backend.
 
-```python
-# AA Time Zones
-AA_TIMEZONES_ADDITIONAL_PANELS = [
-    # US/Pacific
-    {
-        'timezoneName': 'US/Pacific',
-        'panelTitle': 'US / Pacific',
-        'panelId': 'us-pacific'
-    },
+**NOTE:** "Local Time" and "EVE Time" will always be displayed as the first two panels, 
+no matter what.
 
-    # US/Mountain
-    {
-        'timezoneName': 'US/Mountain',
-        'panelTitle': 'US / Mountain',
-        'panelId': 'us-mountain'
-    },
-]
-```
-
-Now there will be only these two defined paned be displayed, additionally to Local Time and EVE Time. The needed `timezoneName` you'll find in [this list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List), `panelTitle` is just the headline of the panel and `panelId` is a random letter string. Make sure `panelId` is unique for every panel.
-
-**NOTE:** Local Time and EVE Time will always be displayed as the first two panels, no matter what.
 
 ## Adjusting Time
 
