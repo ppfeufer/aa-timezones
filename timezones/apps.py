@@ -14,4 +14,4 @@ class AaTimezonesConfig(AppConfig):
 
     name = "timezones"
     label = "timezones"
-    verbose_name = "AA Timezones v{}".format(__version__)
+    verbose_name = "Timezones v{}".format(__version__)
