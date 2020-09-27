@@ -52,10 +52,12 @@
             </script>
         </div>
 
-        {% for panelData in timezonePanelData %}
-            <!-- // {{ panelData.timezoneName }} -->
-            {% include "timezones/timezone-panel.html" with type="panelData" %}
-        {% endfor %}
+        {% if timezones %}
+            {% for timezone in timezones %}
+                <!-- // {{ timezone.panel_name }} -->
+                {% include "timezones/timezone-panel.html" %}
+            {% endfor %}
+        {% endif %}
     </div>
 
     {% include 'timezones/time-until.html' %}

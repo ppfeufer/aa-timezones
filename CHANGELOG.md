@@ -5,6 +5,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [1.2.0] - 2020-09-27
+### Changed
+- Settings moved to database instead of `local.py`
+
 ## [1.1.0] - 2020-09-23
 ### Checked
 - Compatibility with the upcoming changes in Alliance Auth v2.8.0 (Django 3)
