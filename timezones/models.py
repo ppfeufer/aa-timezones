@@ -31,7 +31,10 @@ class TimezoneData(models.Model):
     )
 
     utc_offset = models.CharField(
-        max_length=255, blank=False, unique=False, help_text=_("UTC of the timezone")
+        max_length=255,
+        blank=False,
+        unique=False,
+        help_text=_("UTC offset of the timezone"),
     )
 
     panel_id = models.CharField(
