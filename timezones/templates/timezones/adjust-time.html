@@ -226,8 +226,8 @@
                     <select class="form-control" id="tatzone">
                         <option value="">{% trans "Local Time" %}</option>
                         <option value="Etc/UTC" selected>{% trans "EVE Time" %}</option>
-                        {% for optionData in timezonePanelData %}
-                            <option value="{{ optionData.timezoneName }}">{{ optionData.panelTitle }}</option>
+                        {% for timezone in timezones %}
+                            <option value="{{ timezone.timezone.timezone_name }}">{{ timezone.panel_name }}</option>
                         {% endfor %}
                     </select>
                 </div>
