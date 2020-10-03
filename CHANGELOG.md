@@ -7,7 +7,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [1.2.1] - xxxx-xx-xx
 ### Fixed
-- column name in admin view
+- Column name in admin view
+- Timezones re-added in selector in adjust time mode
+
+### Updated
+- German translation
 
 
 ## [1.2.0] - 2020-09-27
