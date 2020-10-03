@@ -102,7 +102,7 @@ msgstr "um"
 #: timezones/templates/timezones/adjust-time.html:227
 #: timezones/templates/timezones/index.html:15
 msgid "Local Time"
-msgstr "Lokale Zeit"
+msgstr "Ortszeit"
 
 #: timezones/templates/timezones/adjust-time.html:228
 #: timezones/templates/timezones/index.html:32
