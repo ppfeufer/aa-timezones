@@ -12,7 +12,7 @@ from django.utils.translation import gettext_lazy as _
 class AaTimezones(models.Model):
     """Meta model for app permissions"""
 
-    class Meta:
+    class Meta:  # pylint: disable=too-few-public-methods
         """AaTimezones :: Meta"""
 
         managed = False
@@ -21,6 +21,11 @@ class AaTimezones(models.Model):
 
 
 class TimezoneData(models.Model):
+    """
+    available timzones
+    imported from pytz
+    """
+
     timezone_name = models.CharField(
         max_length=255, blank=False, unique=True, help_text=_("Name of the timezone")
     )
@@ -39,7 +44,7 @@ class TimezoneData(models.Model):
     def __str__(self) -> str:
         return str(self.timezone_name)
 
-    class Meta:
+    class Meta:  # pylint: disable=too-few-public-methods
         """
         TimezoneData :: Meta
         """
@@ -50,6 +55,10 @@ class TimezoneData(models.Model):
 
 
 class Timezones(models.Model):
+    """
+    configured timezones to display
+    """
+
     panel_name = models.CharField(
         max_length=255,
         blank=False,
@@ -72,7 +81,7 @@ class Timezones(models.Model):
     def __str__(self) -> str:
         return str(self.panel_name)
 
-    class Meta:
+    class Meta:  # pylint: disable=too-few-public-methods
         """
         TimezoneData :: Meta
         """

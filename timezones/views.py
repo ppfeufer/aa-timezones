@@ -105,7 +105,6 @@ def index(request):
     context = {
         "title": __title__,
         "timezones": timezones,
-        # "timezonePanelData": AA_TIMEZONE_DEFAULT_PANELS,
     }
 
     return render(request, "timezones/index.html", context)

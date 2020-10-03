@@ -10,8 +10,10 @@ from . import __version__
 
 
 class AaTimezonesConfig(AppConfig):
-    """AaTimezonesConfig"""
+    """
+    AaTimezonesConfig
+    """
 
-    name = "timezones"
-    label = "timezones"
-    verbose_name = "Timezones v{}".format(__version__)
+    name: str = "timezones"
+    label: str = "timezones"
+    verbose_name: str = "Timezones v{}".format(__version__)
