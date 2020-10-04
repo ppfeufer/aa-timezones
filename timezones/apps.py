@@ -6,7 +6,7 @@ app config
 
 from django.apps import AppConfig
 
-from . import __version__
+from timezones import __version__
 
 
 class AaTimezonesConfig(AppConfig):

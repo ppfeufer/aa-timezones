@@ -5,7 +5,7 @@ page urls config
 """
 
 from django.urls import path
-from . import views
+from timezones import views
 
 
 app_name: str = "timezones"

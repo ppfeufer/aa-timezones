@@ -8,7 +8,7 @@ from django.contrib.auth.decorators import login_required, permission_required
 from django.shortcuts import render
 from timezones.models import Timezones
 
-from . import __title__
+from timezones import __title__
 
 
 @login_required
