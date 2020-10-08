@@ -10,6 +10,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Column name in admin view
 - Timezones re-added in selector in adjust time mode
 
+### Added
+- summary after time zone import during install
+
 ### Updated
 - German translation
 
