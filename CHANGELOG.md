@@ -5,13 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
-## [1.2.1] - xxxx-xx-xx
+## [1.2.1] - 2020-10-09
 ### Fixed
 - Column name in admin view
 - Timezones re-added in selector in adjust time mode
 
 ### Added
-- summary after time zone import during install
+- Summary after time zone import during install
 
 ### Changed
 - Timestamp is now a real part of the URL instead of a hash added to it. The old URLs with the hash are still supported and work as well in case you have links to it somewhere..
