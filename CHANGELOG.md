@@ -5,9 +5,25 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [1.2.1] - 2020-10-09
+### Fixed
+- Column name in admin view
+- Timezones re-added in selector in adjust time mode
+
+### Added
+- Summary after time zone import during install
+
+### Changed
+- Timestamp is now a real part of the URL instead of a hash added to it. The old URLs with the hash are still supported and work as well in case you have links to it somewhere..
+
+### Updated
+- German translation
+
+
 ## [1.2.0] - 2020-09-27
 ### Changed
 - Settings moved to database instead of `local.py`
+
 
 ## [1.1.0] - 2020-09-23
 ### Checked
@@ -15,7 +31,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Added
 - German translation to UI
-- Translations for Russian, Spansih, Korean and Chines prepared, need translators though :-)
+- Translations for Russian, Spansih, Korean and Chinese prepared, need translators though. So if you wanna help out, [feel free to to so here](https://www.transifex.com/ppfeufer/aa-timezones/dashboard/).
 
 
 ## [1.0.0] - 2020-09-13

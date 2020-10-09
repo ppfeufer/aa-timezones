@@ -12,21 +12,28 @@ from timezones.models import Timezones
 
 @admin.register(Timezones)
 class TimezonesAdmin(admin.ModelAdmin):
+    """
+    timezones admin
+    configure timezones that should be displayed
+    """
+
     list_display = ("_panel_name", "_timezone", "is_enabled")
     ordering = ("panel_name",)
     list_filter = ("is_enabled",)
 
-    def _panel_name(self, obj):
+    @classmethod
+    def _panel_name(cls, obj):
         return obj.panel_name
 
-    _panel_name.short_description = "Timezone Panel Name"
+    _panel_name.short_description = "Panel Name"
     _panel_name.admin_order_field = "panel_name"
 
-    def _timezone(self, obj):
+    @classmethod
+    def _timezone(cls, obj):
         return obj.timezone.timezone_name
 
-    _panel_name.short_description = "Timezone"
-    _panel_name.admin_order_field = "timezone__timezone_name"
+    _timezone.short_description = "Timezone"
+    _timezone.admin_order_field = "timezone__timezone_name"
 
     actions = (
         "mark_as_active",

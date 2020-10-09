@@ -6,13 +6,13 @@ hooks to AA
 
 from django.utils.translation import ugettext_lazy as _
 
+from timezones import urls, __title__
+
 from allianceauth import hooks
 from allianceauth.services.hooks import MenuItemHook, UrlHook
 
-from . import urls, __title__
 
-
-class AaTimezonesMenuItem(MenuItemHook):
+class AaTimezonesMenuItem(MenuItemHook):  # pylint: disable=too-few-public-methods
     """ This class ensures only authorized users will see the menu entry """
 
     def __init__(self):

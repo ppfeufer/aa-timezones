@@ -1,4 +1,4 @@
-/* global moment, timezoneOptions, aaTimezonesTranslations */
+/* global moment, aaTimezonesPanels, aaTimezonesOptions, aaTimezonesTranslations, aaTimezonesAdjustOptions */
 
 var clockTarget = 0;
 var clockTickId = 0;
@@ -17,11 +17,23 @@ function showAdjust() {
     jQuery('#tatyear').val(mom.format('YYYY'));
 }
 
+// set time for in x day, y hours, z minutes
+function reloadToTimestamp() {
+    var timestamp = parseInt(new Date().getTime() / 1000) + jQuery('#tind').val() * 24 * 60 * 60 + jQuery('#tinh').val() * 60 * 60 + jQuery('#tinm').val() * 60;
+
+    window.location.replace(aaTimezonesOptions.base_url + timestamp);
+}
+
+// reload to base page
+function reloadBasePage() {
+    window.location.replace(aaTimezonesOptions.base_url);
+}
+
 function setdate(str, tz) {
     if(tz !== '') {
-        window.location.hash = moment.tz(str, tz).unix();
+        window.location.replace(aaTimezonesOptions.base_url + moment.tz(str, tz).unix());
     } else {
-        window.location.hash = moment(str).unix();
+        window.location.replace(aaTimezonesOptions.base_url + moment(str).unix());
     }
 }
 
@@ -83,7 +95,7 @@ function updatePanels(now) {
     updatePanel(moment(now), 'local-time');
 
     // panels
-    jQuery.each(timezoneOptions, function(index, value) {
+    jQuery.each(aaTimezonesPanels, function(index, value) {
         updatePanel(moment.tz(now, value.timezoneName), value.timezoneId);
     });
 }
@@ -164,7 +176,7 @@ function switchto(mode) {
 }
 
 function hashchange() {
-    var ts = window.location.hash.substring(1);
+    var ts = aaTimezonesAdjustOptions.timestamp.substring(1);
 
     clockTarget = 0;
 

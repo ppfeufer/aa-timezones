@@ -62,13 +62,10 @@ class Command(BaseCommand):
                         tz_name=timezone_name
                     )
                 )
+
+                timezones_skipped += 1
             else:
                 timezonedata = TimezoneData()
-                # timezonedata = {
-                #     "timezone_name": timezone_name,
-                #     "utc_offset": timezone_utc_offset,
-                #     "panel_id": timezone_panel_id,
-                # }
 
                 timezonedata.timezone_name = timezone_name
                 timezonedata.utc_offset = timezone_utc_offset
@@ -76,12 +73,23 @@ class Command(BaseCommand):
                 timezonedata.save()
 
                 self.stdout.write(
-                    "Importing timezone '{tz_name}' with UTC offset of '{tz_offset}' and panel ID of '{tz_panel_id}'".format(
+                    "Importing timezone '{tz_name}' with UTC offset of '{tz_offset}' "
+                    "and panel ID of '{tz_panel_id}'".format(
                         tz_name=timezone_name,
                         tz_offset=timezone_utc_offset,
                         tz_panel_id=timezone_panel_id,
                     )
                 )
+
+                timezones_imported += 1
+
+        self.stdout.write(
+            "Import done with {tz_imported} new timezones imported and {tz_skipped} "
+            "timezones skipped because they were already in the DB:".format(
+                tz_imported=timezones_imported,
+                tz_skipped=timezones_skipped,
+            )
+        )
 
     def handle(self, *args, **options):
         """

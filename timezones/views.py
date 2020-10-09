@@ -3,25 +3,27 @@
 """
 the views
 """
+from typing import Dict, List, Union
 
 from django.contrib.auth.decorators import login_required, permission_required
 from django.shortcuts import render
 from timezones.models import Timezones
 
-from . import __title__
+from timezones import __title__
 
 
 @login_required
 @permission_required("timezones.basic_access")
-def index(request):
+def index(request, timestamp: int = None):
     """
     index view
 
     :param request:
+    :param timestamp:
     :return:
     """
 
-    AA_TIMEZONE_DEFAULT_PANELS = [
+    AA_TIMEZONE_DEFAULT_PANELS: List[Dict[str, Union[str, Dict[str, str]]]] = [
         {
             "panel_name": "US / Pacific",
             "timezone": {
@@ -102,10 +104,6 @@ def index(request):
     if not timezones:
         timezones = AA_TIMEZONE_DEFAULT_PANELS
 
-    context = {
-        "title": __title__,
-        "timezones": timezones,
-        # "timezonePanelData": AA_TIMEZONE_DEFAULT_PANELS,
-    }
+    context = {"title": __title__, "timezones": timezones, "timestamp": timestamp}
 
     return render(request, "timezones/index.html", context)

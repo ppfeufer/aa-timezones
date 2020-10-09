@@ -17,11 +17,11 @@
 
     {% if timezone.timezone.timezone_name %}
         <script type="application/javascript">
-            if((timezoneOptions instanceof Array) === false) {
-                var timezoneOptions = [];
+            if((aaTimezonesPanels instanceof Array) === false) {
+                var aaTimezonesPanels = [];
             }
 
-            timezoneOptions.push({
+            aaTimezonesPanels.push({
                 'timezoneName': '{{ timezone.timezone.timezone_name }}',
                 'timezoneId': '{{ timezone.timezone.panel_id }}'
             });
