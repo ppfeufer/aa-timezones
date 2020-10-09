@@ -3,7 +3,7 @@
 <!-- // adjust time -->
 <p class="aa-timezones-adjust-time text-right">
     <button id="btnadjust" class="btn btn-info btn-sm hidden" onclick="showAdjust();">{% trans "Adjust Time" %}</button>
-    <button id="btnclear" class="btn btn-danger btn-sm hidden" onclick="window.location.hash = '';">{% trans "Remove" %}</button>
+    <button id="btnclear" class="btn btn-danger btn-sm hidden" onclick="reloadBasePage();">{% trans "Remove" %}</button>
     <button id="btnshowcurrent" class="btn btn-primary btn-sm hidden" onclick="switchto(0);">{% trans "Switch to current time" %}</button>
     <button id="btnshowfixed" class="btn btn-primary btn-sm hidden" onclick="switchto(1);">{% trans "Switch to adjusted time" %}</button>
 </p>
@@ -123,7 +123,9 @@
                     </select>
                     <div class="input-group-addon">{% trans "Minutes" %}</div>
                 </div>
-                <button class="btn btn-info btn-sm" onclick="window.location.hash = (parseInt(new Date().getTime() / 1000) + jQuery('#tind').val() * 24 * 60 * 60 + jQuery('#tinh').val() * 60 * 60 + jQuery('#tinm').val() * 60);">{% trans "Set Time" %}</button>
+
+{#                <button class="btn btn-info btn-sm" onclick="window.location.hash = (parseInt(new Date().getTime() / 1000) + jQuery('#tind').val() * 24 * 60 * 60 + jQuery('#tinh').val() * 60 * 60 + jQuery('#tinm').val() * 60);">{% trans "Set Time" %}</button>#}
+                <button class="btn btn-info btn-sm" onclick="reloadToTimestamp(); return false;">{% trans "Set Time" %}</button>
             </div>
         </form>
 
@@ -286,7 +288,7 @@
                         <option>31</option>
                     </select>
                 </div>
-                <button class="btn btn-info btn-sm" onclick="setdate(jQuery('#tatyear').val() + '-' + jQuery('#tatmonth').val() + '-' + jQuery('#tatday').val() + ' ' + jQuery('#tathour').val() + ':' + jQuery('#tatminute').val(), jQuery('#tatzone').val());">{% trans "Set Time" %}</button>
+                <button class="btn btn-info btn-sm" onclick="setdate(jQuery('#tatyear').val() + '-' + jQuery('#tatmonth').val() + '-' + jQuery('#tatday').val() + ' ' + jQuery('#tathour').val() + ':' + jQuery('#tatminute').val(), jQuery('#tatzone').val()); return false;">{% trans "Set Time" %}</button>
             </div>
         </form>
     </span>
