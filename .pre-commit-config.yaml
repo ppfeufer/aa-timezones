@@ -3,8 +3,8 @@ repos:
       rev: v3.3.0
       hooks:
         - id: trailing-whitespace
-          exclude: \.(min\.css|min\.js|po|mo)$
+          exclude: \.(min\.css|min\.scss|min\.js|po|mo)$
         - id: end-of-file-fixer
-          exclude: \.(min\.css|min\.js|po|mo)$
+          exclude: \.(min\.css|min\.scss|min\.js|po|mo)$
         - id: mixed-line-ending
           args: [ '--fix=lf' ]
