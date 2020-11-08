@@ -3,4 +3,3 @@ include README.md
 recursive-include timezones *.py
 recursive-include timezones/static *
 recursive-include timezones/templates *
-
