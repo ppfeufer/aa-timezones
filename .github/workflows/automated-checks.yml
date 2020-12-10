@@ -1,0 +1,64 @@
+name: Run Automated Checks
+
+on:
+  push:
+    branches:
+      - '**'
+
+    tags-ignore:
+      - v*
+
+jobs:
+  # pre-commit checks
+  pre-commit:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+
+      - name: Run Pre Commit Checks
+        uses: pre-commit/action@v2.0.0
+
+  # black formatter
+  black-format:
+    needs: pre-commit
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Run Black Formatter Checks
+        uses: Ahuge/black-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BLACK_ARGS: "."
+
+  # pypi build test
+  build-test:
+    needs: black-format
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Set up Python 3.8
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8
+
+      - name: Install Tools
+        run: |
+          python -m pip install --upgrade pip
+          pip install setuptools wheel
+
+      - name: Package Build
+        env:
+          STACKMANAGER_VERSION: 9999
+        run: |
+          python setup.py sdist bdist_wheel
