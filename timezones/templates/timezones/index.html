@@ -11,13 +11,13 @@
                 <div class="panel panel-warning">
                     <div class="panel-heading">
                         <div class="panel-title">
-                            {% trans "Local Time" %} <span class="pull-right"><i id="icon-local-time"></i></span>
+                            {% translate "Local Time" %} <span class="pull-right"><i id="icon-local-time"></i></span>
                         </div>
                     </div>
 
                     <div class="panel-body text-center timezone-panel">
                         <b id="time-local-time" class="timezone-panel-section timezone-panel-section-time">--:--:--</b>
-                        <span id="date-local-time" class="timezone-panel-section timezone-panel-section-date">({% trans "loading" %})</span>
+                        <span id="date-local-time" class="timezone-panel-section timezone-panel-section-date">({% translate "loading" %})</span>
                         <span id="utc-offset-local-time" class="timezone-panel-section timezone-panel-section-utc-offset"></span>
                     </div>
                 </div>
@@ -28,13 +28,13 @@
                 <div class="panel panel-success">
                     <div class="panel-heading">
                         <div class="panel-title">
-                            {% trans "EVE Time" %} <span class="pull-right"><i id="icon-eve-time"></i></span>
+                            {% translate "EVE Time" %} <span class="pull-right"><i id="icon-eve-time"></i></span>
                         </div>
                     </div>
 
                     <div class="panel-body text-center timezone-panel">
                         <b id="time-eve-time" class="timezone-panel-section timezone-panel-section-time">--:--:--</b>
-                        <span id="date-eve-time" class="timezone-panel-section timezone-panel-section-date">({% trans "loading" %})</span>
+                        <span id="date-eve-time" class="timezone-panel-section timezone-panel-section-date">({% translate "loading" %})</span>
                         <span id="utc-offset-eve-time" class="timezone-panel-section timezone-panel-section-utc-offset"></span>
                     </div>
                 </div>
@@ -69,8 +69,8 @@
             }
 
             let aaTimezonesTranslations = {
-                days: '{% trans "Days" %}',
-                alreadyOver: '{% trans "Already over, you missed it!" %}'
+                days: '{% translate "Days" %}',
+                alreadyOver: '{% translate "Already over, you missed it!" %}'
             };
 
             // check if we have a ts hash or a real url
