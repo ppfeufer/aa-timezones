@@ -6,6 +6,11 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 
+## [1.3.1] - 2021-01-28
+### Changed
+- Moved `AA_TIMEZONE_DEFAULT_PANELS` into its own constants file, so it can also be
+  used by other apps as well.
+
 ## [1.3.0] - 2021-01-12
 ### Removed
 - Django 2 support
