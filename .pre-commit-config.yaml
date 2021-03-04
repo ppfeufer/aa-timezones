@@ -1,6 +1,6 @@
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v3.3.0
+    rev: v3.4.0
     hooks:
       - id: check-case-conflict
       - id: check-json
@@ -10,15 +10,16 @@ repos:
       - id: trailing-whitespace
         exclude: \.(min\.css|min\.js|po|mo)$
       - id: end-of-file-fixer
-        exclude: \.(min\.css|min\.less|min\.scss|min\.js|po|mo)$
+        exclude: \.(min\.css|min\.js|po|mo)$
       - id: mixed-line-ending
         args: [ '--fix=lf' ]
+      - id: fix-encoding-pragma
+        args: [ '--remove' ]
 
   - repo: https://github.com/psf/black
     rev: 20.8b1
     hooks:
       - id: black
-        language_version: python3.6
 
   - repo: https://gitlab.com/pycqa/flake8
     rev: '3.8.4'

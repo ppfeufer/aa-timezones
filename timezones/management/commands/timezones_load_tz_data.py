@@ -1,5 +1,3 @@
-# coding=utf-8
-
 """
 loading timezone data into DB
 """
