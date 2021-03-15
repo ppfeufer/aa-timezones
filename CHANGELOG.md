@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 
+## [1.3.2] - 2021-03-15
+### Fixed
+- Month number for March in time selection
+
 ## [1.3.1] - 2021-01-28
 ### Changed
 - Moved `AA_TIMEZONE_DEFAULT_PANELS` into its own constants file, so it can also be

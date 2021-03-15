@@ -227,7 +227,7 @@
                 <div class="input-group input-group-sm">
                     <select class="form-control" id="tatzone">
                         <option value="">{% translate "Local Time" %}</option>
-                        <option value="Etc/UTC" selected>{% translate "EVE Time" %}</option>
+                        <option value="ETC/UTC" selected>{% translate "EVE Time" %}</option>
                         {% for timezone in timezones %}
                             <option value="{{ timezone.timezone.timezone_name }}">{{ timezone.panel_name }}</option>
                         {% endfor %}
@@ -242,7 +242,7 @@
                     <select class="form-control" id="tatmonth">
                         <option value="01">{% translate "January" %}</option>
                         <option value="02">{% translate "February" %}</option>
-                        <option value="04">{% translate "March" %}</option>
+                        <option value="03">{% translate "March" %}</option>
                         <option value="04">{% translate "April" %}</option>
                         <option value="05">{% translate "May" %}</option>
                         <option value="06">{% translate "June" %}</option>
