@@ -4,10 +4,10 @@ hooks to AA
 
 from django.utils.translation import ugettext_lazy as _
 
-from timezones import urls, __title__
-
 from allianceauth import hooks
 from allianceauth.services.hooks import MenuItemHook, UrlHook
+
+from timezones import __title__, urls
 
 
 class AaTimezonesMenuItem(MenuItemHook):  # pylint: disable=too-few-public-methods

@@ -6,7 +6,6 @@ from django.conf.urls import url
 
 from timezones import views
 
-
 app_name: str = "timezones"
 
 urlpatterns = [
