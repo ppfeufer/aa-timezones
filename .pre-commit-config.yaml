@@ -1,3 +1,8 @@
+# Apply to all files without committing:
+#   pre-commit run --all-files
+# Update this file:
+#   pre-commit autoupdate
+
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v3.4.0
@@ -15,18 +20,40 @@ repos:
         args: [ '--fix=lf' ]
       - id: fix-encoding-pragma
         args: [ '--remove' ]
+      - id: detect-private-key
+      - id: check-added-large-files
+      - id: check-ast  # Is it valid Python?
+      - id: debug-statements  # Check for debugger imports and py37+ breakpoint() calls
+
+  - repo: https://github.com/editorconfig-checker/editorconfig-checker.python
+    rev: 2.3.5
+    hooks:
+      - id: editorconfig-checker
+        exclude: ^(LICENSE|timezones/static/timezones/css/weather-icons/|timezones/static/timezones/js/timeago/|timezones/static/timezones/js/moment/)
+
+  - repo: https://github.com/asottile/pyupgrade
+    rev: v2.14.0
+    hooks:
+      - id: pyupgrade
+        args: [ --py37-plus ]
+
+  - repo: https://gitlab.com/pycqa/flake8
+    rev: 3.9.1
+    hooks:
+      - id: flake8
 
   - repo: https://github.com/pre-commit/mirrors-isort
-    rev: "v5.8.0"
+    rev: v5.8.0
     hooks:
       - id: isort
 
   - repo: https://github.com/psf/black
-    rev: 21.4b2
+    rev: 21.5b0
     hooks:
       - id: black
 
-  - repo: https://gitlab.com/pycqa/flake8
-    rev: '3.9.1'
+  - repo: https://github.com/asottile/blacken-docs
+    rev: v1.10.0
     hooks:
-      - id: flake8
+      - id: blacken-docs
+        additional_dependencies: [ black==21.5b0 ]

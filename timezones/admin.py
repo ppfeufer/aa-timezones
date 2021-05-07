@@ -53,9 +53,7 @@ class TimezonesAdmin(admin.ModelAdmin):
 
             notifications_count += 1
 
-        self.message_user(
-            request, "{} timezone(s) activated".format(notifications_count)
-        )
+        self.message_user(request, f"{notifications_count} timezone(s) activated")
 
     mark_as_active.short_description = "Activate selected timezone(s)"
 
@@ -74,8 +72,6 @@ class TimezonesAdmin(admin.ModelAdmin):
 
             notifications_count += 1
 
-        self.message_user(
-            request, "{} timezone(s) deactivated".format(notifications_count)
-        )
+        self.message_user(request, f"{notifications_count} timezone(s) deactivated")
 
     mark_as_inactive.short_description = "Deactivate selected timezone(s)"
