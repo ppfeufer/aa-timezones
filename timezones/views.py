@@ -22,7 +22,11 @@ def index(request, timestamp: int = None):
     """
 
     try:
-        timezones = Timezones.objects.filter(is_enabled=True).order_by("panel_name")
+        timezones = (
+            Timezones.objects.select_related("timezone")
+            .filter(is_enabled=True)
+            .order_by("panel_name")
+        )
     except Timezones.DoesNotExist:
         timezones = None
 

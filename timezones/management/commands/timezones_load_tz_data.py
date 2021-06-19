@@ -3,9 +3,11 @@ loading timezone data into DB
 """
 
 import datetime
+
 import pytz
 
 from django.core.management.base import BaseCommand
+
 from timezones.models import TimezoneData
 
 

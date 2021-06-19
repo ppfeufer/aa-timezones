@@ -21,3 +21,6 @@ compiletranslationfiles:
 	django-admin compilemessages -l ko  && \
 	django-admin compilemessages -l ru  && \
 	django-admin compilemessages -l zh_Hans
+
+graph_models:
+	python ../myauth/manage.py graph_models $(package) --arrow-shape normal -o $(appname)-models.png

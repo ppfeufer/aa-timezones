@@ -1,4 +1,4 @@
-name: Run Automated Checks
+name: Automated Checks
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
       - '**'
 
     tags-ignore:
-      - v*
+      - '**'
 
 jobs:
   # pre-commit checks
@@ -23,22 +23,6 @@ jobs:
 
       - name: Run Pre Commit Checks
         uses: pre-commit/action@v2.0.0
-
-  # black formatter
-#  black-format:
-#    needs: pre-commit
-#    name: Black Code Formatter
-#    runs-on: ubuntu-latest
-#
-#    steps:
-#      - name: Checkout
-#        uses: actions/checkout@v2
-#
-#      - name: Run Black Formatter Checks
-#        uses: Ahuge/black-action@master
-#        env:
-#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-#          BLACK_ARGS: "."
 
   # codacy security scan
   codacy-security-scan:
