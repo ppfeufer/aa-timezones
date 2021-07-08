@@ -32,7 +32,7 @@ repos:
         exclude: ^(LICENSE|timezones/static/timezones/css/weather-icons/|timezones/static/timezones/js/timeago/|timezones/static/timezones/js/moment/)
 
   - repo: https://github.com/asottile/pyupgrade
-    rev: v2.19.4
+    rev: v2.20.0
     hooks:
       - id: pyupgrade
         args: [ --py37-plus ]
@@ -43,7 +43,7 @@ repos:
       - id: flake8
 
   - repo: https://github.com/pre-commit/mirrors-isort
-    rev: v5.8.0
+    rev: v5.9.2
     hooks:
       - id: isort
 
