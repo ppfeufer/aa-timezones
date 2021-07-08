@@ -8,6 +8,13 @@ on:
     tags-ignore:
       - '**'
 
+  pull_request:
+    branches:
+      - '**'
+
+    tags-ignore:
+      - '**'
+
 jobs:
   # pre-commit checks
   pre-commit:
