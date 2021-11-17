@@ -2,86 +2,180 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
+# Translators:
+# Николай Постников, 2021
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-13 14:16+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"POT-Creation-Date: 2020-10-03 19:49+0200\n"
+"PO-Revision-Date: 2020-10-03 15:51+0000\n"
+"Last-Translator: Николай Постников, 2021\n"
+"Language-Team: Russian (https://www.transifex.com/ppfeufer/teams/113732/ru/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
-"%100>=11 && n%100<=14)? 2 : 3);\n"
+"Language: ru\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: timezones/models.py:30
+msgid "Name of the timezone"
+msgstr "Название часового пояса"
+
+#: timezones/models.py:37
+msgid "UTC offset of the timezone"
+msgstr "Смещение от UTC"
+
+#: timezones/models.py:44
+msgid "ID of the timezone panel in frontend"
+msgstr "ID панели часового пояса"
+
+#: timezones/models.py:55 timezones/models.py:56
+msgid "Timezone Data"
+msgstr "Дата часового пояса"
+
+#: timezones/models.py:69
+msgid "Name of the timezone panel"
+msgstr "Название панели часового пояса"
+
+#: timezones/models.py:76
+msgid "Selected timezone"
+msgstr "Выбранный часовой пояс"
+
+#: timezones/models.py:81
+msgid "Whether this timezone is enabled or not"
+msgstr "Активен или нет данный часовой пояс"
+
+#: timezones/models.py:92
+msgid "Timezone"
+msgstr "Часовой пояс"
+
+#: timezones/models.py:93
+msgid "Timezones"
+msgstr "Часовые пояса"
 
 #: timezones/templates/timezones/adjust-time.html:5
 msgid "Adjust Time"
-msgstr ""
+msgstr "Задать момент времени"
+
+#: timezones/templates/timezones/adjust-time.html:6
+msgid "Remove"
+msgstr "Удалить"
 
 #: timezones/templates/timezones/adjust-time.html:7
 msgid "Switch to current time"
-msgstr ""
+msgstr "Переключиться на текущее время"
 
 #: timezones/templates/timezones/adjust-time.html:8
 msgid "Switch to adjusted time"
-msgstr ""
+msgstr "Переключиться на установленное время"
 
 #: timezones/templates/timezones/adjust-time.html:16
 msgid "in"
-msgstr ""
+msgstr "Через"
 
 #: timezones/templates/timezones/adjust-time.html:28
-#: timezones/templates/timezones/index.html:68
+#: timezones/templates/timezones/index.html:69
 msgid "Days"
-msgstr ""
+msgstr "дней"
 
 #: timezones/templates/timezones/adjust-time.html:58
 msgid "Hours"
-msgstr ""
+msgstr "часов"
 
 #: timezones/templates/timezones/adjust-time.html:124
 msgid "Minutes"
-msgstr ""
+msgstr "минут"
 
 #: timezones/templates/timezones/adjust-time.html:126
 #: timezones/templates/timezones/adjust-time.html:289
 msgid "Set Time"
-msgstr ""
+msgstr "Установить"
 
 #: timezones/templates/timezones/adjust-time.html:132
 msgid "at"
-msgstr ""
+msgstr "Ровно в"
+
+#: timezones/templates/timezones/adjust-time.html:227
+#: timezones/templates/timezones/index.html:15
+msgid "Local Time"
+msgstr "Локальное время"
 
 #: timezones/templates/timezones/adjust-time.html:228
-#: timezones/templates/timezones/index.html:33
+#: timezones/templates/timezones/index.html:32
 msgid "EVE Time"
-msgstr ""
+msgstr "Время EVE"
 
 #: timezones/templates/timezones/adjust-time.html:235
 msgid "on"
-msgstr ""
+msgstr " "
+
+#: timezones/templates/timezones/adjust-time.html:241
+msgid "January"
+msgstr "Январь"
+
+#: timezones/templates/timezones/adjust-time.html:242
+msgid "February"
+msgstr "Февраль"
+
+#: timezones/templates/timezones/adjust-time.html:243
+msgid "March"
+msgstr "Март"
+
+#: timezones/templates/timezones/adjust-time.html:244
+msgid "April"
+msgstr "Апрель"
+
+#: timezones/templates/timezones/adjust-time.html:245
+msgid "May"
+msgstr "Май"
+
+#: timezones/templates/timezones/adjust-time.html:246
+msgid "June"
+msgstr "Июнь"
+
+#: timezones/templates/timezones/adjust-time.html:247
+msgid "July"
+msgstr "Июль"
+
+#: timezones/templates/timezones/adjust-time.html:248
+msgid "August"
+msgstr "Август"
+
+#: timezones/templates/timezones/adjust-time.html:249
+msgid "September"
+msgstr "Сентябрь"
+
+#: timezones/templates/timezones/adjust-time.html:250
+msgid "October"
+msgstr "Октябрь"
+
+#: timezones/templates/timezones/adjust-time.html:251
+msgid "November"
+msgstr "Ноябрь"
+
+#: timezones/templates/timezones/adjust-time.html:252
+msgid "December"
+msgstr "Декабрь"
 
 #: timezones/templates/timezones/base.html:5
 #: timezones/templates/timezones/base.html:9
 msgid "Time Zones"
-msgstr ""
+msgstr "Часовые пояса"
 
-#: timezones/templates/timezones/index.html:22
-#: timezones/templates/timezones/index.html:39
+#: timezones/templates/timezones/index.html:21
+#: timezones/templates/timezones/index.html:38
 #: timezones/templates/timezones/timezone-panel.html:13
 msgid "loading"
-msgstr ""
+msgstr "загрузка"
 
-#: timezones/templates/timezones/index.html:69
+#: timezones/templates/timezones/index.html:70
 msgid "Already over, you missed it!"
-msgstr ""
+msgstr "Поздно, установленное время уже наступило!"
 
 #: timezones/templates/timezones/time-until.html:5
 msgid "Time left"
-msgstr ""
+msgstr "Осталось времени"
