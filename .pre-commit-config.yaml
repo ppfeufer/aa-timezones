@@ -29,7 +29,7 @@ repos:
     rev: 2.3.5
     hooks:
       - id: editorconfig-checker
-        exclude: ^(LICENSE|timezones/static/timezones/css/weather-icons/|timezones/static/timezones/js/timeago/|timezones/static/timezones/js/moment/)
+        exclude: ^(LICENSE|timezones/static/timezones/css/weather-icons/|timezones/static/timezones/js/timeago/|timezones/static/timezones/js/moment/|(.*.po)|(.*.mo))
 
   - repo: https://github.com/asottile/pyupgrade
     rev: v2.20.0
