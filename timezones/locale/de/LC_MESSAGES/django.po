@@ -10,172 +10,167 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-03 19:49+0200\n"
+"POT-Creation-Date: 2021-11-17 22:57+0100\n"
 "PO-Revision-Date: 2020-10-03 21:17+0200\n"
 "Last-Translator: Peter Pfeufer <rounon.dax@terra-nanotech.de>, 2020\n"
 "Language-Team: German (https://www.transifex.com/ppfeufer/teams/113733/de/)\n"
+"Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: de\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 2.2.4\n"
 
-#: timezones/models.py:30
+#: models.py:28
 msgid "Name of the timezone"
 msgstr "Name der Zeitzone"
 
-#: timezones/models.py:37
+#: models.py:35
 msgid "UTC offset of the timezone"
 msgstr "Unterschied zu UTC"
 
-#: timezones/models.py:44
+#: models.py:42
 msgid "ID of the timezone panel in frontend"
 msgstr "ID der Zeitzone im Panel im Frontend"
 
-#: timezones/models.py:55 timezones/models.py:56
+#: models.py:53 models.py:54
 msgid "Timezone Data"
 msgstr "Zeitzonen Daten"
 
-#: timezones/models.py:69
+#: models.py:67
 msgid "Name of the timezone panel"
 msgstr "Name der Zeitzone im Panel"
 
-#: timezones/models.py:76
+#: models.py:74
 msgid "Selected timezone"
 msgstr "Ausgewählte Zeitzone"
 
-#: timezones/models.py:81
+#: models.py:79
 msgid "Whether this timezone is enabled or not"
 msgstr "Ist diese Zeitzone aktiv oder nicht"
 
-#: timezones/models.py:92
+#: models.py:90
 msgid "Timezone"
 msgstr "Zeitzone"
 
-#: timezones/models.py:93
+#: models.py:91
 msgid "Timezones"
 msgstr "Zeitzonen"
 
-#: timezones/templates/timezones/adjust-time.html:5
+#: templates/timezones/adjust-time.html:5
 msgid "Adjust Time"
 msgstr "Zeit anpassen"
 
-#: timezones/templates/timezones/adjust-time.html:6
+#: templates/timezones/adjust-time.html:6
 msgid "Remove"
 msgstr "Entfernen"
 
-#: timezones/templates/timezones/adjust-time.html:7
+#: templates/timezones/adjust-time.html:7
 msgid "Switch to current time"
 msgstr "Zur aktuellen Zeit wechseln"
 
-#: timezones/templates/timezones/adjust-time.html:8
+#: templates/timezones/adjust-time.html:8
 msgid "Switch to adjusted time"
 msgstr "Zur angepassten Zeit wechseln"
 
-#: timezones/templates/timezones/adjust-time.html:16
+#: templates/timezones/adjust-time.html:16
 msgid "in"
 msgstr "in"
 
-#: timezones/templates/timezones/adjust-time.html:28
-#: timezones/templates/timezones/index.html:69
+#: templates/timezones/adjust-time.html:28 templates/timezones/index.html:72
 msgid "Days"
 msgstr "Tage"
 
-#: timezones/templates/timezones/adjust-time.html:58
+#: templates/timezones/adjust-time.html:58
 msgid "Hours"
 msgstr "Stunden"
 
-#: timezones/templates/timezones/adjust-time.html:124
+#: templates/timezones/adjust-time.html:124
 msgid "Minutes"
 msgstr "Minuten"
 
-#: timezones/templates/timezones/adjust-time.html:126
-#: timezones/templates/timezones/adjust-time.html:289
+#: templates/timezones/adjust-time.html:128
+#: templates/timezones/adjust-time.html:291
 msgid "Set Time"
 msgstr "Zeit setzen"
 
-#: timezones/templates/timezones/adjust-time.html:132
+#: templates/timezones/adjust-time.html:134
 msgid "at"
 msgstr "um"
 
-#: timezones/templates/timezones/adjust-time.html:227
-#: timezones/templates/timezones/index.html:15
+#: templates/timezones/adjust-time.html:229 templates/timezones/index.html:14
 msgid "Local Time"
 msgstr "Ortszeit"
 
-#: timezones/templates/timezones/adjust-time.html:228
-#: timezones/templates/timezones/index.html:32
+#: templates/timezones/adjust-time.html:230 templates/timezones/index.html:31
 msgid "EVE Time"
 msgstr "EVE Zeit"
 
-#: timezones/templates/timezones/adjust-time.html:235
+#: templates/timezones/adjust-time.html:237
 msgid "on"
 msgstr "am"
 
-#: timezones/templates/timezones/adjust-time.html:241
+#: templates/timezones/adjust-time.html:243
 msgid "January"
 msgstr "Januar"
 
-#: timezones/templates/timezones/adjust-time.html:242
+#: templates/timezones/adjust-time.html:244
 msgid "February"
 msgstr "Februar"
 
-#: timezones/templates/timezones/adjust-time.html:243
+#: templates/timezones/adjust-time.html:245
 msgid "March"
 msgstr "März"
 
-#: timezones/templates/timezones/adjust-time.html:244
+#: templates/timezones/adjust-time.html:246
 msgid "April"
 msgstr "April"
 
-#: timezones/templates/timezones/adjust-time.html:245
+#: templates/timezones/adjust-time.html:247
 msgid "May"
 msgstr "Mai"
 
-#: timezones/templates/timezones/adjust-time.html:246
+#: templates/timezones/adjust-time.html:248
 msgid "June"
 msgstr "Juni"
 
-#: timezones/templates/timezones/adjust-time.html:247
+#: templates/timezones/adjust-time.html:249
 msgid "July"
 msgstr "Juli"
 
-#: timezones/templates/timezones/adjust-time.html:248
+#: templates/timezones/adjust-time.html:250
 msgid "August"
 msgstr "August"
 
-#: timezones/templates/timezones/adjust-time.html:249
+#: templates/timezones/adjust-time.html:251
 msgid "September"
 msgstr "September"
 
-#: timezones/templates/timezones/adjust-time.html:250
+#: templates/timezones/adjust-time.html:252
 msgid "October"
 msgstr "Oktober"
 
-#: timezones/templates/timezones/adjust-time.html:251
+#: templates/timezones/adjust-time.html:253
 msgid "November"
 msgstr "November"
 
-#: timezones/templates/timezones/adjust-time.html:252
+#: templates/timezones/adjust-time.html:254
 msgid "December"
 msgstr "Dezember"
 
-#: timezones/templates/timezones/base.html:5
-#: timezones/templates/timezones/base.html:9
+#: templates/timezones/base.html:5 templates/timezones/base.html:8
 msgid "Time Zones"
 msgstr "Zeitzonen"
 
-#: timezones/templates/timezones/index.html:21
-#: timezones/templates/timezones/index.html:38
-#: timezones/templates/timezones/timezone-panel.html:13
+#: templates/timezones/index.html:20 templates/timezones/index.html:37
+#: templates/timezones/timezone-panel.html:13
 msgid "loading"
 msgstr "lade"
 
-#: timezones/templates/timezones/index.html:70
+#: templates/timezones/index.html:73
 msgid "Already over, you missed it!"
 msgstr "Schon vorbei, Du hast alles verpasst!!"
 
-#: timezones/templates/timezones/time-until.html:5
+#: templates/timezones/time-until.html:5
 msgid "Time left"
 msgstr "Verbleibend"
