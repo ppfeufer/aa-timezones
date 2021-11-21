@@ -1,14 +1,16 @@
 /* global moment, aaTimezonesPanels, aaTimezonesOptions, aaTimezonesTranslations, aaTimezonesAdjustOptions */
 
-var clockTarget = 0;
-var clockTickId = 0;
-var countdownIntervalId = 0;
+'use strict';
 
-function showAdjust() {
+let clockTarget = 0;
+let clockTickId = 0;
+let countdownIntervalId = 0;
+
+function showAdjust () {
     jQuery('#btnadjust').addClass('hidden');
     jQuery('#adjust').removeClass('hidden');
 
-    var mom = moment.tz(new Date(), 'Etc/UTC');
+    let mom = moment.tz(new Date(), 'Etc/UTC');
 
     jQuery('#tathour').val(mom.format('HH'));
     jQuery('#tatminute').val(mom.format('mm'));
@@ -18,26 +20,26 @@ function showAdjust() {
 }
 
 // set time for in x day, y hours, z minutes
-function reloadToTimestamp() {
-    var timestamp = parseInt(new Date().getTime() / 1000) + jQuery('#tind').val() * 24 * 60 * 60 + jQuery('#tinh').val() * 60 * 60 + jQuery('#tinm').val() * 60;
+function reloadToTimestamp () {
+    let timestamp = parseInt(new Date().getTime() / 1000) + jQuery('#tind').val() * 24 * 60 * 60 + jQuery('#tinh').val() * 60 * 60 + jQuery('#tinm').val() * 60;
 
     window.location.replace(aaTimezonesOptions.base_url + timestamp);
 }
 
 // reload to base page
-function reloadBasePage() {
+function reloadBasePage () {
     window.location.replace(aaTimezonesOptions.base_url);
 }
 
-function setdate(str, tz) {
-    if(tz !== '') {
+function setdate (str, tz) {
+    if (tz !== '') {
         window.location.replace(aaTimezonesOptions.base_url + moment.tz(str, tz).unix());
     } else {
         window.location.replace(aaTimezonesOptions.base_url + moment(str).unix());
     }
 }
 
-function updatePanel(mom, id) {
+function updatePanel (mom, id) {
     jQuery('#time-' + id).html(mom.format('HH:mm:ss'));
     jQuery('#utc-offset-' + id).html('(UTC ' + mom.format('Z') + ')');
     jQuery('#date-' + id).html(mom.format('dddd DD MMM YYYY'));
@@ -52,98 +54,106 @@ function updatePanel(mom, id) {
 //    3 03-06 moonset
     jQuery('#icon-' + id).removeClass();
 
-    var h = mom.format('H') * 1;
-    var icon = 'wi wi-night-clear';
+    let h = mom.format('H') * 1;
+    let icon = 'wi wi-night-clear';
 
-    if(h < 23) {
+    if (h < 23) {
         icon = 'wi wi-moonrise';
     }
 
-    if(h < 20) {
+    if (h < 20) {
         icon = 'wi wi-sunset';
     }
 
-    if(h < 17) {
+    if (h < 17) {
         icon = 'wi wi-day-sunny';
     }
 
-    if(h < 14) {
+    if (h < 14) {
         icon = 'wi wi-day-sunny';
     }
 
-    if(h < 11) {
+    if (h < 11) {
         icon = 'wi wi-day-sunny';
     }
 
-    if(h < 9) {
+    if (h < 9) {
         icon = 'wi wi-sunrise';
     }
 
-    if(h < 6) {
+    if (h < 6) {
         icon = 'wi wi-moonset';
     }
 
-    if(h < 3) {
+    if (h < 3) {
         icon = 'wi wi-night-clear';
     }
 
     jQuery('#icon-' + id).addClass(icon);
 }
 
-function updatePanels(now) {
+function updatePanels (now) {
     // local time
     updatePanel(moment(now), 'local-time');
 
     // panels
-    jQuery.each(aaTimezonesPanels, function(index, value) {
+    jQuery.each(aaTimezonesPanels, function (index, value) {
         updatePanel(moment.tz(now, value.timezoneName), value.timezoneId);
     });
 }
 
-function timeUntil(timestamp) {
-    var timestampDifference = timestamp - Date.now();
-    var timeDifferenceInSeconds = timestampDifference / 1000; // from ms to seconds
+function timeUntil (timestamp) {
+    let timestampDifference = timestamp - Date.now();
+    let timeDifferenceInSeconds = timestampDifference / 1000; // from ms to seconds
 
     // set the interval
-    countdownIntervalId = setInterval(function() { // execute code each second
+    countdownIntervalId = setInterval(function () { // execute code each second
+        let countdown;
+
         timeDifferenceInSeconds--; // decrement timestamp with one second each second
 
-        if(timeDifferenceInSeconds >= 0) {
-            var days    = Math.floor(timeDifferenceInSeconds / (24 * 60 * 60)); // calculate days from timestamp
-            var hours   = Math.floor(timeDifferenceInSeconds / (60 * 60)) % 24; // hours
-            var minutes = Math.floor(timeDifferenceInSeconds / 60) % 60; // minutes
-            var seconds = Math.floor(timeDifferenceInSeconds / 1) % 60; // seconds
+        if (timeDifferenceInSeconds >= 0) {
+            let days = Math.floor(timeDifferenceInSeconds / (24 * 60 * 60)); // calculate days from timestamp
+            let hours = Math.floor(timeDifferenceInSeconds / (60 * 60)) % 24; // hours
+            let minutes = Math.floor(timeDifferenceInSeconds / 60) % 60; // minutes
+            let seconds = Math.floor(timeDifferenceInSeconds) % 60; // seconds
 
             // leading zero ...
-            if(hours < 10) {hours = '0' + hours;}
-            if(minutes < 10) {minutes = '0' + minutes;}
-            if(seconds < 10) {seconds = '0' + seconds;}
+            if (hours < 10) {
+                hours = '0' + hours;
+            }
+            if (minutes < 10) {
+                minutes = '0' + minutes;
+            }
+            if (seconds < 10) {
+                seconds = '0' + seconds;
+            }
 
-            var countdown = days + ' ' + aaTimezonesTranslations.days + ', ' + hours + ':' + minutes + ':' + seconds;
+            countdown = days + ' ' + aaTimezonesTranslations.days + ', ' + hours + ':' + minutes + ':' + seconds;
         } else {
-            var countdown = aaTimezonesTranslations.alreadyOver;
+            countdown = aaTimezonesTranslations.alreadyOver;
         }
 
         $('.aa-timezones-time-until-countdown').html(countdown);
     }, 1000);
 }
 
-function clockTick() {
+function clockTick () {
     updatePanels(new Date());
 }
 
-function switchto(mode) {
-    if(clockTickId !== 0) {
+function switchto (mode) {
+    if (clockTickId !== 0) {
         clearInterval(clockTickId);
     }
 
-    if(countdownIntervalId !== 0) {
+    if (countdownIntervalId !== 0) {
         clearInterval(countdownIntervalId);
     }
 
     $('.aa-timezones-time-until-countdown').html('');
 
-    if(mode === 0) {
+    if (mode === 0) {
         jQuery('#headlineCurrent').removeClass('hidden');
         jQuery('#headlineFixed').addClass('hidden');
         jQuery('#adjust').addClass('hidden');
@@ -151,7 +161,7 @@ function switchto(mode) {
         jQuery('#btnshowcurrent').addClass('hidden');
         jQuery('.aa-timezones-time-until').addClass('hidden');
 
-        if(clockTarget !== 0) {
+        if (clockTarget !== 0) {
             jQuery('#btnshowfixed').removeClass('hidden');
         }
 
@@ -175,41 +185,42 @@ function switchto(mode) {
     }
 }
 
-function hashchange() {
-    var ts = aaTimezonesAdjustOptions.timestamp.substring(1);
+function hashchange () {
+    let ts = aaTimezonesAdjustOptions.timestamp.substring(1);
 
     clockTarget = 0;
 
-    if(!isNaN(parseFloat(ts)) && isFinite(ts)) {
+    if (!isNaN(parseFloat(ts)) && isFinite(ts)) {
         clockTarget = ts * 1000;
 
-        var mom = moment.tz(new Date(clockTarget), 'Etc/UTC');
+        let mom = moment.tz(new Date(clockTarget), 'Etc/UTC');
 
-        jQuery('#timestamp').attr('datetime', mom.format('YYYY-MM-DDTHH:mm:00Z0000'));
-        jQuery('#timestamp').timeago('update', new Date(clockTarget));
+        jQuery('#timestamp').attr(
+            'datetime', mom.format('YYYY-MM-DDTHH:mm:00Z0000')
+        ).timeago('update', new Date(clockTarget));
     }
 
     switchto(clockTarget);
 }
 
-jQuery(document).ready(function($) {
+jQuery(document).ready(function ($) {
     window.addEventListener('hashchange', hashchange, false);
 
     /**
      * Declaring some variables ...
      */
-    var mom = moment.tz(new Date(), 'Etc/UTC');
-    var year = mom.format('YYYY') * 1;
-    var i;
+    let mom = moment.tz(new Date(), 'Etc/UTC');
+    let year = mom.format('YYYY') * 1;
+    let i;
 
-    for(i = year - 4; i < year + 5; i++) {
+    for (i = year - 4; i < year + 5; i++) {
         $('#tatyear').append($('<option>', {i: i}).text(i));
     }
 
     $.timeago.settings.allowFuture = true;
     $.timeago.settings.allowPast = true;
 
-    setInterval(function() {
+    setInterval(function () {
         $('#timestamp').timeago('update', new Date(clockTarget));
     }, 10000);
 
