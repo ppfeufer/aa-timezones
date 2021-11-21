@@ -1,6 +1,6 @@
 ---
 name: Feature Request
-about: Suggest an idea for AA Forum
+about: Suggest an idea for AA Time Zones
 title: ''
 labels: ''
 assignees: ''
