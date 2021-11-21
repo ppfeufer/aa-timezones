@@ -21,14 +21,11 @@ def index(request, timestamp: int = None):
     :return:
     """
 
-    try:
-        timezones = (
-            Timezones.objects.select_related("timezone")
-            .filter(is_enabled=True)
-            .order_by("panel_name")
-        )
-    except Timezones.DoesNotExist:
-        timezones = None
+    timezones = (
+        Timezones.objects.select_related("timezone")
+        .filter(is_enabled=True)
+        .order_by("panel_name")
+    )
 
     if not timezones:
         timezones = AA_TIMEZONE_DEFAULT_PANELS
