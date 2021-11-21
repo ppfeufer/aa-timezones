@@ -1,11 +1,15 @@
 # AA Time Zones
 
 [![Version](https://img.shields.io/pypi/v/aa-timezones?label=release)](https://pypi.org/project/aa-timezones/)
-[![License](https://img.shields.io/badge/license-GPLv3-green)](https://pypi.org/project/aa-timezones/)
+[![License](https://img.shields.io/github/license/ppfeufer/aa-timezones)](https://github.com/ppfeufer/aa-timezones/blob/master/LICENSE)
 [![Python](https://img.shields.io/pypi/pyversions/aa-timezones)](https://pypi.org/project/aa-timezones/)
 [![Django](https://img.shields.io/pypi/djversions/aa-timezones?label=django)](https://pypi.org/project/aa-timezones/)
-[![PyPI Downloads](https://img.shields.io/pypi/dm/aa-timezones)](https://pypi.org/project/aa-timezones/)
+![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)
 [![Code Style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](http://black.readthedocs.io/en/latest/)
+[![Discord](https://img.shields.io/discord/790364535294132234?label=discord)](https://discord.gg/zmh52wnfvM)
+[![Checks](https://github.com/ppfeufer/aa-timezones/actions/workflows/automated-checks.yml/badge.svg)](https://github.com/ppfeufer/aa-timezones/actions/workflows/automated-checks.yml)
+[![codecov](https://codecov.io/gh/ppfeufer/aa-timezones/branch/master/graph/badge.svg?token=ZSRTW5FR4C)](https://codecov.io/gh/ppfeufer/aa-timezones)
+[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](https://github.com/ppfeufer/aa-timezones/blob/master/CODE_OF_CONDUCT.md)
 
 
 App for displaying different time zones with Alliance Auth
