@@ -30,3 +30,12 @@ compiletranslationfiles:
 
 graph_models:
 	python ../myauth/manage.py graph_models $(package) --arrow-shape normal -o $(appname)-models.png
+
+coverage:
+	rm -rfv htmlcov && \
+	coverage run ../myauth/manage.py test $(package) --keepdb --failfast && coverage html && coverage report
+
+build_test:
+	rm -rfv dist && \
+	rm -rfv build && \
+	python3 setup.py sdist bdist_wheel
