@@ -1,4 +1,4 @@
-name: Automated Checks
+name: Checks
 
 on:
   push:
@@ -16,7 +16,7 @@ on:
       - '**'
 
 jobs:
-  # pre-commit checks
+  # pre-commit Checks
   pre-commit:
     name: Pre Commit Checks
     runs-on: ubuntu-latest
@@ -31,14 +31,15 @@ jobs:
       - name: Run Pre Commit Checks
         uses: pre-commit/action@v2.0.0
 
-  # codacy security scan
+  # Codacy Security Scan
   codacy-security-scan:
     needs: [pre-commit]
     name: Codacy Security Scan
     runs-on: ubuntu-latest
+
     steps:
       # Checkout the repository to the GitHub Actions runner
-      - name: Checkout code
+      - name: Checkout
         uses: actions/checkout@v2
 
       # Execute Codacy Analysis CLI and generate a SARIF output with the security issues identified during the analysis
@@ -63,9 +64,131 @@ jobs:
         with:
           sarif_file: results.sarif
 
-  # pypi build test
-  build-test:
+  # Run Test Coverage
+  test-coverage-django-31:
     needs: [codacy-security-scan]
+    name: Test Coverage (Python ${{ matrix.python-version }}, Django ${{ matrix.django-version }})
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        python-version: [ '3.6', '3.7', '3.8' ]
+        django-version: [ '3.1' ]
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Install redis
+        run: sudo apt-get install -y redis-tools redis-server
+
+      - name: Verify that redis is up
+        run: redis-cli ping
+
+      - name: Setup Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v2
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install Tox and any other packages
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install --upgrade tox tox-gh-actions
+
+      - name: Run Tox
+        # Run tox using the version of Python in `PATH`
+        run: tox -v
+        env:
+          DJANGO: ${{ matrix.django-version }}
+
+      - name: Upload Coverage Artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: coverage-python-${{ matrix.python-version }}-django-${{ matrix.django-version }}
+          path: coverage.xml
+          if-no-files-found: ignore
+
+  test-coverage-django-32:
+    needs: [ codacy-security-scan ]
+    name: Test Coverage (Python ${{ matrix.python-version }}, Django ${{ matrix.django-version }})
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        python-version: [ '3.7', '3.8', '3.9', '3.10' ]
+        django-version: [ '3.2' ]
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Install redis
+        run: sudo apt-get install -y redis-tools redis-server
+
+      - name: Verify that redis is up
+        run: redis-cli ping
+
+      - name: Setup Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v2
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install Tox and any other packages
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install --upgrade tox tox-gh-actions
+
+      - name: Run Tox
+        # Run tox using the version of Python in `PATH`
+        run: tox -v
+        env:
+          DJANGO: ${{ matrix.django-version }}
+
+      - name: Upload Coverage Artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: coverage-python-${{ matrix.python-version }}-django-${{ matrix.django-version }}
+          path: coverage.xml
+          if-no-files-found: ignore
+
+  # Coverage upload to Codecov and Codacy
+  upload-coverage:
+    needs: [test-coverage-django-31, test-coverage-django-32]
+    name: Upload Coverage
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Download artifacts
+        uses: actions/download-artifact@v2
+        with:
+          path: artifacts
+
+      - name: Display structure of downloaded files
+        run: ls -Rrtlh
+        working-directory: artifacts
+
+      - name: Upload Coverage to Codecov
+        uses: codecov/codecov-action@v2
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }} # not required for public repos
+          files: artifacts/coverage-python-3.9-django-3.2/coverage.xml # optional
+#          flags: unittests # optional
+#          name: codecov-umbrella # optional
+#          fail_ci_if_error: true # optional (default = false)
+          verbose: true # optional (default = false)
+
+      - name: Upload Coverage to Codacy Coverage Reporter
+        uses: codacy/codacy-coverage-reporter-action@v1
+        with:
+          project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
+          coverage-reports: artifacts/coverage-python-3.9-django-3.2/coverage.xml
+
+  # Pypi Build Test
+  pypi-build-test:
+    needs: [test-coverage-django-31, test-coverage-django-32]
     name: PyPi Build Test
     runs-on: ubuntu-latest
 
