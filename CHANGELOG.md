@@ -6,6 +6,23 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 
+## [1.4.0] - 2021-11-23
+
+### Added
+
+- Versioned static files, to break the browser cache on version changes
+
+### Removed
+
+- tasks.py file, since we don't have tasks in this app
+
+### Updated
+
+- JS files to the newest versions
+  - timeago.js
+  - moments-timezones script
+
+
 ## [1.3.6] - 2021-11-21
 
 ### Added
