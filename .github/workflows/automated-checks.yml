@@ -65,50 +65,7 @@ jobs:
           sarif_file: results.sarif
 
   # Run Test Coverage
-  test-coverage-django-31:
-    needs: [codacy-security-scan]
-    name: Test Coverage (Python ${{ matrix.python-version }}, Django ${{ matrix.django-version }})
-    runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        python-version: [ '3.6', '3.7', '3.8' ]
-        django-version: [ '3.1' ]
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-
-      - name: Install redis
-        run: sudo apt-get install -y redis-tools redis-server
-
-      - name: Verify that redis is up
-        run: redis-cli ping
-
-      - name: Setup Python ${{ matrix.python-version }}
-        uses: actions/setup-python@v2
-        with:
-          python-version: ${{ matrix.python-version }}
-
-      - name: Install Tox and any other packages
-        run: |
-          python -m pip install --upgrade pip
-          python -m pip install --upgrade tox tox-gh-actions
-
-      - name: Run Tox
-        # Run tox using the version of Python in `PATH`
-        run: tox -v
-        env:
-          DJANGO: ${{ matrix.django-version }}
-
-      - name: Upload Coverage Artifacts
-        uses: actions/upload-artifact@v2
-        with:
-          name: coverage-python-${{ matrix.python-version }}-django-${{ matrix.django-version }}
-          path: coverage.xml
-          if-no-files-found: ignore
-
-  test-coverage-django-32:
+  test-coverage:
     needs: [ codacy-security-scan ]
     name: Test Coverage (Python ${{ matrix.python-version }}, Django ${{ matrix.django-version }})
     runs-on: ubuntu-latest
@@ -153,7 +110,7 @@ jobs:
 
   # Coverage upload to Codecov and Codacy
   upload-coverage:
-    needs: [test-coverage-django-31, test-coverage-django-32]
+    needs: [test-coverage]
     name: Upload Coverage
     runs-on: ubuntu-latest
 
@@ -174,7 +131,7 @@ jobs:
         uses: codecov/codecov-action@v2
         with:
           token: ${{ secrets.CODECOV_TOKEN }} # not required for public repos
-          files: artifacts/coverage-python-3.9-django-3.2/coverage.xml # optional
+          files: artifacts/coverage-python-3.10-django-3.2/coverage.xml # optional
 #          flags: unittests # optional
 #          name: codecov-umbrella # optional
 #          fail_ci_if_error: true # optional (default = false)
@@ -184,11 +141,11 @@ jobs:
         uses: codacy/codacy-coverage-reporter-action@v1
         with:
           project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
-          coverage-reports: artifacts/coverage-python-3.9-django-3.2/coverage.xml
+          coverage-reports: artifacts/coverage-python-3.10-django-3.2/coverage.xml
 
   # Pypi Build Test
   pypi-build-test:
-    needs: [test-coverage-django-31, test-coverage-django-32]
+    needs: [test-coverage]
     name: PyPi Build Test
     runs-on: ubuntu-latest
 

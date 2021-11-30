@@ -35,12 +35,17 @@ repos:
     rev: v2.29.1
     hooks:
       - id: pyupgrade
-        args: [ --py36-plus ]
+        args: [ --py37-plus ]
 
   - repo: https://gitlab.com/pycqa/flake8
     rev: 3.9.2
     hooks:
       - id: flake8
+
+  - repo: https://github.com/asottile/yesqa
+    rev: v1.3.0
+    hooks:
+      - id: yesqa
 
   - repo: https://github.com/pre-commit/mirrors-isort
     rev: v5.9.3
