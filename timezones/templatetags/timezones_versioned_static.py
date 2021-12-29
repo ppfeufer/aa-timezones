@@ -2,9 +2,11 @@
 Versioned static URLs to break browser caches when changing the app version
 """
 
+# Django
 from django.template.defaulttags import register
 from django.templatetags.static import static
 
+# AA Time Zones
 from timezones import __version__
 
 

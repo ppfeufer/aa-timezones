@@ -2,9 +2,10 @@
 admin backend config
 """
 
+# Django
 from django.contrib import admin
 
-# Register your models here.
+# AA Time Zones
 from timezones.models import Timezones
 
 

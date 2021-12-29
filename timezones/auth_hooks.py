@@ -2,11 +2,14 @@
 hooks to AA
 """
 
+# Django
 from django.utils.translation import ugettext_lazy as _
 
+# Alliance Auth
 from allianceauth import hooks
 from allianceauth.services.hooks import MenuItemHook, UrlHook
 
+# AA Time Zones
 from timezones import __title__, urls
 
 

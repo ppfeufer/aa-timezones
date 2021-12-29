@@ -2,14 +2,15 @@
 Test checks for access to timezones
 """
 
+# Django
 from django.contrib.auth.models import Group
 from django.test import TestCase
 from django.urls import reverse
 
+# AA Time Zones
 from timezones.constants import AA_TIMEZONE_DEFAULT_PANELS
 from timezones.models import TimezoneData, Timezones
-
-from .utils import create_fake_user
+from timezones.tests.utils import create_fake_user
 
 
 class TestAccess(TestCase):
