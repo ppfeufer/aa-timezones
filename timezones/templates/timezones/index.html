@@ -67,15 +67,11 @@
         <script type="application/javascript">
             let aaTimezonesOptions = {
                 base_url: '{% url "timezones:index" %}',
-            }
-
-            let aaTimezonesTranslations = {
-                days: '{% translate "Days" %}',
-                alreadyOver: '{% translate "Already over, you missed it!" %}'
-            };
-
-            let aaTimezonesAdjustOptions = {
-                timestamp: {{ timestamp }}
+                timestamp: {{ timestamp }},
+                translation: {
+                    days: '{% translate "Days" %}',
+                    alreadyOver: '{% translate "Already over, you missed it!" %}'
+                }
             }
         </script>
     </div>

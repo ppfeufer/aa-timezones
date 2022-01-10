@@ -1,4 +1,4 @@
-/* global moment, aaTimezonesPanels, aaTimezonesOptions, aaTimezonesTranslations, aaTimezonesAdjustOptions */
+/* global moment, aaTimezonesPanels, aaTimezonesOptions */
 
 'use strict';
 
@@ -168,9 +168,9 @@ function timeUntil (timestamp) {
                 seconds = '0' + seconds;
             }
 
-            countdown = days + ' ' + aaTimezonesTranslations.days + ', ' + hours + ':' + minutes + ':' + seconds;
+            countdown = days + ' ' + aaTimezonesOptions.translation.days + ', ' + hours + ':' + minutes + ':' + seconds;
         } else {
-            countdown = aaTimezonesTranslations.alreadyOver;
+            countdown = aaTimezonesOptions.translation.alreadyOver;
         }
 
         $('.aa-timezones-time-until-countdown').html(countdown);
@@ -238,7 +238,7 @@ function switchto (mode) {
  * Timestamp has changed
  */
 function hashchange () {
-    let ts = aaTimezonesAdjustOptions.timestamp;
+    let ts = aaTimezonesOptions.timestamp;
 
     clockTarget = 0;
 
