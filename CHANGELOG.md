@@ -14,6 +14,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
   - Python 3.7
   - Alliance Auth v2.9.3
 
+### Removed
+
+- Backwards compatibility with old timecode style URLs (was deprecated with v1.2.1
+  in Octber 2020)
+
 
 ## [1.4.0] - 2021-11-23
 

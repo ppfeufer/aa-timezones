@@ -238,7 +238,7 @@ function switchto (mode) {
  * Timestamp has changed
  */
 function hashchange () {
-    let ts = parseInt(aaTimezonesAdjustOptions.timestamp.substring(1));
+    let ts = aaTimezonesAdjustOptions.timestamp;
 
     clockTarget = 0;
 

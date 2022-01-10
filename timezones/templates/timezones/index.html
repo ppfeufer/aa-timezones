@@ -74,15 +74,8 @@
                 alreadyOver: '{% translate "Already over, you missed it!" %}'
             };
 
-            // check if we have a ts hash or a real url
-            let timestamp = window.location.hash;
-
-            {% if timestamp %}
-                timestamp = '#{{ timestamp }}';
-            {% endif %}
-
             let aaTimezonesAdjustOptions = {
-                timestamp: timestamp
+                timestamp: {{ timestamp }}
             }
         </script>
     </div>
