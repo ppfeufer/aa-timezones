@@ -1,5 +1,7 @@
+# Django
 from django.conf.urls import include, url
 
+# Alliance Auth
 from allianceauth import urls
 
 urlpatterns = [

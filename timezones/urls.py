@@ -2,8 +2,10 @@
 page urls config
 """
 
+# Django
 from django.conf.urls import url
 
+# AA Time Zones
 from timezones import views
 
 app_name: str = "timezones"

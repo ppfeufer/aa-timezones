@@ -6,6 +6,24 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 
+## [1.6.0] - 2022-01-10
+
+### Added
+
+- Tests for Python 3.11
+
+### Changed
+
+- Minimum requirements
+  - Alliance Auth v2.9.4
+- JS options combined into one array instead of three
+
+### Removed
+
+- Backwards compatibility with old timecode style URLs (was deprecated with v1.2.1
+  in October 2020)
+
+
 ## [1.5.0] - 2021-11-30
 
 ### Changed

@@ -1,4 +1,4 @@
-/* global moment, aaTimezonesPanels, aaTimezonesOptions, aaTimezonesTranslations, aaTimezonesAdjustOptions */
+/* global moment, aaTimezonesPanels, aaTimezonesOptions */
 
 'use strict';
 
@@ -6,6 +6,9 @@ let clockTarget = 0;
 let clockTickId = 0;
 let countdownIntervalId = 0;
 
+/**
+ * Show the time adjust section
+ */
 function showAdjust () {
     jQuery('#btnadjust').addClass('hidden');
     jQuery('#adjust').removeClass('hidden');
@@ -19,41 +22,67 @@ function showAdjust () {
     jQuery('#tatyear').val(mom.format('YYYY'));
 }
 
-// set time for in x day, y hours, z minutes
+/**
+ * Set time for in x day, y hours, z minutes
+ */
 function reloadToTimestamp () {
-    let timestamp = parseInt(new Date().getTime() / 1000) + jQuery('#tind').val() * 24 * 60 * 60 + jQuery('#tinh').val() * 60 * 60 + jQuery('#tinm').val() * 60;
+    let timestamp = (
+        (new Date).getTime() / 1000
+        + jQuery('#tind').val() * 24 * 60 * 60
+        + jQuery('#tinh').val() * 60 * 60
+        + jQuery('#tinm').val() * 60
+    );
 
     window.location.replace(aaTimezonesOptions.base_url + timestamp);
 }
 
-// reload to base page
+/**
+ * Reload to base page
+ */
 function reloadBasePage () {
     window.location.replace(aaTimezonesOptions.base_url);
 }
 
+/**
+ * Set the date
+ *
+ * @param str
+ * @param tz
+ */
 function setdate (str, tz) {
     if (tz !== '') {
-        window.location.replace(aaTimezonesOptions.base_url + moment.tz(str, tz).unix());
+        window.location.replace(
+            aaTimezonesOptions.base_url + moment.tz(str, tz).unix()
+        );
     } else {
-        window.location.replace(aaTimezonesOptions.base_url + moment(str).unix());
+        window.location.replace(
+            aaTimezonesOptions.base_url + moment(str).unix()
+        );
     }
 }
 
+/**
+ * Update the timezone panel
+ *
+ * @param mom
+ * @param id
+ */
 function updatePanel (mom, id) {
     jQuery('#time-' + id).html(mom.format('HH:mm:ss'));
     jQuery('#utc-offset-' + id).html('(UTC ' + mom.format('Z') + ')');
     jQuery('#date-' + id).html(mom.format('dddd DD MMM YYYY'));
 
-//    3 06-09 sunrise
-//    3 09-11 sun
-//    3 11-14 sun
-//    3 14-17 sun
-//    3 17-20 sunset
-//    3 20-23 moonrise
-//    4 23-03 moon
-//    3 03-06 moonset
-    jQuery('#icon-' + id).removeClass();
-
+    /**
+     * Update the weather icon
+     *    3 06-09 sunrise
+     *    3 09-11 sun
+     *    3 11-14 sun
+     *    3 14-17 sun
+     *    3 17-20 sunset
+     *    3 20-23 moonrise
+     *    4 23-03 moon
+     *    3 03-06 moonset
+     */
     let h = mom.format('H') * 1;
     let icon = 'wi wi-night-clear';
 
@@ -89,9 +118,15 @@ function updatePanel (mom, id) {
         icon = 'wi wi-night-clear';
     }
 
-    jQuery('#icon-' + id).addClass(icon);
+    // Set the icon
+    jQuery('#icon-' + id).removeClass().addClass(icon);
 }
 
+/**
+ * Bulk update the timezone panels
+ *
+ * @param now
+ */
 function updatePanels (now) {
     // local time
     updatePanel(moment(now), 'local-time');
@@ -102,6 +137,10 @@ function updatePanels (now) {
     });
 }
 
+/**
+ * Time until given timestamp
+ * @param timestamp
+ */
 function timeUntil (timestamp) {
     let timestampDifference = timestamp - Date.now();
     let timeDifferenceInSeconds = timestampDifference / 1000; // from ms to seconds
@@ -129,19 +168,29 @@ function timeUntil (timestamp) {
                 seconds = '0' + seconds;
             }
 
-            countdown = days + ' ' + aaTimezonesTranslations.days + ', ' + hours + ':' + minutes + ':' + seconds;
+            countdown = days + ' ' + aaTimezonesOptions.translation.days + ', ' + hours + ':' + minutes + ':' + seconds;
         } else {
-            countdown = aaTimezonesTranslations.alreadyOver;
+            countdown = aaTimezonesOptions.translation.alreadyOver;
         }
 
         $('.aa-timezones-time-until-countdown').html(countdown);
     }, 1000);
 }
 
+/**
+ * Callback to set the clock interval
+ *
+ * @see switchto()
+ */
 function clockTick () {
     updatePanels(new Date());
 }
 
+/**
+ * Switch between time-adh´just mode and normal view mode
+ *
+ * @param mode
+ */
 function switchto (mode) {
     if (clockTickId !== 0) {
         clearInterval(clockTickId);
@@ -185,12 +234,15 @@ function switchto (mode) {
     }
 }
 
+/**
+ * Timestamp has changed
+ */
 function hashchange () {
-    let ts = aaTimezonesAdjustOptions.timestamp.substring(1);
+    let ts = parseInt(aaTimezonesOptions.timestamp);
 
     clockTarget = 0;
 
-    if (!isNaN(parseFloat(ts)) && isFinite(ts)) {
+    if (!isNaN(ts) && isFinite(ts)) {
         clockTarget = ts * 1000;
 
         let mom = moment.tz(new Date(clockTarget), 'Etc/UTC');

@@ -2,12 +2,16 @@
 loading timezone data into DB
 """
 
+# Standard Library
 import datetime
 
+# Third Party
 import pytz
 
+# Django
 from django.core.management.base import BaseCommand
 
+# AA Time Zones
 from timezones.models import TimezoneData
 
 

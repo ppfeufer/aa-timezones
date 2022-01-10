@@ -1,9 +1,12 @@
 # flake8: noqa
 
+# Standard Library
 import os
 
+# Third Party
 from celery.schedules import crontab
 
+# Django
 from django.contrib import messages
 
 INSTALLED_APPS = [

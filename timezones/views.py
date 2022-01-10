@@ -2,9 +2,11 @@
 the views
 """
 
+# Django
 from django.contrib.auth.decorators import login_required, permission_required
 from django.shortcuts import render
 
+# AA Time Zones
 from timezones import __title__
 from timezones.constants import AA_TIMEZONE_DEFAULT_PANELS
 from timezones.models import Timezones
