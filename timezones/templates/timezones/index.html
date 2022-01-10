@@ -67,7 +67,7 @@
         <script type="application/javascript">
             let aaTimezonesOptions = {
                 base_url: '{% url "timezones:index" %}',
-                timestamp: {{ timestamp }},
+                timestamp: '{{ timestamp }}',
                 translation: {
                     days: '{% translate "Days" %}',
                     alreadyOver: '{% translate "Already over, you missed it!" %}'
@@ -82,7 +82,7 @@
 
     <script type="application/javascript" src="{% timezones_static 'timezones/js/timeago/jquery.timeago.min.js' %}"></script>
     <script type="application/javascript" src="{% timezones_static 'timezones/js/moment/moment-timezone-with-data-1970-2030.min.js' %}"></script>
-    <script type="application/javascript" src="{% timezones_static 'timezones/js/timezones.min.js' %}"></script>
+    <script type="application/javascript" src="{% timezones_static 'timezones/js/timezones.js' %}"></script>
 {% endblock %}
 
 {% block extra_css %}
