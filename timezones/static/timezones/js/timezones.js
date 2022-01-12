@@ -13,7 +13,7 @@ function showAdjust () {
     jQuery('#btnadjust').addClass('hidden');
     jQuery('#adjust').removeClass('hidden');
 
-    let mom = moment.tz(new Date(), 'Etc/UTC');
+    const mom = moment.tz(new Date(), 'Etc/UTC');
 
     jQuery('#tathour').val(mom.format('HH'));
     jQuery('#tatminute').val(mom.format('mm'));
@@ -26,7 +26,7 @@ function showAdjust () {
  * Set time for in x day, y hours, z minutes
  */
 function reloadToTimestamp () {
-    let timestamp = (
+    const timestamp = (
         (new Date).getTime() / 1000
         + jQuery('#tind').val() * 24 * 60 * 60
         + jQuery('#tinh').val() * 60 * 60
@@ -83,7 +83,7 @@ function updatePanel (mom, id) {
      *    4 23-03 moon
      *    3 03-06 moonset
      */
-    let h = mom.format('H') * 1;
+    const h = mom.format('H') * 1;
     let icon = 'wi wi-night-clear';
 
     if (h < 23) {
@@ -142,7 +142,7 @@ function updatePanels (now) {
  * @param timestamp
  */
 function timeUntil (timestamp) {
-    let timestampDifference = timestamp - Date.now();
+    const timestampDifference = timestamp - Date.now();
     let timeDifferenceInSeconds = timestampDifference / 1000; // from ms to seconds
 
     // set the interval
@@ -152,7 +152,7 @@ function timeUntil (timestamp) {
         timeDifferenceInSeconds--; // decrement timestamp with one second each second
 
         if (timeDifferenceInSeconds >= 0) {
-            let days = Math.floor(timeDifferenceInSeconds / (24 * 60 * 60)); // calculate days from timestamp
+            const days = Math.floor(timeDifferenceInSeconds / (24 * 60 * 60)); // calculate days from timestamp
             let hours = Math.floor(timeDifferenceInSeconds / (60 * 60)) % 24; // hours
             let minutes = Math.floor(timeDifferenceInSeconds / 60) % 60; // minutes
             let seconds = Math.floor(timeDifferenceInSeconds) % 60; // seconds
@@ -238,14 +238,14 @@ function switchto (mode) {
  * Timestamp has changed
  */
 function hashchange () {
-    let ts = parseInt(aaTimezonesOptions.timestamp);
+    const ts = parseInt(aaTimezonesOptions.timestamp);
 
     clockTarget = 0;
 
     if (!isNaN(ts) && isFinite(ts)) {
         clockTarget = ts * 1000;
 
-        let mom = moment.tz(new Date(clockTarget), 'Etc/UTC');
+        const mom = moment.tz(new Date(clockTarget), 'Etc/UTC');
 
         jQuery('#timestamp').attr(
             'datetime', mom.format('YYYY-MM-DDTHH:mm:00Z0000')
@@ -261,8 +261,8 @@ jQuery(document).ready(function ($) {
     /**
      * Declaring some variables ...
      */
-    let mom = moment.tz(new Date(), 'Etc/UTC');
-    let year = mom.format('YYYY') * 1;
+    const mom = moment.tz(new Date(), 'Etc/UTC');
+    const year = mom.format('YYYY') * 1;
     let i;
 
     for (i = year - 4; i < year + 5; i++) {
