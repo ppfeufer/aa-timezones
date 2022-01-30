@@ -24,6 +24,7 @@ repos:
       - id: check-added-large-files
       - id: check-ast  # Is it valid Python?
       - id: debug-statements  # Check for debugger imports and py37+ breakpoint() calls
+      - id: check-merge-conflict
 
   - repo: https://github.com/editorconfig-checker/editorconfig-checker.python
     rev: 2.4.0
