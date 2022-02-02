@@ -3,7 +3,7 @@ page urls config
 """
 
 # Django
-from django.conf.urls import url
+from django.urls import path
 
 # AA Time Zones
 from timezones import views
@@ -11,6 +11,6 @@ from timezones import views
 app_name: str = "timezones"
 
 urlpatterns = [
-    url(r"^$", views.index, name="index"),
-    url(r"^(?P<timestamp>[0-9]+)/$", views.index, name="index"),
+    path("", views.index, name="index"),
+    path("<int:timestamp>/", views.index, name="index"),
 ]
