@@ -12,5 +12,5 @@ app_name: str = "timezones"
 
 urlpatterns = [
     path("", views.index, name="index"),
-    path("<int:timestamp>/", views.index, name="index"),
+    path("<str:timestamp>/", views.index, name="index"),
 ]
