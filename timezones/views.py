@@ -14,7 +14,7 @@ from timezones.models import Timezones
 
 @login_required
 @permission_required("timezones.basic_access")
-def index(request, timestamp: int = None):
+def index(request, timestamp: str = None):
     """
     index view
 
