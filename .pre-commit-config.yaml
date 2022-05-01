@@ -32,6 +32,20 @@ repos:
       - id: editorconfig-checker
         exclude: ^(LICENSE|timezones/static/timezones/css/weather-icons/|timezones/static/timezones/js/timeago/|timezones/static/timezones/js/moment/|(.*.po)|(.*.mo))
 
+  - repo: https://github.com/pre-commit/pygrep-hooks
+    rev: v1.9.0
+    hooks:
+      - id: python-check-mock-methods
+      - id: python-no-log-warn
+      - id: python-use-type-annotations
+      - id: text-unicode-replacement-char
+
+  - repo: https://github.com/adamchainz/django-upgrade
+    rev: 1.5.0
+    hooks:
+      - id: django-upgrade
+        args: [ --target-version, "3.2" ]
+
   - repo: https://github.com/asottile/pyupgrade
     rev: v2.32.0
     hooks:
