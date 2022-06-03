@@ -11,6 +11,7 @@ from allianceauth.services.hooks import MenuItemHook, UrlHook
 
 # AA Time Zones
 from timezones import __title__, urls
+from timezones.app_settings import allianceauth_discordbot_active
 
 
 class AaTimezonesMenuItem(MenuItemHook):  # pylint: disable=too-few-public-methods
@@ -56,12 +57,13 @@ def register_urls():
     return UrlHook(urls, "timezones", r"^timezones/")
 
 
-@hooks.register("discord_cogs_hook")
-def register_cogs():
-    """
-    Registering our discord cog
-    :return:
-    :rtype:
-    """
+# Only register the cog when aadiscordbot is installed
+if allianceauth_discordbot_active():
 
-    return ["timezones.aadiscordbot.cogs.time"]
+    @hooks.register("discord_cogs_hook")
+    def register_cogs():
+        """
+        Registering our discord cog
+        """
+
+        return ["timezones.aadiscordbot.cogs.time"]
