@@ -54,3 +54,14 @@ def register_urls():
     :return:
     """
     return UrlHook(urls, "timezones", r"^timezones/")
+
+
+@hooks.register("discord_cogs_hook")
+def register_cogs():
+    """
+    Registering our discord cog
+    :return:
+    :rtype:
+    """
+
+    return ["timezones.aadiscordbot.cogs.time"]
