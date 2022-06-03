@@ -126,7 +126,7 @@ def setup(bot):
 
     # Unload the `time` extemsion from `aadiscordbot`, so we can load our own
     if bot.get_cog("Time") is not None:
-        bot.unload_extension("aadiscordbot.cogs.time")
+        bot.remove_cog("Time")
 
     # Load our `time` extension
     bot.add_cog(Time(bot))
