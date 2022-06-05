@@ -1,5 +1,5 @@
 """
-"Time" cog for discordbot - https://github.com/pvyParts/allianceauth-discordbot
+"Time" cog for allianceauth-discordbot - https://github.com/pvyParts/allianceauth-discordbot
 """
 
 # Standard Library
@@ -7,7 +7,7 @@ from datetime import datetime
 
 # Third Party
 import pytz
-from aadiscordbot.app_settings import get_site_url, timezones_active
+from aadiscordbot.app_settings import get_site_url
 from discord.colour import Color
 from discord.embeds import Embed
 from discord.ext import commands
@@ -36,7 +36,6 @@ class Time(commands.Cog):
 
         fmt_utc = "%H:%M:%S (UTC)\n%A %d. %b %Y"
         fmt = "%H:%M:%S (UTC %z)\n%A %d. %b %Y"
-        url = None
 
         embed = Embed(title="Time")
         embed.colour = Color.green()
@@ -47,57 +46,54 @@ class Time(commands.Cog):
             inline=False,
         )
 
-        if timezones_active():
-            url = get_site_url() + reverse("timezones:index")
-            configured_timezones = (
-                Timezones.objects.select_related("timezone")
-                .filter(is_enabled=True)
-                .order_by("panel_name")
-            )
+        configured_timezones = (
+            Timezones.objects.select_related("timezone")
+            .filter(is_enabled=True)
+            .order_by("panel_name")
+        )
 
-            # Get configured timezones from module setting
-            if configured_timezones.count() > 0:
-                for configured_timezone in configured_timezones:
-                    embed.add_field(
-                        name=configured_timezone.panel_name,
-                        value=(
-                            datetime.utcnow()
-                            .astimezone(
-                                pytz.timezone(
-                                    configured_timezone.timezone.timezone_name
-                                )
+        # Get configured timezones from module setting
+        if configured_timezones.count() > 0:
+            for configured_timezone in configured_timezones:
+                embed.add_field(
+                    name=configured_timezone.panel_name,
+                    value=(
+                        datetime.utcnow()
+                        .astimezone(
+                            pytz.timezone(configured_timezone.timezone.timezone_name)
+                        )
+                        .strftime(fmt)
+                    ),
+                    inline=True,
+                )
+
+        # get default timezones from module
+        else:
+            configured_timezones = AA_TIMEZONE_DEFAULT_PANELS
+
+            for configured_timezone in configured_timezones:
+                embed.add_field(
+                    name=configured_timezone["panel_name"],
+                    value=(
+                        datetime.utcnow()
+                        .astimezone(
+                            pytz.timezone(
+                                configured_timezone["timezone"]["timezone_name"]
                             )
-                            .strftime(fmt)
-                        ),
-                        inline=True,
-                    )
-
-            # get default timezones from module
-            else:
-                configured_timezones = AA_TIMEZONE_DEFAULT_PANELS
-
-                for configured_timezone in configured_timezones:
-                    embed.add_field(
-                        name=configured_timezone["panel_name"],
-                        value=(
-                            datetime.utcnow()
-                            .astimezone(
-                                pytz.timezone(
-                                    configured_timezone["timezone"]["timezone_name"]
-                                )
-                            )
-                            .strftime(fmt)
-                        ),
-                        inline=True,
-                    )
+                        )
+                        .strftime(fmt)
+                    ),
+                    inline=True,
+                )
 
         # add url to the timezones module
-        if url is not None:
-            embed.add_field(
-                name="Timezones Conversion",
-                value=url,
-                inline=False,
-            )
+        timezones_url = get_site_url() + reverse("timezones:index")
+
+        embed.add_field(
+            name="Timezones Conversion",
+            value=timezones_url,
+            inline=False,
+        )
 
         return embed
 
