@@ -8,6 +8,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [In Development] - Unreleased
 
+### Fixed
+
+- "Method could be a function" warning
+
 
 ## [1.10.0] - 2022-06-07
 

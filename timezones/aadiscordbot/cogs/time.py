@@ -29,7 +29,8 @@ class Time(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-    def show_timezones(self):
+    @classmethod
+    def show_timezones(cls):
         """
         Create and format the embed for Discord
         """
