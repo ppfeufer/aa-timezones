@@ -135,6 +135,6 @@ with others directly.
 **For this to work, you'll need to have `allianceauth-discordbit` installed, configured
 and running. ([See this link](https://github.com/pvyParts/allianceauth-discordbot))**
 
-| Command            | Effect                                                                      |
-|:-------------------|:----------------------------------------------------------------------------|
-| `!time` or `/time` | Shows the current Eve time and what time it is in the configured time zones |
+| Command            | Effect                                                                                                                                                                                                             |
+|:-------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `!time` or `/time` | Shows the current Eve time and what time it is in the <br/>configured time zones<br>![Discord Bot Response](https://raw.githubusercontent.com/ppfeufer/aa-timezones/master/timezones/docs/discordbot-response.jpg) |
