@@ -1,7 +1,7 @@
 # AA Time Zones
 
 <style>
-table {
+table td {
     vertical-align: top;
 }
 </style>
