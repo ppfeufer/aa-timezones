@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
 
 - JS modernized (Part 2)
+- Management command for the initial timezones import optimised
 
 
 ## [1.9.0] - 2022-03-03
