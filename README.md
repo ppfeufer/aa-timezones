@@ -133,7 +133,7 @@ with others directly.
 ## Discord Bot Command
 
 **For this to work, you'll need to have `allianceauth-discordbot` installed, configured
-and running. ([See this link](https://github.com/pvyParts/allianceauth-discordbot))**
+and running.** ([See this link](https://github.com/pvyParts/allianceauth-discordbot))
 
 | Command            | Effect                                                                                                                                                                                                             |
 |:-------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
