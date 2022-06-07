@@ -17,13 +17,17 @@ from timezones.models import TimezoneData
 
 def get_input(text):
     """
-    wrapped input to enable tz import
+    Wrapped input to enable tz import
     """
 
     return input(text)
 
 
 class Command(BaseCommand):
+    """
+    Import timezones
+    """
+
     help = "Imports timezone data"
 
     def _import_timezone_data(self) -> None:
@@ -36,63 +40,43 @@ class Command(BaseCommand):
         timezones_skipped = 0
 
         for timezone_name in pytz.common_timezones:
-            timezone_utc_offset = (
-                pytz.timezone(timezone_name)
-                .localize(datetime.datetime(2011, 1, 1))
-                .strftime("%z")
-            )
-
             if timezone_name == "UTC":
                 break
 
-            timezone_panel_id = timezone_name.replace("/", "-").lower()
-
-            # check if timezone is already in DB
-            timezone_in_db = False
-
-            try:
-                timezonedata = TimezoneData.objects.filter(timezone_name=timezone_name)
-
-                if timezonedata:
-                    timezone_in_db = True
-            except TimezoneData.DoesNotExist:
+            # Check if timezone is already in DB
+            if TimezoneData.objects.filter(timezone_name=timezone_name).exists():
                 self.stdout.write(
-                    "Something went wrong while connecting to the Database"
-                )
-
-            if timezone_in_db:
-                self.stdout.write(
-                    "Timezone '{tz_name}' already in DB, skipping".format(
-                        tz_name=timezone_name
-                    )
+                    f"Timezone '{timezone_name}' already in DB, skipping ..."
                 )
 
                 timezones_skipped += 1
             else:
-                timezonedata = TimezoneData()
+                timezone_utc_offset = (
+                    pytz.timezone(timezone_name)
+                    .localize(datetime.datetime(2011, 1, 1))
+                    .strftime("%z")
+                )
 
+                timezone_panel_id = timezone_name.replace("/", "-").lower()
+
+                timezonedata = TimezoneData()
                 timezonedata.timezone_name = timezone_name
                 timezonedata.utc_offset = timezone_utc_offset
                 timezonedata.panel_id = timezone_panel_id
                 timezonedata.save()
 
                 self.stdout.write(
-                    "Importing timezone '{tz_name}' with UTC offset of '{tz_offset}' "
-                    "and panel ID of '{tz_panel_id}'".format(
-                        tz_name=timezone_name,
-                        tz_offset=timezone_utc_offset,
-                        tz_panel_id=timezone_panel_id,
-                    )
+                    f"Importing timezone '{timezone_name}' "
+                    f"with UTC offset of '{timezone_utc_offset}' "
+                    f"and panel ID of '{timezone_panel_id}'"
                 )
 
                 timezones_imported += 1
 
         self.stdout.write(
-            "Import done with {tz_imported} new timezones imported and {tz_skipped} "
-            "timezones skipped because they were already in the DB:".format(
-                tz_imported=timezones_imported,
-                tz_skipped=timezones_skipped,
-            )
+            f"Import done with {timezones_imported} new timezones imported "
+            f"and {timezones_skipped} timezones skipped because they were already "
+            "in the DB."
         )
 
     def handle(self, *args, **options):
@@ -104,7 +88,7 @@ class Command(BaseCommand):
 
         self.stdout.write(
             "Timezones will be imported. "
-            "Previously imported timezones will not be replaced or overwritten"
+            "Previously imported timezones will not be replaced or overwritten."
         )
 
         user_input = get_input("Are you sure you want to proceed? (yes/no)?")

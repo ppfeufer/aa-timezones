@@ -1,7 +1,5 @@
 /* global moment, aaTimezonesPanels, aaTimezonesOptions */
 
-'use strict';
-
 let clockTarget = 0;
 let clockTickId = 0;
 let countdownIntervalId = 0;
@@ -9,7 +7,9 @@ let countdownIntervalId = 0;
 /**
  * Show the time adjust section
  */
-function showAdjust () {
+const showAdjust = () => {
+    'use strict';
+
     jQuery('#btnadjust').addClass('hidden');
     jQuery('#adjust').removeClass('hidden');
 
@@ -20,36 +20,39 @@ function showAdjust () {
     jQuery('#tatday').val(mom.format('DD'));
     jQuery('#tatmonth').val(mom.format('MM'));
     jQuery('#tatyear').val(mom.format('YYYY'));
-}
+};
 
 /**
  * Set time for in x day, y hours, z minutes
  */
-function reloadToTimestamp () {
+const reloadToTimestamp = () => {
+    'use strict';
+
     const timestamp = (
-        (new Date).getTime() / 1000
-        + jQuery('#tind').val() * 24 * 60 * 60
-        + jQuery('#tinh').val() * 60 * 60
-        + jQuery('#tinm').val() * 60
+        new Date().getTime() / 1000 + jQuery('#tind').val() * 24 * 60 * 60 + jQuery('#tinh').val() * 60 * 60 + jQuery('#tinm').val() * 60
     );
 
     window.location.replace(aaTimezonesOptions.base_url + timestamp);
-}
+};
 
 /**
  * Reload to base page
  */
-function reloadBasePage () {
+const reloadBasePage = () => {
+    'use strict';
+
     window.location.replace(aaTimezonesOptions.base_url);
-}
+};
 
 /**
  * Set the date
  *
- * @param str
- * @param tz
+ * @param {string} str
+ * @param {string} tz
  */
-function setdate (str, tz) {
+const setdate = (str, tz) => {
+    'use strict';
+
     if (tz !== '') {
         window.location.replace(
             aaTimezonesOptions.base_url + moment.tz(str, tz).unix()
@@ -59,7 +62,7 @@ function setdate (str, tz) {
             aaTimezonesOptions.base_url + moment(str).unix()
         );
     }
-}
+};
 
 /**
  * Update the timezone panel
@@ -67,7 +70,9 @@ function setdate (str, tz) {
  * @param mom
  * @param id
  */
-function updatePanel (mom, id) {
+const updatePanel = (mom, id) => {
+    'use strict';
+
     jQuery('#time-' + id).html(mom.format('HH:mm:ss'));
     jQuery('#utc-offset-' + id).html('(UTC ' + mom.format('Z') + ')');
     jQuery('#date-' + id).html(mom.format('dddd DD MMM YYYY'));
@@ -120,14 +125,16 @@ function updatePanel (mom, id) {
 
     // Set the icon
     jQuery('#icon-' + id).removeClass().addClass(icon);
-}
+};
 
 /**
  * Bulk update the timezone panels
  *
- * @param now
+ * @param {Date} now
  */
-function updatePanels (now) {
+const updatePanels = (now) => {
+    'use strict';
+
     // local time
     updatePanel(moment(now), 'local-time');
 
@@ -135,18 +142,20 @@ function updatePanels (now) {
     jQuery.each(aaTimezonesPanels, function (index, value) {
         updatePanel(moment.tz(now, value.timezoneName), value.timezoneId);
     });
-}
+};
 
 /**
  * Time until given timestamp
- * @param timestamp
+ * @param {number} timestamp
  */
-function timeUntil (timestamp) {
+const timeUntil = (timestamp) => {
+    'use strict';
+
     const timestampDifference = timestamp - Date.now();
     let timeDifferenceInSeconds = timestampDifference / 1000; // from ms to seconds
 
     // set the interval
-    countdownIntervalId = setInterval(function () { // execute code each second
+    countdownIntervalId = setInterval(() => { // execute code each second
         let countdown;
 
         timeDifferenceInSeconds--; // decrement timestamp with one second each second
@@ -175,23 +184,27 @@ function timeUntil (timestamp) {
 
         $('.aa-timezones-time-until-countdown').html(countdown);
     }, 1000);
-}
+};
 
 /**
  * Callback to set the clock interval
  *
  * @see switchto()
  */
-function clockTick () {
+const clockTick = () => {
+    'use strict';
+
     updatePanels(new Date());
-}
+};
 
 /**
  * Switch between time-adh´just mode and normal view mode
  *
- * @param mode
+ * @param {int} mode
  */
-function switchto (mode) {
+const switchto = (mode) => {
+    'use strict';
+
     if (clockTickId !== 0) {
         clearInterval(clockTickId);
     }
@@ -232,12 +245,14 @@ function switchto (mode) {
         updatePanels(new Date(clockTarget));
         timeUntil(clockTarget);
     }
-}
+};
 
 /**
  * Timestamp has changed
  */
-function hashchange () {
+const hashchange = () => {
+    'use strict';
+
     const ts = parseInt(aaTimezonesOptions.timestamp);
 
     clockTarget = 0;
@@ -253,9 +268,11 @@ function hashchange () {
     }
 
     switchto(clockTarget);
-}
+};
 
-jQuery(document).ready(function ($) {
+jQuery(document).ready(($) => {
+    'use strict';
+
     window.addEventListener('hashchange', hashchange, false);
 
     /**
@@ -272,7 +289,7 @@ jQuery(document).ready(function ($) {
     $.timeago.settings.allowFuture = true;
     $.timeago.settings.allowPast = true;
 
-    setInterval(function () {
+    setInterval(() => {
         $('#timestamp').timeago('update', new Date(clockTarget));
     }, 10000);
 

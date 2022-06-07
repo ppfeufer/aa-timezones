@@ -11,6 +11,7 @@
 [![codecov](https://codecov.io/gh/ppfeufer/aa-timezones/branch/master/graph/badge.svg?token=ZSRTW5FR4C)](https://codecov.io/gh/ppfeufer/aa-timezones)
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](https://github.com/ppfeufer/aa-timezones/blob/master/CODE_OF_CONDUCT.md)
 
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/N4N8CL1BY)
 
 App for displaying different time zones with Alliance Auth
 
@@ -23,6 +24,7 @@ App for displaying different time zones with Alliance Auth
 - [Updating](#updating)
 - [Configure Timezone Panels](#configure-timezone-panels)
 - [Adjusting Time](#adjusting-time)
+- [Discord Bot Command](#discord-bot-command)
 - [Change Log](CHANGELOG.md)
 
 
@@ -126,3 +128,13 @@ So if you are going to use it to plan fleets it is recommanded to keep this set 
 To set the adjusted time, simply click on "Set Time" in the row you altered. This will than adjust all
 time zone panels to the time you selected and will also alter the link in your browser, so you can share it
 with others directly.
+
+
+## Discord Bot Command
+
+**For this to work, you'll need to have `allianceauth-discordbot` installed, configured
+and running.** ([See this link](https://github.com/pvyParts/allianceauth-discordbot))
+
+| Command            | Effect                                                                                                                                                                                                             |
+|:-------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `!time` or `/time` | Shows the current Eve time and what time it is in the <br/>configured time zones<br>![Discord Bot Response](https://raw.githubusercontent.com/ppfeufer/aa-timezones/master/timezones/docs/discordbot-response.jpg) |
