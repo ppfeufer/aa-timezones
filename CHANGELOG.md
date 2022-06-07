@@ -8,6 +8,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [In Development] - Unreleased
 
+
+## [1.10.0] - 2022-06-07
+
 ### Added
 
 - Cog for `allianceauth-discordbot` to implement the `/time` command for Discord
