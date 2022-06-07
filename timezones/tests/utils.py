@@ -1,3 +1,7 @@
+"""
+Test utilities
+"""
+
 # Standard Library
 import re
 from typing import List
@@ -19,16 +23,22 @@ def create_fake_user(
     alliance_name: str = None,
     permissions: List[str] = None,
 ) -> User:
-    """Create a fake user incl. main character and (optional) permissions."""
+    """
+    Create a fake user incl. main character and (optional) permissions.
+    """
+
     username = re.sub(r"[^\w\d@\.\+-]", "_", character_name)
     user = AuthUtils.create_user(username)
+
     if not corporation_id:
         corporation_id = 2001
         corporation_name = "Wayne Technologies Inc."
         corporation_ticker = "WTE"
+
     if not alliance_id:
         alliance_id = 3001
         alliance_name = "Wayne Enterprises"
+
     AuthUtils.add_main_character_2(
         user=user,
         name=character_name,
@@ -39,7 +49,9 @@ def create_fake_user(
         alliance_id=alliance_id,
         alliance_name=alliance_name,
     )
+
     if permissions:
         perm_objs = [AuthUtils.get_permission_by_name(perm) for perm in permissions]
         user = AuthUtils.add_permissions_to_user(perms=perm_objs, user=user)
+
     return user

@@ -1,5 +1,5 @@
 """
-page urls config
+App urls config
 """
 
 # Django

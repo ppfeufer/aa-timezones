@@ -1,5 +1,6 @@
 """
-"Time" cog for allianceauth-discordbot - https://github.com/pvyParts/allianceauth-discordbot
+"Time" cog for `allianceauth-discordbot`
+https://github.com/pvyParts/allianceauth-discordbot
 """
 
 # Standard Library
@@ -68,7 +69,7 @@ class Time(commands.Cog):
                     inline=True,
                 )
 
-        # get default timezones from module
+        # Get default timezones from module
         else:
             configured_timezones = AA_TIMEZONE_DEFAULT_PANELS
 
@@ -87,7 +88,7 @@ class Time(commands.Cog):
                     inline=True,
                 )
 
-        # add url to the timezones module
+        # Add url to the timezones module
         timezones_url = get_site_url() + reverse("timezones:index")
 
         embed.add_field(
@@ -117,11 +118,11 @@ class Time(commands.Cog):
 
 def setup(bot):
     """
-    Setup the cog
+    Set up the cog
     :param bot:
     """
 
-    # Unload the `time` extemsion from `aadiscordbot`, so we can load our own
+    # Unload the `time` extension from `aadiscordbot`, so we can load our own
     if bot.get_cog("Time") is not None:
         bot.remove_cog("Time")
 

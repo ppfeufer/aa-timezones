@@ -1,5 +1,5 @@
 """
-constants
+Constants
 """
 
 # Standard Library

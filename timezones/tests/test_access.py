@@ -12,6 +12,10 @@ from timezones.tests.utils import create_fake_user
 
 
 class TestAccess(TestCase):
+    """
+    Test module access
+    """
+
     @classmethod
     def setUpClass(cls) -> None:
         """

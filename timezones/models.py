@@ -1,5 +1,5 @@
 """
-our models
+The models
 """
 
 # Django
@@ -9,10 +9,14 @@ from django.utils.translation import gettext_lazy as _
 
 # Create your models here.
 class AaTimezones(models.Model):
-    """Meta model for app permissions"""
+    """
+    Meta model for app permissions
+    """
 
     class Meta:  # pylint: disable=too-few-public-methods
-        """AaTimezones :: Meta"""
+        """
+        AaTimezones :: Meta
+        """
 
         managed = False
         default_permissions = ()
@@ -21,8 +25,7 @@ class AaTimezones(models.Model):
 
 class TimezoneData(models.Model):
     """
-    available timzones
-    imported from pytz
+    Available timezones imported from pytz
     """
 
     timezone_name = models.CharField(
@@ -58,7 +61,7 @@ class TimezoneData(models.Model):
 
 class Timezones(models.Model):
     """
-    configured timezones to display
+    Configured timezones to display
     """
 
     panel_name = models.CharField(

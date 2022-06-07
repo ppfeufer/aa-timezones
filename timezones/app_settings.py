@@ -8,7 +8,7 @@ from django.apps import apps
 
 def allianceauth_discordbot_active():
     """
-    Check if allianceauth-dicordbot is installed and active
+    Check if allianceauth-discordbot is installed and active
     :return:
     """
 

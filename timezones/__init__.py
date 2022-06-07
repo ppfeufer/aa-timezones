@@ -1,5 +1,5 @@
 """
-application init
+Application init
 """
 
 __version__ = "1.10.0"
