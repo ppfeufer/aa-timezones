@@ -8,6 +8,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [In Development] - Unreleased
 
+### Added
+
+- `pytz` to dependencies. Can't rely on other packages for dragging it in
+
 ### Changed
 
 - JS modernized (Part 2)
