@@ -10,6 +10,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Added
 
+- Cog for `allianceauth-discordbot` to implement the `/time` command for Discord
+  - **Advice:** Please make sure `aadiscordbot` is listed _before_ `timezones` in
+    `INSTALLED_APPS` in your `local.py` to prevent an error from spawning in your
+    log file. It will still work, but the error is annoying and might cause
+    unnecessary questions in the Alliance Auth support Discord.
 - `pytz` to dependencies. Can't rely on other packages for dragging it in
 
 ### Changed
