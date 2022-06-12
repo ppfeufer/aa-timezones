@@ -1,5 +1,5 @@
 """
-the views
+The views
 """
 
 # Django
@@ -16,8 +16,7 @@ from timezones.models import Timezones
 @permission_required("timezones.basic_access")
 def index(request, timestamp: str = None):
     """
-    index view
-
+    Index view
     :param request:
     :param timestamp:
     :return:

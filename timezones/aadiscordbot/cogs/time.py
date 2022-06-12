@@ -1,5 +1,6 @@
 """
-"Time" cog for allianceauth-discordbot - https://github.com/pvyParts/allianceauth-discordbot
+"Time" cog for `allianceauth-discordbot`
+https://github.com/pvyParts/allianceauth-discordbot
 """
 
 # Standard Library
@@ -29,9 +30,12 @@ class Time(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-    def show_timezones(self):
+    @classmethod
+    def show_timezones(cls, deprecated_command_used: bool = False):
         """
         Create and format the embed for Discord
+        :param deprecated_command_used:
+        :return:
         """
 
         fmt_utc = "%H:%M:%S (UTC)\n%A %d. %b %Y"
@@ -67,7 +71,7 @@ class Time(commands.Cog):
                     inline=True,
                 )
 
-        # get default timezones from module
+        # Get default timezones from module
         else:
             configured_timezones = AA_TIMEZONE_DEFAULT_PANELS
 
@@ -86,7 +90,7 @@ class Time(commands.Cog):
                     inline=True,
                 )
 
-        # add url to the timezones module
+        # Add url to the timezones module
         timezones_url = get_site_url() + reverse("timezones:index")
 
         embed.add_field(
@@ -94,6 +98,16 @@ class Time(commands.Cog):
             value=timezones_url,
             inline=False,
         )
+
+        if deprecated_command_used:
+            embed.add_field(
+                name="Deprecation Warning",
+                value=(
+                    "You used the deprecated `!time` command, which will be removed in "
+                    "the foreseeable future. Please use `/time` istead."
+                ),
+                inline=False,
+            )
 
         return embed
 
@@ -103,7 +117,7 @@ class Time(commands.Cog):
         Returns the Eve time and the current time in various time zones
         """
 
-        return await ctx.send(embed=self.show_timezones())
+        return await ctx.send(embed=self.show_timezones(deprecated_command_used=True))
 
     @commands.slash_command(name="time", guild_ids=[int(settings.DISCORD_GUILD_ID)])
     async def time_slash(self, ctx):
@@ -116,11 +130,11 @@ class Time(commands.Cog):
 
 def setup(bot):
     """
-    Setup the cog
+    Set up the cog
     :param bot:
     """
 
-    # Unload the `time` extemsion from `aadiscordbot`, so we can load our own
+    # Unload the `time` extension from `aadiscordbot`, so we can load our own
     if bot.get_cog("Time") is not None:
         bot.remove_cog("Time")
 

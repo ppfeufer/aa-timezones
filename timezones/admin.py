@@ -1,5 +1,5 @@
 """
-admin backend config
+Admin backend config
 """
 
 # Django
@@ -13,7 +13,7 @@ from timezones.models import Timezones
 class TimezonesAdmin(admin.ModelAdmin):
     """
     timezones admin
-    configure timezones that should be displayed
+    Configure timezones that should be displayed
     """
 
     list_display = ("_panel_name", "_timezone", "is_enabled")

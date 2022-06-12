@@ -1,5 +1,5 @@
 """
-app config
+App config
 """
 
 # Django

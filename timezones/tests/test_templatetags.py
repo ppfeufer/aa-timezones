@@ -1,3 +1,7 @@
+"""
+Tests for our template tags
+"""
+
 # Django
 from django.template import Context, Template
 from django.test import TestCase
@@ -7,6 +11,10 @@ from timezones import __version__
 
 
 class TestVersionedStatic(TestCase):
+    """
+    Test versioned static
+    """
+
     def test_versioned_static(self):
         """
         Test versioned static template tag

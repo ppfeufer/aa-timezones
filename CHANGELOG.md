@@ -9,6 +9,17 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [In Development] - Unreleased
 
 
+## [1.10.1] - 2022-06-12
+
+### Added
+
+- Deprecation warning when the `!time` command is used, advising to use `/time` instead
+
+### Fixed
+
+- "Method could be a function" warning
+
+
 ## [1.10.0] - 2022-06-07
 
 ### Added
