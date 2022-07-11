@@ -9,6 +9,18 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [In Development] - Unreleased
 
 
+## [1.11.0] - 2022-06-12
+
+### Fixed
+
+- A Typo :-)
+
+### Changed
+
+- Minimum Requirement:
+  - Alliance Auth >= 2.14.0
+
+
 ## [1.10.1] - 2022-06-12
 
 ### Added
