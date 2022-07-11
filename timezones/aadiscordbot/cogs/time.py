@@ -40,15 +40,30 @@ class Time(commands.Cog):
 
         fmt_utc = "%H:%M:%S (UTC)\n%A %d. %b %Y"
         fmt = "%H:%M:%S (UTC %z)\n%A %d. %b %Y"
+        utc_now = datetime.utcnow()
+        # utc_timestamp = utc_now.strftime("%s")
 
         embed = Embed(title="Time")
         embed.colour = Color.green()
 
+        # embed.add_field(
+        #     name="Your Local Time",
+        #     # value=f"<t:{utc_timestamp}:T>\n<t:{utc_timestamp}:D>",
+        #     value=f"<t:{utc_timestamp}:T>",
+        #     inline=True,
+        # )
+
         embed.add_field(
             name="EVE Time",
-            value=datetime.utcnow().strftime(fmt_utc),
-            inline=False,
+            value=utc_now.strftime(fmt_utc),
+            inline=True,
         )
+
+        # embed.add_field(
+        #     name="\u200b",
+        #     value="\u200b",
+        #     inline=True,
+        # )
 
         configured_timezones = (
             Timezones.objects.select_related("timezone")
@@ -62,11 +77,9 @@ class Time(commands.Cog):
                 embed.add_field(
                     name=configured_timezone.panel_name,
                     value=(
-                        datetime.utcnow()
-                        .astimezone(
+                        utc_now.astimezone(
                             pytz.timezone(configured_timezone.timezone.timezone_name)
-                        )
-                        .strftime(fmt)
+                        ).strftime(fmt)
                     ),
                     inline=True,
                 )
@@ -104,7 +117,7 @@ class Time(commands.Cog):
                 name="Deprecation Warning",
                 value=(
                     "You used the deprecated `!time` command, which will be removed in "
-                    "the foreseeable future. Please use `/time` istead."
+                    "the foreseeable future. Please use `/time` instead."
                 ),
                 inline=False,
             )
