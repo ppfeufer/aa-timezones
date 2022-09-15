@@ -31,7 +31,7 @@ class Time(commands.Cog):
         self.bot = bot
 
     @classmethod
-    def show_timezones(cls, deprecated_command_used: bool = False):
+    def show_timezones(cls, deprecated_command_used: bool = False) -> Embed:
         """
         Create and format the embed for Discord
         :param deprecated_command_used:
@@ -41,17 +41,41 @@ class Time(commands.Cog):
         fmt_utc = "%H:%M:%S (UTC)\n%A %d. %b %Y"
         fmt = "%H:%M:%S (UTC %z)\n%A %d. %b %Y"
         utc_now = datetime.utcnow()
-        # utc_timestamp = utc_now.strftime("%s")
+        utc_timestamp = utc_now.strftime("%s")
 
         embed = Embed(title="Time")
         embed.colour = Color.green()
 
-        # embed.add_field(
-        #     name="Your Local Time",
-        #     # value=f"<t:{utc_timestamp}:T>\n<t:{utc_timestamp}:D>",
-        #     value=f"<t:{utc_timestamp}:T>",
-        #     inline=True,
-        # )
+        def add_empty_field() -> None:
+            """
+            Adding an empty field to the embed
+            :return:
+            """
+
+            embed.add_field(
+                name="\u200b",
+                value="\u200b",
+                inline=True,
+            )
+
+        def add_empty_line() -> None:
+            """
+            Adding an empty line to the embed
+            :return:
+            """
+
+            embed.add_field(
+                name="\u200b",
+                value="\u200b",
+                inline=False,
+            )
+
+        embed.add_field(
+            name="Your Local Time",
+            value=f"<t:{utc_timestamp}:T>\n<t:{utc_timestamp}:D>",
+            # value=f"<t:{utc_timestamp}:T>",
+            inline=True,
+        )
 
         embed.add_field(
             name="EVE Time",
@@ -59,11 +83,8 @@ class Time(commands.Cog):
             inline=True,
         )
 
-        # embed.add_field(
-        #     name="\u200b",
-        #     value="\u200b",
-        #     inline=True,
-        # )
+        add_empty_field()
+        add_empty_line()
 
         configured_timezones = (
             Timezones.objects.select_related("timezone")
@@ -102,6 +123,8 @@ class Time(commands.Cog):
                     ),
                     inline=True,
                 )
+
+        add_empty_line()
 
         # Add url to the timezones module
         timezones_url = get_site_url() + reverse("timezones:index")
