@@ -9,6 +9,20 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [In Development] - Unreleased
 
 
+## [1.12.0] - 2022-09-15
+
+### Added
+
+- Local time to the bot command's output
+
+### Changed
+
+- External JS library updated due to security issue
+- CSS and JS moved to their own bundled templates
+- Minimum Requirement:
+  - Alliance Auth >= 3.0.0
+
+
 ## [1.11.0] - 2022-07-11
 
 ### Fixed
