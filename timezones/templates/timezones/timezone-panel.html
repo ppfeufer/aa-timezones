@@ -16,9 +16,9 @@
     </div>
 
     {% if timezone.timezone.timezone_name %}
-        <script type="application/javascript">
-            if((aaTimezonesPanels instanceof Array) === false) {
-                var aaTimezonesPanels = [];
+        <script>
+            if(!(aaTimezonesPanels instanceof Array)) {
+                const aaTimezonesPanels = [];
             }
 
             aaTimezonesPanels.push({
