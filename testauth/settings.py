@@ -32,6 +32,8 @@ INSTALLED_APPS = [
 
 SECRET_KEY = "wow I'm a really bad default secret key"
 
+PACKAGE_NAME = "timezones"
+
 # Celery configuration
 BROKER_URL = "redis://localhost:6379/0"
 CELERYBEAT_SCHEDULER = "django_celery_beat.schedulers.DatabaseScheduler"
@@ -141,7 +143,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 STATIC_URL = "/static/"
 STATICFILES_DIRS = [
-    os.path.join(PROJECT_DIR, "static"),
+    os.path.join(PROJECT_DIR, f"{PACKAGE_NAME}/static"),
 ]
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
@@ -150,11 +152,8 @@ MESSAGE_TAGS = {messages.ERROR: "danger"}
 
 CACHES = {
     "default": {
-        "BACKEND": "redis_cache.RedisCache",
-        "LOCATION": "localhost:6379",
-        "OPTIONS": {
-            "DB": 1,
-        },
+        "BACKEND": "django_redis.cache.RedisCache",
+        "LOCATION": "redis://127.0.0.1:6379/1",
     }
 }
 
@@ -168,6 +167,8 @@ DATABASES = {
 }
 
 SITE_NAME = "Alliance Auth"
+SITE_URL = "https://example.com"
+CSRF_TRUSTED_ORIGINS = [SITE_URL]
 
 LOGIN_URL = "auth_login_user"  # view that handles login logic
 
