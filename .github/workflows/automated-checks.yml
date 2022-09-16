@@ -152,15 +152,15 @@ jobs:
 #    runs-on: ubuntu-latest
 #
 #    strategy:
-#      # Set Python and Django version to test for the stable release of AllianceAuth
+#      # Set Python and Django version to test for the alpha/beta release of AllianceAuth
 #      matrix:
-#        # Don't forget to change the Python version for [upload-coverage] as well
+#        # Python versions
 #        python-version:
 #          - '3.8'
 #          - '3.9'
 #          - '3.10'
 #          - '3.11-dev'
-#        # Don't forget to change the Django version for [upload-coverage] as well
+#        # Django versions
 #        django-version:
 #          - '4.0'
 #        # MySQL versions to test against

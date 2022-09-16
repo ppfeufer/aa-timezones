@@ -170,6 +170,8 @@ SITE_NAME = "Alliance Auth"
 SITE_URL = "https://example.com"
 CSRF_TRUSTED_ORIGINS = [SITE_URL]
 
+DISCORD_BOT_TOKEN = "My_Dummy_Token"
+
 LOGIN_URL = "auth_login_user"  # view that handles login logic
 
 LOGIN_REDIRECT_URL = "authentication:dashboard"  # default destination when logging in if no redirect specified
@@ -268,10 +270,11 @@ if os.environ.get("USE_MYSQL", True) is True:
         "PORT": os.environ.get("DB_PORT", ""),
         "OPTIONS": {"charset": "utf8mb4"},
         "TEST": {
-            "charset": "utf8mb4",
+            "CHARSET": "utf8mb4",
             "NAME": "test_tox_allianceauth",
         },
     }
+
 
 # Add any additional apps to this list.
 INSTALLED_APPS += ["timezones"]
