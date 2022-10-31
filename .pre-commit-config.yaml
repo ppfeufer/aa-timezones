@@ -13,9 +13,23 @@ repos:
       - id: check-yaml
       - id: fix-byte-order-marker
       - id: trailing-whitespace
-        exclude: \.(min\.css|min\.js|po|mo)|^(timezones/static/timezones/libs/)$
+        exclude: |
+          (?x)(
+            .min\.css|
+            .min\.js|
+            .po|
+            .mo|
+            static/timezones/libs/
+          )
       - id: end-of-file-fixer
-        exclude: \.(min\.css|min\.js|po|mo)|^(timezones/static/timezones/libs/)$
+        exclude: |
+          (?x)(
+            .min\.css|
+            .min\.js|
+            .po|
+            .mo|
+            static/timezones/libs/
+          )
       - id: mixed-line-ending
         args: [ --fix=lf ]
       - id: fix-encoding-pragma
@@ -31,7 +45,13 @@ repos:
     rev: 2.6.1
     hooks:
       - id: editorconfig-checker
-        exclude: ^(LICENSE|timezones/static/timezones/libs/|(.*.po)|(.*.mo))
+        exclude: |
+          (?x)(
+            LICENSE|
+            static/timezones/libs/|
+            .po|
+            .mo
+          )
 
   - repo: https://github.com/pre-commit/pygrep-hooks
     rev: v1.9.0
