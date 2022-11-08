@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
 
 - Code modernization. Using Django decorators in `admin.py`
+- Using `allianceauth-app-utils` to get the absolute URL
 
 
 ## [1.12.0] - 2022-09-15
