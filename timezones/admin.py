@@ -20,25 +20,28 @@ class TimezonesAdmin(admin.ModelAdmin):
     ordering = ("panel_name",)
     list_filter = ("is_enabled",)
 
+    @admin.display(
+        description="Panel Name",
+        ordering="panel_name",
+    )
     @classmethod
     def _panel_name(cls, obj):
         return obj.panel_name
 
-    _panel_name.short_description = "Panel Name"
-    _panel_name.admin_order_field = "panel_name"
-
+    @admin.display(
+        description="Timezone",
+        ordering="timezone__timezone_name",
+    )
     @classmethod
     def _timezone(cls, obj):
         return obj.timezone.timezone_name
-
-    _timezone.short_description = "Timezone"
-    _timezone.admin_order_field = "timezone__timezone_name"
 
     actions = (
         "mark_as_active",
         "mark_as_inactive",
     )
 
+    @admin.action(description="Activate selected timezone(s)")
     def mark_as_active(self, request, queryset):
         """
         Mark fleet type as active
@@ -56,8 +59,7 @@ class TimezonesAdmin(admin.ModelAdmin):
 
         self.message_user(request, f"{notifications_count} timezone(s) activated")
 
-    mark_as_active.short_description = "Activate selected timezone(s)"
-
+    @admin.action(description="Deactivate selected timezone(s)")
     def mark_as_inactive(self, request, queryset):
         """
         Mark fleet type as inactive
@@ -74,5 +76,3 @@ class TimezonesAdmin(admin.ModelAdmin):
             notifications_count += 1
 
         self.message_user(request, f"{notifications_count} timezone(s) deactivated")
-
-    mark_as_inactive.short_description = "Deactivate selected timezone(s)"

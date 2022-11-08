@@ -8,6 +8,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [In Development] - Unreleased
 
+### Changed
+
+- Code modernization. Using Django decorators in `admin.py`
+
 
 ## [1.12.0] - 2022-09-15
 
