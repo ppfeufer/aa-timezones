@@ -139,7 +139,7 @@ jobs:
           DB_PASSWORD: temp_password_aa_tox_tests
 
       - name: Upload Coverage Artifacts
-        if: ${{ github.event_name == 'pull_request' && matrix.python-version == '3.10' && matrix.django-version == '4.0' }}
+        if: ${{ (github.event_name == 'pull_request' || (github.event_name == 'push' && github.ref == 'refs/heads/master')) && matrix.python-version == '3.10' && matrix.django-version == '4.0' }}
         uses: actions/upload-artifact@v3
         with:
           name: coverage-${{ github.event_name }}-${{ github.sha }}
@@ -219,7 +219,7 @@ jobs:
 
   # Coverage upload to Codecov and Codacy
   upload-coverage:
-    if: ${{ github.event_name == 'pull_request' }}
+    if: ${{ github.event_name == 'pull_request' || (github.event_name == 'push' && github.ref == 'refs/heads/master') }}
     needs: [ test-coverage-aa-stable ]
 #    needs: [ test-coverage-aa-stable, test-coverage-aa-dev ]
     name: Upload Coverage
