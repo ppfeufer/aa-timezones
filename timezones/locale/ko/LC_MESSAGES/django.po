@@ -83,7 +83,3 @@ msgstr ""
 #: timezones/templates/timezones/time-until.html:5
 msgid "Time left"
 msgstr ""
-
-#: timezones/templates/timezones/time-until.html:5
-msgid "Time left"
-msgstr ""
