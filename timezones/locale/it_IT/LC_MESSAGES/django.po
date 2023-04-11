@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-17 22:57+0100\n"
+"POT-Creation-Date: 2023-04-11 22:07+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,39 +17,39 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: models.py:28
+#: models.py:32
 msgid "Name of the timezone"
 msgstr ""
 
-#: models.py:35
+#: models.py:39
 msgid "UTC offset of the timezone"
 msgstr ""
 
-#: models.py:42
+#: models.py:46
 msgid "ID of the timezone panel in frontend"
 msgstr ""
 
-#: models.py:53 models.py:54
+#: models.py:57 models.py:58
 msgid "Timezone Data"
 msgstr ""
 
-#: models.py:67
+#: models.py:71
 msgid "Name of the timezone panel"
 msgstr ""
 
-#: models.py:74
+#: models.py:78
 msgid "Selected timezone"
 msgstr ""
 
-#: models.py:79
+#: models.py:83
 msgid "Whether this timezone is enabled or not"
 msgstr ""
 
-#: models.py:90
+#: models.py:94
 msgid "Timezone"
 msgstr ""
 
-#: models.py:91
+#: models.py:95
 msgid "Timezones"
 msgstr ""
 
@@ -73,7 +73,7 @@ msgstr ""
 msgid "in"
 msgstr ""
 
-#: templates/timezones/adjust-time.html:28 templates/timezones/index.html:72
+#: templates/timezones/adjust-time.html:28 templates/timezones/index.html:70
 msgid "Days"
 msgstr ""
 
@@ -94,11 +94,11 @@ msgstr ""
 msgid "at"
 msgstr ""
 
-#: templates/timezones/adjust-time.html:229 templates/timezones/index.html:14
+#: templates/timezones/adjust-time.html:229 templates/timezones/index.html:13
 msgid "Local Time"
 msgstr ""
 
-#: templates/timezones/adjust-time.html:230 templates/timezones/index.html:31
+#: templates/timezones/adjust-time.html:230 templates/timezones/index.html:30
 msgid "EVE Time"
 msgstr ""
 
@@ -158,12 +158,12 @@ msgstr ""
 msgid "Time Zones"
 msgstr ""
 
-#: templates/timezones/index.html:20 templates/timezones/index.html:37
+#: templates/timezones/index.html:19 templates/timezones/index.html:36
 #: templates/timezones/timezone-panel.html:13
 msgid "loading"
 msgstr ""
 
-#: templates/timezones/index.html:73
+#: templates/timezones/index.html:71
 msgid "Already over, you missed it!"
 msgstr ""
 
