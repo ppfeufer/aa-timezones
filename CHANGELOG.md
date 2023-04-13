@@ -9,6 +9,15 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [In Development] - Unreleased
 
 
+## [1.12.1] - 2023-04-13
+
+### Changed
+
+- Code modernization. Using Django decorators in `admin.py`
+- Using `allianceauth-app-utils` to get the absolute URL
+- German translation updated
+
+
 ## [1.12.0] - 2022-09-15
 
 ### Added

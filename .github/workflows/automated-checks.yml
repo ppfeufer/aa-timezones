@@ -23,50 +23,19 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@main
 
       - name: Set up Python
-        uses: actions/setup-python@v3
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
 
       - name: Run Pre Commit Checks
         uses: pre-commit/action@v3.0.0
 
-  # Codacy Security Scan
-  codacy-security-scan:
-    needs: [pre-commit]
-    name: Codacy Security Scan
-    runs-on: ubuntu-latest
-
-    steps:
-      # Checkout the repository to the GitHub Actions runner
-      - name: Checkout
-        uses: actions/checkout@v2
-
-      # Execute Codacy Analysis CLI and generate a SARIF output with the security issues identified during the analysis
-      - name: Run Codacy Analysis CLI
-        uses: codacy/codacy-analysis-cli-action@1.1.0
-        with:
-          # Check https://github.com/codacy/codacy-analysis-cli#project-token to get your project token from your Codacy repository
-          # You can also omit the token and run the tools that support default configurations
-          project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
-          verbose: true
-          output: results.sarif
-          format: sarif
-          # Adjust severity of non-security issues
-          gh-code-scanning-compat: true
-          # Force 0 exit code to allow SARIF file generation
-          # This will hand over control about PR rejection to the GitHub side
-          max-allowed-issues: 2147483647
-
-      # Upload the SARIF file generated in the previous step
-      - name: Upload SARIF results file
-        uses: github/codeql-action/upload-sarif@v2
-        with:
-          sarif_file: results.sarif
-
   # Run Test Coverage
   test-coverage-aa-stable:
-    needs: [ codacy-security-scan ]
+    needs: [pre-commit]
     name: AA Latest (Python ${{ matrix.python-version }}, Django ${{ matrix.django-version }} with ${{ matrix.database }})
     runs-on: ubuntu-latest
 
@@ -78,7 +47,7 @@ jobs:
           - '3.8'
           - '3.9'
           - '3.10'
-          - '3.11-dev'
+          - '3.11'
         # Don't forget to change the Django version for [upload-coverage] as well
         django-version:
           - '4.0'
@@ -94,26 +63,21 @@ jobs:
           - mariadb:10.8
           - mariadb:10.9
 
-    continue-on-error: ${{ matrix.python-version == '3.11-dev' }}
+#    continue-on-error: ${{ matrix.python-version == '3.11-dev' }}
 
     services:
       database:
         image: ${{ matrix.database }}
         env:
-          MYSQL_ROOT_PASSWORD: foobar
+          MYSQL_ROOT_PASSWORD: temp_password_aa_tox_tests
           MYSQL_DATABASE: tox_allianceauth
         ports:
           - 3306:3306
         options: --tmpfs /var/lib/mysql
 
-    env:
-      DB_HOST: 127.0.0.1
-      DB_USER: root
-      DB_PASSWORD: foobar
-
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@main
 
       - name: Install redis
         run: sudo apt-get install -y redis-tools redis-server
@@ -122,7 +86,7 @@ jobs:
         run: redis-cli ping
 
       - name: Setup Python ${{ matrix.python-version }}
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v4
         with:
           python-version: ${{ matrix.python-version }}
 
@@ -137,10 +101,13 @@ jobs:
         env:
           DJANGO: ${{ matrix.django-version }}
           ALLIANCEAUTH: stable
+          DB_HOST: 127.0.0.1
+          DB_USER: root
+          DB_PASSWORD: temp_password_aa_tox_tests
 
       - name: Upload Coverage Artifacts
-        if: ${{ github.event_name == 'pull_request' && matrix.python-version == '3.10' && matrix.django-version == '4.0' }}
-        uses: actions/upload-artifact@v2
+        if: ${{ (github.event_name == 'pull_request' || (github.event_name == 'push' && github.ref == 'refs/heads/master')) && matrix.python-version == '3.10' && matrix.django-version == '4.0' }}
+        uses: actions/upload-artifact@v3
         with:
           name: coverage-${{ github.event_name }}-${{ github.sha }}
           path: coverage.xml
@@ -152,15 +119,15 @@ jobs:
 #    runs-on: ubuntu-latest
 #
 #    strategy:
-#      # Set Python and Django version to test for the stable release of AllianceAuth
+#      # Set Python and Django version to test for the alpha/beta release of AllianceAuth
 #      matrix:
-#        # Don't forget to change the Python version for [upload-coverage] as well
+#        # Python versions
 #        python-version:
 #          - '3.8'
 #          - '3.9'
 #          - '3.10'
-#          - '3.11-dev'
-#        # Don't forget to change the Django version for [upload-coverage] as well
+#          - '3.11'
+#        # Django versions
 #        django-version:
 #          - '4.0'
 #        # MySQL versions to test against
@@ -175,7 +142,7 @@ jobs:
 #          - mariadb:10.8
 #          - mariadb:10.9
 #
-#    continue-on-error: ${{ matrix.python-version == '3.11-dev' }}
+#    continue-on-error: ${{ matrix.python-version == '3.11' }}
 #
 #    services:
 #      database:
@@ -187,15 +154,9 @@ jobs:
 #          - 3306:3306
 #        options: --tmpfs /var/lib/mysql
 #
-#    env:
-#      USE_MYSQL: True
-#      DB_HOST: 127.0.0.1
-#      DB_USER: root
-#      DB_PASSWORD: foobar
-#
 #    steps:
 #      - name: Checkout
-#        uses: actions/checkout@v2
+#        uses: actions/checkout@main
 #
 #      - name: Install redis
 #        run: sudo apt-get install -y redis-tools redis-server
@@ -204,7 +165,7 @@ jobs:
 #        run: redis-cli ping
 #
 #      - name: Setup Python ${{ matrix.python-version }}
-#        uses: actions/setup-python@v2
+#        uses: actions/setup-python@v4
 #        with:
 #          python-version: ${{ matrix.python-version }}
 #
@@ -219,10 +180,13 @@ jobs:
 #        env:
 #          DJANGO: ${{ matrix.django-version }}
 #          ALLIANCEAUTH: testing
+#          DB_HOST: 127.0.0.1
+#          DB_USER: root
+#          DB_PASSWORD: temp_password_aa_tox_tests
 
   # Coverage upload to Codecov and Codacy
   upload-coverage:
-    if: ${{ github.event_name == 'pull_request' }}
+    if: ${{ github.event_name == 'pull_request' || (github.event_name == 'push' && github.ref == 'refs/heads/master') }}
     needs: [ test-coverage-aa-stable ]
 #    needs: [ test-coverage-aa-stable, test-coverage-aa-dev ]
     name: Upload Coverage
@@ -230,10 +194,10 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@main
 
       - name: Download artifacts
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v3
         with:
           path: artifacts
 
@@ -242,7 +206,7 @@ jobs:
         working-directory: artifacts
 
       - name: Upload Coverage to Codecov
-        uses: codecov/codecov-action@v2
+        uses: codecov/codecov-action@v3
         with:
           token: ${{ secrets.CODECOV_TOKEN }} # not required for public repos
           files: artifacts/coverage-${{ github.event_name }}-${{ github.sha }}/coverage.xml # optional
@@ -266,13 +230,12 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@main
 
-      # Minimum supported Python version by AllianceAuth
-      - name: Set up Python 3.8
-        uses: actions/setup-python@v2
+      - name: Set up Python
+        uses: actions/setup-python@v4
         with:
-          python-version: 3.8
+          python-version: '3.8' # Minimum supported Python version by AllianceAuth
 
       - name: Install Tools
         run: |
@@ -287,7 +250,7 @@ jobs:
           python -m build
 
       - name: Upload Build Artifacts
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: build-${{ github.event_name }}-${{ github.sha }}
           path: dist

@@ -1,9 +1,10 @@
 ---
 name: Feature Request
-about: Suggest an idea for AA Time Zones
-title: ''
+about: Suggest an idea
+title: "[Feature Request] "
 labels: ''
 assignees: ''
+
 ---
 
 ### Context

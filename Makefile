@@ -6,7 +6,6 @@ help:
 
 translationfiles:
 	cd $(package) && \
-	django-admin makemessages -l en --ignore 'build/*' && \
 	django-admin makemessages -l de --ignore 'build/*' && \
 	django-admin makemessages -l es --ignore 'build/*' && \
 	django-admin makemessages -l fr_FR --ignore 'build/*' && \
@@ -18,7 +17,6 @@ translationfiles:
 
 compiletranslationfiles:
 	cd $(package) && \
-	django-admin compilemessages -l en  && \
 	django-admin compilemessages -l de  && \
 	django-admin compilemessages -l es  && \
 	django-admin compilemessages -l fr_FR  && \

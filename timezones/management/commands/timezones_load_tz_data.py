@@ -32,50 +32,44 @@ class Command(BaseCommand):
 
     def _import_timezone_data(self) -> None:
         """
-        import time zone data
+        Import time zone data
         :return:
         """
 
         timezones_imported = 0
-        timezones_skipped = 0
+        timezones_updated = 0
 
         for timezone_name in pytz.common_timezones:
             if timezone_name == "UTC":
                 break
 
-            # Check if timezone is already in DB
-            if TimezoneData.objects.filter(timezone_name=timezone_name).exists():
-                self.stdout.write(
-                    f"Timezone '{timezone_name}' already in DB, skipping ..."
-                )
+            timezone_panel_id = timezone_name.replace("/", "-").lower()
+            timezone_utc_offset = datetime.datetime.now(
+                pytz.timezone(timezone_name)
+            ).strftime("%z")
 
-                timezones_skipped += 1
-            else:
-                timezone_utc_offset = (
-                    pytz.timezone(timezone_name)
-                    .localize(datetime.datetime(2011, 1, 1))
-                    .strftime("%z")
-                )
+            timezone, created = TimezoneData.objects.update_or_create(
+                timezone_name=timezone_name,
+                panel_id=timezone_panel_id,
+                defaults={"utc_offset": timezone_utc_offset},
+            )
 
-                timezone_panel_id = timezone_name.replace("/", "-").lower()
-
-                timezonedata = TimezoneData()
-                timezonedata.timezone_name = timezone_name
-                timezonedata.utc_offset = timezone_utc_offset
-                timezonedata.panel_id = timezone_panel_id
-                timezonedata.save()
-
-                self.stdout.write(
-                    f"Importing timezone '{timezone_name}' "
-                    f"with UTC offset of '{timezone_utc_offset}' "
-                    f"and panel ID of '{timezone_panel_id}'"
-                )
-
+            if created:
+                action = "Importing"
                 timezones_imported += 1
+            else:
+                action = "Updating"
+                timezones_updated += 1
+
+            self.stdout.write(
+                f"{action} timezone '{timezone.timezone_name}' "
+                f"with UTC offset of '{timezone.utc_offset}' "
+                f"and panel ID of '{timezone.panel_id}'"
+            )
 
         self.stdout.write(
-            f"Import done with {timezones_imported} new timezones imported "
-            f"and {timezones_skipped} timezones skipped because they were already "
+            f"Import/Update done with {timezones_imported} new timezones imported "
+            f"and {timezones_updated} timezones updated because they were already "
             "in the DB."
         )
 

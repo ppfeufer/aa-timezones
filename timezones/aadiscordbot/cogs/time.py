@@ -8,14 +8,15 @@ from datetime import datetime
 
 # Third Party
 import pytz
-from aadiscordbot.app_settings import get_site_url
 from discord.colour import Color
 from discord.embeds import Embed
 from discord.ext import commands
 
 # Django
 from django.conf import settings
-from django.urls import reverse
+
+# Alliance Auth (External Libs)
+from app_utils.urls import reverse_absolute
 
 # AA Time Zones
 from timezones.constants import AA_TIMEZONE_DEFAULT_PANELS
@@ -127,7 +128,7 @@ class Time(commands.Cog):
         add_empty_line()
 
         # Add url to the timezones module
-        timezones_url = get_site_url() + reverse("timezones:index")
+        timezones_url = reverse_absolute("timezones:index")
 
         embed.add_field(
             name="Timezones Conversion",
