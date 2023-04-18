@@ -14,6 +14,7 @@ translationfiles:
 		-l ja \
 		-l ko_KR \
 		-l ru \
+		-l uk \
 		-l zh_Hans \
 		--keep-pot \
 		--ignore 'build/*'
@@ -28,6 +29,7 @@ compiletranslationfiles:
 		-l ja \
 		-l ko_KR \
 		-l ru \
+		-l uk \
 		-l zh_Hans
 
 graph_models:
