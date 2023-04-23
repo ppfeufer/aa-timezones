@@ -1,18 +1,17 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-#, fuzzy
+# Kristof <kristof@teh.ninja>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-04-19 01:34+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"PO-Revision-Date: 2023-04-20 10:50+0000\n"
+"Last-Translator: Kristof <kristof@teh.ninja>\n"
+"Language-Team: Ukrainian <https://weblate.ppfeufer.de/projects/"
+"alliance-auth-apps/aa-timezones/uk/>\n"
+"Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -21,154 +20,154 @@ msgstr ""
 
 #: models.py:32
 msgid "Name of the timezone"
-msgstr ""
+msgstr "Назва часового поясу"
 
 #: models.py:39
 msgid "UTC offset of the timezone"
-msgstr ""
+msgstr "Зміщення часового поясу за UTC"
 
 #: models.py:46
 msgid "ID of the timezone panel in frontend"
-msgstr ""
+msgstr "Ідентифікатор панелі часових поясів у фронтенді"
 
 #: models.py:57 models.py:58
 msgid "Timezone Data"
-msgstr ""
+msgstr "Дані часового поясу"
 
 #: models.py:71
 msgid "Name of the timezone panel"
-msgstr ""
+msgstr "Назва панелі часового поясу"
 
 #: models.py:78
 msgid "Selected timezone"
-msgstr ""
+msgstr "Обраний часовий пояс"
 
 #: models.py:83
 msgid "Whether this timezone is enabled or not"
-msgstr ""
+msgstr "Незалежно від того, увімкнено цей часовий пояс чи ні"
 
 #: models.py:94
 msgid "Timezone"
-msgstr ""
+msgstr "Часовий пояс"
 
 #: models.py:95
 msgid "Timezones"
-msgstr ""
+msgstr "Часові пояси"
 
 #: templates/timezones/adjust-time.html:5
 msgid "Adjust Time"
-msgstr ""
+msgstr "Налаштувати час"
 
 #: templates/timezones/adjust-time.html:6
 msgid "Remove"
-msgstr ""
+msgstr "Видалити"
 
 #: templates/timezones/adjust-time.html:7
 msgid "Switch to current time"
-msgstr ""
+msgstr "Перейти на поточний час"
 
 #: templates/timezones/adjust-time.html:8
 msgid "Switch to adjusted time"
-msgstr ""
+msgstr "Перейти до налаштованого часу"
 
 #: templates/timezones/adjust-time.html:16
 msgid "in"
-msgstr ""
+msgstr "за"
 
 #: templates/timezones/adjust-time.html:28 templates/timezones/index.html:70
 msgid "Days"
-msgstr ""
+msgstr "Днів"
 
 #: templates/timezones/adjust-time.html:58
 msgid "Hours"
-msgstr ""
+msgstr "Годин"
 
 #: templates/timezones/adjust-time.html:124
 msgid "Minutes"
-msgstr ""
+msgstr "Мінут"
 
 #: templates/timezones/adjust-time.html:128
 #: templates/timezones/adjust-time.html:291
 msgid "Set Time"
-msgstr ""
+msgstr "Встановити час"
 
 #: templates/timezones/adjust-time.html:134
 msgid "at"
-msgstr ""
+msgstr "-"
 
 #: templates/timezones/adjust-time.html:229 templates/timezones/index.html:13
 msgid "Local Time"
-msgstr ""
+msgstr "Місцевий час"
 
 #: templates/timezones/adjust-time.html:230 templates/timezones/index.html:30
 msgid "EVE Time"
-msgstr ""
+msgstr "Час за EVE"
 
 #: templates/timezones/adjust-time.html:237
 msgid "on"
-msgstr ""
+msgstr "о"
 
 #: templates/timezones/adjust-time.html:243
 msgid "January"
-msgstr ""
+msgstr "Січень"
 
 #: templates/timezones/adjust-time.html:244
 msgid "February"
-msgstr ""
+msgstr "Лютий"
 
 #: templates/timezones/adjust-time.html:245
 msgid "March"
-msgstr ""
+msgstr "Березень"
 
 #: templates/timezones/adjust-time.html:246
 msgid "April"
-msgstr ""
+msgstr "Квітень"
 
 #: templates/timezones/adjust-time.html:247
 msgid "May"
-msgstr ""
+msgstr "Травень"
 
 #: templates/timezones/adjust-time.html:248
 msgid "June"
-msgstr ""
+msgstr "Червень"
 
 #: templates/timezones/adjust-time.html:249
 msgid "July"
-msgstr ""
+msgstr "Липень"
 
 #: templates/timezones/adjust-time.html:250
 msgid "August"
-msgstr ""
+msgstr "Серпень"
 
 #: templates/timezones/adjust-time.html:251
 msgid "September"
-msgstr ""
+msgstr "Вересень"
 
 #: templates/timezones/adjust-time.html:252
 msgid "October"
-msgstr ""
+msgstr "Жовтень"
 
 #: templates/timezones/adjust-time.html:253
 msgid "November"
-msgstr ""
+msgstr "Листопад"
 
 #: templates/timezones/adjust-time.html:254
 msgid "December"
-msgstr ""
+msgstr "Грудень"
 
 #: templates/timezones/base.html:5 templates/timezones/base.html:8
 msgid "Time Zones"
-msgstr ""
+msgstr "Часові пояси"
 
 #: templates/timezones/index.html:19 templates/timezones/index.html:36
 #: templates/timezones/timezone-panel.html:13
 msgid "loading"
-msgstr ""
+msgstr "завантаження"
 
 #: templates/timezones/index.html:71
 msgid "Already over, you missed it!"
-msgstr ""
+msgstr "Вже закінчилося, ви все пропустили!"
 
 #: templates/timezones/time-until.html:5
 msgid "Time left"
-msgstr ""
+msgstr "Час, що залишився"
