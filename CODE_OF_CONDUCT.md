@@ -1,5 +1,23 @@
-
 # Contributor Covenant Code of Conduct
+
+---
+
+<!-- TOC -->
+* [Contributor Covenant Code of Conduct](#contributor-covenant-code-of-conduct)
+  * [Our Pledge](#our-pledge)
+  * [Our Standards](#our-standards)
+  * [Enforcement Responsibilities](#enforcement-responsibilities)
+  * [Scope](#scope)
+  * [Enforcement](#enforcement)
+  * [Enforcement Guidelines](#enforcement-guidelines)
+    * [1. Correction](#1-correction)
+    * [2. Warning](#2-warning)
+    * [3. Temporary Ban](#3-temporary-ban)
+    * [4. Permanent Ban](#4-permanent-ban)
+  * [Attribution](#attribution)
+<!-- TOC -->
+
+---
 
 ## Our Pledge
 
@@ -34,7 +52,7 @@ Examples of unacceptable behavior include:
 * Public or private harassment
 * Publishing others' private information, such as a physical or email
   address, without their explicit permission
-* Other conduct which could reasonably be considered inappropriate in a
+* Other conducts which could reasonably be considered inappropriate in a
   professional setting
 
 ## Enforcement Responsibilities
