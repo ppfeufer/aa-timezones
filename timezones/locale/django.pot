@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-19 01:34+0200\n"
+"POT-Creation-Date: 2023-04-23 12:35+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -53,104 +53,100 @@ msgstr ""
 msgid "Timezones"
 msgstr ""
 
-#: templates/timezones/adjust-time.html:5
+#: templates/timezones/adjust-time.html:10
 msgid "Adjust Time"
 msgstr ""
 
-#: templates/timezones/adjust-time.html:6
+#: templates/timezones/adjust-time.html:18
 msgid "Remove"
 msgstr ""
 
-#: templates/timezones/adjust-time.html:7
+#: templates/timezones/adjust-time.html:26
 msgid "Switch to current time"
 msgstr ""
 
-#: templates/timezones/adjust-time.html:8
+#: templates/timezones/adjust-time.html:34
 msgid "Switch to adjusted time"
 msgstr ""
 
-#: templates/timezones/adjust-time.html:16
-msgid "in"
+#: templates/timezones/adjust-time.html:43
+msgid "Set time to be in"
 msgstr ""
 
-#: templates/timezones/adjust-time.html:28 templates/timezones/index.html:70
+#: templates/timezones/adjust-time.html:57 templates/timezones/index.html:70
 msgid "Days"
 msgstr ""
 
-#: templates/timezones/adjust-time.html:58
+#: templates/timezones/adjust-time.html:87
 msgid "Hours"
 msgstr ""
 
-#: templates/timezones/adjust-time.html:124
+#: templates/timezones/adjust-time.html:153
 msgid "Minutes"
 msgstr ""
 
-#: templates/timezones/adjust-time.html:128
-#: templates/timezones/adjust-time.html:291
+#: templates/timezones/adjust-time.html:157
+#: templates/timezones/adjust-time.html:326
 msgid "Set Time"
 msgstr ""
 
-#: templates/timezones/adjust-time.html:134
-msgid "at"
+#: templates/timezones/adjust-time.html:164
+msgid "Set time to be at a specific time and date"
 msgstr ""
 
-#: templates/timezones/adjust-time.html:229 templates/timezones/index.html:13
+#: templates/timezones/adjust-time.html:261 templates/timezones/index.html:13
 msgid "Local Time"
 msgstr ""
 
-#: templates/timezones/adjust-time.html:230 templates/timezones/index.html:30
+#: templates/timezones/adjust-time.html:263 templates/timezones/index.html:30
 msgid "EVE Time"
 msgstr ""
 
-#: templates/timezones/adjust-time.html:237
-msgid "on"
-msgstr ""
-
-#: templates/timezones/adjust-time.html:243
+#: templates/timezones/adjust-time.html:277
 msgid "January"
 msgstr ""
 
-#: templates/timezones/adjust-time.html:244
+#: templates/timezones/adjust-time.html:278
 msgid "February"
 msgstr ""
 
-#: templates/timezones/adjust-time.html:245
+#: templates/timezones/adjust-time.html:279
 msgid "March"
 msgstr ""
 
-#: templates/timezones/adjust-time.html:246
+#: templates/timezones/adjust-time.html:280
 msgid "April"
 msgstr ""
 
-#: templates/timezones/adjust-time.html:247
+#: templates/timezones/adjust-time.html:281
 msgid "May"
 msgstr ""
 
-#: templates/timezones/adjust-time.html:248
+#: templates/timezones/adjust-time.html:282
 msgid "June"
 msgstr ""
 
-#: templates/timezones/adjust-time.html:249
+#: templates/timezones/adjust-time.html:283
 msgid "July"
 msgstr ""
 
-#: templates/timezones/adjust-time.html:250
+#: templates/timezones/adjust-time.html:284
 msgid "August"
 msgstr ""
 
-#: templates/timezones/adjust-time.html:251
+#: templates/timezones/adjust-time.html:285
 msgid "September"
 msgstr ""
 
-#: templates/timezones/adjust-time.html:252
+#: templates/timezones/adjust-time.html:286
 msgid "October"
 msgstr ""
 
-#: templates/timezones/adjust-time.html:253
+#: templates/timezones/adjust-time.html:287
 msgid "November"
 msgstr ""
 
-#: templates/timezones/adjust-time.html:254
+#: templates/timezones/adjust-time.html:288
 msgid "December"
 msgstr ""
 
