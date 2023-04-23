@@ -2,18 +2,47 @@
 
 <!-- // adjust time -->
 <p class="aa-timezones-adjust-time text-right">
-    <button id="btnadjust" class="btn btn-info btn-sm hidden" onclick="showAdjust();">{% translate "Adjust Time" %}</button>
-    <button id="btnclear" class="btn btn-danger btn-sm hidden" onclick="reloadBasePage();">{% translate "Remove" %}</button>
-    <button id="btnshowcurrent" class="btn btn-primary btn-sm hidden" onclick="switchto(0);">{% translate "Switch to current time" %}</button>
-    <button id="btnshowfixed" class="btn btn-primary btn-sm hidden" onclick="switchto(1);">{% translate "Switch to adjusted time" %}</button>
+    <button
+        id="btnadjust"
+        class="btn btn-info btn-sm hidden"
+        onclick="showAdjust();"
+    >
+        {% translate "Adjust Time" %}
+    </button>
+
+    <button
+        id="btnclear"
+        class="btn btn-danger btn-sm hidden"
+        onclick="reloadBasePage();"
+    >
+        {% translate "Remove" %}
+    </button>
+
+    <button
+        id="btnshowcurrent"
+        class="btn btn-primary btn-sm hidden"
+        onclick="switchto(0);"
+    >
+        {% translate "Switch to current time" %}
+    </button>
+
+    <button
+        id="btnshowfixed"
+        class="btn btn-primary btn-sm hidden"
+        onclick="switchto(1);"
+    >
+        {% translate "Switch to adjusted time" %}
+    </button>
 </p>
 
-<div id="adjust" class="hidden eve-online-time-zones-time-adjust">
-    <hr>
-    <span class="pull-right text-right">
-        <form class="form-inline">
-            <div class="form-group">
-                <label>{% translate "in" %}</label>
+<div id="adjust" class="hidden eve-online-time-zones-time-adjust clearfix">
+    <div class="pull-right text-right">
+        <form class="form-inline eve-online-time-zones-time-adjust-form">
+            <div class="form-group form">
+                <div class="text-left eve-online-time-zones-time-adjust-form-header">
+                    {% translate "Set time to be in" %}
+                </div>
+
                 <div class="input-group input-group-sm">
                     <select class="form-control" id="tind">
                         <option>0</option>
@@ -131,7 +160,10 @@
 
         <form class="form-inline">
             <div class="form-group">
-                <label>{% translate "at" %}</label>
+                <div class="text-left eve-online-time-zones-time-adjust-form-header">
+                    {% translate "Set time to be at a specific time and date" %}
+                </div>
+
                 <div class="input-group input-group-sm">
                     <select class="form-control" id="tathour">
                         <option>00</option>
@@ -227,14 +259,16 @@
                 <div class="input-group input-group-sm">
                     <select class="form-control" id="tatzone">
                         <option value="">{% translate "Local Time" %}</option>
-                        <option value="ETC/UTC" selected>{% translate "EVE Time" %}</option>
+                        <option value="ETC/UTC"
+                                selected>{% translate "EVE Time" %}</option>
                         {% for timezone in timezones %}
-                            <option value="{{ timezone.timezone.timezone_name }}">{{ timezone.panel_name }}</option>
+                            <option
+                                value="{{ timezone.timezone.timezone_name }}">{{ timezone.panel_name }}</option>
                         {% endfor %}
                     </select>
                 </div>
 
-                <label>{% translate "on" %}</label>
+                <label> - </label>
                 <div class="input-group input-group-sm">
                     <select class="form-control" id="tatyear">
                     </select>
@@ -288,8 +322,9 @@
                         <option>31</option>
                     </select>
                 </div>
-                <button class="btn btn-info btn-sm" onclick="setdate(jQuery('#tatyear').val() + '-' + jQuery('#tatmonth').val() + '-' + jQuery('#tatday').val() + ' ' + jQuery('#tathour').val() + ':' + jQuery('#tatminute').val(), jQuery('#tatzone').val()); return false;">{% translate "Set Time" %}</button>
+                <button class="btn btn-info btn-sm"
+                        onclick="setdate(jQuery('#tatyear').val() + '-' + jQuery('#tatmonth').val() + '-' + jQuery('#tatday').val() + ' ' + jQuery('#tathour').val() + ':' + jQuery('#tatminute').val(), jQuery('#tatzone').val()); return false;">{% translate "Set Time" %}</button>
             </div>
         </form>
-    </span>
+    </div>
 </div>

@@ -19,4 +19,17 @@
         font-weight: 600;
         font-size: 125%;
     }
+
+    .aa-timezones .eve-online-time-zones-time-adjust {
+        border-top: 1px solid rgb(236 240 241);
+        padding-top: 2rem;
+    }
+
+    .aa-timezones .eve-online-time-zones-time-adjust-form {
+        margin-bottom: 2rem;
+    }
+
+    .aa-timezones .eve-online-time-zones-time-adjust-form-header {
+        font-weight: bold;
+    }
 }

@@ -1,5 +1,17 @@
 # Contributing
 
+---
+
+<!-- TOC -->
+* [Contributing](#contributing)
+  * [Code Formatting](#code-formatting)
+  * [Contributing via pull requests](#contributing-via-pull-requests)
+    * [Test Coverage](#test-coverage)
+  * [Translation](#translation)
+<!-- TOC -->
+
+---
+
 ## Code Formatting
 
 This app is utilizing the [Black](https://black.readthedocs.io/en/stable/the_black_code_style.html)
@@ -17,7 +29,7 @@ You can check if your code to commit adheres to the given style by simply runnin
 pre-commit
 ```
 
-or to check all files:
+Or to check all files:
 ```shell script
 pre-commit run --all-files
 ```
@@ -61,7 +73,7 @@ tox
 
 This app is fully translation-ready and translations are handled via [Weblate]. If
 you like to contribute to the app's translation or simply improve it, feel free to
-register on my [Weblate] site and message me so I can add you to the right group.
+register on my [Weblate] site and message me, so I can add you to the right group.
 
 <!-- Links -->
 [Weblate]: https://weblate.ppfeufer.de/ "Weblate"

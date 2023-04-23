@@ -9,6 +9,19 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [In Development] - Unreleased
 
 
+## [1.13.0] - 2023-04-23
+
+### Added
+
+- Ukrainian translation (for upcoming AA update which adds the Ukrainian language)
+
+### Changed
+
+- German translation updated
+- Russian translation updated
+- Moved the build process to PEP 621 / pyproject.toml
+
+
 ## [1.12.1] - 2023-04-13
 
 ### Changed
@@ -69,7 +82,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
 
 - JS modernized (Part 2)
-- Management command for the initial timezones import optimised
+- Management command for the initial timezones imports optimised
 
 
 ## [1.9.0] - 2022-03-03
@@ -140,7 +153,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Added
 
-- Versioned static files, to break the browser cache on version changes
+- Versioned static files to break the browser cache on version changes
 
 ### Removed
 
@@ -175,14 +188,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Added
 
-- Checked for compatibility with Python 3.9 and Django 3.2
+- Check for compatibility with Python 3.9 and Django 3.2
 
 
 ## [1.3.3] - 2021-06-19
 
 ### Changed
 
-- Minimized the number of SQL queries to improve performance
+- Minimize the number of SQL queries to improve performance
 
 
 ## [1.3.2] - 2021-03-15
@@ -196,8 +209,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Changed
 
-- Moved `AA_TIMEZONE_DEFAULT_PANELS` into its own constants file, so it can also be
-  used by other apps as well.
+- Moved `AA_TIMEZONE_DEFAULT_PANELS` into its own constants file, so it can be used
+  by other apps as well.
 
 
 ## [1.3.0] - 2021-01-12
@@ -252,8 +265,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 
 - German translation to UI
-- Translations for Russian, Spansih, Korean and Chinese prepared, need translators
-  though. So if you wanna help out, [feel free to to so here](https://www.transifex.com/ppfeufer/aa-timezones/dashboard/).
+- Translations for Russian, Spanish, Korean and Chinese prepared, need translators
+  though. So if you want to help out, [feel free to do so here](https://weblate.ppfeufer.de/projects/alliance-auth-apps/aa-timezones/).
 
 
 ## [1.0.0] - 2020-09-13
@@ -261,7 +274,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
 
 - use moment.js provided by AA. No need to provide our own when AA does that for us.
-  If you are concerned about using the coudflare CDN, try using the
+  If you are concerned about using the cloudflare CDN, try using the
   [AA GDPR](https://gitlab.com/soratidus999/aa-gdpr) package
 
 
@@ -269,8 +282,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Fixed
 
-- hours, minutes and seconds now have leading 0 when below 10
-- when countdown is over it no longer counts into negative
+- Hours, minutes and seconds now have a leading 0 when below 10
+- When the countdown is over, it no longer counts into negative
 
 ### Changed
 
@@ -310,8 +323,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Changed
 
-- Button labels to better reflect what they are doing
-- Month numbers into names in Adjust Time section
+- Button labels to better reflect what they're doing
+- Month numbers into names in the Adjust Time section
 - Adjust time buttons are now a bit larger
 - Order of information in the time zone panels
 
@@ -332,7 +345,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
 
 - TZ panels now have their own template
-- Chinese TZ panel now has also Russia / Siberia
+- The Chinese TZ panel now has also Russia / Siberia
 
 
 ## [0.1.1] - 2020-05-14
