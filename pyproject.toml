@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "aa-timezones"
-version = "1.12.1"
+version = "1.13.0"
 description = "Time Zones Overview for Alliance Auth"
 readme = "README.md"
 license = "GPL-3.0"
