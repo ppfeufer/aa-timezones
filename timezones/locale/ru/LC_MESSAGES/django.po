@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-04-23 12:35+0200\n"
-"PO-Revision-Date: 2023-04-23 13:41+0000\n"
+"PO-Revision-Date: 2023-04-23 21:06+0000\n"
 "Last-Translator: Nikolay <nick.postnikov@gmail.com>\n"
 "Language-Team: Russian <https://weblate.ppfeufer.de/projects/"
 "alliance-auth-apps/aa-timezones/ru/>\n"
@@ -37,7 +37,7 @@ msgstr "ID панели часового пояса"
 
 #: models.py:57 models.py:58
 msgid "Timezone Data"
-msgstr "Дата часового пояса"
+msgstr "Данные временной зоны"
 
 #: models.py:71
 msgid "Name of the timezone panel"
@@ -61,7 +61,7 @@ msgstr "Часовые пояса"
 
 #: templates/timezones/adjust-time.html:10
 msgid "Adjust Time"
-msgstr "Задать момент времени"
+msgstr "Скорректировать время"
 
 #: templates/timezones/adjust-time.html:18
 msgid "Remove"
@@ -69,15 +69,15 @@ msgstr "Удалить"
 
 #: templates/timezones/adjust-time.html:26
 msgid "Switch to current time"
-msgstr "Переключиться на текущее время"
+msgstr "Показать текущее время"
 
 #: templates/timezones/adjust-time.html:34
 msgid "Switch to adjusted time"
-msgstr "Переключиться на установленное время"
+msgstr "Показать заданное время"
 
 #: templates/timezones/adjust-time.html:43
 msgid "Set time to be in"
-msgstr "Установить таймер через"
+msgstr "Задать время через"
 
 #: templates/timezones/adjust-time.html:57 templates/timezones/index.html:70
 msgid "Days"
@@ -98,7 +98,7 @@ msgstr "Установить"
 
 #: templates/timezones/adjust-time.html:164
 msgid "Set time to be at a specific time and date"
-msgstr "Установить таймер на указанную дату и время"
+msgstr "Задать указанные время и дату"
 
 #: templates/timezones/adjust-time.html:261 templates/timezones/index.html:13
 msgid "Local Time"
