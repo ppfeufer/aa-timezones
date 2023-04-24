@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-04-23 12:35+0200\n"
-"PO-Revision-Date: 2023-04-23 21:06+0000\n"
+"PO-Revision-Date: 2023-04-24 14:19+0000\n"
 "Last-Translator: Nikolay <nick.postnikov@gmail.com>\n"
 "Language-Team: Russian <https://weblate.ppfeufer.de/projects/"
 "alliance-auth-apps/aa-timezones/ru/>\n"
@@ -37,7 +37,7 @@ msgstr "ID панели часового пояса"
 
 #: models.py:57 models.py:58
 msgid "Timezone Data"
-msgstr "Данные временной зоны"
+msgstr "Данные часового пояса"
 
 #: models.py:71
 msgid "Name of the timezone panel"
@@ -61,7 +61,7 @@ msgstr "Часовые пояса"
 
 #: templates/timezones/adjust-time.html:10
 msgid "Adjust Time"
-msgstr "Скорректировать время"
+msgstr "Задать время"
 
 #: templates/timezones/adjust-time.html:18
 msgid "Remove"
