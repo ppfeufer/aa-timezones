@@ -8,6 +8,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [In Development] - Unreleased
 
+### Change
+
+- Show the date before the time in the panels
+
 
 ## [1.13.0] - 2023-04-23
 
