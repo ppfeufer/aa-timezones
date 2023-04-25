@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Change
 
 - Show the date before the time in the panels
+- JS in the templates modernized
 
 
 ## [1.13.0] - 2023-04-23

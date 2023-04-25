@@ -38,10 +38,8 @@
                     </div>
                 </div>
 
-                <script type="application/javascript">
-                    if(!(aaTimezonesPanels instanceof Array)) {
-                        var aaTimezonesPanels = [];
-                    }
+                <script>
+                    aaTimezonesPanels = (typeof aaTimezonesPanels != 'undefined' && aaTimezonesPanels instanceof Array) ? aaTimezonesPanels : []
 
                     aaTimezonesPanels.push({
                         'timezoneName': 'Etc/UTC',

@@ -17,9 +17,7 @@
 
     {% if timezone.timezone.timezone_name %}
         <script>
-            if(!(aaTimezonesPanels instanceof Array)) {
-                const aaTimezonesPanels = [];
-            }
+            aaTimezonesPanels = (typeof aaTimezonesPanels != 'undefined' && aaTimezonesPanels instanceof Array) ? aaTimezonesPanels : []
 
             aaTimezonesPanels.push({
                 'timezoneName': '{{ timezone.timezone.timezone_name }}',
