@@ -8,10 +8,22 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [In Development] - Unreleased
 
+
+## [1.13.1] - 2023-06-16
+
+### Added
+
+- Screenshots for Weblate
+
 ### Change
 
 - Show the date before the time in the panels
 - JS in the templates modernized
+- Translations updated
+
+### Removed
+
+- Unnecessary template block
 
 
 ## [1.13.0] - 2023-04-23
