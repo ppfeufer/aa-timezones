@@ -34,7 +34,7 @@ App for displaying different time zones with Alliance Auth
 ---
 
 
-![Time Zones](https://raw.githubusercontent.com/ppfeufer/aa-timezones/master/timezones/docs/time-zones.jpg)
+![Time Zones](https://raw.githubusercontent.com/ppfeufer/aa-timezones/master/timezones/docs/screenshots/time-zones.jpg)
 
 
 ## Installation
@@ -127,7 +127,7 @@ You can easily adjust the time that is displayed for all timezones. This is usef
 for reinforcement timers or pre-planned fleets. To do so, click on the "Adjust Time"
 button below the time zone panels, and you will see 2 different ways to set a new time.
 
-![Adjusting Time](https://raw.githubusercontent.com/ppfeufer/aa-timezones/master/timezones/docs/adjust-time.jpg)
+![Adjusting Time](https://raw.githubusercontent.com/ppfeufer/aa-timezones/master/timezones/docs/screenshots/weblate/adjust-time.jpg)
 
 The first one is meant for timers, like reinforcement timers, anchoring timers or
 the like. Its maximum is 7 days, 59 minutes and 59 seconds into the future. That
@@ -149,6 +149,6 @@ the link in your browser, so you can share it with others directly.
 **For this to work, you'll need to have `allianceauth-discordbot` installed, configured
 and running.** ([See this link](https://github.com/pvyParts/allianceauth-discordbot))
 
-| Command            | Effect                                                                                                                                                                                                             |
-|:-------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `!time` or `/time` | Shows the current Eve time and what time it is in the <br/>configured time zones<br>![Discord Bot Response](https://raw.githubusercontent.com/ppfeufer/aa-timezones/master/timezones/docs/discordbot-response.jpg) |
+| Command            | Effect                                                                                                                                                                                                                         |
+|:-------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `!time` or `/time` | Shows the current Eve time and what time it is in the <br/>configured time zones<br>![Discord Bot Response](https://raw.githubusercontent.com/ppfeufer/aa-timezones/master/timezones/docs/screenshots/discordbot-response.jpg) |
