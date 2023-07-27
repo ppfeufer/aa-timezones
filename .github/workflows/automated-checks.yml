@@ -184,7 +184,7 @@ jobs:
 #          DB_USER: root
 #          DB_PASSWORD: temp_password_aa_tox_tests
 
-  # Coverage upload to Codecov and Codacy
+  # Coverage upload to Codecov
   upload-coverage:
     if: ${{ github.event_name == 'pull_request' || (github.event_name == 'push' && github.ref == 'refs/heads/master') }}
     needs: [ test-coverage-aa-stable ]
@@ -214,12 +214,6 @@ jobs:
 #          name: codecov-umbrella # optional
 #          fail_ci_if_error: true # optional (default = false)
           verbose: true # optional (default = false)
-
-      - name: Upload Coverage to Codacy Coverage Reporter
-        uses: codacy/codacy-coverage-reporter-action@v1
-        with:
-          project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
-          coverage-reports: artifacts/coverage-${{ github.event_name }}-${{ github.sha }}/coverage.xml
 
   # Pypi Build Test
   pypi-build-test:

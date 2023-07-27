@@ -5,7 +5,17 @@
 {% block page_title %}{% translate "Time Zones" %}{% endblock %}
 
 {% block content %}
-    <h1 class="page-header text-center">{% translate "Time Zones" %}</h1>
+    <div class="aa-timezones">
+        <div class="aa-timezones-header">
+            <h1 class="page-header text-center">{% translate "Time Zones" %}</h1>
+        </div>
 
-    {% block details %}{% endblock %}
+        <div class="aa-timezones-body">
+            {% block aa_timezones_body %}{% endblock %}
+        </div>
+
+        <div class="aa-timezones-footer">
+            {% include "timezones/partials/footer/app-translation-footer.html" %}
+        </div>
+    </div>
 {% endblock %}
