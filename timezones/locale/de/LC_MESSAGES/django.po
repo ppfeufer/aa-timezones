@@ -11,16 +11,16 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-07-28 00:23+0200\n"
-"PO-Revision-Date: 2023-05-19 23:43+0000\n"
-"Last-Translator: \"H. Peter Pfeufer\" <info@ppfeufer.de>\n"
-"Language-Team: German <https://weblate.ppfeufer.de/projects/alliance-auth-"
-"apps/aa-timezones/de/>\n"
+"PO-Revision-Date: 2023-07-28 22:39+0000\n"
+"Last-Translator: Peter Pfeufer <info@ppfeufer.de>\n"
+"Language-Team: German <https://weblate.ppfeufer.de/projects/"
+"alliance-auth-apps/aa-timezones/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.17\n"
+"X-Generator: Weblate 4.18.2\n"
 
 #: models.py:32
 msgid "Name of the timezone"
@@ -88,7 +88,7 @@ msgstr "Schon vorbei, Du hast alles verpasst!"
 
 #: templates/timezones/partials/footer/app-translation-footer.html:4
 msgid "Join our team of translators!"
-msgstr ""
+msgstr "Tritt unserm Team von Übersetzern bei!"
 
 #: templates/timezones/partials/footer/app-translation-footer.html:7
 #, python-format
@@ -98,6 +98,10 @@ msgid ""
 "improve the existing translation? - %(weblate_link)s\n"
 "        "
 msgstr ""
+"\n"
+"            Du möchtest helfen diese App in Deine Sprache zu übersetzen oder "
+"die bestehende Übersetzung verbessern? - %(weblate_link)s\n"
+"        "
 
 #: templates/timezones/partials/timezones/adjust-time.html:10
 msgid "Adjust Time"
