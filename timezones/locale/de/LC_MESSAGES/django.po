@@ -10,9 +10,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-25 18:26+0200\n"
-"PO-Revision-Date: 2023-05-19 23:43+0000\n"
-"Last-Translator: \"H. Peter Pfeufer\" <info@ppfeufer.de>\n"
+"POT-Creation-Date: 2023-07-28 00:23+0200\n"
+"PO-Revision-Date: 2023-07-28 22:39+0000\n"
+"Last-Translator: Peter Pfeufer <info@ppfeufer.de>\n"
 "Language-Team: German <https://weblate.ppfeufer.de/projects/"
 "alliance-auth-apps/aa-timezones/de/>\n"
 "Language: de\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.17\n"
+"X-Generator: Weblate 4.18.2\n"
 
 #: models.py:32
 msgid "Name of the timezone"
@@ -58,116 +58,136 @@ msgstr "Zeitzone"
 msgid "Timezones"
 msgstr "Zeitzonen"
 
-#: templates/timezones/adjust-time.html:10
-msgid "Adjust Time"
-msgstr "Zeit anpassen"
-
-#: templates/timezones/adjust-time.html:18
-msgid "Remove"
-msgstr "Entfernen"
-
-#: templates/timezones/adjust-time.html:26
-msgid "Switch to current time"
-msgstr "Zur aktuellen Zeit wechseln"
-
-#: templates/timezones/adjust-time.html:34
-msgid "Switch to adjusted time"
-msgstr "Zur angepassten Zeit wechseln"
-
-#: templates/timezones/adjust-time.html:43
-msgid "Set time to be in"
-msgstr "Setze Zeit in"
-
-#: templates/timezones/adjust-time.html:57 templates/timezones/index.html:68
-msgid "Days"
-msgstr "Tage"
-
-#: templates/timezones/adjust-time.html:87
-msgid "Hours"
-msgstr "Stunden"
-
-#: templates/timezones/adjust-time.html:153
-msgid "Minutes"
-msgstr "Minuten"
-
-#: templates/timezones/adjust-time.html:157
-#: templates/timezones/adjust-time.html:338
-msgid "Set Time"
-msgstr "Zeit setzen"
-
-#: templates/timezones/adjust-time.html:164
-msgid "Set time to be at a specific time and date"
-msgstr "Setze Zeit und Datum"
-
-#: templates/timezones/adjust-time.html:263 templates/timezones/index.html:13
-msgid "Local Time"
-msgstr "Ortszeit"
-
-#: templates/timezones/adjust-time.html:265 templates/timezones/index.html:30
-msgid "EVE Time"
-msgstr "EVE Zeit"
-
-#: templates/timezones/adjust-time.html:283
-msgid "January"
-msgstr "Januar"
-
-#: templates/timezones/adjust-time.html:284
-msgid "February"
-msgstr "Februar"
-
-#: templates/timezones/adjust-time.html:285
-msgid "March"
-msgstr "März"
-
-#: templates/timezones/adjust-time.html:286
-msgid "April"
-msgstr "April"
-
-#: templates/timezones/adjust-time.html:287
-msgid "May"
-msgstr "Mai"
-
-#: templates/timezones/adjust-time.html:288
-msgid "June"
-msgstr "Juni"
-
-#: templates/timezones/adjust-time.html:289
-msgid "July"
-msgstr "Juli"
-
-#: templates/timezones/adjust-time.html:290
-msgid "August"
-msgstr "August"
-
-#: templates/timezones/adjust-time.html:291
-msgid "September"
-msgstr "September"
-
-#: templates/timezones/adjust-time.html:292
-msgid "October"
-msgstr "Oktober"
-
-#: templates/timezones/adjust-time.html:293
-msgid "November"
-msgstr "November"
-
-#: templates/timezones/adjust-time.html:294
-msgid "December"
-msgstr "Dezember"
-
-#: templates/timezones/base.html:5 templates/timezones/base.html:8
+#: templates/timezones/base.html:5 templates/timezones/base.html:10
 msgid "Time Zones"
 msgstr "Zeitzonen"
 
-#: templates/timezones/index.html:18 templates/timezones/index.html:35
-#: templates/timezones/timezone-panel.html:12
+#: templates/timezones/index.html:12
+#: templates/timezones/partials/timezones/adjust-time.html:263
+msgid "Local Time"
+msgstr "Ortszeit"
+
+#: templates/timezones/index.html:17 templates/timezones/index.html:34
+#: templates/timezones/partials/timezones/timezone-panel.html:12
 msgid "loading"
 msgstr "lade"
 
-#: templates/timezones/index.html:69
+#: templates/timezones/index.html:29
+#: templates/timezones/partials/timezones/adjust-time.html:265
+msgid "EVE Time"
+msgstr "EVE Zeit"
+
+#: templates/timezones/index.html:67
+#: templates/timezones/partials/timezones/adjust-time.html:57
+msgid "Days"
+msgstr "Tage"
+
+#: templates/timezones/index.html:68
 msgid "Already over, you missed it!"
 msgstr "Schon vorbei, Du hast alles verpasst!"
 
-#: templates/timezones/time-until.html:5
+#: templates/timezones/partials/footer/app-translation-footer.html:4
+msgid "Join our team of translators!"
+msgstr "Tritt unserm Team von Übersetzern bei!"
+
+#: templates/timezones/partials/footer/app-translation-footer.html:7
+#, python-format
+msgid ""
+"\n"
+"            Do you want to help translate this app into your language or "
+"improve the existing translation? - %(weblate_link)s\n"
+"        "
+msgstr ""
+"\n"
+"            Du möchtest helfen diese App in Deine Sprache zu übersetzen oder "
+"die bestehende Übersetzung verbessern? - %(weblate_link)s\n"
+"        "
+
+#: templates/timezones/partials/timezones/adjust-time.html:10
+msgid "Adjust Time"
+msgstr "Zeit anpassen"
+
+#: templates/timezones/partials/timezones/adjust-time.html:18
+msgid "Remove"
+msgstr "Entfernen"
+
+#: templates/timezones/partials/timezones/adjust-time.html:26
+msgid "Switch to current time"
+msgstr "Zur aktuellen Zeit wechseln"
+
+#: templates/timezones/partials/timezones/adjust-time.html:34
+msgid "Switch to adjusted time"
+msgstr "Zur angepassten Zeit wechseln"
+
+#: templates/timezones/partials/timezones/adjust-time.html:43
+msgid "Set time to be in"
+msgstr "Setze Zeit in"
+
+#: templates/timezones/partials/timezones/adjust-time.html:87
+msgid "Hours"
+msgstr "Stunden"
+
+#: templates/timezones/partials/timezones/adjust-time.html:153
+msgid "Minutes"
+msgstr "Minuten"
+
+#: templates/timezones/partials/timezones/adjust-time.html:157
+#: templates/timezones/partials/timezones/adjust-time.html:338
+msgid "Set Time"
+msgstr "Zeit setzen"
+
+#: templates/timezones/partials/timezones/adjust-time.html:164
+msgid "Set time to be at a specific time and date"
+msgstr "Setze Zeit und Datum"
+
+#: templates/timezones/partials/timezones/adjust-time.html:283
+msgid "January"
+msgstr "Januar"
+
+#: templates/timezones/partials/timezones/adjust-time.html:284
+msgid "February"
+msgstr "Februar"
+
+#: templates/timezones/partials/timezones/adjust-time.html:285
+msgid "March"
+msgstr "März"
+
+#: templates/timezones/partials/timezones/adjust-time.html:286
+msgid "April"
+msgstr "April"
+
+#: templates/timezones/partials/timezones/adjust-time.html:287
+msgid "May"
+msgstr "Mai"
+
+#: templates/timezones/partials/timezones/adjust-time.html:288
+msgid "June"
+msgstr "Juni"
+
+#: templates/timezones/partials/timezones/adjust-time.html:289
+msgid "July"
+msgstr "Juli"
+
+#: templates/timezones/partials/timezones/adjust-time.html:290
+msgid "August"
+msgstr "August"
+
+#: templates/timezones/partials/timezones/adjust-time.html:291
+msgid "September"
+msgstr "September"
+
+#: templates/timezones/partials/timezones/adjust-time.html:292
+msgid "October"
+msgstr "Oktober"
+
+#: templates/timezones/partials/timezones/adjust-time.html:293
+msgid "November"
+msgstr "November"
+
+#: templates/timezones/partials/timezones/adjust-time.html:294
+msgid "December"
+msgstr "Dezember"
+
+#: templates/timezones/partials/timezones/time-until.html:5
 msgid "Time left"
 msgstr "Verbleibend"

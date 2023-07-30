@@ -7,12 +7,33 @@ repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.4.0
     hooks:
-      - id: check-case-conflict
-      - id: check-json
-      - id: check-xml
+      # Identify invalid files
+      - id: check-ast
       - id: check-yaml
+      - id: check-json
+      - id: check-toml
+      - id: check-xml
+
+      # git checks
+      - id: check-merge-conflict
+      - id: check-added-large-files
+        args: [ --maxkb=1000 ]
+      - id: detect-private-key
+      - id: check-case-conflict
+
+      # Python checks
+      - id: check-docstring-first
+      - id: debug-statements
+      - id: requirements-txt-fixer
+      - id: fix-encoding-pragma
+        args: [ --remove ]
       - id: fix-byte-order-marker
+
+      # General quality checks
+      - id: mixed-line-ending
+        args: [ --fix=lf ]
       - id: trailing-whitespace
+        args: [ --markdown-linebreak-ext=md ]
         exclude: |
           (?x)(
             .min\.css|
@@ -21,6 +42,7 @@ repos:
             .mo|
             static/timezones/libs/
           )
+      - id: check-executables-have-shebangs
       - id: end-of-file-fixer
         exclude: |
           (?x)(
@@ -30,19 +52,9 @@ repos:
             .mo|
             static/timezones/libs/
           )
-      - id: mixed-line-ending
-        args: [ --fix=lf ]
-      - id: fix-encoding-pragma
-        args: [ --remove ]
-      - id: detect-private-key
-      - id: check-added-large-files
-        args: [ --maxkb=1000 ]
-      - id: check-ast  # Is it valid Python?
-      - id: debug-statements  # Check for debugger imports and py37+ breakpoint() calls
-      - id: check-merge-conflict
 
   - repo: https://github.com/editorconfig-checker/editorconfig-checker.python
-    rev: 2.7.1
+    rev: 2.7.2
     hooks:
       - id: editorconfig-checker
         exclude: |
@@ -62,13 +74,13 @@ repos:
       - id: text-unicode-replacement-char
 
   - repo: https://github.com/adamchainz/django-upgrade
-    rev: 1.12.0
+    rev: 1.14.0
     hooks:
       - id: django-upgrade
         args: [ --target-version=4.0 ]
 
   - repo: https://github.com/asottile/pyupgrade
-    rev: v3.3.1
+    rev: v3.9.0
     hooks:
       - id: pyupgrade
         args: [ --py38-plus ]
@@ -79,7 +91,7 @@ repos:
       - id: flake8
 
   - repo: https://github.com/asottile/yesqa
-    rev: v1.4.0
+    rev: v1.5.0
     hooks:
       - id: yesqa
 
@@ -89,14 +101,14 @@ repos:
       - id: isort
 
   - repo: https://github.com/psf/black
-    rev: 22.12.0
+    rev: 23.7.0
     hooks:
       - id: black
         args: [ --target-version=py38 ]
 
   - repo: https://github.com/asottile/blacken-docs
-    rev: 1.13.0
+    rev: 1.15.0
     hooks:
       - id: blacken-docs
-        additional_dependencies: [ black==22.12.0 ]
+        additional_dependencies: [ black==23.7.0 ]
         args: [ --target-version=py38 ]
