@@ -11,17 +11,17 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-07-28 00:23+0200\n"
-"PO-Revision-Date: 2023-04-24 14:19+0000\n"
+"PO-Revision-Date: 2023-07-29 23:45+0000\n"
 "Last-Translator: Nikolay <nick.postnikov@gmail.com>\n"
-"Language-Team: Russian <https://weblate.ppfeufer.de/projects/alliance-auth-"
-"apps/aa-timezones/ru/>\n"
+"Language-Team: Russian <https://weblate.ppfeufer.de/projects/"
+"alliance-auth-apps/aa-timezones/ru/>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=n==1 ? 3 : (n%10==1 && n%100!=11 ? 0 : "
 "n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 4.17\n"
+"X-Generator: Weblate 4.18.2\n"
 
 #: models.py:32
 msgid "Name of the timezone"
@@ -89,7 +89,7 @@ msgstr "Поздно, установленное время уже в прошл
 
 #: templates/timezones/partials/footer/app-translation-footer.html:4
 msgid "Join our team of translators!"
-msgstr ""
+msgstr "Присоединяйтесь к нашей команде переводчиков!"
 
 #: templates/timezones/partials/footer/app-translation-footer.html:7
 #, python-format
@@ -99,6 +99,10 @@ msgid ""
 "improve the existing translation? - %(weblate_link)s\n"
 "        "
 msgstr ""
+"\n"
+"            Вы хотите помочь перевести это приложение на ваш язык или "
+"улучшить текущий перевод? - %(weblate_link)s\n"
+"        "
 
 #: templates/timezones/partials/timezones/adjust-time.html:10
 msgid "Adjust Time"
