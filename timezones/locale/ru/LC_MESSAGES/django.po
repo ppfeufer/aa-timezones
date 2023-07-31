@@ -2,6 +2,7 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # Nikolay <nick.postnikov@gmail.com>, 2023.
+# Peter Pfeufer <info@ppfeufer.de>, 2023.
 #
 # Translators:
 # Николай Постников, 2021
@@ -11,10 +12,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-07-30 18:56+0200\n"
-"PO-Revision-Date: 2023-07-29 23:45+0000\n"
-"Last-Translator: Nikolay <nick.postnikov@gmail.com>\n"
-"Language-Team: Russian <https://weblate.ppfeufer.de/projects/alliance-auth-"
-"apps/aa-timezones/ru/>\n"
+"PO-Revision-Date: 2023-07-31 17:40+0000\n"
+"Last-Translator: Peter Pfeufer <info@ppfeufer.de>\n"
+"Language-Team: Russian <https://weblate.ppfeufer.de/projects/"
+"alliance-auth-apps/aa-timezones/ru/>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -88,20 +89,12 @@ msgid "Already over, you missed it!"
 msgstr "Поздно, установленное время уже в прошлом!"
 
 #: templates/timezones/partials/footer/app-translation-footer.html:5
-#, fuzzy
-#| msgid ""
-#| "\n"
-#| "            Do you want to help translate this app into your language or "
-#| "improve the existing translation? - %(weblate_link)s\n"
-#| "        "
 msgid ""
 "Do you want to help translate this app into your language or improve the "
 "existing translation?"
 msgstr ""
-"\n"
-"            Вы хотите помочь перевести это приложение на ваш язык или "
-"улучшить текущий перевод? - %(weblate_link)s\n"
-"        "
+"Вы хотите помочь перевести это приложение на ваш язык или улучшить текущий "
+"перевод?"
 
 #: templates/timezones/partials/footer/app-translation-footer.html:8
 msgid "Join our team of translators!"
