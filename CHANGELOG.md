@@ -8,6 +8,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [In Development] - Unreleased
 
+### Change
+
+- Move helper functions out of the class
+
 
 ## [1.13.2] - 2023-07-30
 

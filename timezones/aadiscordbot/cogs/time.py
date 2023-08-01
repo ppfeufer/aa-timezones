@@ -23,6 +23,40 @@ from timezones.constants import AA_TIMEZONE_DEFAULT_PANELS
 from timezones.models import Timezones
 
 
+def add_empty_field(embed: Embed) -> None:
+    """
+    Adding an empty field to the embed
+
+    :param embed:
+    :type embed:
+    :return:
+    :rtype:
+    """
+
+    embed.add_field(
+        name="\u200b",
+        value="\u200b",
+        inline=True,
+    )
+
+
+def add_empty_line(embed: Embed) -> None:
+    """
+    Adding an empty line to the embed
+
+    :param embed:
+    :type embed:
+    :return:
+    :rtype:
+    """
+
+    embed.add_field(
+        name="\u200b",
+        value="\u200b",
+        inline=False,
+    )
+
+
 class Time(commands.Cog):
     """
     A series of Time tools
@@ -47,30 +81,6 @@ class Time(commands.Cog):
         embed = Embed(title="Time")
         embed.colour = Color.green()
 
-        def add_empty_field() -> None:
-            """
-            Adding an empty field to the embed
-            :return:
-            """
-
-            embed.add_field(
-                name="\u200b",
-                value="\u200b",
-                inline=True,
-            )
-
-        def add_empty_line() -> None:
-            """
-            Adding an empty line to the embed
-            :return:
-            """
-
-            embed.add_field(
-                name="\u200b",
-                value="\u200b",
-                inline=False,
-            )
-
         embed.add_field(
             name="Your Local Time",
             value=f"<t:{utc_timestamp}:T>\n<t:{utc_timestamp}:D>",
@@ -84,8 +94,8 @@ class Time(commands.Cog):
             inline=True,
         )
 
-        add_empty_field()
-        add_empty_line()
+        add_empty_field(embed=embed)
+        add_empty_line(embed=embed)
 
         configured_timezones = (
             Timezones.objects.select_related("timezone")
@@ -125,7 +135,7 @@ class Time(commands.Cog):
                     inline=True,
                 )
 
-        add_empty_line()
+        add_empty_line(embed=embed)
 
         # Add url to the timezones module
         timezones_url = reverse_absolute("timezones:index")
