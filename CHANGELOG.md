@@ -10,7 +10,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Change
 
-- Move helper functions out of the class
+- Moved helper functions out of the class
+
+### Removed
+
+- Deprecated `!time` command, use `/time` instead
 
 
 ## [1.13.2] - 2023-07-30

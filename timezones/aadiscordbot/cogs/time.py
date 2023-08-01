@@ -66,11 +66,12 @@ class Time(commands.Cog):
         self.bot = bot
 
     @classmethod
-    def show_timezones(cls, deprecated_command_used: bool = False) -> Embed:
+    def show_timezones(cls) -> Embed:
         """
         Create and format the embed for Discord
-        :param deprecated_command_used:
+
         :return:
+        :rtype:
         """
 
         fmt_utc = "%H:%M:%S (UTC)\n%A %d. %b %Y"
@@ -84,7 +85,6 @@ class Time(commands.Cog):
         embed.add_field(
             name="Your Local Time",
             value=f"<t:{utc_timestamp}:T>\n<t:{utc_timestamp}:D>",
-            # value=f"<t:{utc_timestamp}:T>",
             inline=True,
         )
 
@@ -146,30 +146,17 @@ class Time(commands.Cog):
             inline=False,
         )
 
-        if deprecated_command_used:
-            embed.add_field(
-                name="Deprecation Warning",
-                value=(
-                    "You used the deprecated `!time` command, which will be removed in "
-                    "the foreseeable future. Please use `/time` instead."
-                ),
-                inline=False,
-            )
-
         return embed
 
-    @commands.command(pass_context=True)
+    @commands.slash_command(name="time", guild_ids=[int(settings.DISCORD_GUILD_ID)])
     async def time(self, ctx):
         """
         Returns the Eve time and the current time in various time zones
-        """
 
-        return await ctx.send(embed=self.show_timezones(deprecated_command_used=True))
-
-    @commands.slash_command(name="time", guild_ids=[int(settings.DISCORD_GUILD_ID)])
-    async def time_slash(self, ctx):
-        """
-        Returns the Eve time and the current time in various time zones
+        :param ctx:
+        :type ctx:
+        :return:
+        :rtype:
         """
 
         return await ctx.respond(embed=self.show_timezones())
