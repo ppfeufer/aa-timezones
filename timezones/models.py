@@ -7,22 +7,6 @@ from django.db import models
 from django.utils.translation import gettext_lazy as _
 
 
-# Create your models here.
-class AaTimezones(models.Model):
-    """
-    Meta model for app permissions
-    """
-
-    class Meta:  # pylint: disable=too-few-public-methods
-        """
-        AaTimezones :: Meta
-        """
-
-        managed = False
-        default_permissions = ()
-        permissions = (("basic_access", "Can access this app"),)
-
-
 class TimezoneData(models.Model):
     """
     Available timezones imported from pytz

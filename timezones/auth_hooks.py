@@ -59,7 +59,12 @@ def register_urls():
     :return:
     """
 
-    return UrlHook(urls, "timezones", r"^timezones/")
+    return UrlHook(
+        urls=urls,
+        namespace="timezones",
+        base_url=r"^timezones/",
+        excluded_views=["timezones.views.index"],
+    )
 
 
 # Only register the cog when aadiscordbot is installed
