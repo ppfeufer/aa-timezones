@@ -87,7 +87,7 @@ python manage.py timezones_load_tz_data
 This app supports AA's feature of public views, since time zones conversion is not
 any mission-critical information. To allow user to view the time zone conversion page
 without the need to log in, please add `"timezones",` to the list of
-`APPS_WITH_PUBLIC_VIEWS` your `local.py`:
+`APPS_WITH_PUBLIC_VIEWS` in your `local.py`:
 
 ```python
 # By default, apps are prevented from having public views for security reasons.
