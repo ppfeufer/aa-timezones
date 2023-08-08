@@ -28,12 +28,8 @@ class TestAccess(TestCase):
 
         cls.group = Group.objects.create(name="Superhero")
 
-        # User cannot access timezones
-        cls.user_1001 = create_fake_user(1001, "Peter Parker")
-
-        # User can access timezones
         cls.user_1002 = create_fake_user(
-            1002, "Bruce Wayne", permissions=["timezones.basic_access"]
+            character_id=1002, character_name="Bruce Wayne"
         )
 
     def test_default_timezones(self):

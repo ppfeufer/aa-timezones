@@ -278,6 +278,9 @@ if os.environ.get("USE_MYSQL", True) is True:
 
 # Add any additional apps to this list.
 INSTALLED_APPS += ["timezones"]
+APPS_WITH_PUBLIC_VIEWS = [
+    "timezones",  # https://github.com/ppfeufer/aa-timezones
+]
 
 # Register an application at https://developers.eveonline.com for Authentication
 # & API Access and fill out these settings. Be sure to set the callback URL

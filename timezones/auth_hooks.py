@@ -26,7 +26,7 @@ class AaTimezonesMenuItem(MenuItemHook):  # pylint: disable=too-few-public-metho
             _(__title__),
             "far fa-clock fa-fw",
             "timezones:index",
-            navactive=["timezones:index"],
+            navactive=["timezones:"],
         )
 
     def render(self, request):
@@ -36,10 +36,7 @@ class AaTimezonesMenuItem(MenuItemHook):  # pylint: disable=too-few-public-metho
         :return:
         """
 
-        if request.user.has_perm("timezones.basic_access"):
-            return MenuItemHook.render(self, request)
-
-        return ""
+        return MenuItemHook.render(self, request)
 
 
 @hooks.register("menu_item_hook")
