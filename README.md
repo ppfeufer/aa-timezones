@@ -165,6 +165,6 @@ the link in your browser, so you can share it with others directly.
 **For this to work, you'll need to have `allianceauth-discordbot` installed, configured
 and running.** ([See this link](https://github.com/pvyParts/allianceauth-discordbot))
 
-| Command            | Effect                                                                                                                                                                                                                         |
-|:-------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `!time` or `/time` | Shows the current Eve time and what time it is in the <br/>configured time zones<br>![Discord Bot Response](https://raw.githubusercontent.com/ppfeufer/aa-timezones/master/timezones/docs/screenshots/discordbot-response.jpg) |
+| Command  | Effect                                                                                                                                                                                                                         |
+|:---------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `/time`  | Shows the current Eve time and what time it is in the <br/>configured time zones<br>![Discord Bot Response](https://raw.githubusercontent.com/ppfeufer/aa-timezones/master/timezones/docs/screenshots/discordbot-response.jpg) |
