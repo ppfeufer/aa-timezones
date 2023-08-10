@@ -35,7 +35,7 @@ classifiers = [
     "Topic :: Internet :: WWW/HTTP :: Dynamic Content",
 ]
 dependencies = [
-    "allianceauth>=3.6.0",
+    "allianceauth>=3.6.1",
     "allianceauth-app-utils>=1.14.1",
     "pytz!=2022.2",
 ]
