@@ -11,6 +11,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [1.14.0] - 2023-08-10
 
+> **Warning**
+>
+> The update makes use of a feature introduced in Allianceauth v3.6.1, meaning this
+> update will pull in Allianceauth v3.6.1 unsupervised. Please make sure to update
+> Allianceauth to this version beforehand to avoid any complications.
+
 ### Added
 
 - Support public views (see [README])
