@@ -2,6 +2,7 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # Nikolay <nick.postnikov@gmail.com>, 2023.
+# Peter Pfeufer <info@ppfeufer.de>, 2023.
 #
 # Translators:
 # Николай Постников, 2021
@@ -10,11 +11,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-28 00:23+0200\n"
-"PO-Revision-Date: 2023-07-29 23:45+0000\n"
-"Last-Translator: Nikolay <nick.postnikov@gmail.com>\n"
-"Language-Team: Russian <https://weblate.ppfeufer.de/projects/"
-"alliance-auth-apps/aa-timezones/ru/>\n"
+"POT-Creation-Date: 2023-08-10 09:17+0200\n"
+"PO-Revision-Date: 2023-07-31 17:40+0000\n"
+"Last-Translator: Peter Pfeufer <info@ppfeufer.de>\n"
+"Language-Team: Russian <https://weblate.ppfeufer.de/projects/alliance-auth-"
+"apps/aa-timezones/ru/>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -23,39 +24,39 @@ msgstr ""
 "n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Generator: Weblate 4.18.2\n"
 
-#: models.py:32
+#: models.py:16
 msgid "Name of the timezone"
 msgstr "Название часового пояса"
 
-#: models.py:39
+#: models.py:23
 msgid "UTC offset of the timezone"
 msgstr "Смещение часового пояса от UTC"
 
-#: models.py:46
+#: models.py:30
 msgid "ID of the timezone panel in frontend"
 msgstr "ID панели часового пояса"
 
-#: models.py:57 models.py:58
+#: models.py:41 models.py:42
 msgid "Timezone Data"
 msgstr "Данные часового пояса"
 
-#: models.py:71
+#: models.py:55
 msgid "Name of the timezone panel"
 msgstr "Название панели часового пояса"
 
-#: models.py:78
+#: models.py:62
 msgid "Selected timezone"
 msgstr "Выбранный часовой пояс"
 
-#: models.py:83
+#: models.py:67
 msgid "Whether this timezone is enabled or not"
 msgstr "Активен или нет данный часовой пояс"
 
-#: models.py:94
+#: models.py:78
 msgid "Timezone"
 msgstr "Часовой пояс"
 
-#: models.py:95
+#: models.py:79
 msgid "Timezones"
 msgstr "Часовые пояса"
 
@@ -87,22 +88,17 @@ msgstr "дней"
 msgid "Already over, you missed it!"
 msgstr "Поздно, установленное время уже в прошлом!"
 
-#: templates/timezones/partials/footer/app-translation-footer.html:4
+#: templates/timezones/partials/footer/app-translation-footer.html:5
+msgid ""
+"Do you want to help translate this app into your language or improve the "
+"existing translation?"
+msgstr ""
+"Вы хотите помочь перевести это приложение на ваш язык или улучшить текущий "
+"перевод?"
+
+#: templates/timezones/partials/footer/app-translation-footer.html:8
 msgid "Join our team of translators!"
 msgstr "Присоединяйтесь к нашей команде переводчиков!"
-
-#: templates/timezones/partials/footer/app-translation-footer.html:7
-#, python-format
-msgid ""
-"\n"
-"            Do you want to help translate this app into your language or "
-"improve the existing translation? - %(weblate_link)s\n"
-"        "
-msgstr ""
-"\n"
-"            Вы хотите помочь перевести это приложение на ваш язык или "
-"улучшить текущий перевод? - %(weblate_link)s\n"
-"        "
 
 #: templates/timezones/partials/timezones/adjust-time.html:10
 msgid "Adjust Time"

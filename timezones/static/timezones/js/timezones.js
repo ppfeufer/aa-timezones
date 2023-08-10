@@ -5,9 +5,9 @@ let clockTickId = 0;
 let countdownIntervalId = 0;
 
 /**
- * Show the time adjust section
+ * Show the "time adjust" section
  */
-const showAdjust = () => {
+const showAdjust = () => { // eslint-disable-line no-unused-vars
     'use strict';
 
     jQuery('#btnadjust').addClass('hidden');
@@ -25,11 +25,15 @@ const showAdjust = () => {
 /**
  * Set time for in x day, y hours, z minutes
  */
-const reloadToTimestamp = () => {
+const reloadToTimestamp = () => { // eslint-disable-line no-unused-vars
     'use strict';
 
     const timestamp = (
-        new Date().getTime() / 1000 + jQuery('#tind').val() * 24 * 60 * 60 + jQuery('#tinh').val() * 60 * 60 + jQuery('#tinm').val() * 60
+        new Date()
+            .getTime() / 1000 + jQuery('#tind')
+            .val() * 24 * 60 * 60 + jQuery('#tinh')
+            .val() * 60 * 60 + jQuery('#tinm')
+            .val() * 60
     );
 
     window.location.replace(aaTimezonesOptions.base_url + timestamp);
@@ -38,7 +42,7 @@ const reloadToTimestamp = () => {
 /**
  * Reload to base page
  */
-const reloadBasePage = () => {
+const reloadBasePage = () => { // eslint-disable-line no-unused-vars
     'use strict';
 
     window.location.replace(aaTimezonesOptions.base_url);
@@ -50,7 +54,7 @@ const reloadBasePage = () => {
  * @param {string} str
  * @param {string} tz
  */
-const setdate = (str, tz) => {
+const setdate = (str, tz) => { // eslint-disable-line no-unused-vars
     'use strict';
 
     if (tz !== '') {

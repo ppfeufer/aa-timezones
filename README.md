@@ -24,7 +24,7 @@ App for displaying different time zones with Alliance Auth
     * [Step 1: Install the App](#step-1-install-the-app)
     * [Step 2: Update Your Alliance Auth Settings](#step-2-update-your-alliance-auth-settings)
     * [Step 3: Finalizing the Installation](#step-3-finalizing-the-installation)
-    * [Step 4: Setting up the permissions](#step-4-setting-up-the-permissions)
+  * [(Optional) Public Views](#optional-public-views)
   * [Updating](#updating)
   * [Configure the Timezone Panels](#configure-the-timezone-panels)
   * [Adjusting Time](#adjusting-time)
@@ -82,11 +82,27 @@ python manage.py timezones_load_tz_data
 ```
 
 
-### Step 4: Setting up the permissions
+## (Optional) Public Views
 
-Now you can set up permissions in Alliance Auth for your users.
-Add ``timezones|aa timezones|Can access ths app`` to the states and/or groups you would
-like to have access.
+This app supports AA's feature of public views, since time zones conversion is not
+any mission-critical information. To allow users to view the time zone conversion page
+without the need to log in, please add `"timezones",` to the list of
+`APPS_WITH_PUBLIC_VIEWS` in your `local.py`:
+
+```python
+# By default, apps are prevented from having public views for security reasons.
+# To allow specific apps to have public views, add them to APPS_WITH_PUBLIC_VIEWS
+#   » The format is the same as in INSTALLED_APPS
+#   » The app developer must also explicitly allow public views for their app
+APPS_WITH_PUBLIC_VIEWS = [
+    "timezones",  # https://github.com/ppfeufer/aa-timezones
+]
+```
+> **Note**
+>
+> If you don't have a list for `APPS_WITH_PUBLIC_VIEWS` yet, then add the whole
+> block from here. This feature has been added in Alliance Auth v3.6.0 so you
+> might not yet have this list in your `local.py`.
 
 
 ## Updating

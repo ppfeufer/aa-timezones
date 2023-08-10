@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-28 00:23+0200\n"
+"POT-Creation-Date: 2023-08-10 09:17+0200\n"
 "PO-Revision-Date: 2023-07-27 19:17+0000\n"
 "Last-Translator: Peter Pfeufer <info@ppfeufer.de>\n"
 "Language-Team: Japanese <https://weblate.ppfeufer.de/projects/alliance-auth-"
@@ -18,39 +18,39 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Weblate 4.18.2\n"
 
-#: models.py:32
+#: models.py:16
 msgid "Name of the timezone"
 msgstr ""
 
-#: models.py:39
+#: models.py:23
 msgid "UTC offset of the timezone"
 msgstr ""
 
-#: models.py:46
+#: models.py:30
 msgid "ID of the timezone panel in frontend"
 msgstr ""
 
-#: models.py:57 models.py:58
+#: models.py:41 models.py:42
 msgid "Timezone Data"
 msgstr ""
 
-#: models.py:71
+#: models.py:55
 msgid "Name of the timezone panel"
 msgstr ""
 
-#: models.py:78
+#: models.py:62
 msgid "Selected timezone"
 msgstr ""
 
-#: models.py:83
+#: models.py:67
 msgid "Whether this timezone is enabled or not"
 msgstr ""
 
-#: models.py:94
+#: models.py:78
 msgid "Timezone"
 msgstr ""
 
-#: models.py:95
+#: models.py:79
 msgid "Timezones"
 msgstr ""
 
@@ -82,17 +82,14 @@ msgstr ""
 msgid "Already over, you missed it!"
 msgstr ""
 
-#: templates/timezones/partials/footer/app-translation-footer.html:4
-msgid "Join our team of translators!"
+#: templates/timezones/partials/footer/app-translation-footer.html:5
+msgid ""
+"Do you want to help translate this app into your language or improve the "
+"existing translation?"
 msgstr ""
 
-#: templates/timezones/partials/footer/app-translation-footer.html:7
-#, python-format
-msgid ""
-"\n"
-"            Do you want to help translate this app into your language or "
-"improve the existing translation? - %(weblate_link)s\n"
-"        "
+#: templates/timezones/partials/footer/app-translation-footer.html:8
+msgid "Join our team of translators!"
 msgstr ""
 
 #: templates/timezones/partials/timezones/adjust-time.html:10

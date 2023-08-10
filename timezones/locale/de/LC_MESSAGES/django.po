@@ -10,11 +10,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-28 00:23+0200\n"
-"PO-Revision-Date: 2023-07-28 22:39+0000\n"
+"POT-Creation-Date: 2023-08-10 09:17+0200\n"
+"PO-Revision-Date: 2023-07-31 17:40+0000\n"
 "Last-Translator: Peter Pfeufer <info@ppfeufer.de>\n"
-"Language-Team: German <https://weblate.ppfeufer.de/projects/"
-"alliance-auth-apps/aa-timezones/de/>\n"
+"Language-Team: German <https://weblate.ppfeufer.de/projects/alliance-auth-"
+"apps/aa-timezones/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -22,39 +22,39 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 4.18.2\n"
 
-#: models.py:32
+#: models.py:16
 msgid "Name of the timezone"
 msgstr "Name der Zeitzone"
 
-#: models.py:39
+#: models.py:23
 msgid "UTC offset of the timezone"
 msgstr "Unterschied zu UTC"
 
-#: models.py:46
+#: models.py:30
 msgid "ID of the timezone panel in frontend"
 msgstr "ID der Zeitzone im Panel im Frontend"
 
-#: models.py:57 models.py:58
+#: models.py:41 models.py:42
 msgid "Timezone Data"
 msgstr "Zeitzonen Daten"
 
-#: models.py:71
+#: models.py:55
 msgid "Name of the timezone panel"
 msgstr "Name der Zeitzone im Panel"
 
-#: models.py:78
+#: models.py:62
 msgid "Selected timezone"
 msgstr "Ausgewählte Zeitzone"
 
-#: models.py:83
+#: models.py:67
 msgid "Whether this timezone is enabled or not"
 msgstr "Ist diese Zeitzone aktiv oder nicht"
 
-#: models.py:94
+#: models.py:78
 msgid "Timezone"
 msgstr "Zeitzone"
 
-#: models.py:95
+#: models.py:79
 msgid "Timezones"
 msgstr "Zeitzonen"
 
@@ -86,22 +86,17 @@ msgstr "Tage"
 msgid "Already over, you missed it!"
 msgstr "Schon vorbei, Du hast alles verpasst!"
 
-#: templates/timezones/partials/footer/app-translation-footer.html:4
+#: templates/timezones/partials/footer/app-translation-footer.html:5
+msgid ""
+"Do you want to help translate this app into your language or improve the "
+"existing translation?"
+msgstr ""
+"Du möchtest helfen diese App in Deine Sprache zu übersetzen oder die "
+"bestehende Übersetzung verbessern?"
+
+#: templates/timezones/partials/footer/app-translation-footer.html:8
 msgid "Join our team of translators!"
 msgstr "Tritt unserm Team von Übersetzern bei!"
-
-#: templates/timezones/partials/footer/app-translation-footer.html:7
-#, python-format
-msgid ""
-"\n"
-"            Do you want to help translate this app into your language or "
-"improve the existing translation? - %(weblate_link)s\n"
-"        "
-msgstr ""
-"\n"
-"            Du möchtest helfen diese App in Deine Sprache zu übersetzen oder "
-"die bestehende Übersetzung verbessern? - %(weblate_link)s\n"
-"        "
 
 #: templates/timezones/partials/timezones/adjust-time.html:10
 msgid "Adjust Time"

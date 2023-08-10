@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "aa-timezones"
-version = "1.13.2"
+version = "1.14.0"
 description = "Time Zones Overview for Alliance Auth"
 readme = "README.md"
 license = "GPL-3.0"
@@ -35,8 +35,8 @@ classifiers = [
     "Topic :: Internet :: WWW/HTTP :: Dynamic Content",
 ]
 dependencies = [
+    "allianceauth>=3.6.1",
     "allianceauth-app-utils>=1.14.1",
-    "allianceauth>=3.0.0",
     "pytz!=2022.2",
 ]
 

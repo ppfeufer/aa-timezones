@@ -26,7 +26,7 @@ class AaTimezonesMenuItem(MenuItemHook):  # pylint: disable=too-few-public-metho
             _(__title__),
             "far fa-clock fa-fw",
             "timezones:index",
-            navactive=["timezones:index"],
+            navactive=["timezones:"],
         )
 
     def render(self, request):
@@ -36,10 +36,7 @@ class AaTimezonesMenuItem(MenuItemHook):  # pylint: disable=too-few-public-metho
         :return:
         """
 
-        if request.user.has_perm("timezones.basic_access"):
-            return MenuItemHook.render(self, request)
-
-        return ""
+        return MenuItemHook.render(self, request)
 
 
 @hooks.register("menu_item_hook")
@@ -59,7 +56,12 @@ def register_urls():
     :return:
     """
 
-    return UrlHook(urls, "timezones", r"^timezones/")
+    return UrlHook(
+        urls=urls,
+        namespace="timezones",
+        base_url=r"^timezones/",
+        excluded_views=["timezones.views.index"],
+    )
 
 
 # Only register the cog when aadiscordbot is installed
