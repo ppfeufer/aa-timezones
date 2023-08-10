@@ -11,10 +11,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [1.14.0] - 2023-08-10
 
+### Added
+
+- Support public views (see [README])
+
 ### Change
 
 - Moved helper functions out of the class
-- Support public views
 
 ### Removed
 
@@ -408,3 +411,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 
 - initial version
+
+
+<!-- Links -->
+[README]: https://github.com/ppfeufer/aa-timezones/blob/master/README.md "README.md"
