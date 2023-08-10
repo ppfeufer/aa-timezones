@@ -73,9 +73,9 @@ class Command(BaseCommand):
             "in the DB."
         )
 
-    def handle(self, *args, **options):
+    def handle(self, *args, **options):  # pylint: disable=unused-argument
         """
-        ask before running ...
+        Ask before running ...
         :param args:
         :param options:
         """

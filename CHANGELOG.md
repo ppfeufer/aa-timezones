@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Change
 
 - Moved helper functions out of the class
+- Support public views
 
 ### Removed
 

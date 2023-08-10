@@ -3,7 +3,6 @@ The views
 """
 
 # Django
-from django.contrib.auth.decorators import login_required, permission_required
 from django.shortcuts import render
 
 # AA Time Zones
@@ -12,8 +11,6 @@ from timezones.constants import AA_TIMEZONE_DEFAULT_PANELS
 from timezones.models import Timezones
 
 
-@login_required
-@permission_required("timezones.basic_access")
 def index(request, timestamp: str = None):
     """
     Index view
