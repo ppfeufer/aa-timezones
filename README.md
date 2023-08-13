@@ -9,9 +9,11 @@
 [![Discord](https://img.shields.io/discord/790364535294132234?label=discord)](https://discord.gg/zmh52wnfvM)
 [![Checks](https://github.com/ppfeufer/aa-timezones/actions/workflows/automated-checks.yml/badge.svg)](https://github.com/ppfeufer/aa-timezones/actions/workflows/automated-checks.yml)
 [![codecov](https://codecov.io/gh/ppfeufer/aa-timezones/branch/master/graph/badge.svg?token=ZSRTW5FR4C)](https://codecov.io/gh/ppfeufer/aa-timezones)
+[![Translation Status](https://weblate.ppfeufer.de/widgets/alliance-auth-apps/-/aa-timezones/svg-badge.svg)](https://weblate.ppfeufer.de/engage/alliance-auth-apps/)
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](https://github.com/ppfeufer/aa-timezones/blob/master/CODE_OF_CONDUCT.md)
 
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/N4N8CL1BY)
+
 
 App for displaying different time zones with Alliance Auth
 
@@ -39,11 +41,9 @@ App for displaying different time zones with Alliance Auth
 
 ## Installation
 
-**Important**: This app is a plugin for Alliance Auth.
-If you don't have Alliance Auth running already, please install it first before
-proceeding. (See the official
-[AA installation guide](https://allianceauth.readthedocs.io/en/latest/installation/allianceauth.html)
-for details)
+**Important**: This app is a plugin for Alliance Auth. If you don't have
+Alliance Auth running already, please install it first before proceeding.
+(See the official [AA installation guide](https://allianceauth.readthedocs.io/en/latest/installation/allianceauth.html) for details)
 
 
 ### Step 1: Install the App
