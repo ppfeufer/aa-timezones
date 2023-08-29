@@ -1,4 +1,4 @@
-# AA Time Zones
+# AA Time Zones<a name="aa-time-zones"></a>
 
 [![Version](https://img.shields.io/pypi/v/aa-timezones?label=release)](https://pypi.org/project/aa-timezones/)
 [![License](https://img.shields.io/github/license/ppfeufer/aa-timezones)](https://github.com/ppfeufer/aa-timezones/blob/master/LICENSE)
@@ -14,39 +14,36 @@
 
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/N4N8CL1BY)
 
-
 App for displaying different time zones with Alliance Auth
 
+______________________________________________________________________
 
----
+<!-- mdformat-toc start --slug=github --maxlevel=6 --minlevel=1 -->
 
-<!-- TOC -->
-* [AA Time Zones](#aa-time-zones)
-  * [Installation](#installation)
-    * [Step 1: Install the App](#step-1-install-the-app)
-    * [Step 2: Update Your Alliance Auth Settings](#step-2-update-your-alliance-auth-settings)
-    * [Step 3: Finalizing the Installation](#step-3-finalizing-the-installation)
-  * [(Optional) Public Views](#optional-public-views)
-  * [Updating](#updating)
-  * [Configure the Timezone Panels](#configure-the-timezone-panels)
-  * [Adjusting Time](#adjusting-time)
-  * [Discord Bot Command](#discord-bot-command)
-<!-- TOC -->
+- [AA Time Zones](#aa-time-zones)
+  - [Installation](#installation)
+    - [Step 1: Install the App](#step-1-install-the-app)
+    - [Step 2: Update Your Alliance Auth Settings](#step-2-update-your-alliance-auth-settings)
+    - [Step 3: Finalizing the Installation](#step-3-finalizing-the-installation)
+  - [(Optional) Public Views](#optional-public-views)
+  - [Updating](#updating)
+  - [Configure the Timezone Panels](#configure-the-timezone-panels)
+  - [Adjusting Time](#adjusting-time)
+  - [Discord Bot Command](#discord-bot-command)
 
----
+<!-- mdformat-toc end -->
 
+______________________________________________________________________
 
 ![Time Zones](https://raw.githubusercontent.com/ppfeufer/aa-timezones/master/timezones/docs/screenshots/time-zones.jpg)
 
-
-## Installation
+## Installation<a name="installation"></a>
 
 **Important**: This app is a plugin for Alliance Auth. If you don't have
 Alliance Auth running already, please install it first before proceeding.
 (See the official [AA installation guide](https://allianceauth.readthedocs.io/en/latest/installation/allianceauth.html) for details)
 
-
-### Step 1: Install the App
+### Step 1: Install the App<a name="step-1-install-the-app"></a>
 
 Make sure you're in the virtual environment (venv) of your Alliance Auth installation.
 Then install the latest version:
@@ -55,15 +52,13 @@ Then install the latest version:
 pip install aa-timezones
 ```
 
-
-### Step 2: Update Your Alliance Auth Settings
+### Step 2: Update Your Alliance Auth Settings<a name="step-2-update-your-alliance-auth-settings"></a>
 
 Configure your AA settings (`local.py`) as follows:
 
 - Add `'timezones',` to `INSTALLED_APPS`
 
-
-### Step 3: Finalizing the Installation
+### Step 3: Finalizing the Installation<a name="step-3-finalizing-the-installation"></a>
 
 Run migrations & copy static files
 
@@ -81,8 +76,7 @@ own set of panels later. To do so, simply run:
 python manage.py timezones_load_tz_data
 ```
 
-
-## (Optional) Public Views
+## (Optional) Public Views<a name="optional-public-views"></a>
 
 This app supports AA's feature of public views, since time zones conversion is not
 any mission-critical information. To allow users to view the time zone conversion page
@@ -98,14 +92,14 @@ APPS_WITH_PUBLIC_VIEWS = [
     "timezones",  # https://github.com/ppfeufer/aa-timezones
 ]
 ```
+
 > **Note**
 >
 > If you don't have a list for `APPS_WITH_PUBLIC_VIEWS` yet, then add the whole
 > block from here. This feature has been added in Alliance Auth v3.6.0 so you
 > might not yet have this list in your `local.py`.
 
-
-## Updating
+## Updating<a name="updating"></a>
 
 To update your existing installation of AA Time Zones, first enable your virtual
 environment.
@@ -127,8 +121,8 @@ python manage.py migrate
 
 Now restart your AA supervisor services.
 
+## Configure the Timezone Panels<a name="configure-the-timezone-panels"></a>
 
-## Configure the Timezone Panels
 Per default, there are 10 additional time zone panels that are displayed (see first
 image). If you want to change those, you can create your own set of panels in your
 admin backend.
@@ -136,8 +130,7 @@ admin backend.
 **NOTE:** "Local Time" and "EVE Time" will always be displayed as the first two panels,
 no matter what.
 
-
-## Adjusting Time
+## Adjusting Time<a name="adjusting-time"></a>
 
 You can easily adjust the time that is displayed for all timezones. This is useful
 for reinforcement timers or pre-planned fleets. To do so, click on the "Adjust Time"
@@ -159,12 +152,11 @@ To set the adjusted time, simply click on "Set Time" in the row you altered. Thi
 will then adjust all time zone panels to the time you selected and will also alter
 the link in your browser, so you can share it with others directly.
 
-
-## Discord Bot Command
+## Discord Bot Command<a name="discord-bot-command"></a>
 
 **For this to work, you'll need to have `allianceauth-discordbot` installed, configured
 and running.** ([See this link](https://github.com/pvyParts/allianceauth-discordbot))
 
-| Command  | Effect                                                                                                                                                                                                                         |
-|:---------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `/time`  | Shows the current Eve time and what time it is in the <br/>configured time zones<br>![Discord Bot Response](https://raw.githubusercontent.com/ppfeufer/aa-timezones/master/timezones/docs/screenshots/discordbot-response.jpg) |
+| Command | Effect                                                                                                                                                                                                                         |
+| :------ | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `/time` | Shows the current Eve time and what time it is in the <br/>configured time zones<br>![Discord Bot Response](https://raw.githubusercontent.com/ppfeufer/aa-timezones/master/timezones/docs/screenshots/discordbot-response.jpg) |
