@@ -1,23 +1,25 @@
 [build-system]
-requires = ["hatchling"]
 build-backend = "hatchling.build"
+requires = [
+    "hatchling",
+]
 
 [project]
 name = "aa-timezones"
-version = "1.15.0"
+version = "1.16.0"
 description = "Time Zones Overview for Alliance Auth"
 readme = "README.md"
-license = "GPL-3.0"
-requires-python = "~=3.8"
-authors = [
-    { name = "Peter Pfeufer", email = "develop@ppfeufer.de" },
-]
 keywords = [
     "allianceauth",
     "eveonline",
     "time",
     "timezones",
 ]
+license = {file = "LICENSE"}
+authors = [
+    { name = "Peter Pfeufer", email = "develop@ppfeufer.de" },
+]
+requires-python = "~=3.8"
 classifiers = [
     "Environment :: Web Environment",
     "Framework :: Django",
@@ -39,12 +41,12 @@ dependencies = [
     "allianceauth-app-utils>=1.14.1",
     "pytz!=2022.2",
 ]
-
 [project.urls]
-Homepage = "https://github.com/ppfeufer/aa-timezones"
-Documentation = "https://github.com/ppfeufer/aa-timezones/blob/master/README.md"
-Source = "https://github.com/ppfeufer/aa-timezones.git"
 Changelog = "https://github.com/ppfeufer/aa-timezones/blob/master/CHANGELOG.md"
+Documentation = "https://github.com/ppfeufer/aa-timezones/blob/master/README.md"
+Donations = "https://ko-fi.com/ppfeufer"
+Homepage = "https://github.com/ppfeufer/aa-timezones"
+Source = "https://github.com/ppfeufer/aa-timezones.git"
 Tracker = "https://github.com/ppfeufer/aa-timezones/issues"
 
 [tool.hatch.build]

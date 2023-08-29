@@ -1,0 +1,21 @@
+{
+    "extends": "stylelint-config-standard",
+    "rules": {
+        "indentation": 4,
+        "color-no-hex": true,
+        "number-max-precision": 5,
+        "no-descending-specificity": null,
+        "media-feature-range-notation": "prefix",
+        "selector-class-pattern": "_?[a-z0-9]+(-[a-z0-9]+)*$",
+        "selector-id-pattern": "_?[a-z0-9]+(-[a-z0-9]+)*$",
+        "selector-type-case": [
+            "lower",
+            {
+                "ignoreTypes": [
+                    "/regex/",
+                    "non-regex"
+                ]
+            }
+        ]
+    }
+}

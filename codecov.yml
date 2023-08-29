@@ -3,7 +3,7 @@ codecov:
 
 coverage:
   precision: 2
-  round: down
+  round: up
   range: "70...100"
 
 parsers:
@@ -15,6 +15,5 @@ parsers:
       macro: no
 
 comment:
-  layout: "reach,diff,flags,files,footer"
-  behavior: default
+  layout: header, reach, changes, diff, files, footer
   require_changes: no

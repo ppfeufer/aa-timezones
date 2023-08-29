@@ -5,25 +5,27 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## \[In Development\] - Unreleased
 
-## [In Development] - Unreleased
+## \[1.16.0\] - 2023-08-29
 
+### Added
 
-## [1.15.0] - 2023-08-16
+- Korean translation
+
+## \[1.15.0\] - 2023-08-16
 
 ### Added
 
 - Spanish translation
 
-
-## [1.14.1] - 2023-08-13
+## \[1.14.1\] - 2023-08-13
 
 ### Fixed
 
 - Bootstrap CSS fix
 
-
-## [1.14.0] - 2023-08-10
+## \[1.14.0\] - 2023-08-10
 
 > **Warning**
 >
@@ -43,8 +45,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 - Deprecated `!time` command, use `/time` instead
 
-
-## [1.13.2] - 2023-07-30
+## \[1.13.2\] - 2023-07-30
 
 ### Added
 
@@ -62,8 +63,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Japanese translation improved
 - Korean translation improved
 
-
-## [1.13.1] - 2023-06-16
+## \[1.13.1\] - 2023-06-16
 
 ### Added
 
@@ -79,8 +79,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 - Unnecessary template block
 
-
-## [1.13.0] - 2023-04-23
+## \[1.13.0\] - 2023-04-23
 
 ### Added
 
@@ -92,8 +91,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Russian translation updated
 - Moved the build process to PEP 621 / pyproject.toml
 
-
-## [1.12.1] - 2023-04-13
+## \[1.12.1\] - 2023-04-13
 
 ### Changed
 
@@ -101,8 +99,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Using `allianceauth-app-utils` to get the absolute URL
 - German translation updated
 
-
-## [1.12.0] - 2022-09-15
+## \[1.12.0\] - 2022-09-15
 
 ### Added
 
@@ -115,8 +112,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Minimum Requirement:
   - Alliance Auth >= 3.0.0
 
-
-## [1.11.0] - 2022-07-11
+## \[1.11.0\] - 2022-07-11
 
 ### Fixed
 
@@ -127,8 +123,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Minimum Requirement:
   - Alliance Auth >= 2.14.0
 
-
-## [1.10.1] - 2022-06-12
+## \[1.10.1\] - 2022-06-12
 
 ### Added
 
@@ -138,8 +133,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 - "Method could be a function" warning
 
-
-## [1.10.0] - 2022-06-07
+## \[1.10.0\] - 2022-06-07
 
 ### Added
 
@@ -155,8 +149,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - JS modernized (Part 2)
 - Management command for the initial timezones imports optimised
 
-
-## [1.9.0] - 2022-03-03
+## \[1.9.0\] - 2022-03-03
 
 ### Added
 
@@ -170,30 +163,26 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 - Deprecated settings
 
-
-## [1.8.0] - 2022-02-28
+## \[1.8.0\] - 2022-02-28
 
 ### Fixed
 
-- [Compatibility] AA 3.x / Django 4 :: ImportError: cannot import name
+- \[Compatibility\] AA 3.x / Django 4 :: ImportError: cannot import name
   'ugettext_lazy' from 'django.utils.translation'
 
-
-## [1.7.1] - 2022-02-02
+## \[1.7.1\] - 2022-02-02
 
 ### Changed
 
 - Using `path` in URL config instead of soon-to-be removed `url`
 
-
-## [1.7.0] - 2022-01-12
+## \[1.7.0\] - 2022-01-12
 
 ### Changed
 
 - JavaScript: `const` instead of `let` where ever appropriate
 
-
-## [1.6.0] - 2022-01-10
+## \[1.6.0\] - 2022-01-10
 
 ### Added
 
@@ -210,8 +199,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Backwards compatibility with old timecode style URLs (was deprecated with v1.2.1
   in October 2020)
 
-
-## [1.5.0] - 2021-11-30
+## \[1.5.0\] - 2021-11-30
 
 ### Changed
 
@@ -219,8 +207,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
   - Python 3.7
   - Alliance Auth v2.9.3
 
-
-## [1.4.0] - 2021-11-23
+## \[1.4.0\] - 2021-11-23
 
 ### Added
 
@@ -236,8 +223,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
   - timeago.js
   - moments-timezones script
 
-
-## [1.3.6] - 2021-11-21
+## \[1.3.6\] - 2021-11-21
 
 ### Added
 
@@ -247,58 +233,50 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 - JavaScript modernised
 
-
-## [1.3.5] - 2021-11-17
+## \[1.3.5\] - 2021-11-17
 
 ### Added
 
-- Russian translation (Thanks to -7- [0RIG] Neomad Miromme)
+- Russian translation (Thanks to -7- \[0RIG\] Neomad Miromme)
 
-
-## [1.3.4] - 2021-07-08
+## \[1.3.4\] - 2021-07-08
 
 ### Added
 
 - Check for compatibility with Python 3.9 and Django 3.2
 
-
-## [1.3.3] - 2021-06-19
+## \[1.3.3\] - 2021-06-19
 
 ### Changed
 
 - Minimize the number of SQL queries to improve performance
 
-
-## [1.3.2] - 2021-03-15
+## \[1.3.2\] - 2021-03-15
 
 ### Fixed
 
 - Month number for March in time selection
 
-
-## [1.3.1] - 2021-01-28
+## \[1.3.1\] - 2021-01-28
 
 ### Changed
 
 - Moved `AA_TIMEZONE_DEFAULT_PANELS` into its own constants file, so it can be used
   by other apps as well.
 
-
-## [1.3.0] - 2021-01-12
+## \[1.3.0\] - 2021-01-12
 
 ### Removed
 
 - Django 2 support
 
-
-## [1.2.2] - 2020-12-16
+## \[1.2.2\] - 2020-12-16
 
 ### Fixed
 
 - Bootstap classes in template
 
-
-## [1.2.1] - 2020-10-09
+## \[1.2.1\] - 2020-10-09
 
 ### Fixed
 
@@ -319,15 +297,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 - German translation
 
-
-## [1.2.0] - 2020-09-27
+## \[1.2.0\] - 2020-09-27
 
 ### Changed
 
 - Settings moved to database instead of `local.py`
 
-
-## [1.1.0] - 2020-09-23
+## \[1.1.0\] - 2020-09-23
 
 ### Checked
 
@@ -339,8 +315,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Translations for Russian, Spanish, Korean and Chinese prepared, need translators
   though. So if you want to help out, [feel free to do so here](https://weblate.ppfeufer.de/projects/alliance-auth-apps/aa-timezones/).
 
-
-## [1.0.0] - 2020-09-13
+## \[1.0.0\] - 2020-09-13
 
 ### Changed
 
@@ -348,8 +323,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
   If you are concerned about using the cloudflare CDN, try using the
   [AA GDPR](https://gitlab.com/soratidus999/aa-gdpr) package
 
-
-## [0.1.9] - 2020-08-01
+## \[0.1.9\] - 2020-08-01
 
 ### Fixed
 
@@ -360,37 +334,32 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 - Countdown text "Time left" instead of "Time until"
 
-
-## [0.1.8] - 2020-06-23
+## \[0.1.8\] - 2020-06-23
 
 ### Added
 
 - Time until in "Set Time" mode (#19)
 
-
-## [0.1.7] - 2020-06-11
+## \[0.1.7\] - 2020-06-11
 
 ### Changed
 
 - Menu icon updated to FontAwesome v5, which allianceauth uses since 2.7.2
 
-
-## [0.1.6] - 2020-06-09
+## \[0.1.6\] - 2020-06-09
 
 ### Changed
 
 - Readme updated
 - Prepared to be served via Pypi
 
-
-## [0.1.5] - 2020-05-17
+## \[0.1.5\] - 2020-05-17
 
 ### Added
 
 - Set up your own additional time zone panels via `local.py` (see readme)
 
-
-## [0.1.4] - 2020-05-16
+## \[0.1.4\] - 2020-05-16
 
 ### Changed
 
@@ -399,8 +368,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Adjust time buttons are now a bit larger
 - Order of information in the time zone panels
 
-
-## [0.1.3] - 2020-05-15
+## \[0.1.3\] - 2020-05-15
 
 ### Added
 
@@ -410,28 +378,25 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 - moment.js and timeago.js to their latest versions
 
-
-## [0.1.2] - 2020-05-15
+## \[0.1.2\] - 2020-05-15
 
 ### Changed
 
 - TZ panels now have their own template
 - The Chinese TZ panel now has also Russia / Siberia
 
-
-## [0.1.1] - 2020-05-14
+## \[0.1.1\] - 2020-05-14
 
 ### Fixed
 
 - Bootstrap template hierarchy
 
-
-## [0.1.0] - 2020-05-14
+## \[0.1.0\] - 2020-05-14
 
 ### Added
 
 - initial version
 
-
 <!-- Links -->
-[README]: https://github.com/ppfeufer/aa-timezones/blob/master/README.md "README.md"
+
+[readme]: https://github.com/ppfeufer/aa-timezones/blob/master/README.md "README.md"
