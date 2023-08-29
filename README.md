@@ -43,6 +43,15 @@ ______________________________________________________________________
 Alliance Auth running already, please install it first before proceeding.
 (See the official [AA installation guide](https://allianceauth.readthedocs.io/en/latest/installation/allianceauth.html) for details)
 
+> **Note**
+>
+> This app makes use of a feature introduced with Alliance Auth v3.6.1, meaning,
+> installing this app will pull in Alliance Auth v3.6.1 unsupervised if you haven't
+> updated yet.
+>
+> **Please make sure to update Allianceauth to version 3.6.1 or higher before you
+> install this app to avoid any complications.**
+
 ### Step 1: Install the App<a name="step-1-install-the-app"></a>
 
 Make sure you're in the virtual environment (venv) of your Alliance Auth installation.
