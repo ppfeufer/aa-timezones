@@ -45,7 +45,7 @@ repos:
           - --markdown-linebreak-ext=md
         exclude: |
           (?x)(
-            .min(.css|.css.map|.js)|
+            .min(.css|.css.map|.js|.js.map)|
             locale/|
             static/(.*)/libs/
           )
@@ -53,18 +53,18 @@ repos:
       - id: end-of-file-fixer
         exclude: |
           (?x)(
-            .min(.css|.css.map|.js)|
+            .min(.css|.css.map|.js|.js.map)|
             locale/|
             static/(.*)/libs/
           )
 
   - repo: https://github.com/pre-commit/mirrors-eslint
-    rev: v8.47.0
+    rev: v8.48.0
     hooks:
       - id: eslint
         exclude: |
           (?x)(
-            .min.js|
+            .min(.js|.js.map)|
             static/(.*)/libs/
           )
 
@@ -100,7 +100,7 @@ repos:
         exclude: |
           (?x)(
             LICENSE|
-            .min(.css|.css.map|.js)|
+            .min(.css|.css.map|.js|.js.map)|
             static/(.*)/libs/
           )
 
@@ -155,7 +155,7 @@ repos:
           - --target-version=py38
 
   - repo: https://github.com/executablebooks/mdformat
-    rev: 0.7.16
+    rev: 0.7.17
     hooks:
       - id: mdformat
         additional_dependencies:
@@ -170,7 +170,7 @@ repos:
       - id: tox-ini-fmt
 
   - repo: https://github.com/tox-dev/pyproject-fmt
-    rev: 1.0.0
+    rev: 1.1.0
     hooks:
       - id: pyproject-fmt
         args:

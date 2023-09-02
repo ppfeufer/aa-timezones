@@ -9,7 +9,7 @@
 [![Discord](https://img.shields.io/discord/790364535294132234?label=discord)](https://discord.gg/zmh52wnfvM)
 [![Checks](https://github.com/ppfeufer/aa-timezones/actions/workflows/automated-checks.yml/badge.svg)](https://github.com/ppfeufer/aa-timezones/actions/workflows/automated-checks.yml)
 [![codecov](https://codecov.io/gh/ppfeufer/aa-timezones/branch/master/graph/badge.svg?token=ZSRTW5FR4C)](https://codecov.io/gh/ppfeufer/aa-timezones)
-[![Translation Status](https://weblate.ppfeufer.de/widgets/alliance-auth-apps/-/aa-timezones/svg-badge.svg)](https://weblate.ppfeufer.de/engage/alliance-auth-apps/)
+[![Translation status](https://weblate.ppfeufer.de/widget/alliance-auth-apps/aa-timezones/svg-badge.svg)](https://weblate.ppfeufer.de/engage/alliance-auth-apps/)
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](https://github.com/ppfeufer/aa-timezones/blob/master/CODE_OF_CONDUCT.md)
 
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/N4N8CL1BY)
@@ -30,6 +30,9 @@ ______________________________________________________________________
   - [Configure the Timezone Panels](#configure-the-timezone-panels)
   - [Adjusting Time](#adjusting-time)
   - [Discord Bot Command](#discord-bot-command)
+  - [Changelog](#changelog)
+  - [Translation Status](#translation-status)
+  - [Contributing](#contributing)
 
 <!-- mdformat-toc end -->
 
@@ -169,3 +172,26 @@ and running.** ([See this link](https://github.com/pvyParts/allianceauth-discord
 | Command | Effect                                                                                                                                                                                                                         |
 | :------ | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `/time` | Shows the current Eve time and what time it is in the <br/>configured time zones<br>![Discord Bot Response](https://raw.githubusercontent.com/ppfeufer/aa-timezones/master/timezones/docs/screenshots/discordbot-response.jpg) |
+
+## Changelog<a name="changelog"></a>
+
+See [CHANGELOG.md](https://github.com/ppfeufer/aa-timezones/blob/master/CHANGELOG.md)
+
+## Translation Status<a name="translation-status"></a>
+
+[![Translation status](https://weblate.ppfeufer.de/widget/alliance-auth-apps/aa-timezones/multi-auto.svg)](https://weblate.ppfeufer.de/engage/alliance-auth-apps/)
+
+Do you want to help translate this app into your language or improve the existing
+translation? - [Join our team of translators][weblate engage]!
+
+## Contributing<a name="contributing"></a>
+
+Do you want to contribute to this project? That's cool!
+
+Please make sure to read the [Contribution Guidelines].\
+(I promise, it's not much, just some basics)
+
+<!-- Inline Links -->
+
+[contribution guidelines]: https://github.com/ppfeufer/aa-timezones/blob/master/CONTRIBUTING.md "Contribution Guidelines"
+[weblate engage]: https://weblate.ppfeufer.de/engage/alliance-auth-apps/ "Weblate Translations"
