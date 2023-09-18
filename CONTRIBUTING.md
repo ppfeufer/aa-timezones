@@ -11,7 +11,7 @@ ______________________________________________________________________
     - [CSS](#css)
     - [pre-commit](#pre-commit)
   - [Contributing via Pull Requests](#contributing-via-pull-requests)
-    - [Checklist:](#checklist)
+    - [Checklist](#checklist)
   - [Translation](#translation)
 
 <!-- mdformat-toc end -->
@@ -113,7 +113,7 @@ Before you start working on a new feature, please open an Issue (Type: Feature
 Request) and start a discussion if your idea is generally wanted and considered a
 good addition to the app in general.
 
-### Checklist:<a name="checklist"></a>
+### Checklist<a name="checklist"></a>
 
 Before you submit a pull request, please make sure that:
 
