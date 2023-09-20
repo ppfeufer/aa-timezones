@@ -53,15 +53,17 @@ jobs:
           - '4.0'
         # MySQL versions to test against
         database:
-          - mysql:5.7
-          - mysql:8.0
-          - mariadb:10.3
-          - mariadb:10.4
-          - mariadb:10.5
-          - mariadb:10.6
-          - mariadb:10.7
-          - mariadb:10.8
-          - mariadb:10.9
+          # https://endoflife.date/mysql
+          - mysql:8.0     # [LTS] Maintained until: 30 Apr 2026
+          - mysql:8.1     # Latest official release
+          # https://endoflife.date/mariadb and https://mariadb.com/kb/en/mariadb-server-release-dates/
+          - mariadb:10.4  # Maintained until: 18 June 2024
+          - mariadb:10.5  # Maintained until: 24 June 2025
+          - mariadb:10.6  # [LTS] Maintained until: July 2026
+          - mariadb:10.10 # Maintained until: November 2023
+          - mariadb:10.11 # [LTS] Maintained until: February 2028
+          - mariadb:11.0  # Maintained until: June 2024
+          - mariadb:11.1  # Maintained until: August 2024
 
 #    continue-on-error: ${{ matrix.python-version == '3.11-dev' }}
 
@@ -106,7 +108,19 @@ jobs:
           DB_PASSWORD: temp_password_aa_tox_tests
 
       - name: Upload Coverage Artifacts
-        if: ${{ (github.event_name == 'pull_request' || (github.event_name == 'push' && github.ref == 'refs/heads/master')) && matrix.python-version == '3.10' && matrix.django-version == '4.0' }}
+        if: ${{
+              (
+                github.event_name == 'pull_request' ||
+                (
+                  github.event_name == 'push' &&
+                  github.ref == 'refs/heads/master'
+                )
+              ) &&
+              (
+                matrix.python-version == '3.10' &&
+                matrix.django-version == '4.0'
+              )
+            }}
         uses: actions/upload-artifact@v3
         with:
           name: coverage-${{ github.event_name }}-${{ github.sha }}
@@ -186,7 +200,10 @@ jobs:
 
   # Coverage upload to Codecov
   upload-coverage:
-    if: ${{ github.event_name == 'pull_request' || (github.event_name == 'push' && github.ref == 'refs/heads/master') }}
+    if: ${{
+          github.event_name == 'pull_request' ||
+          (github.event_name == 'push' && github.ref == 'refs/heads/master')
+        }}
     needs: [ test-coverage-aa-stable ]
 #    needs: [ test-coverage-aa-stable, test-coverage-aa-dev ]
     name: Upload Coverage
