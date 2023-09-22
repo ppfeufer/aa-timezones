@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-10 09:17+0200\n"
+"POT-Creation-Date: 2023-09-23 01:22+0200\n"
 "PO-Revision-Date: 2023-07-28 22:39+0000\n"
 "Last-Translator: Peter Pfeufer <info@ppfeufer.de>\n"
 "Language-Team: French <https://weblate.ppfeufer.de/projects/alliance-auth-"
@@ -17,6 +17,56 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
 "X-Generator: Weblate 4.18.2\n"
+
+#: __init__.py:12 templates/timezones/base.html:5
+#: templates/timezones/base.html:10
+msgid "Time Zones"
+msgstr ""
+
+#: admin.py:25
+msgid "Panel name"
+msgstr ""
+
+#: admin.py:29
+msgid "Time zone"
+msgstr ""
+
+#: admin.py:35
+msgid "Activate selected timezone(s)"
+msgstr ""
+
+#: admin.py:59
+#, python-brace-format
+msgid "Failed to activate {failed} timezone"
+msgid_plural "Failed to activate {failed} timezones"
+msgstr[0] ""
+msgstr[1] ""
+
+#: admin.py:69
+#, python-brace-format
+msgid "Activated {notifications_count} timezone"
+msgid_plural "Activated {notifications_count} timezones"
+msgstr[0] ""
+msgstr[1] ""
+
+#: admin.py:99
+#, python-brace-format
+msgid "Failed to deactivate {failed} timezone"
+msgid_plural "Failed to deactivate {failed} timezones"
+msgstr[0] ""
+msgstr[1] ""
+
+#: admin.py:109
+#, python-brace-format
+msgid "Deactivated {notifications_count} timezone"
+msgid_plural "Deactivated {notifications_count} timezones"
+msgstr[0] ""
+msgstr[1] ""
+
+#: apps.py:20
+#, python-brace-format
+msgid "Time Zones v{__version__}"
+msgstr ""
 
 #: models.py:16
 msgid "Name of the timezone"
@@ -31,7 +81,7 @@ msgid "ID of the timezone panel in frontend"
 msgstr ""
 
 #: models.py:41 models.py:42
-msgid "Timezone Data"
+msgid "Timezone data"
 msgstr ""
 
 #: models.py:55
@@ -54,13 +104,9 @@ msgstr ""
 msgid "Timezones"
 msgstr ""
 
-#: templates/timezones/base.html:5 templates/timezones/base.html:10
-msgid "Time Zones"
-msgstr ""
-
 #: templates/timezones/index.html:12
 #: templates/timezones/partials/timezones/adjust-time.html:263
-msgid "Local Time"
+msgid "Local time"
 msgstr ""
 
 #: templates/timezones/index.html:17 templates/timezones/index.html:34
@@ -70,8 +116,8 @@ msgstr ""
 
 #: templates/timezones/index.html:29
 #: templates/timezones/partials/timezones/adjust-time.html:265
-msgid "EVE Time"
-msgstr "Heure d'EVE"
+msgid "Eve time"
+msgstr ""
 
 #: templates/timezones/index.html:67
 #: templates/timezones/partials/timezones/adjust-time.html:57
@@ -93,7 +139,7 @@ msgid "Join our team of translators!"
 msgstr ""
 
 #: templates/timezones/partials/timezones/adjust-time.html:10
-msgid "Adjust Time"
+msgid "Adjust time"
 msgstr ""
 
 #: templates/timezones/partials/timezones/adjust-time.html:18
@@ -122,7 +168,7 @@ msgstr ""
 
 #: templates/timezones/partials/timezones/adjust-time.html:157
 #: templates/timezones/partials/timezones/adjust-time.html:338
-msgid "Set Time"
+msgid "Set time"
 msgstr ""
 
 #: templates/timezones/partials/timezones/adjust-time.html:164
