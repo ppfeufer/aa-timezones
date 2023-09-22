@@ -2,9 +2,6 @@
 Hooks to AA
 """
 
-# Django
-from django.utils.translation import gettext_lazy as _
-
 # Alliance Auth
 from allianceauth import hooks
 from allianceauth.services.hooks import MenuItemHook, UrlHook
@@ -23,7 +20,7 @@ class AaTimezonesMenuItem(MenuItemHook):  # pylint: disable=too-few-public-metho
         # Set up menu entry for sidebar
         MenuItemHook.__init__(
             self,
-            _(__title__),
+            __title__,
             "far fa-clock fa-fw",
             "timezones:index",
             navactive=["timezones:"],

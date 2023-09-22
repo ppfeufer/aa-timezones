@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## \[In Development\] - Unreleased
 
+### Fixed
+
+- Capitalization for translatable strings
+
 ## \[1.16.1\] - 2023-09-02
 
 ### Changed

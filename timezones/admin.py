@@ -3,7 +3,9 @@ Admin backend config
 """
 
 # Django
-from django.contrib import admin
+from django.contrib import admin, messages
+from django.utils.translation import gettext_lazy as _
+from django.utils.translation import ngettext
 
 # AA Time Zones
 from timezones.models import Timezones
@@ -20,59 +22,92 @@ class TimezonesAdmin(admin.ModelAdmin):
     ordering = ("panel_name",)
     list_filter = ("is_enabled",)
 
-    @admin.display(
-        description="Panel Name",
-        ordering="panel_name",
-    )
-    @classmethod
-    def _panel_name(cls, obj):
+    @admin.display(description=_("Panel name"), ordering="panel_name")
+    def _panel_name(self, obj):
         return obj.panel_name
 
-    @admin.display(
-        description="Timezone",
-        ordering="timezone__timezone_name",
-    )
-    @classmethod
-    def _timezone(cls, obj):
+    @admin.display(description=_("Time zone"), ordering="timezone__timezone_name")
+    def _timezone(self, obj):
         return obj.timezone.timezone_name
 
-    actions = (
-        "mark_as_active",
-        "mark_as_inactive",
-    )
+    actions = ("mark_as_active", "mark_as_inactive")
 
-    @admin.action(description="Activate selected timezone(s)")
+    @admin.action(description=_("Activate selected timezone(s)"))
     def mark_as_active(self, request, queryset):
         """
-        Mark fleet type as active
+        Mark timezone as active
         :param request:
         :param queryset:
         """
 
         notifications_count = 0
+        failed = 0
 
         for obj in queryset:
-            obj.is_enabled = True
-            obj.save()
+            try:
+                obj.is_enabled = True
+                obj.save()
 
-            notifications_count += 1
+                notifications_count += 1
+            except Exception:  # pylint: disable=broad-exception-caught
+                failed += 1
 
-        self.message_user(request, f"{notifications_count} timezone(s) activated")
+        if failed:
+            messages.error(
+                request,
+                ngettext(
+                    singular="Failed to activate {failed} timezone",
+                    plural="Failed to activate {failed} timezones",
+                    number=failed,
+                ).format(failed=failed),
+            )
 
-    @admin.action(description="Deactivate selected timezone(s)")
+        if queryset.count() - failed > 0:
+            messages.success(
+                request,
+                ngettext(
+                    singular="Activated {notifications_count} timezone",
+                    plural="Activated {notifications_count} timezones",
+                    number=notifications_count,
+                ).format(notifications_count=notifications_count),
+            )
+
+    @admin.action(description="Deactivate selected time zone(s)")
     def mark_as_inactive(self, request, queryset):
         """
-        Mark fleet type as inactive
+        Mark timezone as inactive
         :param request:
         :param queryset:
         """
 
         notifications_count = 0
+        failed = 0
 
         for obj in queryset:
-            obj.is_enabled = False
-            obj.save()
+            try:
+                obj.is_enabled = False
+                obj.save()
 
-            notifications_count += 1
+                notifications_count += 1
+            except Exception:  # pylint: disable=broad-exception-caught
+                failed += 1
 
-        self.message_user(request, f"{notifications_count} timezone(s) deactivated")
+        if failed:
+            messages.error(
+                request,
+                ngettext(
+                    singular="Failed to deactivate {failed} timezone",
+                    plural="Failed to deactivate {failed} timezones",
+                    number=failed,
+                ).format(failed=failed),
+            )
+
+        if queryset.count() - failed > 0:
+            messages.success(
+                request,
+                ngettext(
+                    singular="Deactivated {notifications_count} timezone",
+                    plural="Deactivated {notifications_count} timezones",
+                    number=notifications_count,
+                ).format(notifications_count=notifications_count),
+            )

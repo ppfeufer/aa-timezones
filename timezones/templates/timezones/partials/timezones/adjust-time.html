@@ -7,7 +7,7 @@
         class="btn btn-info btn-sm hidden"
         onclick="showAdjust();"
     >
-        {% translate "Adjust Time" %}
+        {% translate "Adjust time" %}
     </button>
 
     <button
@@ -154,7 +154,7 @@
                 </div>
 
 {#                <button class="btn btn-info btn-sm" onclick="window.location.hash = (parseInt(new Date().getTime() / 1000) + jQuery('#tind').val() * 24 * 60 * 60 + jQuery('#tinh').val() * 60 * 60 + jQuery('#tinm').val() * 60);">{% translate "Set Time" %}</button>#}
-                <button class="btn btn-info btn-sm" onclick="reloadToTimestamp(); return false;">{% translate "Set Time" %}</button>
+                <button class="btn btn-info btn-sm" onclick="reloadToTimestamp(); return false;">{% translate "Set time" %}</button>
             </div>
         </form>
 
@@ -260,9 +260,9 @@
 
                 <div class="input-group input-group-sm">
                     <select class="form-control" id="tatzone">
-                        <option value="">{% translate "Local Time" %}</option>
+                        <option value="">{% translate "Local time" %}</option>
                         <option value="ETC/UTC" selected>
-                            {% translate "EVE Time" %}
+                            {% translate "Eve time" %}
                         </option>
 
                         {% for timezone in timezones %}
@@ -335,7 +335,7 @@
                     class="btn btn-info btn-sm"
                     onclick="setdate(jQuery('#tatyear').val() + '-' + jQuery('#tatmonth').val() + '-' + jQuery('#tatday').val() + ' ' + jQuery('#tathour').val() + ':' + jQuery('#tatminute').val(), jQuery('#tatzone').val()); return false;"
                 >
-                    {% translate "Set Time" %}
+                    {% translate "Set time" %}
                 </button>
             </div>
         </form>
