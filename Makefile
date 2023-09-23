@@ -17,7 +17,6 @@ translationfiles:
 		-l uk \
 		-l zh_Hans \
 		--keep-pot \
-		--no-obsolete \
 		--ignore 'build/*'
 
 compiletranslationfiles:
