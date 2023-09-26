@@ -38,8 +38,8 @@ class TimezoneData(models.Model):
         TimezoneData :: Meta
         """
 
-        verbose_name = _("Timezone Data")
-        verbose_name_plural = _("Timezone Data")
+        verbose_name = _("Timezone data")
+        verbose_name_plural = _("Timezone data")
         default_permissions = ()
 
 

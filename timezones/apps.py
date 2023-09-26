@@ -4,6 +4,7 @@ App config
 
 # Django
 from django.apps import AppConfig
+from django.utils.translation import gettext_lazy as _
 
 # AA Time Zones
 from timezones import __version__
@@ -16,4 +17,4 @@ class AaTimezonesConfig(AppConfig):
 
     name: str = "timezones"
     label: str = "timezones"
-    verbose_name: str = f"Timezones v{__version__}"
+    verbose_name: str = _(f"Time Zones v{__version__}")

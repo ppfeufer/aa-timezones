@@ -89,7 +89,7 @@ class Time(commands.Cog):
         )
 
         embed.add_field(
-            name="EVE Time",
+            name="Eve Time",
             value=utc_now.strftime(fmt_utc),
             inline=True,
         )
