@@ -17,7 +17,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.8' # Minimum supported Python version by AllianceAuth
+          python-version-file: 'pyproject.toml' # Read python version from a file pyproject.toml
 
       - name: Install Tools
         run: |
