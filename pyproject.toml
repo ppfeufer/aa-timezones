@@ -19,7 +19,7 @@ license = {file = "LICENSE"}
 authors = [
     { name = "Peter Pfeufer", email = "develop@ppfeufer.de" },
 ]
-requires-python = "~=3.8"
+requires-python = ">=3.8"
 classifiers = [
     "Environment :: Web Environment",
     "Framework :: Django",

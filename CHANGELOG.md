@@ -11,6 +11,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 - Capitalization for translatable strings
 
+### Changed
+
+- Translations updated
+- Test suite updated
+
 ## \[1.16.1\] - 2023-09-02
 
 ### Changed
