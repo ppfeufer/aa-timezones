@@ -32,7 +32,7 @@ class TimezonesAdmin(admin.ModelAdmin):
 
     actions = ("mark_as_active", "mark_as_inactive")
 
-    @admin.action(description=_("Activate selected timezone(s)"))
+    @admin.action(description=_("Activate selected timezones"))
     def mark_as_active(self, request, queryset):
         """
         Mark timezone as active
@@ -72,7 +72,7 @@ class TimezonesAdmin(admin.ModelAdmin):
                 ).format(notifications_count=notifications_count),
             )
 
-    @admin.action(description="Deactivate selected time zone(s)")
+    @admin.action(description=_("Deactivate selected timezones"))
     def mark_as_inactive(self, request, queryset):
         """
         Mark timezone as inactive
