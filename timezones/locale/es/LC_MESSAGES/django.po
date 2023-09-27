@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-27 12:24+0200\n"
+"POT-Creation-Date: 2023-09-27 15:42+0200\n"
 "PO-Revision-Date: 2023-09-24 13:13+0000\n"
 "Last-Translator: Peter Pfeufer <info@ppfeufer.de>\n"
 "Language-Team: Spanish <https://weblate.ppfeufer.de/projects/alliance-auth-"
@@ -37,7 +37,7 @@ msgstr "Zona horaria"
 #: admin.py:35
 #, fuzzy
 #| msgid "Selected timezone"
-msgid "Activate selected timezone(s)"
+msgid "Activate selected timezones"
 msgstr "Zona horaria seleccionada"
 
 #: admin.py:59
@@ -53,6 +53,12 @@ msgid "Activated {notifications_count} timezone"
 msgid_plural "Activated {notifications_count} timezones"
 msgstr[0] ""
 msgstr[1] ""
+
+#: admin.py:75
+#, fuzzy
+#| msgid "Selected timezone"
+msgid "Deactivate selected timezones"
+msgstr "Zona horaria seleccionada"
 
 #: admin.py:99
 #, python-brace-format
