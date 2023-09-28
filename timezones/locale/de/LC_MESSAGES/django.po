@@ -11,10 +11,10 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-09-27 15:42+0200\n"
-"PO-Revision-Date: 2023-09-24 13:12+0000\n"
+"PO-Revision-Date: 2023-09-27 17:06+0000\n"
 "Last-Translator: Peter Pfeufer <info@ppfeufer.de>\n"
-"Language-Team: German <https://weblate.ppfeufer.de/projects/alliance-auth-"
-"apps/aa-timezones/de/>\n"
+"Language-Team: German <https://weblate.ppfeufer.de/projects/"
+"alliance-auth-apps/aa-timezones/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -36,10 +36,8 @@ msgid "Time zone"
 msgstr "Zeitzone"
 
 #: admin.py:35
-#, fuzzy
-#| msgid "Activate selected timezone(s)"
 msgid "Activate selected timezones"
-msgstr "Ausgewählte Zeitzone"
+msgstr "Ausgewählte Zeitzonen aktivieren"
 
 #: admin.py:59
 #, python-brace-format
@@ -56,10 +54,8 @@ msgstr[0] "{notifications_count} Zeitzone aktiviert"
 msgstr[1] "{notifications_count} Zeitzonen aktiviert"
 
 #: admin.py:75
-#, fuzzy
-#| msgid "Activate selected timezone(s)"
 msgid "Deactivate selected timezones"
-msgstr "Ausgewählte Zeitzone"
+msgstr "Ausgewählte Zeitzonen deaktivieren"
 
 #: admin.py:99
 #, python-brace-format
@@ -78,7 +74,7 @@ msgstr[1] "{notifications_count} Zeitzonen deaktiviert"
 #: apps.py:20
 #, python-brace-format
 msgid "Time Zones v{__version__}"
-msgstr "Time Zones v{__version__}"
+msgstr "Zeitzonen v{__version__}"
 
 #: models.py:16
 msgid "Name of the timezone"
@@ -240,3 +236,7 @@ msgstr "Dezember"
 #: templates/timezones/partials/timezones/time-until.html:5
 msgid "Time left"
 msgstr "Verbleibend"
+
+#: admin.py:35
+msgid "Activate selected timezone(s)"
+msgstr "Ausgewählte Zeitzonen aktivieren"
