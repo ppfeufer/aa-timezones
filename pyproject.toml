@@ -41,6 +41,11 @@ dependencies = [
     "allianceauth-app-utils>=1.14.1",
     "pytz!=2022.2",
 ]
+[project.optional-dependencies]
+tests-allianceauth-stable = [
+    "coverage",
+    "django-webtest",
+]
 [project.urls]
 Changelog = "https://github.com/ppfeufer/aa-timezones/blob/master/CHANGELOG.md"
 Documentation = "https://github.com/ppfeufer/aa-timezones/blob/master/README.md"

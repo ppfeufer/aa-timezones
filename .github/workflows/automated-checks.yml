@@ -98,14 +98,13 @@ jobs:
           python -m pip install --upgrade tox tox-gh-actions
 
       - name: Run Tox
-        # Run tox using the version of Python in `PATH`
-        run: tox -v
         env:
-          DJANGO: ${{ matrix.django-version }}
-          ALLIANCEAUTH: stable
+          TOX_ENV: allianceauth-stable
           DB_HOST: 127.0.0.1
           DB_USER: root
           DB_PASSWORD: temp_password_aa_tox_tests
+        # Run tox using the version of Python in `PATH`
+        run: tox -v -e ${{ env.TOX_ENV }}
 
       - name: Upload Coverage Artifacts
         if: ${{
