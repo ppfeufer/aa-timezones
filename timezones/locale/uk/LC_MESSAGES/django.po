@@ -8,10 +8,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-09-28 19:50+0200\n"
-"PO-Revision-Date: 2023-09-24 13:13+0000\n"
-"Last-Translator: Peter Pfeufer <info@ppfeufer.de>\n"
-"Language-Team: Ukrainian <https://weblate.ppfeufer.de/projects/alliance-auth-"
-"apps/aa-timezones/uk/>\n"
+"PO-Revision-Date: 2023-10-01 10:43+0000\n"
+"Last-Translator: Kristof <kristof@teh.ninja>\n"
+"Language-Team: Ukrainian <https://weblate.ppfeufer.de/projects/"
+"alliance-auth-apps/aa-timezones/uk/>\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -27,7 +27,7 @@ msgstr "Часові пояси"
 
 #: admin.py:25
 msgid "Panel name"
-msgstr ""
+msgstr "Назва панелі"
 
 #: admin.py:29
 #, fuzzy
@@ -36,34 +36,30 @@ msgid "Time zone"
 msgstr "Часовий пояс"
 
 #: admin.py:35
-#, fuzzy
-#| msgid "Selected timezone"
 msgid "Activate selected timezones"
-msgstr "Обраний часовий пояс"
+msgstr "Активувати обрані часові пояси"
 
 #: admin.py:59
 #, python-brace-format
 msgid "Failed to activate {failed} timezone"
 msgid_plural "Failed to activate {failed} timezones"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "Не вийшло активувати {failed} часовий пояс"
+msgstr[1] "Не вийшло активувати {failed} пояси"
+msgstr[2] "Не вийшло активувати {failed} часові пояси"
+msgstr[3] "Не вийшло активувати {failed} часові пояси"
 
 #: admin.py:69
 #, python-brace-format
 msgid "Activated {notifications_count} timezone"
 msgid_plural "Activated {notifications_count} timezones"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "Активований {notifications_count} часовий пояс"
+msgstr[1] "Активовані {notifications_count}часові пояси"
+msgstr[2] "Активовані {notifications_count}часові пояси"
+msgstr[3] "Активовані {notifications_count}часові пояси"
 
 #: admin.py:75
-#, fuzzy
-#| msgid "Selected timezone"
 msgid "Deactivate selected timezones"
-msgstr "Обраний часовий пояс"
+msgstr "Деактивувати обрані часові пояси"
 
 #: admin.py:99
 #, python-brace-format
