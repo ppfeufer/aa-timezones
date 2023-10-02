@@ -189,7 +189,7 @@ repos:
       - id: tox-ini-fmt
 
   - repo: https://github.com/tox-dev/pyproject-fmt
-    rev: 1.1.0
+    rev: 1.2.0
     hooks:
       - id: pyproject-fmt
         args:
@@ -203,7 +203,7 @@ repos:
       - id: validate-pyproject
 
   - repo: https://github.com/pylint-dev/pylint
-    rev: v3.0.0a7
+    rev: v3.0.0
     hooks:
       - id: pylint
         args:
