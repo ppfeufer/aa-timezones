@@ -23,7 +23,7 @@ ci:
 # pre-commit setup
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.4.0
+    rev: v4.5.0
     hooks:
       # Identify invalid files
       - id: check-ast
@@ -73,7 +73,7 @@ repos:
           )
 
   - repo: https://github.com/pre-commit/mirrors-eslint
-    rev: v8.50.0
+    rev: v8.51.0
     hooks:
       - id: eslint
         exclude: |
@@ -127,7 +127,7 @@ repos:
           - --target-version=4.0  # Minimum supported Django version for AA. Update as needed.
 
   - repo: https://github.com/asottile/pyupgrade
-    rev: v3.13.0
+    rev: v3.15.0
     hooks:
       - id: pyupgrade
         args:
@@ -203,7 +203,7 @@ repos:
       - id: validate-pyproject
 
   - repo: https://github.com/pylint-dev/pylint
-    rev: v3.0.0
+    rev: v3.0.1
     hooks:
       - id: pylint
         args:
