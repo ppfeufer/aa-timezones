@@ -19,6 +19,9 @@ STATICFILES_DIRS = [os.path.join(PROJECT_DIR, f"{PACKAGE}/static")]
 SITE_URL = "https://example.com"
 CSRF_TRUSTED_ORIGINS = [SITE_URL]
 
+# Override this variable until #1386 is fixed
+DEFAULT_THEME = "allianceauth.theme.flatly.auth_hooks.FlatlyThemeHook"
+
 DISCORD_BOT_TOKEN = "My_Dummy_Token"
 # These are required for Django to function properly. Don't touch.
 ROOT_URLCONF = "testauth.urls"

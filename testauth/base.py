@@ -6,16 +6,11 @@ It gets overwritten by the 'allianceauth update' command.
 If you wish to make changes, overload the setting in your project's settings file (local.py).
 """
 
-# Standard Library
 import os
 
-# Third Party
+from django.contrib import messages
 from celery.schedules import crontab
 
-# Django
-from django.contrib import messages
-
-# pylint: disable=line-too-long
 INSTALLED_APPS = [
     "allianceauth",  # needs to be on top of this list to support favicons in Django admin (see https://gitlab.com/allianceauth/allianceauth/-/issues/1301)
     "django.contrib.admin",
@@ -36,6 +31,11 @@ INSTALLED_APPS = [
     "allianceauth.notifications",
     "allianceauth.thirdparty.navhelper",
     "allianceauth.analytics",
+    "allianceauth.menu",
+    "allianceauth.theme",
+    "allianceauth.theme.darkly",
+    "allianceauth.theme.flatly",
+    "allianceauth.theme.materia",
 ]
 
 SECRET_KEY = "wow I'm a really bad default secret key"
@@ -80,7 +80,6 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
-    "allianceauth.analytics.middleware.AnalyticsMiddleware",
 ]
 
 ROOT_URLCONF = "allianceauth.urls"
@@ -189,6 +188,8 @@ DATABASES = {
 }
 
 SITE_NAME = "Alliance Auth"
+
+DEFAULT_THEME = "allianceauth.theme.darkly"
 
 LOGIN_URL = "auth_login_user"  # view that handles login logic
 

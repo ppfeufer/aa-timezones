@@ -32,18 +32,22 @@ class TestAccess(TestCase):
         )
 
         cls.html_menu = f"""
-            <li>
-                <a class="active" href="{reverse('timezones:index')}">
-                    <i class="far fa-clock fa-fw"></i>
+            <li class="d-flex flex-wrap m-2 p-2 pt-0 pb-0 mt-0 mb-0 me-0 pe-0">
+                <i class="nav-link far fa-clock fa-fw fa-fw align-self-center me-3 active"></i>
+                <a class="nav-link flex-fill align-self-center" href="{reverse('timezones:index')}">
                     Time Zones
                 </a>
             </li>
         """
 
-        cls.header = """
+        cls.header_public_page = """
             <div class="aa-timezones-header">
-                <h1 class="page-header text-center">Time Zones</h1>
+                <h1 class="text-center">Time Zones</h1>
             </div>
+        """
+
+        cls.header_logged_in_user = """
+            <div class="navbar-brand">Time Zones</div>
         """
 
     def test_access_to_index_for_logged_in_user(self):
@@ -60,7 +64,9 @@ class TestAccess(TestCase):
 
         self.assertEqual(first=response.status_code, second=HTTPStatus.OK)
         self.assertContains(response=response, text=self.html_menu, html=True)
-        self.assertContains(response=response, text=self.header, html=True)
+        self.assertContains(
+            response=response, text=self.header_logged_in_user, html=True
+        )
 
     def test_access_to_index_as_public_page(self):
         """
@@ -73,4 +79,4 @@ class TestAccess(TestCase):
         response = self.client.get(path=reverse(viewname="timezones:index"))
 
         self.assertEqual(first=response.status_code, second=HTTPStatus.OK)
-        self.assertContains(response=response, text=self.header, html=True)
+        self.assertContains(response=response, text=self.header_public_page, html=True)
