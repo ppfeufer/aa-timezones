@@ -1,14 +1,17 @@
-{% extends 'allianceauth/base.html' %}
+{% extends 'allianceauth/base-bs5.html' %}
 
 {% load i18n %}
 
 {% block page_title %}{% translate "Time Zones" %}{% endblock %}
+{% block header_nav_brand %}{% translate "Time Zones" %}{% endblock header_nav_brand %}
 
 {% block content %}
-    <div class="aa-timezones">
-        <div class="aa-timezones-header">
-            <h1 class="page-header text-center">{% translate "Time Zones" %}</h1>
-        </div>
+    <div class="aa-timezones pt-2">
+        {% if not user.is_authenticated %}
+            <div class="aa-timezones-header">
+                <h1 class="text-center">{% translate "Time Zones" %}</h1>
+            </div>
+        {% endif %}
 
         <div class="aa-timezones-body">
             {% block aa_timezones_body %}{% endblock %}

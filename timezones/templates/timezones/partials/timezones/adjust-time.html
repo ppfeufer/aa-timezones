@@ -1,50 +1,34 @@
 {% load i18n %}
 
 <!-- // adjust time -->
-<p class="aa-timezones-adjust-time text-right">
-    <button
-        id="btnadjust"
-        class="btn btn-info btn-sm hidden"
-        onclick="showAdjust();"
-    >
+<p class="aa-timezones-adjust-time text-end">
+    <button id="btnadjust" class="btn btn-info d-none" onclick="showAdjust();">
         {% translate "Adjust time" %}
     </button>
 
-    <button
-        id="btnclear"
-        class="btn btn-danger btn-sm hidden"
-        onclick="reloadBasePage();"
-    >
+    <button id="btnclear" class="btn btn-danger d-none" onclick="reloadBasePage();">
         {% translate "Remove" %}
     </button>
 
-    <button
-        id="btnshowcurrent"
-        class="btn btn-primary btn-sm hidden"
-        onclick="switchto(0);"
-    >
+    <button id="btnshowcurrent" class="btn btn-primary d-none" onclick="switchto(0);">
         {% translate "Switch to current time" %}
     </button>
 
-    <button
-        id="btnshowfixed"
-        class="btn btn-primary btn-sm hidden"
-        onclick="switchto(1);"
-    >
+    <button id="btnshowfixed" class="btn btn-primary d-none" onclick="switchto(1);">
         {% translate "Switch to adjusted time" %}
     </button>
 </p>
 
-<div id="adjust" class="hidden eve-online-time-zones-time-adjust clearfix">
-    <div class="pull-right text-right">
-        <form class="form-inline eve-online-time-zones-time-adjust-form">
-            <div class="form-group form">
-                <div class="text-left eve-online-time-zones-time-adjust-form-header">
-                    {% translate "Set time to be in" %}
-                </div>
+<div id="adjust" class="d-none eve-online-time-zones-time-adjust pt-4 border-top border-light">
+    <div class="text-end clearfix">
+        <form class="float-end text-end eve-online-time-zones-time-adjust-form mb-4 fw-bold">
+            <div class="text-start eve-online-time-zones-time-adjust-form-header">
+                {% translate "Set time to be in" %}
+            </div>
 
-                <div class="input-group input-group-sm">
-                    <select class="form-control" id="tind">
+            <div class="d-flex flex-row align-items-center flex-wrap">
+                <div class="input-group me-3 my-1 me-sm-2 w-auto">
+                    <select class="form-select" id="tind">
                         <option>0</option>
                         <option>1</option>
                         <option>2</option>
@@ -54,11 +38,11 @@
                         <option>6</option>
                         <option>7</option>
                     </select>
-                    <div class="input-group-addon">{% translate "Days" %}</div>
+                    <div class="input-group-text">{% translate "Days" %}</div>
                 </div>
 
-                <div class="input-group input-group-sm">
-                    <select class="form-control" id="tinh">
+                <div class="input-group me-3 my-1 me-sm-2 w-auto">
+                    <select class="form-select" id="tinh">
                         <option>0</option>
                         <option>1</option>
                         <option>2</option>
@@ -84,11 +68,11 @@
                         <option>22</option>
                         <option>23</option>
                     </select>
-                    <div class="input-group-addon">{% translate "Hours" %}</div>
+                    <div class="input-group-text">{% translate "Hours" %}</div>
                 </div>
 
-                <div class="input-group input-group-sm">
-                    <select class="form-control" id="tinm">
+                <div class="input-group me-3 my-1 me-sm-2 w-auto">
+                    <select class="form-select" id="tinm">
                         <option>0</option>
                         <option>1</option>
                         <option>2</option>
@@ -150,22 +134,25 @@
                         <option>58</option>
                         <option>59</option>
                     </select>
-                    <div class="input-group-addon">{% translate "Minutes" %}</div>
+                    <div class="input-group-text">{% translate "Minutes" %}</div>
                 </div>
 
-{#                <button class="btn btn-info btn-sm" onclick="window.location.hash = (parseInt(new Date().getTime() / 1000) + jQuery('#tind').val() * 24 * 60 * 60 + jQuery('#tinh').val() * 60 * 60 + jQuery('#tinm').val() * 60);">{% translate "Set Time" %}</button>#}
-                <button class="btn btn-info btn-sm" onclick="reloadToTimestamp(); return false;">{% translate "Set time" %}</button>
+                <div>
+                    <button class="btn btn-info" onclick="reloadToTimestamp(); return false;">{% translate "Set time" %}</button>
+                </div>
             </div>
         </form>
+    </div>
 
-        <form class="form-inline">
-            <div class="form-group">
-                <div class="text-left eve-online-time-zones-time-adjust-form-header">
-                    {% translate "Set time to be at a specific time and date" %}
-                </div>
+    <div class="text-end clearfix">
+        <form class="float-end text-end eve-online-time-zones-time-adjust-form mb-4 fw-bold">
+            <div class="text-start eve-online-time-zones-time-adjust-form-header">
+                {% translate "Set time to be at a specific time and date" %}
+            </div>
 
-                <div class="input-group input-group-sm">
-                    <select class="form-control" id="tathour">
+            <div class="d-flex flex-row align-items-center flex-wrap">
+                <div class="input-group me-3 my-1 me-sm-2 w-auto">
+                    <select class="form-select" id="tathour">
                         <option>00</option>
                         <option>01</option>
                         <option>02</option>
@@ -191,10 +178,9 @@
                         <option>22</option>
                         <option>23</option>
                     </select>
+                    <div class="input-group-text">:</div>
 
-                    <div class="input-group-addon">:</div>
-
-                    <select class="form-control" id="tatminute">
+                    <select class="form-select" id="tatminute">
                         <option>00</option>
                         <option>01</option>
                         <option>02</option>
@@ -258,8 +244,8 @@
                     </select>
                 </div>
 
-                <div class="input-group input-group-sm">
-                    <select class="form-control" id="tatzone">
+                <div class="input-group me-3 my-1 me-sm-2 w-auto">
+                    <select class="form-select" id="tatzone">
                         <option value="">{% translate "Local time" %}</option>
                         <option value="ETC/UTC" selected>
                             {% translate "Eve time" %}
@@ -273,13 +259,13 @@
                     </select>
                 </div>
 
-                <label> - </label>
-                <div class="input-group input-group-sm">
+                <label class=" me-3 my-1 me-sm-2 w-auto"> - </label>
+
+                <div class="input-group me-3 my-1 me-sm-2 w-auto">
                     <select class="form-control" id="tatyear"></select>
+                    <div class="input-group-text">-</div>
 
-                    <div class="input-group-addon">-</div>
-
-                    <select class="form-control" id="tatmonth">
+                    <select class="form-select" id="tatmonth">
                         <option value="01">{% translate "January" %}</option>
                         <option value="02">{% translate "February" %}</option>
                         <option value="03">{% translate "March" %}</option>
@@ -293,10 +279,9 @@
                         <option value="11">{% translate "November" %}</option>
                         <option value="12">{% translate "December" %}</option>
                     </select>
+                    <div class="input-group-text">-</div>
 
-                    <div class="input-group-addon">-</div>
-
-                    <select class="form-control" id="tatday">
+                    <select class="form-select" id="tatday">
                         <option>01</option>
                         <option>02</option>
                         <option>03</option>
@@ -331,12 +316,14 @@
                     </select>
                 </div>
 
-                <button
-                    class="btn btn-info btn-sm"
-                    onclick="setdate(jQuery('#tatyear').val() + '-' + jQuery('#tatmonth').val() + '-' + jQuery('#tatday').val() + ' ' + jQuery('#tathour').val() + ':' + jQuery('#tatminute').val(), jQuery('#tatzone').val()); return false;"
-                >
-                    {% translate "Set time" %}
-                </button>
+                <div>
+                    <button
+                        class="btn btn-info"
+                        onclick="setdate(jQuery('#tatyear').val() + '-' + jQuery('#tatmonth').val() + '-' + jQuery('#tatday').val() + ' ' + jQuery('#tathour').val() + ':' + jQuery('#tatminute').val(), jQuery('#tatzone').val()); return false;"
+                    >
+                        {% translate "Set time" %}
+                    </button>
+                </div>
             </div>
         </form>
     </div>

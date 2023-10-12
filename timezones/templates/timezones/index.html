@@ -5,34 +5,40 @@
 {% block aa_timezones_body %}
     <div class="row">
         <!-- // Local Time -->
-        <div class="col-sm-6 col-md-4 col-lg-3">
-            <div class="panel panel-warning">
-                <div class="panel-heading">
-                    <div class="panel-title">
-                        {% translate "Local time" %} <span class="pull-right"><i id="icon-local-time"></i></span>
+        <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
+            <div class="card border-warning">
+                <div class="card-header bg-warning">
+                    <div class="card-title text-white">
+                        {% translate "Local time" %}
+                        <span class="float-end">
+                            <i id="icon-local-time"></i>
+                        </span>
                     </div>
                 </div>
 
-                <div class="panel-body text-center timezone-panel">
+                <div class="card-body text-center timezone-panel">
                     <span id="date-local-time" class="timezone-panel-section timezone-panel-section-date">({% translate "loading" %})</span>
-                    <b id="time-local-time" class="timezone-panel-section timezone-panel-section-time">--:--:--</b>
+                    <span id="time-local-time" class="timezone-panel-section timezone-panel-section-time fw-bold">--:--:--</span>
                     <span id="utc-offset-local-time" class="timezone-panel-section timezone-panel-section-utc-offset"></span>
                 </div>
             </div>
         </div>
 
         <!-- // EVE Time -->
-        <div class="col-sm-6 col-md-4 col-lg-3">
-            <div class="panel panel-success">
-                <div class="panel-heading">
-                    <div class="panel-title">
-                        {% translate "Eve time" %} <span class="pull-right"><i id="icon-eve-time"></i></span>
+        <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
+            <div class="card border-success">
+                <div class="card-header bg-success">
+                    <div class="card-title text-white">
+                        {% translate "Eve time" %}
+                        <span class="float-end">
+                            <i id="icon-eve-time"></i>
+                        </span>
                     </div>
                 </div>
 
-                <div class="panel-body text-center timezone-panel">
+                <div class="card-body text-center timezone-panel">
                     <span id="date-eve-time" class="timezone-panel-section timezone-panel-section-date">({% translate "loading" %})</span>
-                    <b id="time-eve-time" class="timezone-panel-section timezone-panel-section-time">--:--:--</b>
+                    <span id="time-eve-time" class="timezone-panel-section timezone-panel-section-time fw-bold">--:--:--</span>
                     <span id="utc-offset-eve-time" class="timezone-panel-section timezone-panel-section-utc-offset"></span>
                 </div>
             </div>
