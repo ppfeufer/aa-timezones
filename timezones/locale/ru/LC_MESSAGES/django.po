@@ -3,6 +3,7 @@
 # This file is distributed under the same license as the PACKAGE package.
 # Nikolay <nick.postnikov@gmail.com>, 2023.
 # Peter Pfeufer <info@ppfeufer.de>, 2023.
+# Max <mark25@inbox.ru>, 2023.
 #
 # Translators:
 # Николай Постников, 2021
@@ -12,10 +13,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-10-01 13:30+0200\n"
-"PO-Revision-Date: 2023-09-24 13:13+0000\n"
-"Last-Translator: Peter Pfeufer <info@ppfeufer.de>\n"
-"Language-Team: Russian <https://weblate.ppfeufer.de/projects/alliance-auth-"
-"apps/aa-timezones/ru/>\n"
+"PO-Revision-Date: 2023-10-03 15:43+0000\n"
+"Last-Translator: Max <mark25@inbox.ru>\n"
+"Language-Team: Russian <https://weblate.ppfeufer.de/projects/"
+"alliance-auth-apps/aa-timezones/ru/>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -31,66 +32,60 @@ msgstr "Часовые пояса"
 
 #: timezones/admin.py:25
 msgid "Panel name"
-msgstr ""
+msgstr "Название панели"
 
 #: timezones/admin.py:29
-#, fuzzy
-#| msgid "Timezone"
 msgid "Time zone"
 msgstr "Часовой пояс"
 
 #: timezones/admin.py:35
-#, fuzzy
-#| msgid "Selected timezone"
 msgid "Activate selected timezones"
-msgstr "Выбранный часовой пояс"
+msgstr "Активация выбранного часового пояса"
 
 #: timezones/admin.py:59
 #, python-brace-format
 msgid "Failed to activate {failed} timezone"
 msgid_plural "Failed to activate {failed} timezones"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "Не удалось активировать {failed} часовой пояс"
+msgstr[1] "Не удалось активировать {failed} часовые пояса"
+msgstr[2] "Не удалось активировать {failed} часовые пояса"
+msgstr[3] "Не удалось активировать {failed} часовые пояса"
 
 #: timezones/admin.py:69
 #, python-brace-format
 msgid "Activated {notifications_count} timezone"
 msgid_plural "Activated {notifications_count} timezones"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "Активированный часовой пояс {notifications_count}"
+msgstr[1] "Активированные часовые пояса {notifications_count}"
+msgstr[2] "Активированные часовые пояса {notifications_count}"
+msgstr[3] "Активированные часовые пояса {notifications_count}"
 
 #: timezones/admin.py:75
-#, fuzzy
-#| msgid "Selected timezone"
 msgid "Deactivate selected timezones"
-msgstr "Выбранный часовой пояс"
+msgstr "Деактивировать выбранный часовой пояс"
 
 #: timezones/admin.py:99
 #, python-brace-format
 msgid "Failed to deactivate {failed} timezone"
 msgid_plural "Failed to deactivate {failed} timezones"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "Не удалось отключить {failed} часовой пояс"
+msgstr[1] "Не удалось отключить {failed} часовые пояса"
+msgstr[2] "Не удалось отключить {failed} часовые пояса"
+msgstr[3] "Не удалось отключить {failed} часовые пояса"
 
 #: timezones/admin.py:109
 #, python-brace-format
 msgid "Deactivated {notifications_count} timezone"
 msgid_plural "Deactivated {notifications_count} timezones"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "Отключенный часовой пояс {notifications_count}"
+msgstr[1] "Отключенные часовые пояса {notifications_count}"
+msgstr[2] "Отключенные часовые пояса {notifications_count}"
+msgstr[3] "Отключенные часовые пояса {notifications_count}"
 
 #: timezones/apps.py:20
 #, python-brace-format
 msgid "Time Zones v{__version__}"
-msgstr ""
+msgstr "Часовой пояс в{__version__}"
 
 #: timezones/models.py:16
 msgid "Name of the timezone"
@@ -105,8 +100,6 @@ msgid "ID of the timezone panel in frontend"
 msgstr "ID панели часового пояса"
 
 #: timezones/models.py:41 timezones/models.py:42
-#, fuzzy
-#| msgid "Timezone Data"
 msgid "Timezone data"
 msgstr "Данные часового пояса"
 
@@ -132,10 +125,8 @@ msgstr "Часовые пояса"
 
 #: timezones/templates/timezones/index.html:12
 #: timezones/templates/timezones/partials/timezones/adjust-time.html:263
-#, fuzzy
-#| msgid "Local Time"
 msgid "Local time"
-msgstr "Локальное время"
+msgstr "Местное время"
 
 #: timezones/templates/timezones/index.html:17
 #: timezones/templates/timezones/index.html:34
@@ -170,8 +161,6 @@ msgid "Join our team of translators!"
 msgstr "Присоединяйтесь к нашей команде переводчиков!"
 
 #: timezones/templates/timezones/partials/timezones/adjust-time.html:10
-#, fuzzy
-#| msgid "Adjust Time"
 msgid "Adjust time"
 msgstr "Задать время"
 
@@ -201,14 +190,12 @@ msgstr "минут"
 
 #: timezones/templates/timezones/partials/timezones/adjust-time.html:157
 #: timezones/templates/timezones/partials/timezones/adjust-time.html:338
-#, fuzzy
-#| msgid "Set Time"
 msgid "Set time"
-msgstr "Установить"
+msgstr "Установить время"
 
 #: timezones/templates/timezones/partials/timezones/adjust-time.html:164
 msgid "Set time to be at a specific time and date"
-msgstr "Задать указанные время и дату"
+msgstr "Установите время на определенное время и дату"
 
 #: timezones/templates/timezones/partials/timezones/adjust-time.html:283
 msgid "January"
