@@ -19,8 +19,4 @@
     .aa-timezones-footer {
         font-size: 85%;
     }
-
-    .template-dark-mode .aa-timezones-footer {
-        border-color: rgb(70 69 69);
-    }
 }
