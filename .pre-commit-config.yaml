@@ -109,7 +109,7 @@ repos:
       - id: python-use-type-annotations  # Enforce that python3.6+ type annotations are used instead of type comments
 
   - repo: https://github.com/editorconfig-checker/editorconfig-checker.python
-    rev: 2.7.2
+    rev: 2.7.3
     hooks:
       - id: editorconfig-checker
         exclude: |
@@ -198,7 +198,7 @@ repos:
           - tox==4.11.3  # https://github.com/tox-dev/tox/releases/latest
 
   - repo: https://github.com/abravalheri/validate-pyproject
-    rev: v0.14
+    rev: v0.15
     hooks:
       - id: validate-pyproject
 
