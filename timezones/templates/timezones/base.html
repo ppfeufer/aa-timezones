@@ -2,11 +2,16 @@
 
 {% load i18n %}
 
-{% block page_title %}{% translate "Time Zones" %}{% endblock %}
-{% block header_nav_brand %}{% translate "Time Zones" %}{% endblock header_nav_brand %}
+{% block page_title %}
+    {% translate "Time Zones" %}
+{% endblock %}
+
+{% block header_nav_brand %}
+    {% translate "Time Zones" %}
+{% endblock header_nav_brand %}
 
 {% block content %}
-    <div class="aa-timezones pt-2">
+    <div class="aa-timezones">
         {% if not user.is_authenticated %}
             <div class="aa-timezones-header">
                 <h1 class="text-center">{% translate "Time Zones" %}</h1>
