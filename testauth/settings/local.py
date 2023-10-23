@@ -14,7 +14,10 @@ PACKAGE = "timezones"
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
-STATICFILES_DIRS = [os.path.join(PROJECT_DIR, f"{PACKAGE}/static")]
+# STATICFILES_DIRS = [os.path.join(PROJECT_DIR, f"{PACKAGE}/static")]
+STATICFILES_DIRS = [
+    f"{PACKAGE}/static",
+]
 
 SITE_URL = "https://example.com"
 CSRF_TRUSTED_ORIGINS = [SITE_URL]

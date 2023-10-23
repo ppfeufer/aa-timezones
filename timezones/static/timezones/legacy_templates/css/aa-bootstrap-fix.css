@@ -1,0 +1,13 @@
+/* Attempting to fix AA's wrong usage of bootstrap classes
+------------------------------------------------------------------------------------- */
+@media all {
+    #site-body-wrapper.row {
+        margin-left: 0;
+    }
+}
+
+@media all and (min-width: 768px) {
+    #site-body-wrapper.row {
+        margin-left: -15px;
+    }
+}

@@ -10,7 +10,7 @@ from django.test import TestCase
 from django.urls import reverse
 
 # AA Time Zones
-from timezones.tests.utils import create_fake_user
+from timezones.tests.utils import create_fake_user, is_legacy_auth
 
 
 class TestAccess(TestCase):
@@ -40,7 +40,7 @@ class TestAccess(TestCase):
             </li>
         """
 
-        cls.header_public_page = """
+        cls.header = """
             <div class="aa-timezones-header">
                 <h1 class="text-center">Time Zones</h1>
             </div>
@@ -49,6 +49,22 @@ class TestAccess(TestCase):
         cls.header_logged_in_user = """
             <div class="navbar-brand">Time Zones</div>
         """
+
+        if is_legacy_auth:
+            cls.html_menu = f"""
+                        <li>
+                            <a class="active" href="{reverse('timezones:index')}">
+                                <i class="far fa-clock fa-fw"></i>
+                                Time Zones
+                            </a>
+                        </li>
+                    """
+
+            cls.header = """
+                        <div class="aa-timezones-header">
+                            <h1 class="page-header text-center">Time Zones</h1>
+                        </div>
+                    """
 
     def test_access_to_index_for_logged_in_user(self):
         """
@@ -64,9 +80,13 @@ class TestAccess(TestCase):
 
         self.assertEqual(first=response.status_code, second=HTTPStatus.OK)
         self.assertContains(response=response, text=self.html_menu, html=True)
-        self.assertContains(
-            response=response, text=self.header_logged_in_user, html=True
-        )
+
+        if is_legacy_auth():
+            self.assertContains(response=response, text=self.header, html=True)
+        else:
+            self.assertContains(
+                response=response, text=self.header_logged_in_user, html=True
+            )
 
     def test_access_to_index_as_public_page(self):
         """
@@ -79,4 +99,4 @@ class TestAccess(TestCase):
         response = self.client.get(path=reverse(viewname="timezones:index"))
 
         self.assertEqual(first=response.status_code, second=HTTPStatus.OK)
-        self.assertContains(response=response, text=self.header_public_page, html=True)
+        self.assertContains(response=response, text=self.header, html=True)

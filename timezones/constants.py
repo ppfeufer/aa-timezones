@@ -5,6 +5,9 @@ Constants
 # Standard Library
 from typing import Dict, List, Union
 
+# AA Time Zones
+from timezones.app_settings import template_path
+
 AA_TIMEZONE_DEFAULT_PANELS: List[Dict[str, Union[str, Dict[str, str]]]] = [
     {
         "panel_name": "US / Pacific",
@@ -77,3 +80,5 @@ AA_TIMEZONE_DEFAULT_PANELS: List[Dict[str, Union[str, Dict[str, str]]]] = [
         },
     },
 ]
+
+TEMPLATE_PATH = template_path()

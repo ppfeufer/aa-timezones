@@ -39,12 +39,22 @@ dynamic = [
     "version",
 ]
 dependencies = [
-    "allianceauth>=4.0.0a1",
+    "allianceauth>=3.6.1",
     "allianceauth-app-utils>=1.14.1",
     "pytz!=2022.2",
 ]
 [project.optional-dependencies]
+tests-allianceauth-legacy = [
+    "allianceauth<=4,>=3",
+    "coverage",
+    "django-webtest",
+]
 tests-allianceauth-stable = [
+    "coverage",
+    "django-webtest",
+]
+tests-allianceauth-testing = [
+    "allianceauth>=4.0.0a1",
     "coverage",
     "django-webtest",
 ]

@@ -1,0 +1,84 @@
+{% extends 'timezones/legacy_templates/base.html' %}
+
+{% load i18n %}
+
+{% block aa_timezones_body %}
+    <div class="row">
+        <!-- // Local Time -->
+        <div class="col-sm-6 col-md-4 col-lg-3">
+            <div class="panel panel-warning">
+                <div class="panel-heading">
+                    <div class="panel-title">
+                        {% translate "Local time" %} <span class="pull-right"><i id="icon-local-time"></i></span>
+                    </div>
+                </div>
+
+                <div class="panel-body text-center timezone-panel">
+                    <span id="date-local-time" class="timezone-panel-section timezone-panel-section-date">({% translate "loading" %})</span>
+                    <b id="time-local-time" class="timezone-panel-section timezone-panel-section-time">--:--:--</b>
+                    <span id="utc-offset-local-time" class="timezone-panel-section timezone-panel-section-utc-offset"></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- // EVE Time -->
+        <div class="col-sm-6 col-md-4 col-lg-3">
+            <div class="panel panel-success">
+                <div class="panel-heading">
+                    <div class="panel-title">
+                        {% translate "Eve time" %} <span class="pull-right"><i id="icon-eve-time"></i></span>
+                    </div>
+                </div>
+
+                <div class="panel-body text-center timezone-panel">
+                    <span id="date-eve-time" class="timezone-panel-section timezone-panel-section-date">({% translate "loading" %})</span>
+                    <b id="time-eve-time" class="timezone-panel-section timezone-panel-section-time">--:--:--</b>
+                    <span id="utc-offset-eve-time" class="timezone-panel-section timezone-panel-section-utc-offset"></span>
+                </div>
+            </div>
+
+            <script>
+                aaTimezonesPanels = (typeof aaTimezonesPanels != 'undefined' && aaTimezonesPanels instanceof Array) ? aaTimezonesPanels : []
+
+                aaTimezonesPanels.push({
+                    'timezoneName': 'Etc/UTC',
+                    'timezoneId': 'eve-time'
+                });
+            </script>
+        </div>
+
+        {% if timezones %}
+            {% for timezone in timezones %}
+                <!-- // {{ timezone.panel_name }} -->
+                {% include "timezones/legacy_templates/partials/timezones/timezone-panel.html" %}
+            {% endfor %}
+        {% endif %}
+    </div>
+
+    {% include 'timezones/legacy_templates/partials/timezones/time-until.html' %}
+    {% include 'timezones/legacy_templates/partials/timezones/adjust-time.html' %}
+
+    <!-- share options with JS part -->
+    <script>
+        let aaTimezonesOptions = {
+            base_url: '{% url "timezones:index" %}',
+            timestamp: '{{ timestamp }}',
+            translation: {
+                days: '{% translate "Days" %}',
+                alreadyOver: '{% translate "Already over, you missed it!" %}'
+            }
+        }
+    </script>
+{% endblock %}
+
+{% block extra_javascript %}
+    {% include 'bundles/moment-js.html' with locale=True %}
+    {% include "timezones/legacy_templates/bundles/jquery-timeago-js.html" %}
+    {% include "timezones/legacy_templates/bundles/moment-timezone-js.html" %}
+    {% include "timezones/legacy_templates/bundles/aa-timezones-js.html" %}
+{% endblock %}
+
+{% block extra_css %}
+    {% include "timezones/legacy_templates/bundles/weather-icons-css.html" %}
+    {% include "timezones/legacy_templates/bundles/aa-timezones-css.html" %}
+{% endblock %}

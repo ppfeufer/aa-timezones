@@ -1,6 +1,8 @@
 """
 Test checks for access to timezones
 """
+# Standard Library
+from unittest.mock import patch
 
 # Django
 from django.contrib.auth.models import Group
@@ -8,6 +10,7 @@ from django.test import TestCase
 from django.urls import reverse
 
 # AA Time Zones
+from timezones.app_settings import template_path
 from timezones.constants import AA_TIMEZONE_DEFAULT_PANELS
 from timezones.models import TimezoneData, Timezones
 from timezones.tests.utils import create_fake_user
@@ -71,3 +74,31 @@ class TestAccess(TestCase):
         self.assertQuerysetEqual(
             res.context["timezones"], Timezones.objects.all(), transform=lambda x: x
         )
+
+    def test_should_return_template_path(self):
+        """
+        Test should return the template path
+
+        :return:
+        :rtype:
+        """
+
+        with patch(target="timezones.app_settings.allianceauth__version", new="4.0.0"):
+            current_template_path = template_path()
+            expected_template_path = "timezones"
+
+            self.assertEqual(first=current_template_path, second=expected_template_path)
+
+    def test_should_return_legacy_template_path(self):
+        """
+        Test should return the template path to the legacy templates
+
+        :return:
+        :rtype:
+        """
+
+        with patch(target="timezones.app_settings.allianceauth__version", new="3.7.1"):
+            current_template_path = template_path()
+            expected_template_path = "timezones/legacy_templates"
+
+            self.assertEqual(first=current_template_path, second=expected_template_path)
