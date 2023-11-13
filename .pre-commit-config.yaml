@@ -73,7 +73,7 @@ repos:
           )
 
   - repo: https://github.com/pre-commit/mirrors-eslint
-    rev: v8.51.0
+    rev: v8.53.0
     hooks:
       - id: eslint
         exclude: |
@@ -83,7 +83,7 @@ repos:
           )
 
   - repo: https://github.com/thibaudcolas/pre-commit-stylelint
-    rev: v15.10.3
+    rev: v15.11.0
     hooks:
       - id: stylelint
         exclude: |
@@ -154,7 +154,7 @@ repos:
       - id: black-disable-checker
 
   - repo: https://github.com/psf/black
-    rev: 23.9.1
+    rev: 23.11.0
     hooks:
       - id: black
         args:
@@ -189,7 +189,7 @@ repos:
       - id: tox-ini-fmt
 
   - repo: https://github.com/tox-dev/pyproject-fmt
-    rev: 1.2.0
+    rev: 1.5.1
     hooks:
       - id: pyproject-fmt
         args:
