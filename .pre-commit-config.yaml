@@ -16,7 +16,7 @@ ci:
   autofix_prs: false
   autoupdate_branch: 'master'
   autoupdate_commit_msg: '[pre-commit.ci] pre-commit autoupdate'
-  autoupdate_schedule: weekly
+  autoupdate_schedule: monthly
   skip: []
   submodules: false
 
@@ -95,7 +95,7 @@ repos:
           - --formatter=compact
         additional_dependencies:
           # stylelint itself needs to be here when using additional_dependencies.
-          - stylelint@15.10.3  # https://github.com/stylelint/stylelint/releases/latest
+          - stylelint@15.11.0  # https://github.com/stylelint/stylelint/releases/latest
           - stylelint-config-standard@34.0.0  # https://github.com/stylelint/stylelint-config-standard/releases/latest
 
   - repo: https://github.com/pre-commit/pygrep-hooks
@@ -165,7 +165,7 @@ repos:
     hooks:
       - id: blacken-docs
         additional_dependencies:
-          - black==23.9.1  # https://github.com/psf/black/releases/latest
+          - black==23.11.0  # https://github.com/psf/black/releases/latest
         args:
           - --target-version=py38  # Minimum required Python version for AA. Update as needed.
 
