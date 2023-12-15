@@ -28,7 +28,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version-file: 'pyproject.toml' # Read python version from a file pyproject.toml
+          python-version-file: 'pyproject.toml' # Read the Python version from the pyproject.toml file
 
       - name: Run Pre Commit Checks
         uses: pre-commit/action@v3.0.0
@@ -42,13 +42,11 @@ jobs:
     strategy:
       # Set Python and Django version to test for the stable release of AllianceAuth
       matrix:
-        # Don't forget to change the Python version for [upload-coverage] as well
         python-version:
           - '3.8'
           - '3.9'
           - '3.10'
           - '3.11'
-        # Don't forget to change the Django version for [upload-coverage] as well
         django-version:
           - '4.0'
         # MySQL versions to test against
@@ -106,7 +104,7 @@ jobs:
         # Run tox using the version of Python in `PATH`
         run: tox -v -e ${{ env.TOX_ENV }}
 
-      - name: Upload Coverage Artifacts
+      - name: Upload Coverage
         if: ${{
               (
                 github.event_name == 'pull_request' ||
@@ -117,14 +115,18 @@ jobs:
               ) &&
               (
                 matrix.python-version == '3.10' &&
+                matrix.database == 'mariadb:10.11' &&
                 matrix.django-version == '4.0'
               )
             }}
-        uses: actions/upload-artifact@v3
+        uses: codecov/codecov-action@v3
         with:
-          name: coverage-${{ github.event_name }}-${{ github.sha }}
-          path: coverage.xml
-          if-no-files-found: ignore
+          token: ${{ secrets.CODECOV_TOKEN }} # not required for public repos
+          files: coverage.xml # optional
+#          flags: unittests # optional
+#          name: codecov-umbrella # optional
+#          fail_ci_if_error: true # optional (default = false)
+          verbose: true # optional (default = false)
 
 #  test-coverage-aa-dev:
 #    needs: [ test-coverage-aa-stable ]
@@ -197,40 +199,6 @@ jobs:
 #          DB_USER: root
 #          DB_PASSWORD: temp_password_aa_tox_tests
 
-  # Coverage upload to Codecov
-  upload-coverage:
-    if: ${{
-          github.event_name == 'pull_request' ||
-          (github.event_name == 'push' && github.ref == 'refs/heads/master')
-        }}
-    needs: [ test-coverage-aa-stable ]
-#    needs: [ test-coverage-aa-stable, test-coverage-aa-dev ]
-    name: Upload Coverage
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Download artifacts
-        uses: actions/download-artifact@v3
-        with:
-          path: artifacts
-
-      - name: Display the structure of the downloaded files
-        run: ls -Rrtlh
-        working-directory: artifacts
-
-      - name: Upload Coverage to Codecov
-        uses: codecov/codecov-action@v3
-        with:
-          token: ${{ secrets.CODECOV_TOKEN }} # not required for public repos
-          files: artifacts/coverage-${{ github.event_name }}-${{ github.sha }}/coverage.xml # optional
-#          flags: unittests # optional
-#          name: codecov-umbrella # optional
-#          fail_ci_if_error: true # optional (default = false)
-          verbose: true # optional (default = false)
-
   # Pypi Build Test
   pypi-build-test:
     needs: [ test-coverage-aa-stable ]
@@ -245,7 +213,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version-file: 'pyproject.toml' # Read python version from a file pyproject.toml
+          python-version-file: 'pyproject.toml' # Read the Python version from the pyproject.toml file
 
       - name: Install Tools
         run: |
@@ -260,7 +228,7 @@ jobs:
           python -m build
 
       - name: Upload Build Artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: build-${{ github.event_name }}-${{ github.sha }}
           path: dist
