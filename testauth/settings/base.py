@@ -6,16 +6,11 @@ It gets overwritten by the 'allianceauth update' command.
 If you wish to make changes, overload the setting in your project's settings file (local.py).
 """
 
-# Standard Library
 import os
 
-# Third Party
+from django.contrib import messages
 from celery.schedules import crontab
 
-# Django
-from django.contrib import messages
-
-# pylint: disable=line-too-long
 INSTALLED_APPS = [
     "allianceauth",  # needs to be on top of this list to support favicons in Django admin (see https://gitlab.com/allianceauth/allianceauth/-/issues/1301)
     "django.contrib.admin",
@@ -27,6 +22,7 @@ INSTALLED_APPS = [
     "django.contrib.humanize",
     "django_celery_beat",
     "bootstrapform",
+    "django_bootstrap5",  # https://github.com/zostera/django-bootstrap5
     "sortedm2m",
     "esi",
     "allianceauth.authentication",
@@ -36,6 +32,11 @@ INSTALLED_APPS = [
     "allianceauth.notifications",
     "allianceauth.thirdparty.navhelper",
     "allianceauth.analytics",
+    "allianceauth.menu",
+    "allianceauth.theme",
+    "allianceauth.theme.darkly",
+    "allianceauth.theme.flatly",
+    "allianceauth.theme.materia",
 ]
 
 SECRET_KEY = "wow I'm a really bad default secret key"
@@ -80,7 +81,6 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
-    "allianceauth.analytics.middleware.AnalyticsMiddleware",
 ]
 
 ROOT_URLCONF = "allianceauth.urls"
@@ -125,7 +125,6 @@ WSGI_APPLICATION = "allianceauth.wsgi.application"
 
 # Password validation
 # https://docs.djangoproject.com/en/1.10/ref/settings/#auth-password-validators
-
 AUTH_PASSWORD_VALIDATORS = [
     {
         "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",
@@ -148,15 +147,10 @@ AUTHENTICATION_BACKENDS = [
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.10/topics/i18n/
-
 LANGUAGE_CODE = "en-us"
-
 LANGUAGE_COOKIE_AGE = 1209600
-
 TIME_ZONE = "UTC"
-
 USE_I18N = True
-
 USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
@@ -190,6 +184,9 @@ DATABASES = {
 
 SITE_NAME = "Alliance Auth"
 
+DEFAULT_THEME = "allianceauth.theme.flatly.auth_hooks.FlatlyThemeHook"
+DEFAULT_THEME_DARK = "allianceauth.theme.darkly.auth_hooks.DarklyThemeHook"  # Legacy AAv3 user.profile.night_mode=1
+
 LOGIN_URL = "auth_login_user"  # view that handles login logic
 
 LOGIN_REDIRECT_URL = "authentication:dashboard"  # default destination when logging in if no redirect specified
@@ -200,10 +197,10 @@ LOGOUT_REDIRECT_URL = "authentication:dashboard"  # destination after logging ou
 # - relative urls eg '/dashboard'
 # - absolute urls eg 'http://example.com/dashboard'
 
-# scopes required on new tokens when logging in. Cannot be blank.
+# Scopes required on new tokens when logging in. Cannot be blank.
 LOGIN_TOKEN_SCOPES = ["publicData"]
 
-# number of days email verification links are valid for
+# Number of days email verification links are valid for
 ACCOUNT_ACTIVATION_DAYS = 1
 
 ESI_API_URL = "https://esi.evetech.net/"
@@ -225,7 +222,7 @@ LOGGING = {
             "filename": os.path.join(BASE_DIR, "log/allianceauth.log"),
             "formatter": "verbose",
             "maxBytes": 1024 * 1024 * 5,  # edit this line to change max log file size
-            "backupCount": 5,  # edit this line to change number of log backups
+            "backupCount": 5,  # edit this line to change the number of log backups
         },
         "extension_file": {
             "level": "INFO",

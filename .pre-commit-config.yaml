@@ -206,7 +206,7 @@ repos:
         name: Django upgrade
         description: "Upgrade Django code to a target version."
         args:
-          - --target-version=4.0  # Minimum supported Django version for AA. Update as needed.
+          - --target-version=4.2  # Minimum supported Django version for AA. Update as needed.
 
   - repo: https://github.com/asottile/pyupgrade
     rev: v3.15.0

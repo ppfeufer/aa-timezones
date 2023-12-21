@@ -77,6 +77,6 @@ class TestAccess(TestCase):
         res = self.client.get(path=reverse(viewname="timezones:index"))
 
         # then
-        self.assertQuerysetEqual(
+        self.assertQuerySetEqual(
             res.context["timezones"], Timezones.objects.all(), transform=lambda x: x
         )
