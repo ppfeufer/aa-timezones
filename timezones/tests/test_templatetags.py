@@ -25,7 +25,7 @@ class TestVersionedStatic(TestCase):
 
         context = Context({"version": __version__})
         template_to_render = Template(
-            "{% load timezones_versioned_static %}"
+            "{% load timezones %}"
             "{% timezones_static 'timezones/css/timezones.min.css' %}"
         )
 
