@@ -7,7 +7,7 @@ from django.shortcuts import render
 
 # AA Time Zones
 from timezones import __title__
-from timezones.constants import AA_TIMEZONE_DEFAULT_PANELS, TEMPLATE_PATH
+from timezones.constants import AA_TIMEZONE_DEFAULT_PANELS
 from timezones.models import Timezones
 
 
@@ -32,5 +32,5 @@ def index(request, timestamp: str = None):
     context = {"title": __title__, "timezones": timezones, "timestamp": timestamp}
 
     return render(
-        request=request, template_name=f"{TEMPLATE_PATH}/index.html", context=context
+        request=request, template_name="timezones/index.html", context=context
     )
