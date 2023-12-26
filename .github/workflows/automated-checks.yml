@@ -36,7 +36,7 @@ jobs:
   # Run Test Coverage
   test-coverage-aa-stable:
     needs: [pre-commit]
-    name: AA Latest (Python ${{ matrix.python-version }}, Django ${{ matrix.django-version }} with ${{ matrix.database }})
+    name: AA Latest (Python ${{ matrix.python-version }} with ${{ matrix.database }})
     runs-on: ubuntu-latest
 
     strategy:
@@ -48,8 +48,6 @@ jobs:
           - '3.10'
           - '3.11'
           - '3.12'
-        django-version:
-          - '4.0'
         # MySQL versions to test against
         database:
           # https://endoflife.date/mysql
@@ -107,16 +105,15 @@ jobs:
       - name: Upload Coverage
         if: ${{
               (
-                github.event_name == 'pull_request' ||
-                (
-                  github.event_name == 'push' &&
-                  github.ref == 'refs/heads/master'
+                github.event_name == 'pull_request'
+                || (
+                  github.event_name == 'push'
+                  && github.ref == 'refs/heads/master'
                 )
-              ) &&
-              (
-                matrix.python-version == '3.10' &&
-                matrix.database == 'mariadb:10.11' &&
-                matrix.django-version == '4.0'
+              )
+              && (
+                matrix.python-version == '3.10'
+                && matrix.database == 'mariadb:10.11'
               )
             }}
         uses: codecov/codecov-action@v4
@@ -131,7 +128,6 @@ jobs:
   # Pypi Build Test
   pypi-build-test:
     needs: [ test-coverage-aa-stable ]
-#    needs: [ test-coverage-aa-stable, test-coverage-aa-dev ]
     name: PyPi Build Test
     runs-on: ubuntu-latest
 

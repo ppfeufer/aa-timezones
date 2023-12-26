@@ -14,7 +14,8 @@
     <div class="aa-timezones">
         {% if not user.is_authenticated %}
             <div class="aa-timezones-header">
-                <h1 class="text-center">{% translate "Time Zones" %}</h1>
+                {% translate "Time Zones" as page_header %}
+                {% include "framework/header/page-header.html" with title=page_header %}
             </div>
         {% endif %}
 

@@ -4,7 +4,6 @@ Test checks for access to timezones
 
 # Standard Library
 from http import HTTPStatus
-from unittest import skip
 
 # Django
 from django.test import TestCase
@@ -14,8 +13,6 @@ from django.urls import reverse
 from timezones.tests.utils import create_fake_user
 
 
-# FIXME: Ignore this test until AA menu generation is fixed
-@skip("Ignore this test until AA menu generation is fixed")
 class TestAccess(TestCase):
     """
     Test module access
@@ -39,7 +36,7 @@ class TestAccess(TestCase):
 
         cls.html_menu = f"""
             <li class="d-flex flex-wrap m-2 p-2 pt-0 pb-0 mt-0 mb-0 me-0 pe-0">
-                <i class="nav-link far fa-clock fa-fw align-self-center me-3 active"></i>
+                <i class="nav-link fa-regular fa-clock fa-fw fa-fw align-self-center me-3 active"></i>
                 <a class="nav-link flex-fill align-self-center" href="{reverse('timezones:index')}">
                     Time Zones
                 </a>
@@ -48,7 +45,7 @@ class TestAccess(TestCase):
 
         cls.header = """
             <div class="aa-timezones-header">
-                <h1 class="text-center">Time Zones</h1>
+                <h1 class="page-header text-center mb-3">Time Zones</h1>
             </div>
         """
 
