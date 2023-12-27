@@ -16,31 +16,34 @@ on:
       - '**'
 
 jobs:
-  # pre-commit Checks
+  # Run pre-commit Checks
   pre-commit:
     name: Pre Commit Checks
     runs-on: ubuntu-latest
 
     steps:
+      # Checkout the repository
       - name: Checkout
         uses: actions/checkout@v4
 
+      # Set up Python
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version-file: 'pyproject.toml' # Read the Python version from the pyproject.toml file
 
+      # Install pre-commit
       - name: Run Pre Commit Checks
         uses: pre-commit/action@v3.0.1
 
   # Run Test Coverage
-  test-coverage-aa-stable:
+  test-coverage:
     needs: [pre-commit]
     name: AA Latest (Python ${{ matrix.python-version }} with ${{ matrix.database }})
     runs-on: ubuntu-latest
 
     strategy:
-      # Set Python and Django version to test for the stable release of AllianceAuth
+      # Set Python versions to test against
       matrix:
         python-version:
           - '3.8'
@@ -61,8 +64,9 @@ jobs:
           - mariadb:11.0  # Maintained until: June 2024
           - mariadb:11.1  # Maintained until: August 2024
 
-#    continue-on-error: ${{ matrix.python-version == '3.11-dev' }}
+#    continue-on-error: ${{ matrix.python-version == '3.12' }}
 
+    # Set up services
     services:
       database:
         image: ${{ matrix.database }}
@@ -74,34 +78,40 @@ jobs:
         options: --tmpfs /var/lib/mysql
 
     steps:
+      # Checkout the repository
       - name: Checkout
         uses: actions/checkout@v4
 
+      # Install redis
       - name: Install redis
         run: sudo apt-get install -y redis-tools redis-server
 
+      # Verify that redis is up
       - name: Verify that redis is up
         run: redis-cli ping
 
+      # Set up Python
       - name: Setup Python ${{ matrix.python-version }}
         uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python-version }}
 
+      # Install Tox and any other packages
       - name: Install Tox and any other packages
         run: |
           python -m pip install --upgrade pip
           python -m pip install --upgrade tox tox-gh-actions
 
+      # Run Tox with the specified environment
       - name: Run Tox
         env:
           TOX_ENV: allianceauth-latest
           DB_HOST: 127.0.0.1
           DB_USER: root
           DB_PASSWORD: temp_password_aa_tox_tests
-        # Run tox using the version of Python in `PATH`
         run: tox -v -e ${{ env.TOX_ENV }}
 
+      # Upload coverage to Codecov
       - name: Upload Coverage
         if: ${{
               (
@@ -125,33 +135,38 @@ jobs:
 #          fail_ci_if_error: true # optional (default = false)
           verbose: true # optional (default = false)
 
-  # Pypi Build Test
+  # Run PyPi Build Test
   pypi-build-test:
-    needs: [ test-coverage-aa-stable ]
+    needs: [ test-coverage ]
     name: PyPi Build Test
     runs-on: ubuntu-latest
 
     steps:
+      # Checkout the repository
       - name: Checkout
         uses: actions/checkout@v4
 
+      # Set up Python
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version-file: 'pyproject.toml' # Read the Python version from the pyproject.toml file
 
+      # Install Tools
       - name: Install Tools
         run: |
           python -m pip install --upgrade pip
           python -m pip install --upgrade build
           python -m pip install --upgrade setuptools wheel
 
+      # Build Package
       - name: Package Build
         env:
           STACKMANAGER_VERSION: 9999
         run: |
           python -m build
 
+      # Upload Build Artifacts
       - name: Upload Build Artifacts
         uses: actions/upload-artifact@v4
         with:
