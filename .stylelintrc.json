@@ -1,7 +1,6 @@
 {
     "extends": "stylelint-config-standard",
     "rules": {
-        "indentation": 4,
         "color-no-hex": true,
         "number-max-precision": 5,
         "no-descending-specificity": null,
