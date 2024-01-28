@@ -46,6 +46,7 @@ dependencies = [
 ]
 [project.optional-dependencies]
 tests-allianceauth-latest = [
+    "allianceauth-discordbot",
     "coverage",
     "django-webtest",
 ]
