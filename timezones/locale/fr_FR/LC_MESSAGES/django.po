@@ -1,15 +1,15 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# "H. Peter Pfeufer" <info@ppfeufer.de>, 2023.
+# "H. Peter Pfeufer" <info@ppfeufer.de>, 2023, 2024.
 # erka Ekanon <M6musicT@hotmail.fr>, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-10-01 13:30+0200\n"
-"PO-Revision-Date: 2024-01-09 18:04+0000\n"
-"Last-Translator: erka Ekanon <M6musicT@hotmail.fr>\n"
+"PO-Revision-Date: 2024-02-03 19:02+0000\n"
+"Last-Translator: Peter Pfeufer <info@ppfeufer.de>\n"
 "Language-Team: French <https://weblate.ppfeufer.de/projects/"
 "alliance-auth-apps/aa-timezones/fr/>\n"
 "Language: fr_FR\n"
@@ -139,10 +139,12 @@ msgid ""
 "Do you want to help translate this app into your language or improve the "
 "existing translation?"
 msgstr ""
+"Voulez-vous aider à traduire cette application dans votre langue ou "
+"améliorer la traduction existante ?"
 
 #: timezones/templates/timezones/partials/footer/app-translation-footer.html:8
 msgid "Join our team of translators!"
-msgstr ""
+msgstr "Rejoignez notre équipe de traducteurs !"
 
 #: timezones/templates/timezones/partials/timezones/adjust-time.html:10
 msgid "Adjust time"
