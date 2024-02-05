@@ -73,7 +73,7 @@ repos:
           )
 
   - repo: https://github.com/pre-commit/mirrors-eslint
-    rev: v8.56.0
+    rev: v9.0.0-alpha.2
     hooks:
       - id: eslint
         exclude: |
@@ -83,7 +83,7 @@ repos:
           )
 
   - repo: https://github.com/thibaudcolas/pre-commit-stylelint
-    rev: v16.1.0
+    rev: v16.2.1
     hooks:
       - id: stylelint
         exclude: |
@@ -134,7 +134,7 @@ repos:
           - --py38-plus  # Minimum required Python version for AA. Update as needed.
 
   - repo: https://github.com/pycqa/flake8
-    rev: 6.1.0
+    rev: 7.0.0
     hooks:
       - id: flake8
 
@@ -154,7 +154,7 @@ repos:
       - id: black-disable-checker
 
   - repo: https://github.com/psf/black
-    rev: 23.12.1
+    rev: 24.1.1
     hooks:
       - id: black
         args:
@@ -189,7 +189,7 @@ repos:
       - id: tox-ini-fmt
 
   - repo: https://github.com/tox-dev/pyproject-fmt
-    rev: 1.5.3
+    rev: 1.7.0
     hooks:
       - id: pyproject-fmt
         args:
@@ -198,7 +198,7 @@ repos:
           - tox==4.11.4  # https://github.com/tox-dev/tox/releases/latest
 
   - repo: https://github.com/abravalheri/validate-pyproject
-    rev: v0.15
+    rev: v0.16
     hooks:
       - id: validate-pyproject
 
