@@ -6,10 +6,14 @@ It gets overwritten by the 'allianceauth update' command.
 If you wish to make changes, overload the setting in your project's settings file (local.py).
 """
 
+# Standard Library
 import os
 
-from django.contrib import messages
+# Third Party
 from celery.schedules import crontab
+
+# Django
+from django.contrib import messages
 
 INSTALLED_APPS = [
     "allianceauth",  # needs to be on top of this list to support favicons in Django admin (see https://gitlab.com/allianceauth/allianceauth/-/issues/1301)
