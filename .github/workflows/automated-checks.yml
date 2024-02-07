@@ -31,7 +31,7 @@ jobs:
           python-version-file: 'pyproject.toml' # Read the Python version from the pyproject.toml file
 
       - name: Run Pre Commit Checks
-        uses: pre-commit/action@v3.0.0
+        uses: pre-commit/action@v3.0.1
 
   # Run Test Coverage
   test-coverage-aa-stable:
