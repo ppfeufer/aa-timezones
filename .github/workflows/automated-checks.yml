@@ -32,7 +32,13 @@ jobs:
         with:
           python-version-file: 'pyproject.toml' # Read the Python version from the pyproject.toml file
 
-      # Install pre-commit
+      # Set up Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: npm install
+
       - name: Run Pre Commit Checks
         uses: pre-commit/action@v3.0.1
 
@@ -64,7 +70,7 @@ jobs:
           - mariadb:11.0  # Maintained until: June 2024
           - mariadb:11.1  # Maintained until: August 2024
 
-#    continue-on-error: ${{ matrix.python-version == '3.12' }}
+    continue-on-error: ${{ matrix.python-version == '3.12' }}
 
     # Set up services
     services:
@@ -128,7 +134,7 @@ jobs:
             }}
         uses: codecov/codecov-action@v4
         with:
-          token: ${{ secrets.CODECOV_TOKEN }} # not required for public repos
+          token: ${{ secrets.CODECOV_TOKEN }}
           files: coverage.xml # optional
 #          flags: unittests # optional
 #          name: codecov-umbrella # optional

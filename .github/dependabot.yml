@@ -6,4 +6,24 @@ updates:
     directory: "/"
     target-branch: "master"
     schedule:
-      interval: "daily"
+      interval: "monthly"
+    commit-message:
+      # Prefix all commit messages with "[github-actions] "
+      prefix: "[github-actions] "
+    labels:
+      - "github-actions"
+      - "dependencies"
+
+  # Maintain dependencies for npm
+  - package-ecosystem: "npm"
+    directory: "/"
+    target-branch: "master"
+    versioning-strategy: increase
+    schedule:
+      interval: "monthly"
+    commit-message:
+      # Prefix all commit messages with "[npm] "
+      prefix: "[npm] "
+    labels:
+      - "npm"
+      - "dependencies"
