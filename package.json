@@ -2,6 +2,6 @@
     "type": "module",
     "devDependencies": {
         "eslint": "^8.57.0",
-        "globals": "^13.24.0"
+        "globals": "^14.0.0"
     }
 }
