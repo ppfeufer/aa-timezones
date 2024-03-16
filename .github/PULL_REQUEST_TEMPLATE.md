@@ -15,6 +15,6 @@ Fixes # (issue)
 ## Checklist:
 
 - [ ] My code follows the style guidelines of this project
-- [ ] I have performed a self-review of my own code
+- [ ] I have performed a self-review of my code
 - [ ] I have commented on my code, particularly in hard-to-understand areas
 - [ ] I have checked my code and corrected any misspellings

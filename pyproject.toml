@@ -6,7 +6,6 @@ requires = [
 
 [project]
 name = "aa-timezones"
-version = "1.16.2"
 description = "Time Zones Overview for Alliance Auth"
 readme = "README.md"
 keywords = [
@@ -23,7 +22,7 @@ requires-python = ">=3.8"
 classifiers = [
     "Environment :: Web Environment",
     "Framework :: Django",
-    "Framework :: Django :: 4.0",
+    "Framework :: Django :: 4.2",
     "Intended Audience :: Developers",
     "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
     "Operating System :: OS Independent",
@@ -33,16 +32,21 @@ classifiers = [
     "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
     "Topic :: Internet :: WWW/HTTP",
     "Topic :: Internet :: WWW/HTTP :: Dynamic Content",
 ]
+dynamic = [
+    "version",
+]
 dependencies = [
-    "allianceauth>=3.6.1",
-    "allianceauth-app-utils>=1.14.1",
-    "pytz!=2022.2",
+    "allianceauth>=4.0.0b1",
+    "allianceauth-app-utils>=1.25",
+    "pytz>=2023.3.post1",
 ]
 [project.optional-dependencies]
-tests-allianceauth-stable = [
+tests-allianceauth-latest = [
+    "allianceauth-discordbot",
     "coverage",
     "django-webtest",
 ]
@@ -58,3 +62,6 @@ Tracker = "https://github.com/ppfeufer/aa-timezones/issues"
 include = [
     "/timezones",
 ]
+
+[tool.hatch.version]
+path = "timezones/__init__.py"

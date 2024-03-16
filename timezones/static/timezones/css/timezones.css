@@ -1,8 +1,4 @@
 @media all {
-    .aa-timezones .form-inline .form-group {
-        margin-bottom: 0.5rem;
-    }
-
     .aa-timezones .timezone-panel-section {
         display: block;
     }
@@ -18,29 +14,5 @@
     .aa-timezones .aa-timezones-time-until {
         font-size: 125%;
         font-weight: 600;
-    }
-
-    .aa-timezones .eve-online-time-zones-time-adjust {
-        border-top: 1px solid rgb(236 240 241);
-        padding-top: 2rem;
-    }
-
-    .aa-timezones .eve-online-time-zones-time-adjust-form {
-        margin-bottom: 2rem;
-    }
-
-    .aa-timezones .eve-online-time-zones-time-adjust-form-header {
-        font-weight: bold;
-    }
-
-    .aa-timezones-footer {
-        border-top: 1px solid rgb(236 240 241);
-        font-size: 85%;
-        margin-top: 1rem;
-        padding-top: 1rem;
-    }
-
-    .template-dark-mode .aa-timezones-footer {
-        border-color: rgb(70 69 69);
     }
 }

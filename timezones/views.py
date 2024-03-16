@@ -14,6 +14,7 @@ from timezones.models import Timezones
 def index(request, timestamp: str = None):
     """
     Index view
+
     :param request:
     :param timestamp:
     :return:
@@ -30,4 +31,6 @@ def index(request, timestamp: str = None):
 
     context = {"title": __title__, "timezones": timezones, "timestamp": timestamp}
 
-    return render(request, "timezones/index.html", context)
+    return render(
+        request=request, template_name="timezones/index.html", context=context
+    )

@@ -22,6 +22,9 @@ class TestAccess(TestCase):
     def setUpClass(cls) -> None:
         """
         Set up groups and users
+
+        :return:
+        :rtype:
         """
 
         super().setUpClass()
@@ -35,26 +38,32 @@ class TestAccess(TestCase):
     def test_default_timezones(self):
         """
         Test default timezones
+
         :return:
+        :rtype:
         """
 
         # given
-        self.client.force_login(self.user_1002)
+        self.client.force_login(user=self.user_1002)
 
         # when
-        res = self.client.get(reverse("timezones:index"))
+        res = self.client.get(path=reverse(viewname="timezones:index"))
 
         # then
-        self.assertListEqual(res.context["timezones"], AA_TIMEZONE_DEFAULT_PANELS)
+        self.assertListEqual(
+            list1=res.context["timezones"], list2=AA_TIMEZONE_DEFAULT_PANELS
+        )
 
     def test_custom_timezones(self):
         """
         Test custom timezones
+
         :return:
+        :rtype:
         """
 
         # given
-        self.client.force_login(self.user_1002)
+        self.client.force_login(user=self.user_1002)
 
         timezone_info = TimezoneData.objects.create(
             timezone_name="Europe/Berlin", utc_offset="+0100", panel_id="europe-berlin"
@@ -65,9 +74,9 @@ class TestAccess(TestCase):
         )
 
         # when
-        res = self.client.get(reverse("timezones:index"))
+        res = self.client.get(path=reverse(viewname="timezones:index"))
 
         # then
-        self.assertQuerysetEqual(
+        self.assertQuerySetEqual(
             res.context["timezones"], Timezones.objects.all(), transform=lambda x: x
         )

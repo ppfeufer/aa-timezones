@@ -1,3 +1,5 @@
+# Check potential duplicates when an issue is opened or edited.
+#
 # https://github.com/wow-actions/potential-duplicates
 
 name: Potential Duplicates
@@ -9,6 +11,7 @@ on:
 jobs:
   run:
     runs-on: ubuntu-latest
+
     steps:
       - uses: wow-actions/potential-duplicates@v1
         with:
@@ -25,7 +28,7 @@ jobs:
           state: all
           # If similarity is higher than this threshold([0,1]), issue will be marked as duplicate.
           threshold: 0.6
-          # Reactions to be add to comment when potential duplicates are detected.
+          # Reactions to be added to comment when potential duplicates are detected.
           # Available reactions: "-1", "+1", "confused", "laugh", "heart", "hooray", "rocket", "eyes"
           reactions: 'eyes, confused'
           # Comment to post when potential duplicates are detected.

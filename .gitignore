@@ -1,15 +1,16 @@
 /build/
 /dist/
-/aa_timezones.egg-info/
-__pycache__
+/*.egg-info/
 .idea/
-
+.tox/
+htmlcov/
+node_modules/
 
 *.log
 *.tmp
 *.bak
 *.old
+__pycache__
 .coverage
 /coverage.xml
-.tox/
-htmlcov/
+alliance_auth.sqlite3

@@ -4,6 +4,7 @@ Admin backend config
 
 # Django
 from django.contrib import admin, messages
+from django.db import transaction
 from django.utils.translation import gettext_lazy as _
 from django.utils.translation import ngettext
 
@@ -45,12 +46,22 @@ class TimezonesAdmin(admin.ModelAdmin):
 
         for obj in queryset:
             try:
-                obj.is_enabled = True
-                obj.save()
+                with transaction.atomic():
+                    obj.is_enabled = True
+                    obj.save()
 
-                notifications_count += 1
+                    notifications_count += 1
             except Exception:  # pylint: disable=broad-exception-caught
                 failed += 1
+
+        messages.success(
+            request,
+            ngettext(
+                singular="Activated {notifications_count} timezone",
+                plural="Activated {notifications_count} timezones",
+                number=notifications_count,
+            ).format(notifications_count=notifications_count),
+        )
 
         if failed:
             messages.error(
@@ -85,10 +96,11 @@ class TimezonesAdmin(admin.ModelAdmin):
 
         for obj in queryset:
             try:
-                obj.is_enabled = False
-                obj.save()
+                with transaction.atomic():
+                    obj.is_enabled = False
+                    obj.save()
 
-                notifications_count += 1
+                    notifications_count += 1
             except Exception:  # pylint: disable=broad-exception-caught
                 failed += 1
 

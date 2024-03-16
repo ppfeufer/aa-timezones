@@ -22,19 +22,22 @@ class TestAccess(TestCase):
     def setUpClass(cls) -> None:
         """
         Set up groups and users
+
+        :return:
+        :rtype:
         """
 
         super().setUpClass()
 
-        # User cannot access timezones
+        # User
         cls.user_1001 = create_fake_user(
             character_id=1001, character_name="Peter Parker"
         )
 
         cls.html_menu = f"""
-            <li>
-                <a class="active" href="{reverse('timezones:index')}">
-                    <i class="far fa-clock fa-fw"></i>
+            <li class="d-flex flex-wrap m-2 p-2 pt-0 pb-0 mt-0 mb-0 me-0 pe-0">
+                <i class="nav-link fa-regular fa-clock fa-fw fa-fw align-self-center me-3 active"></i>
+                <a class="nav-link flex-fill align-self-center me-auto" href="{reverse('timezones:index')}">
                     Time Zones
                 </a>
             </li>
@@ -42,8 +45,12 @@ class TestAccess(TestCase):
 
         cls.header = """
             <div class="aa-timezones-header">
-                <h1 class="page-header text-center">Time Zones</h1>
+                <h1 class="page-header text-center mb-3">Time Zones</h1>
             </div>
+        """
+
+        cls.header_logged_in_user = """
+            <div class="navbar-brand">Time Zones</div>
         """
 
     def test_access_to_index_for_logged_in_user(self):
@@ -60,7 +67,9 @@ class TestAccess(TestCase):
 
         self.assertEqual(first=response.status_code, second=HTTPStatus.OK)
         self.assertContains(response=response, text=self.html_menu, html=True)
-        self.assertContains(response=response, text=self.header, html=True)
+        self.assertContains(
+            response=response, text=self.header_logged_in_user, html=True
+        )
 
     def test_access_to_index_as_public_page(self):
         """

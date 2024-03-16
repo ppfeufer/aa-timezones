@@ -39,22 +39,19 @@ ______________________________________________________________________
 
 ______________________________________________________________________
 
-![Time Zones](https://raw.githubusercontent.com/ppfeufer/aa-timezones/master/docs/images/time-zones.jpg)
+![Time Zones](https://raw.githubusercontent.com/ppfeufer/aa-timezones/master/docs/images/presentation/aa-timezones.jpg)
 
 ## Installation<a name="installation"></a>
 
-**Important**: This app is a plugin for Alliance Auth. If you don't have
-Alliance Auth running already, please install it first before proceeding.
-(See the official [AA installation guide](https://allianceauth.readthedocs.io/en/latest/installation/allianceauth.html) for details)
-
-> **Note**
+> \[!NOTE\]
 >
-> This app makes use of a feature introduced with Alliance Auth v3.6.1, meaning,
-> installing this app will pull in Alliance Auth v3.6.1 unsupervised if you haven't
-> updated yet.
+> **AA Time Zones >= 2.0.0 needs at least Alliance Auth v4.0.0!**
 >
-> **Please make sure to update Allianceauth to version 3.6.1 or higher before you
-> install this app to avoid any complications.**
+> Please make sure to update your Alliance Auth instance _before_ you install this
+> module or update to the latest version, otherwise an update to Alliance Auth will
+> be pulled in unsupervised.
+>
+> The last version compatible with Alliance Auth v3 is `1.16.2`.
 
 ### Step 1: Install the App<a name="step-1-install-the-app"></a>
 
@@ -170,9 +167,9 @@ the link in your browser, so you can share it with others directly.
 **For this to work, you'll need to have `allianceauth-discordbot` installed, configured
 and running.** ([See this link](https://github.com/pvyParts/allianceauth-discordbot))
 
-| Command | Effect                                                                                                                                                                                                          |
-| :------ | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `/time` | Shows the current Eve time and what time it is in the <br/>configured time zones<br>![Discord Bot Response](https://raw.githubusercontent.com/ppfeufer/aa-timezones/master/docs/images/discordbot-response.jpg) |
+| Command | Effect                                                                                                                                                                                                                     |
+| :------ | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `/time` | Displays the current Eve time and what time it is in the configured time zones<br>![Discord Bot Response](https://raw.githubusercontent.com/ppfeufer/aa-timezones/master/docs/images/presentation/discordbot-response.jpg) |
 
 ## Changelog<a name="changelog"></a>
 

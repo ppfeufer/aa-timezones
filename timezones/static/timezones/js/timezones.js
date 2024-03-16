@@ -10,8 +10,8 @@ let countdownIntervalId = 0;
 const showAdjust = () => { // eslint-disable-line no-unused-vars
     'use strict';
 
-    jQuery('#btnadjust').addClass('hidden');
-    jQuery('#adjust').removeClass('hidden');
+    jQuery('#btnadjust').addClass('d-none');
+    jQuery('#adjust').removeClass('d-none');
 
     const mom = moment.tz(new Date(), 'Etc/UTC');
 
@@ -220,31 +220,31 @@ const switchto = (mode) => {
     $('.aa-timezones-time-until-countdown').html('');
 
     if (mode === 0) {
-        jQuery('#headlineCurrent').removeClass('hidden');
-        jQuery('#headlineFixed').addClass('hidden');
-        jQuery('#adjust').addClass('hidden');
-        jQuery('#btnadjust').removeClass('hidden');
-        jQuery('#btnshowcurrent').addClass('hidden');
-        jQuery('.aa-timezones-time-until').addClass('hidden');
+        jQuery('#headlineCurrent').removeClass('d-none');
+        jQuery('#headlineFixed').addClass('d-none');
+        jQuery('#adjust').addClass('d-none');
+        jQuery('#btnadjust').removeClass('d-none');
+        jQuery('#btnshowcurrent').addClass('d-none');
+        jQuery('.aa-timezones-time-until').addClass('d-none');
 
         if (clockTarget !== 0) {
-            jQuery('#btnshowfixed').removeClass('hidden');
+            jQuery('#btnshowfixed').removeClass('d-none');
         }
 
-        jQuery('#btnclear').addClass('hidden');
+        jQuery('#btnclear').addClass('d-none');
 
         clockTickId = setInterval(clockTick, 1000);
 
         clockTick();
     } else {
-        jQuery('#headlineCurrent').addClass('hidden');
-        jQuery('#headlineFixed').removeClass('hidden');
-        jQuery('#adjust').addClass('hidden');
-        jQuery('#btnadjust').addClass('hidden');
-        jQuery('#btnshowcurrent').removeClass('hidden');
-        jQuery('#btnshowfixed').addClass('hidden');
-        jQuery('#btnclear').removeClass('hidden');
-        jQuery('.aa-timezones-time-until').removeClass('hidden');
+        jQuery('#headlineCurrent').addClass('d-none');
+        jQuery('#headlineFixed').removeClass('d-none');
+        jQuery('#adjust').addClass('d-none');
+        jQuery('#btnadjust').addClass('d-none');
+        jQuery('#btnshowcurrent').removeClass('d-none');
+        jQuery('#btnshowfixed').addClass('d-none');
+        jQuery('#btnclear').removeClass('d-none');
+        jQuery('.aa-timezones-time-until').removeClass('d-none');
 
         updatePanels(new Date(clockTarget));
         timeUntil(clockTarget);

@@ -12,24 +12,26 @@ from timezones import __version__
 
 class TestVersionedStatic(TestCase):
     """
-    Test versioned static
+    Test versioned static template tag
     """
 
     def test_versioned_static(self):
         """
         Test versioned static template tag
+
         :return:
+        :rtype:
         """
 
         context = Context({"version": __version__})
         template_to_render = Template(
-            "{% load timezones_versioned_static %}"
+            "{% load timezones %}"
             "{% timezones_static 'timezones/css/timezones.min.css' %}"
         )
 
         rendered_template = template_to_render.render(context)
 
         self.assertInHTML(
-            f'/static/timezones/css/timezones.min.css?v={context["version"]}',
-            rendered_template,
+            needle=f'/static/timezones/css/timezones.min.css?v={context["version"]}',
+            haystack=rendered_template,
         )

@@ -21,7 +21,7 @@ class AaTimezonesMenuItem(MenuItemHook):  # pylint: disable=too-few-public-metho
         MenuItemHook.__init__(
             self,
             __title__,
-            "far fa-clock fa-fw",
+            "fa-regular fa-clock fa-fw",
             "timezones:index",
             navactive=["timezones:"],
         )
