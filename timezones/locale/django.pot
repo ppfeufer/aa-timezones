@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-01 13:30+0200\n"
+"POT-Creation-Date: 2024-03-16 02:05+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,49 +18,50 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
-#: timezones/__init__.py:12 timezones/templates/timezones/base.html:5
+#: timezones/__init__.py:9 timezones/templates/timezones/base.html:6
 #: timezones/templates/timezones/base.html:10
+#: timezones/templates/timezones/base.html:17
 msgid "Time Zones"
 msgstr ""
 
-#: timezones/admin.py:25
+#: timezones/admin.py:26
 msgid "Panel name"
 msgstr ""
 
-#: timezones/admin.py:29
+#: timezones/admin.py:30
 msgid "Time zone"
 msgstr ""
 
-#: timezones/admin.py:35
+#: timezones/admin.py:36
 msgid "Activate selected timezones"
 msgstr ""
 
-#: timezones/admin.py:59
-#, python-brace-format
-msgid "Failed to activate {failed} timezone"
-msgid_plural "Failed to activate {failed} timezones"
-msgstr[0] ""
-msgstr[1] ""
-
-#: timezones/admin.py:69
+#: timezones/admin.py:60 timezones/admin.py:80
 #, python-brace-format
 msgid "Activated {notifications_count} timezone"
 msgid_plural "Activated {notifications_count} timezones"
 msgstr[0] ""
 msgstr[1] ""
 
-#: timezones/admin.py:75
+#: timezones/admin.py:70
+#, python-brace-format
+msgid "Failed to activate {failed} timezone"
+msgid_plural "Failed to activate {failed} timezones"
+msgstr[0] ""
+msgstr[1] ""
+
+#: timezones/admin.py:86
 msgid "Deactivate selected timezones"
 msgstr ""
 
-#: timezones/admin.py:99
+#: timezones/admin.py:111
 #, python-brace-format
 msgid "Failed to deactivate {failed} timezone"
 msgid_plural "Failed to deactivate {failed} timezones"
 msgstr[0] ""
 msgstr[1] ""
 
-#: timezones/admin.py:109
+#: timezones/admin.py:121
 #, python-brace-format
 msgid "Deactivated {notifications_count} timezone"
 msgid_plural "Deactivated {notifications_count} timezones"
@@ -109,27 +110,27 @@ msgid "Timezones"
 msgstr ""
 
 #: timezones/templates/timezones/index.html:12
-#: timezones/templates/timezones/partials/timezones/adjust-time.html:263
+#: timezones/templates/timezones/partials/timezones/adjust-time.html:249
 msgid "Local time"
 msgstr ""
 
-#: timezones/templates/timezones/index.html:17
-#: timezones/templates/timezones/index.html:34
-#: timezones/templates/timezones/partials/timezones/timezone-panel.html:12
+#: timezones/templates/timezones/index.html:20
+#: timezones/templates/timezones/index.html:40
+#: timezones/templates/timezones/partials/timezones/timezone-panel.html:15
 msgid "loading"
 msgstr ""
 
-#: timezones/templates/timezones/index.html:29
-#: timezones/templates/timezones/partials/timezones/adjust-time.html:265
+#: timezones/templates/timezones/index.html:32
+#: timezones/templates/timezones/partials/timezones/adjust-time.html:251
 msgid "Eve time"
 msgstr ""
 
-#: timezones/templates/timezones/index.html:67
-#: timezones/templates/timezones/partials/timezones/adjust-time.html:57
+#: timezones/templates/timezones/index.html:73
+#: timezones/templates/timezones/partials/timezones/adjust-time.html:41
 msgid "Days"
 msgstr ""
 
-#: timezones/templates/timezones/index.html:68
+#: timezones/templates/timezones/index.html:74
 msgid "Already over, you missed it!"
 msgstr ""
 
@@ -143,88 +144,88 @@ msgstr ""
 msgid "Join our team of translators!"
 msgstr ""
 
-#: timezones/templates/timezones/partials/timezones/adjust-time.html:10
+#: timezones/templates/timezones/partials/timezones/adjust-time.html:6
 msgid "Adjust time"
 msgstr ""
 
-#: timezones/templates/timezones/partials/timezones/adjust-time.html:18
+#: timezones/templates/timezones/partials/timezones/adjust-time.html:10
 msgid "Remove"
 msgstr ""
 
-#: timezones/templates/timezones/partials/timezones/adjust-time.html:26
+#: timezones/templates/timezones/partials/timezones/adjust-time.html:14
 msgid "Switch to current time"
 msgstr ""
 
-#: timezones/templates/timezones/partials/timezones/adjust-time.html:34
+#: timezones/templates/timezones/partials/timezones/adjust-time.html:18
 msgid "Switch to adjusted time"
 msgstr ""
 
-#: timezones/templates/timezones/partials/timezones/adjust-time.html:43
+#: timezones/templates/timezones/partials/timezones/adjust-time.html:26
 msgid "Set time to be in"
 msgstr ""
 
-#: timezones/templates/timezones/partials/timezones/adjust-time.html:87
+#: timezones/templates/timezones/partials/timezones/adjust-time.html:71
 msgid "Hours"
 msgstr ""
 
-#: timezones/templates/timezones/partials/timezones/adjust-time.html:153
+#: timezones/templates/timezones/partials/timezones/adjust-time.html:137
 msgid "Minutes"
 msgstr ""
 
-#: timezones/templates/timezones/partials/timezones/adjust-time.html:157
-#: timezones/templates/timezones/partials/timezones/adjust-time.html:338
+#: timezones/templates/timezones/partials/timezones/adjust-time.html:141
+#: timezones/templates/timezones/partials/timezones/adjust-time.html:324
 msgid "Set time"
 msgstr ""
 
-#: timezones/templates/timezones/partials/timezones/adjust-time.html:164
+#: timezones/templates/timezones/partials/timezones/adjust-time.html:150
 msgid "Set time to be at a specific time and date"
 msgstr ""
 
-#: timezones/templates/timezones/partials/timezones/adjust-time.html:283
+#: timezones/templates/timezones/partials/timezones/adjust-time.html:269
 msgid "January"
 msgstr ""
 
-#: timezones/templates/timezones/partials/timezones/adjust-time.html:284
+#: timezones/templates/timezones/partials/timezones/adjust-time.html:270
 msgid "February"
 msgstr ""
 
-#: timezones/templates/timezones/partials/timezones/adjust-time.html:285
+#: timezones/templates/timezones/partials/timezones/adjust-time.html:271
 msgid "March"
 msgstr ""
 
-#: timezones/templates/timezones/partials/timezones/adjust-time.html:286
+#: timezones/templates/timezones/partials/timezones/adjust-time.html:272
 msgid "April"
 msgstr ""
 
-#: timezones/templates/timezones/partials/timezones/adjust-time.html:287
+#: timezones/templates/timezones/partials/timezones/adjust-time.html:273
 msgid "May"
 msgstr ""
 
-#: timezones/templates/timezones/partials/timezones/adjust-time.html:288
+#: timezones/templates/timezones/partials/timezones/adjust-time.html:274
 msgid "June"
 msgstr ""
 
-#: timezones/templates/timezones/partials/timezones/adjust-time.html:289
+#: timezones/templates/timezones/partials/timezones/adjust-time.html:275
 msgid "July"
 msgstr ""
 
-#: timezones/templates/timezones/partials/timezones/adjust-time.html:290
+#: timezones/templates/timezones/partials/timezones/adjust-time.html:276
 msgid "August"
 msgstr ""
 
-#: timezones/templates/timezones/partials/timezones/adjust-time.html:291
+#: timezones/templates/timezones/partials/timezones/adjust-time.html:277
 msgid "September"
 msgstr ""
 
-#: timezones/templates/timezones/partials/timezones/adjust-time.html:292
+#: timezones/templates/timezones/partials/timezones/adjust-time.html:278
 msgid "October"
 msgstr ""
 
-#: timezones/templates/timezones/partials/timezones/adjust-time.html:293
+#: timezones/templates/timezones/partials/timezones/adjust-time.html:279
 msgid "November"
 msgstr ""
 
-#: timezones/templates/timezones/partials/timezones/adjust-time.html:294
+#: timezones/templates/timezones/partials/timezones/adjust-time.html:280
 msgid "December"
 msgstr ""
 
