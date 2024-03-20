@@ -1,4 +1,4 @@
-# Makefile for Alliance Auth Fleet Activity Tracker (AFAT)
+# Makefile for AA Timezones
 
 appname = aa-timezones
 appname_verbose = AA Timezones
