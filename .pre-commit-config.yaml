@@ -127,7 +127,7 @@ repos:
           )
 
   - repo: https://github.com/eslint/eslint
-    rev: v9.0.0-rc.0
+    rev: v8.57.0
     hooks:
       - id: eslint
         name: ESLint
@@ -262,7 +262,7 @@ repos:
         name: Blacken docs
         description: "Format Python code in documentation files."
         additional_dependencies:
-          - black==24.1.1  # https://github.com/psf/black/releases/latest
+          - black==24.3.0  # https://github.com/psf/black/releases/latest
         args:
           - --target-version=py38  # Minimum required Python version for AA. Update as needed.
 
