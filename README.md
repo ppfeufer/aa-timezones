@@ -146,7 +146,7 @@ You can easily adjust the time that is displayed for all timezones. This is usef
 for reinforcement timers or pre-planned fleets. To do so, click on the "Adjust Time"
 button below the time zone panels, and you will see 2 different ways to set a new time.
 
-![Adjusting Time](https://raw.githubusercontent.com/ppfeufer/aa-timezones/master/docs/images/weblate/adjust-time-settings.jpg)
+![Adjusting Time](https://raw.githubusercontent.com/ppfeufer/aa-timezones/master/docs/images/weblate/aa-timezones_adjust-time-settings.jpg)
 
 The first one is meant for timers, like reinforcement timers, anchoring timers or
 the like. Its maximum is 7 days, 59 minutes and 59 seconds into the future. That

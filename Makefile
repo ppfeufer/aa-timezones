@@ -1,21 +1,28 @@
 # Makefile for AA Timezones
 
+# Variables
 appname = aa-timezones
 appname_verbose = AA Timezones
 package = timezones
 
+# Default goal
+.DEFAULT_GOAL := help
+
+# Help
 help:
 	@echo "$(appname_verbose) Makefile"
 	@echo ""
 	@echo "Usage: make [command]"
 	@echo ""
 	@echo "Commands:"
-	@echo "  translationfiles    Create or update translation files"
-	@echo "  graph_models        Create a graph of the models"
-	@echo "  coverage            Run tests and create a coverage report"
 	@echo "  build_test          Build the package"
+	@echo "  coverage            Run tests and create a coverage report"
+	@echo "  graph_models        Create a graph of the models"
+	@echo "  pre-commit-checks   Run pre-commit checks"
 	@echo "  tox_tests           Run tests with tox"
+	@echo "  translationfiles    Create or update translation files"
 
+# Translation files
 translationfiles:
 	#cd $(package); \
 	django-admin makemessages \
@@ -35,6 +42,7 @@ translationfiles:
 		--keep-pot \
 		--ignore 'build/*'
 
+# Graph models
 graph_models:
 	python ../myauth/manage.py \
 		graph_models \
@@ -42,6 +50,7 @@ graph_models:
 		--arrow-shape normal \
 		-o $(appname)-models.png
 
+# Coverage
 coverage:
 	rm -rfv htmlcov; \
 	coverage run ../myauth/manage.py \
@@ -52,11 +61,17 @@ coverage:
 	coverage html; \
 	coverage report -m
 
+# Build test
 build_test:
 	rm -rfv dist; \
 	python3 -m build
 
+# Tox tests
 tox_tests:
 	export USE_MYSQL=False; \
 	tox -v -e allianceauth-latest; \
 	rm -rf .tox/
+
+# Pre-commit checks
+pre-commit-checks:
+	pre-commit run --all-files
