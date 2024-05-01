@@ -10,9 +10,6 @@ updates:
     commit-message:
       # Prefix all commit messages with "[github-actions] "
       prefix: "[github-actions] "
-    labels:
-      - "github-actions"
-      - "dependencies"
 
   # Maintain dependencies for npm
   - package-ecosystem: "npm"
@@ -24,6 +21,3 @@ updates:
     commit-message:
       # Prefix all commit messages with "[npm] "
       prefix: "[npm] "
-    labels:
-      - "npm"
-      - "dependencies"
