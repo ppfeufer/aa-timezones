@@ -24,7 +24,7 @@ ci:
 # pre-commit setup
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.5.0
+    rev: v4.6.0
     hooks:
       # Identify invalid files
       - id: check-ast
@@ -127,7 +127,7 @@ repos:
           )
 
   - repo: https://github.com/eslint/eslint
-    rev: v8.57.0
+    rev: v9.2.0
     hooks:
       - id: eslint
         name: ESLint
@@ -143,7 +143,7 @@ repos:
 #          - globals@13.24.0  # https://github.com/sindresorhus/globals/releases/latest
 
   - repo: https://github.com/thibaudcolas/pre-commit-stylelint
-    rev: v16.3.1
+    rev: v16.5.0
     hooks:
       - id: stylelint
         name: Stylelint
@@ -247,7 +247,7 @@ repos:
         description: "Check for black disable comments."
 
   - repo: https://github.com/psf/black
-    rev: 24.3.0
+    rev: 24.4.2
     hooks:
       - id: black
         name: Black
@@ -290,7 +290,7 @@ repos:
         description: "Format the tox.ini file."
 
   - repo: https://github.com/tox-dev/pyproject-fmt
-    rev: 1.7.0
+    rev: 1.8.0
     hooks:
       - id: pyproject-fmt
         name: pyproject.toml formatter
