@@ -29,80 +29,80 @@ repos:
       # Identify invalid files
       - id: check-ast
         name: check-ast (Python)
-        description: "Check for syntax errors in Python files."
+        description: Check for syntax errors in Python files.
 
       - id: check-yaml
         name: check-yaml (YAML)
-        description: "Check for syntax errors in YAML files."
+        description: Check for syntax errors in YAML files.
 
       - id: check-json
         name: check-json (JSON)
-        description: "Check for syntax errors in JSON files."
+        description: Check for syntax errors in JSON files.
 
       - id: check-toml
         name: check-toml (TOML)
-        description: "Check for syntax errors in TOML files."
+        description: Check for syntax errors in TOML files.
 
       - id: check-xml
         name: check-xml (XML)
-        description: "Check for syntax errors in XML files."
+        description: Check for syntax errors in XML files.
 
       # git checks
       - id: check-merge-conflict
         name: Check for merge conflict strings
-        description: "Check for files that contain merge conflict strings."
+        description: Check for files that contain merge conflict strings.
 
       - id: check-added-large-files
         name: Check for large files
-        description: "Check for large files that were added to the repository."
+        description: Check for large files that were added to the repository.
         args:
           - --maxkb=1000
 
       - id: detect-private-key
         name: Detect private key
-        description: "Check for private keys in the repository."
+        description: Check for private keys in the repository.
 
       - id: check-case-conflict
         name: Check for case conflicts
-        description: "Check for files with names that differ only in case."
+        description: Check for files with names that differ only in case.
 
       # Python checks
       - id: check-docstring-first
         name: Check for docstring in first line
-        description: "Check that the first line of a file is a docstring."
+        description: Check that the first line of a file is a docstring.
 
       - id: debug-statements
         name: Check for debug statements
-        description: "Check for print statements and pdb imports."
+        description: Check for print statements and pdb imports.
 
       - id: requirements-txt-fixer
         name: Fix requirements.txt
-        description: "Fix the formatting of requirements.txt files."
+        description: Fix the formatting of requirements.txt files.
 
       - id: fix-encoding-pragma
         name: Fix encoding pragma
-        description: "Fix the encoding pragma in Python files."
+        description: Fix the encoding pragma in Python files.
         args:
           - --remove
 
       - id: fix-byte-order-marker
         name: Fix byte order marker
-        description: "Fix the byte order marker in Python files."
+        description: Fix the byte order marker in Python files.
 
       - id: check-builtin-literals
         name: Check for built-in literals
-        description: "Check for built-in literals in Python code."
+        description: Check for built-in literals in Python code.
 
       # General quality checks
       - id: mixed-line-ending
         name: Mixed line ending
-        description: "Check for mixed line endings."
+        description: Check for mixed line endings.
         args:
           - --fix=lf
 
       - id: trailing-whitespace
         name: Trailing whitespace
-        description: "Check for trailing whitespace."
+        description: Check for trailing whitespace.
         args:
           - --markdown-linebreak-ext=md
         exclude: |
@@ -114,11 +114,11 @@ repos:
 
       - id: check-executables-have-shebangs
         name: Check for shebangs in executables
-        description: "Check that executables have shebangs."
+        description: Check that executables have shebangs.
 
       - id: end-of-file-fixer
         name: End of file fixer
-        description: "Ensure that files end with a newline."
+        description: Ensure that files end with a newline.
         exclude: |
           (?x)(
             .min(.css|.css.map|.js|.js.map)|
@@ -131,7 +131,7 @@ repos:
     hooks:
       - id: eslint
         name: ESLint
-        description: "Check for problems in JavaScript files."
+        description: Check for problems in JavaScript files.
         exclude: |
           (?x)(
             .min(.js|.js.map)|
@@ -147,7 +147,7 @@ repos:
     hooks:
       - id: stylelint
         name: Stylelint
-        description: "Check for problems in CSS files."
+        description: Check for problems in CSS files.
         exclude: |
           (?x)(
             .min(.css|.css.map)|
@@ -157,7 +157,7 @@ repos:
           - --formatter=compact
         additional_dependencies:
           # stylelint itself needs to be here when using additional_dependencies.
-          - stylelint@16.2.1  # https://github.com/stylelint/stylelint/releases/latest
+          - stylelint@16.5.0  # https://github.com/stylelint/stylelint/releases/latest
           - stylelint-config-standard@36.0.0  # https://github.com/stylelint/stylelint-config-standard/releases/latest
 
   - repo: https://github.com/pre-commit/pygrep-hooks
@@ -165,34 +165,34 @@ repos:
     hooks:
       - id: python-check-blanket-noqa  # Enforce that noqa annotations always occur with specific codes. Sample annotations: # noqa: F401, # noqa: F401,W203
         name: Check for blanket noqa
-        description: "Check for blanket noqa annotations."
+        description: Check for blanket noqa annotations.
 
       - id: python-check-blanket-type-ignore  # Enforce that # type: ignore annotations always occur with specific codes. Sample annotations: # type: ignore[attr-defined], # type: ignore[attr-defined, name-defined]
         name: Check for blanket type ignore
-        description: "Check for blanket type ignore annotations."
+        description: Check for blanket type ignore annotations.
 
       - id: python-check-mock-methods  # Prevent common mistakes of assert mck.not_called(), assert mck.called_once_with(...) and mck.assert_called
         name: Check for mock methods
-        description: "Check for common mistakes of mock methods."
+        description: Check for common mistakes of mock methods.
 
       - id: python-no-eval  # A quick check for the eval() built-in function
         name: Check for eval
-        description: "Check for the eval() built-in function."
+        description: Check for the eval() built-in function.
 
       - id: python-no-log-warn  #  A quick check for the deprecated .warn() method of python loggers
         name: Check for log warn
-        description: "Check for the deprecated .warn() method of python loggers."
+        description: Check for the deprecated .warn() method of python loggers.
 
       - id: python-use-type-annotations  # Enforce that python3.6+ type annotations are used instead of type comments
         name: Use type annotations
-        description: "Enforce that python3.6+ type annotations are used instead of type comments."
+        description: Enforce that python3.6+ type annotations are used instead of type comments.
 
   - repo: https://github.com/editorconfig-checker/editorconfig-checker.python
     rev: 2.7.3
     hooks:
       - id: editorconfig-checker
         name: EditorConfig Checker
-        description: "Check for compliance with the definitions in the EditorConfig file."
+        description: Check for compliance with the definitions in the EditorConfig file.
         exclude: |
           (?x)(
             LICENSE|
@@ -205,7 +205,7 @@ repos:
     hooks:
       - id: django-upgrade
         name: Django upgrade
-        description: "Upgrade Django code to a target version."
+        description: Upgrade Django code to a target version.
         args:
           - --target-version=4.2  # Minimum supported Django version for AA. Update as needed.
 
@@ -214,7 +214,7 @@ repos:
     hooks:
       - id: pyupgrade
         name: PyUpgrade
-        description: "Upgrade syntax to newer versions of Python."
+        description: Upgrade syntax to newer versions of Python.
         args:
           - --py38-plus  # Minimum required Python version for AA. Update as needed.
 
@@ -223,35 +223,35 @@ repos:
     hooks:
       - id: flake8
         name: Flake8
-        description: "Check for style and complexity issues in Python code."
+        description: Check for style and complexity issues in Python code.
 
   - repo: https://github.com/asottile/yesqa
     rev: v1.5.0
     hooks:
       - id: yesqa
         name: YesQA
-        description: "Check for extraneous `# noqa` comments."
+        description: Check for extraneous `# noqa` comments.
 
   - repo: https://github.com/PyCQA/isort
     rev: 5.13.2
     hooks:
       - id: isort
         name: Isort
-        description: "Sort imports."
+        description: Sort imports.
 
   - repo: https://github.com/Pierre-Sassoulas/black-disable-checker/
     rev: v1.1.3
     hooks:
       - id: black-disable-checker
         name: Black disable checker
-        description: "Check for black disable comments."
+        description: Check for black disable comments.
 
   - repo: https://github.com/psf/black
     rev: 24.4.2
     hooks:
       - id: black
         name: Black
-        description: "Format Python code."
+        description: Format Python code.
         args:
           - --target-version=py38  # Minimum required Python version for AA. Update as needed.
 
@@ -260,9 +260,9 @@ repos:
     hooks:
       - id: blacken-docs
         name: Blacken docs
-        description: "Format Python code in documentation files."
+        description: Format Python code in documentation files.
         additional_dependencies:
-          - black==24.3.0  # https://github.com/psf/black/releases/latest
+          - black==24.4.2  # https://github.com/psf/black/releases/latest
         args:
           - --target-version=py38  # Minimum required Python version for AA. Update as needed.
 
@@ -271,13 +271,14 @@ repos:
     hooks:
       - id: mdformat
         name: Mdformat
-        description: "Format Markdown files."
+        description: Format Markdown files.
         exclude: |
           (?x)(
-            .github/
+            .github/|
+            static/(.*)/libs/
           )
         additional_dependencies:
-          - mdformat-gfm==0.3.5  # Mdformat plugin for GitHub Flavored Markdown compatibility » https://github.com/hukkin/mdformat-gfm/tags
+          - mdformat-gfm==0.3.6  # Mdformat plugin for GitHub Flavored Markdown compatibility » https://github.com/hukkin/mdformat-gfm/tags
           - mdformat-toc==0.3.0  # Mdformat plugin to generate a table of contents » https://github.com/hukkin/mdformat-toc/tags
           - mdformat-black==0.1.1  # Mdformat plugin to Blacken Python code blocks » https://github.com/hukkin/mdformat-black/tags
           - mdformat-shfmt==0.1.0  # Mdformat plugin to format shell code blocks » https://github.com/hukkin/mdformat-shfmt/tags
@@ -287,31 +288,52 @@ repos:
     hooks:
       - id: tox-ini-fmt
         name: tox.ini formatter
-        description: "Format the tox.ini file."
+        description: Format the tox.ini file.
 
   - repo: https://github.com/tox-dev/pyproject-fmt
     rev: 1.8.0
     hooks:
       - id: pyproject-fmt
         name: pyproject.toml formatter
-        description: "Format the pyproject.toml file."
+        description: Format the pyproject.toml file.
         args:
           - --indent=4
         additional_dependencies:
-          - tox==4.11.4  # https://github.com/tox-dev/tox/releases/latest
+          - tox==4.15.0  # https://github.com/tox-dev/tox/releases/latest
 
   - repo: https://github.com/abravalheri/validate-pyproject
     rev: v0.16
     hooks:
       - id: validate-pyproject
         name: Validate pyproject.toml
-        description: "Validate the pyproject.toml file."
+        description: Validate the pyproject.toml file.
 
   - repo: https://github.com/pylint-dev/pylint
     rev: v3.1.0
     hooks:
       - id: pylint
         name: Pylint
-        description: "Check for errors and code smells in Python code."
+        description: Check for errors and code smells in Python code.
         args:
           - --py-version=3.8  # Minimum required Python version for AA. Update as needed.
+
+  - repo: https://github.com/python-jsonschema/check-jsonschema
+    rev: 0.28.2
+    hooks:
+      - id: check-github-actions
+        name: Check GitHub Actions
+        description: This hook checks that GitHub Actions files are valid.
+        args:
+          - --verbose
+
+      - id: check-github-workflows
+        name: Check GitHub Workflows
+        description: This hook checks that GitHub Workflows files are valid.
+        args:
+          - --verbose
+
+      - id: check-dependabot
+        name: Check Dependabot Configuration
+        description: This hook checks that Dependabot configuration files are valid.
+        args:
+          - --verbose
