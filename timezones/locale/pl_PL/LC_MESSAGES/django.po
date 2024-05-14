@@ -7,8 +7,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-03-20 17:01+0100\n"
-"PO-Revision-Date: 2024-04-04 07:11+0000\n"
-"Last-Translator: Peter Pfeufer <info@ppfeufer.de>\n"
+"PO-Revision-Date: 2024-05-10 14:13+0000\n"
+"Last-Translator: Anonymous <noreply@weblate.org>\n"
 "Language-Team: Polish <https://weblate.ppfeufer.de/projects/"
 "alliance-auth-apps/aa-timezones/pl/>\n"
 "Language: pl_PL\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 5.4.3\n"
+"X-Generator: Weblate 5.5.3\n"
 
 #: timezones/__init__.py:9 timezones/templates/timezones/base.html:6
 #: timezones/templates/timezones/base.html:10
@@ -43,6 +43,7 @@ msgid "Activated {notifications_count} timezone"
 msgid_plural "Activated {notifications_count} timezones"
 msgstr[0] ""
 msgstr[1] ""
+msgstr[2] ""
 
 #: timezones/admin.py:70
 #, python-brace-format
@@ -50,6 +51,7 @@ msgid "Failed to activate {failed} timezone"
 msgid_plural "Failed to activate {failed} timezones"
 msgstr[0] ""
 msgstr[1] ""
+msgstr[2] ""
 
 #: timezones/admin.py:86
 msgid "Deactivate selected timezones"
@@ -61,6 +63,7 @@ msgid "Failed to deactivate {failed} timezone"
 msgid_plural "Failed to deactivate {failed} timezones"
 msgstr[0] ""
 msgstr[1] ""
+msgstr[2] ""
 
 #: timezones/admin.py:121
 #, python-brace-format
@@ -68,6 +71,7 @@ msgid "Deactivated {notifications_count} timezone"
 msgid_plural "Deactivated {notifications_count} timezones"
 msgstr[0] ""
 msgstr[1] ""
+msgstr[2] ""
 
 #: timezones/apps.py:20
 #, python-brace-format
