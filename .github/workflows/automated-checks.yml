@@ -70,7 +70,7 @@ jobs:
           - mariadb:11.0  # Maintained until: June 2024
           - mariadb:11.1  # Maintained until: August 2024
 
-    continue-on-error: ${{ matrix.python-version == '3.12' }}
+#    continue-on-error: ${{ matrix.python-version == '3.12' }}
 
     # Set up services
     services:
