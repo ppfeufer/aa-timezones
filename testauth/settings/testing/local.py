@@ -122,3 +122,6 @@ DEFAULT_FROM_EMAIL = ""
 #######################################
 # Add any custom settings below here. #
 #######################################
+
+# Discord
+DISCORD_GUILD_ID = "1234567890"
