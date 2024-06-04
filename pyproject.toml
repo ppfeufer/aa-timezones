@@ -14,7 +14,7 @@ keywords = [
     "time",
     "timezones",
 ]
-license = {file = "LICENSE"}
+license = { file = "LICENSE" }
 authors = [
     { name = "Peter Pfeufer", email = "develop@ppfeufer.de" },
 ]
@@ -40,23 +40,21 @@ dynamic = [
     "version",
 ]
 dependencies = [
-    "allianceauth<5.0.0,>=4",
+    "allianceauth<5,>=4",
     "allianceauth-app-utils>=1.25",
     "pytz>=2023.3.post1",
 ]
-[project.optional-dependencies]
-tests-allianceauth-latest = [
+optional-dependencies.tests-allianceauth-latest = [
     "allianceauth-discordbot",
     "coverage",
     "django-webtest",
 ]
-[project.urls]
-Changelog = "https://github.com/ppfeufer/aa-timezones/blob/master/CHANGELOG.md"
-Documentation = "https://github.com/ppfeufer/aa-timezones/blob/master/README.md"
-Donations = "https://ko-fi.com/ppfeufer"
-Homepage = "https://github.com/ppfeufer/aa-timezones"
-Source = "https://github.com/ppfeufer/aa-timezones.git"
-Tracker = "https://github.com/ppfeufer/aa-timezones/issues"
+urls.Changelog = "https://github.com/ppfeufer/aa-timezones/blob/master/CHANGELOG.md"
+urls.Documentation = "https://github.com/ppfeufer/aa-timezones/blob/master/README.md"
+urls.Donations = "https://ko-fi.com/ppfeufer"
+urls.Homepage = "https://github.com/ppfeufer/aa-timezones"
+urls.Source = "https://github.com/ppfeufer/aa-timezones.git"
+urls.Tracker = "https://github.com/ppfeufer/aa-timezones/issues"
 
 [tool.hatch.build]
 include = [
