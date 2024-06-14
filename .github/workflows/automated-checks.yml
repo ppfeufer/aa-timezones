@@ -61,14 +61,12 @@ jobs:
         database:
           # https://endoflife.date/mysql
           - mysql:8.0     # [LTS] Maintained until: 30 Apr 2026
-          - mysql:8.1     # Latest official release
+          - mysql:8.4     # [LTS] Maintained until: 30 Apr 2032
           # https://endoflife.date/mariadb and https://mariadb.com/kb/en/mariadb-server-release-dates/
-          - mariadb:10.4  # Maintained until: 18 June 2024
-          - mariadb:10.5  # Maintained until: 24 June 2025
-          - mariadb:10.6  # [LTS] Maintained until: July 2026
-          - mariadb:10.11 # [LTS] Maintained until: February 2028
-          - mariadb:11.0  # Maintained until: June 2024
-          - mariadb:11.1  # Maintained until: August 2024
+          - mariadb:10.5  # [LTS] Maintained until: 24 Jun 2025
+          - mariadb:10.6  # [LTS] Maintained until: 06 Jul 2026
+          - mariadb:10.11 # [LTS] Maintained until: 16 Feb 2028
+          - mariadb:11.4  # [LTS] Maintained until: 29 May 2029
 
 #    continue-on-error: ${{ matrix.python-version == '3.12' }}
 
