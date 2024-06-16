@@ -2,10 +2,7 @@
 Constants
 """
 
-# Standard Library
-from typing import Dict, List, Union
-
-AA_TIMEZONE_DEFAULT_PANELS: List[Dict[str, Union[str, Dict[str, str]]]] = [
+AA_TIMEZONE_DEFAULT_PANELS: list[dict[str, str | dict[str, str]]] = [
     {
         "panel_name": "US / Pacific",
         "timezone": {

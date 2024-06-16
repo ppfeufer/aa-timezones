@@ -36,7 +36,8 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          # https://endoflife.date/nodejs
+          node-version: '20' # [LTS] End of Life: 30 Apr 2026
       - run: npm install
 
       - name: Run Pre Commit Checks
@@ -52,11 +53,10 @@ jobs:
       # Set Python versions to test against
       matrix:
         python-version:
-          - '3.8'
-          - '3.9'
-          - '3.10'
-          - '3.11'
-          - '3.12'
+          # https://endoflife.date/python
+          - '3.10'  # [EOL] End of Life: 31 Oct 2026
+          - '3.11'  # [EOL] End of Life: 31 Dec 2027
+          - '3.12'  # [EOL] End of Life: 31 Dec 2028
         # MySQL versions to test against
         database:
           # https://endoflife.date/mysql
@@ -126,18 +126,20 @@ jobs:
                 )
               )
               && (
-                matrix.python-version == '3.10'
+                matrix.python-version == '3.12'
                 && matrix.database == 'mariadb:10.11'
               )
             }}
         uses: codecov/codecov-action@v4
         with:
-          token: ${{ secrets.CODECOV_TOKEN }}
+#          token: ${{ secrets.CODECOV_TOKEN }}
           files: coverage.xml # optional
 #          flags: unittests # optional
 #          name: codecov-umbrella # optional
 #          fail_ci_if_error: true # optional (default = false)
           verbose: true # optional (default = false)
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
 
   # Run PyPi Build Test
   pypi-build-test:
