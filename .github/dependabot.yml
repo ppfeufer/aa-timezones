@@ -16,6 +16,12 @@ updates:
     directory: "/"
     target-branch: "master"
     versioning-strategy: increase
+    groups:
+      "NPM Dependencies":
+        update-types:
+          - "major"
+          - "minor"
+          - "patch"
     schedule:
       interval: "monthly"
     commit-message:
