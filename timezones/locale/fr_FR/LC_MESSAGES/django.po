@@ -4,13 +4,14 @@
 # "H. Peter Pfeufer" <info@ppfeufer.de>, 2023, 2024.
 # erka Ekanon <M6musicT@hotmail.fr>, 2024.
 # Matthias P <randomusernetcom@gmail.com>, 2024.
+# Hexo <ghostcig@free.fr>, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-03-16 02:05+0100\n"
-"PO-Revision-Date: 2024-05-10 14:13+0000\n"
-"Last-Translator: Anonymous <noreply@weblate.org>\n"
+"PO-Revision-Date: 2024-07-04 13:27+0000\n"
+"Last-Translator: Hexo <ghostcig@free.fr>\n"
 "Language-Team: French <https://weblate.ppfeufer.de/projects/"
 "alliance-auth-apps/aa-timezones/fr/>\n"
 "Language: fr_FR\n"
@@ -18,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 5.5.3\n"
+"X-Generator: Weblate 5.6.1\n"
 
 #: timezones/__init__.py:9 timezones/templates/timezones/base.html:6
 #: timezones/templates/timezones/base.html:10
@@ -167,7 +168,7 @@ msgstr "Basculer sur le temps ajusté"
 #: timezones/templates/timezones/partials/timezones/adjust-time.html:26
 #, fuzzy
 msgid "Set time to be in"
-msgstr "Paramétrez le temps pour qu'il soit dans"
+msgstr "Définir l'heure dans"
 
 #: timezones/templates/timezones/partials/timezones/adjust-time.html:71
 msgid "Hours"
@@ -236,4 +237,4 @@ msgstr "Décembre"
 
 #: timezones/templates/timezones/partials/timezones/time-until.html:5
 msgid "Time left"
-msgstr ""
+msgstr "Temps restant"
