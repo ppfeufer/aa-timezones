@@ -8,45 +8,6 @@ package = timezones
 # Default goal
 .DEFAULT_GOAL := help
 
-# Help
-.PHONY: help
-help:
-	@echo ""
-	@echo "$(appname_verbose) Makefile"
-	@echo ""
-	@echo "Usage:"
-	@echo "  make [command]"
-	@echo ""
-	@echo "Commands:"
-	@echo "  build_test          Build the package"
-	@echo "  coverage            Run tests and create a coverage report"
-	@echo "  graph_models        Create a graph of the models"
-	@echo "  pre-commit-checks   Run pre-commit checks"
-	@echo "  tox_tests           Run tests with tox"
-	@echo "  translationfiles    Create or update translation files"
-	@echo ""
-
-# Translation files
-.PHONY: translationfiles
-translationfiles:
-	@echo "Creating or updating translation files"
-	@django-admin makemessages \
-		-l cs \
-		-l de \
-		-l es \
-		-l fr_FR \
-		-l it_IT \
-		-l ja \
-		-l ko_KR \
-		-l nl \
-		-l pl_PL \
-		-l ru \
-		-l sk \
-		-l uk \
-		-l zh_Hans \
-		--keep-pot \
-		--ignore 'build/*'
-
 # Graph models
 .PHONY: graph_models
 graph_models:
@@ -57,36 +18,32 @@ graph_models:
 		--arrow-shape normal \
 		-o $(appname)-models.png
 
-# Coverage
-.PHONY: coverage
-coverage:
-	@echo "Running tests and creating a coverage report"
-	@rm -rf htmlcov
-	@coverage run ../myauth/manage.py \
-		test \
-		$(package) \
-		--keepdb \
-		--failfast; \
-	coverage html; \
-	coverage report -m
+# Prepare a new release
+# Update the graph of the models, translation files and the version in the package
+.PHONY: prepare-release
+prepare-release: graph_models translations
+	@echo ""
+	@echo "Preparing a release"
+	@read -p "New Version Number: " new_version; \
+	sed -i "/__version__/c\__version__ = \"$$new_version\"" $(package)/__init__.py; \
+	echo "Updated version in $(TEXT_BOLD)$(package)/__init__.py$(TEXT_BOLD_END)"
 
-# Build test
-.PHONY: build_test
-build_test:
-	@echo "Building the package"
-	@rm -rf dist
-	@python3 -m build
+# Help
+.PHONY: help
+help::
+	@echo ""
+	@echo "$(TEXT_BOLD)$(appname_verbose)$(TEXT_BOLD_END) Makefile"
+	@echo ""
+	@echo "$(TEXT_BOLD)Usage:$(TEXT_BOLD_END)"
+	@echo "  make [command]"
+	@echo ""
+	@echo "$(TEXT_BOLD)Commands:$(TEXT_BOLD_END)"
+	@echo "  $(TEXT_UNDERLINE)General:$(TEXT_UNDERLINE_END)"
+	@echo "    graph_models              Create a graph of the models"
+	@echo "    help                      Show this help message"
+	@echo "    prepare-release           Prepare a release and update the version in '$(package)/__init__.py'."
+	@echo "                              Please make sure to update the 'CHANGELOG.md' file accordingly."
+	@echo ""
 
-# Tox tests
-.PHONY: tox_tests
-tox_tests:
-	@echo "Running tests with tox"
-	@export USE_MYSQL=False; \
-	tox -v -e allianceauth-latest; \
-	rm -rf .tox/
-
-# Pre-commit checks
-.PHONY: pre-commit-checks
-pre-commit-checks:
-	@echo "Running pre-commit checks"
-	@pre-commit run --all-files
+# Include the configurations
+include .make/conf.d/*.mk

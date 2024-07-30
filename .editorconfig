@@ -17,5 +17,5 @@ indent_size = 2
 indent_size = 2
 
 # Makefiles always use tabs for indentation
-[Makefile]
+[{Makefile*,*.mk}]
 indent_style = tab
