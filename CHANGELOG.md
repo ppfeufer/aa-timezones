@@ -35,6 +35,12 @@ Section Order:
 ### Security
 -->
 
+## \[2.1.0\] - 2024-07-30
+
+### Changed
+
+- French translation updated
+
 ### Removed
 
 - Support for Python 3.8 and Python 3.9
