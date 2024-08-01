@@ -1,8 +1,8 @@
 {
     "type": "module",
     "devDependencies": {
-        "eslint": "^9.6.0",
-        "globals": "^15.7.0",
+        "eslint": "^9.8.0",
+        "globals": "^15.9.0",
         "stylelint": "^16.8.1",
         "stylelint-config-standard": "^36.0.1"
     }
