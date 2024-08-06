@@ -157,8 +157,8 @@ repos:
           - --formatter=compact
         additional_dependencies:
           # stylelint itself needs to be here when using additional_dependencies.
-          - stylelint@16.6.1  # https://github.com/stylelint/stylelint/releases/latest
-          - stylelint-config-standard@36.0.0  # https://github.com/stylelint/stylelint-config-standard/releases/latest
+          - stylelint@16.8.1  # https://github.com/stylelint/stylelint/releases/latest
+          - stylelint-config-standard@36.0.1  # https://github.com/stylelint/stylelint-config-standard/releases/latest
 
   - repo: https://github.com/pre-commit/pygrep-hooks
     rev: v1.10.0
@@ -262,7 +262,7 @@ repos:
         name: Blacken docs
         description: Format Python code in documentation files.
         additional_dependencies:
-          - black==24.4.2  # https://github.com/psf/black/releases/latest
+          - black==24.8.0  # https://github.com/psf/black/releases/latest
         args:
           - --target-version=py310  # Minimum required Python version for AA. Update as needed.
 
@@ -299,7 +299,7 @@ repos:
         args:
           - --indent=4
         additional_dependencies:
-          - tox==4.15.0  # https://github.com/tox-dev/tox/releases/latest
+          - tox==4.17.0  # https://github.com/tox-dev/tox/releases/latest
 
   - repo: https://github.com/abravalheri/validate-pyproject
     rev: v0.18
