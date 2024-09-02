@@ -157,7 +157,7 @@ repos:
           - --formatter=compact
         additional_dependencies:
           # stylelint itself needs to be here when using additional_dependencies.
-          - stylelint@16.8.1  # https://github.com/stylelint/stylelint/releases/latest
+          - stylelint@16.9.0  # https://github.com/stylelint/stylelint/releases/latest
           - stylelint-config-standard@36.0.1  # https://github.com/stylelint/stylelint-config-standard/releases/latest
 
   - repo: https://github.com/pre-commit/pygrep-hooks
@@ -299,7 +299,7 @@ repos:
         args:
           - --indent=4
         additional_dependencies:
-          - tox==4.17.0  # https://github.com/tox-dev/tox/releases/latest
+          - tox==4.18.0  # https://github.com/tox-dev/tox/releases/latest
 
   - repo: https://github.com/abravalheri/validate-pyproject
     rev: v0.19
