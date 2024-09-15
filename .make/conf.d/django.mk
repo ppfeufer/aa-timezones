@@ -5,14 +5,14 @@
 translations:
 	@echo "Creating or updating translation files"
 	@django-admin makemessages \
-		-l cs \
+		-l cs_CZ \
 		-l de \
 		-l es \
 		-l fr_FR \
 		-l it_IT \
 		-l ja \
 		-l ko_KR \
-		-l nl \
+		-l nl_NL \
 		-l pl_PL \
 		-l ru \
 		-l sk \
@@ -26,14 +26,14 @@ translations:
 compile_translations:
 	@echo "Compiling translation files"
 	@django-admin compilemessages \
-		-l cs \
+		-l cs_CZ \
 		-l de \
 		-l es \
 		-l fr_FR \
 		-l it_IT \
 		-l ja \
 		-l ko_KR \
-		-l nl \
+		-l nl_NL \
 		-l pl_PL \
 		-l ru \
 		-l sk \

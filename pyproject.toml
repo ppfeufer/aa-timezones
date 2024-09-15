@@ -38,7 +38,7 @@ dynamic = [
     "version",
 ]
 dependencies = [
-    "allianceauth<5,>=4",
+    "allianceauth<5,>=4.3.1",
     "allianceauth-app-utils>=1.25",
     "pytz>=2023.3.post1",
 ]
