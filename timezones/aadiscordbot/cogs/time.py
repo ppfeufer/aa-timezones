@@ -25,7 +25,7 @@ from timezones.models import Timezones
 
 def add_empty_field(embed: Embed) -> None:
     """
-    Adding an empty field to the embed
+    Adding an empty field to the embed.
 
     :param embed:
     :type embed:
@@ -42,7 +42,7 @@ def add_empty_field(embed: Embed) -> None:
 
 def add_empty_line(embed: Embed) -> None:
     """
-    Adding an empty line to the embed
+    Adding an empty line to the embed.
 
     :param embed:
     :type embed:
@@ -68,7 +68,7 @@ class Time(commands.Cog):
     @classmethod
     def show_timezones(cls) -> Embed:
         """
-        Create and format the embed for Discord
+        Create and format the embed for Discord.
 
         :return:
         :rtype:
@@ -151,7 +151,7 @@ class Time(commands.Cog):
     @commands.slash_command(name="time", guild_ids=[int(settings.DISCORD_GUILD_ID)])
     async def time(self, ctx):
         """
-        Returns the Eve time and the current time in various time zones
+        Returns the Eve time, and the current time in various time zones.
 
         :param ctx:
         :type ctx:
@@ -159,7 +159,7 @@ class Time(commands.Cog):
         :rtype:
         """
 
-        return await ctx.respond(embed=self.show_timezones())
+        return await ctx.respond(embed=self.show_timezones(), ephemeral=True)
 
 
 def setup(bot):
@@ -168,7 +168,7 @@ def setup(bot):
     :param bot:
     """
 
-    # Unload the `time` extension from `aadiscordbot`, so we can load our own
+    # Unload the `time` extension from `aadiscordbot`, so we can load our own.
     if bot.get_cog("Time") is not None:
         bot.remove_cog("Time")
 
