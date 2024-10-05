@@ -127,7 +127,7 @@ repos:
           )
 
   - repo: https://github.com/eslint/eslint
-    rev: v9.9.1
+    rev: v9.12.0
     hooks:
       - id: eslint
         name: ESLint
@@ -139,8 +139,8 @@ repos:
           )
 #        additional_dependencies:
 #          # eslint itself needs to be here when using additional_dependencies.
-#          - eslint@8.56.0  # https://github.com/eslint/eslint/releases/latest
-#          - globals@13.24.0  # https://github.com/sindresorhus/globals/releases/latest
+#          - eslint@9.12.0  # https://github.com/eslint/eslint/releases/latest
+#          - globals@15.10.0  # https://github.com/sindresorhus/globals/releases/latest
 
   - repo: https://github.com/thibaudcolas/pre-commit-stylelint
     rev: v16.9.0
@@ -201,7 +201,7 @@ repos:
           )
 
   - repo: https://github.com/adamchainz/django-upgrade
-    rev: 1.20.0
+    rev: 1.21.0
     hooks:
       - id: django-upgrade
         name: Django upgrade
@@ -284,14 +284,14 @@ repos:
           - mdformat-shfmt==0.1.0  # Mdformat plugin to format shell code blocks » https://github.com/hukkin/mdformat-shfmt/tags
 
   - repo: https://github.com/tox-dev/tox-ini-fmt
-    rev: 1.3.1
+    rev: 1.4.1
     hooks:
       - id: tox-ini-fmt
         name: tox.ini formatter
         description: Format the tox.ini file.
 
   - repo: https://github.com/tox-dev/pyproject-fmt
-    rev: 2.2.1
+    rev: 2.2.4
     hooks:
       - id: pyproject-fmt
         name: pyproject.toml formatter
@@ -299,17 +299,17 @@ repos:
         args:
           - --indent=4
         additional_dependencies:
-          - tox==4.18.0  # https://github.com/tox-dev/tox/releases/latest
+          - tox==4.21.2  # https://github.com/tox-dev/tox/releases/latest
 
   - repo: https://github.com/abravalheri/validate-pyproject
-    rev: v0.19
+    rev: v0.20.2
     hooks:
       - id: validate-pyproject
         name: Validate pyproject.toml
         description: Validate the pyproject.toml file.
 
   - repo: https://github.com/pylint-dev/pylint
-    rev: v3.2.7
+    rev: v3.3.1
     hooks:
       - id: pylint
         name: Pylint
@@ -318,7 +318,7 @@ repos:
           - --py-version=3.10  # Minimum required Python version for AA. Update as needed.
 
   - repo: https://github.com/python-jsonschema/check-jsonschema
-    rev: 0.29.2
+    rev: 0.29.3
     hooks:
       - id: check-github-actions
         name: Check GitHub Actions
