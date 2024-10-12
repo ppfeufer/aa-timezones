@@ -35,6 +35,8 @@ Section Order:
 ### Security
 -->
 
+## \[2.2.1\] - 2024-10-12
+
 ### Added
 
 - Integrity checks for CSS and JS files
