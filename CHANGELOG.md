@@ -35,6 +35,10 @@ Section Order:
 ### Security
 -->
 
+### Fixed
+
+- Minimized drift in countdown timer
+
 ## \[2.2.0\] - 2024-09-16
 
 ### Changed

@@ -150,19 +150,21 @@ const updatePanels = (now) => {
 
 /**
  * Time until given timestamp
+ *
  * @param {number} timestamp
  */
 const timeUntil = (timestamp) => {
     'use strict';
 
-    const timestampDifference = timestamp - Date.now();
-    let timeDifferenceInSeconds = timestampDifference / 1000; // from ms to seconds
+    /**
+     * Update the countdown
+     */
+    const updateCountdown = () => {
+        const now = Date.now();
+        const timestampDifference = timestamp - now;
+        let timeDifferenceInSeconds = timestampDifference / 1000; // from ms to seconds
 
-    // set the interval
-    countdownIntervalId = setInterval(() => { // execute code each second
         let countdown;
-
-        timeDifferenceInSeconds--; // decrement timestamp with one second each second
 
         if (timeDifferenceInSeconds >= 0) {
             const days = Math.floor(timeDifferenceInSeconds / (24 * 60 * 60)); // calculate days from timestamp
@@ -174,9 +176,11 @@ const timeUntil = (timestamp) => {
             if (hours < 10) {
                 hours = '0' + hours;
             }
+
             if (minutes < 10) {
                 minutes = '0' + minutes;
             }
+
             if (seconds < 10) {
                 seconds = '0' + seconds;
             }
@@ -187,7 +191,17 @@ const timeUntil = (timestamp) => {
         }
 
         $('.aa-timezones-time-until-countdown').html(countdown);
-    }, 1000);
+
+        // Calculate drift and set the next interval
+        const drift = 1000 - (Date.now() - now);
+
+        countdownIntervalId = setTimeout(
+            updateCountdown,
+            Math.max(0, drift)
+        );
+    };
+
+    updateCountdown();
 };
 
 /**
