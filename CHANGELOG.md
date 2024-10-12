@@ -35,6 +35,10 @@ Section Order:
 ### Security
 -->
 
+### Added
+
+- Integrity checks for CSS and JS files
+
 ### Fixed
 
 - Minimized drift in countdown timer
