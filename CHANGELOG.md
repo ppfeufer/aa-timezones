@@ -43,6 +43,10 @@ Section Order:
 
 - Minimized drift in countdown timer
 
+### Changed
+
+- Make bot response ephemeral
+
 ## \[2.2.0\] - 2024-09-16
 
 ### Changed
