@@ -139,8 +139,8 @@ repos:
           )
 #        additional_dependencies:
 #          # eslint itself needs to be here when using additional_dependencies.
-#          - eslint@9.12.0  # https://github.com/eslint/eslint/releases/latest
-#          - globals@15.10.0  # https://github.com/sindresorhus/globals/releases/latest
+#          - eslint@9.14.0  # https://github.com/eslint/eslint/releases/latest
+#          - globals@15.12.0  # https://github.com/sindresorhus/globals/releases/latest
 
   - repo: https://github.com/thibaudcolas/pre-commit-stylelint
     rev: v16.10.0
@@ -157,7 +157,7 @@ repos:
           - --formatter=compact
         additional_dependencies:
           # stylelint itself needs to be here when using additional_dependencies.
-          - stylelint@16.9.0  # https://github.com/stylelint/stylelint/releases/latest
+          - stylelint@16.10.0  # https://github.com/stylelint/stylelint/releases/latest
           - stylelint-config-standard@36.0.1  # https://github.com/stylelint/stylelint-config-standard/releases/latest
 
   - repo: https://github.com/pre-commit/pygrep-hooks
@@ -262,7 +262,7 @@ repos:
         name: Blacken docs
         description: Format Python code in documentation files.
         additional_dependencies:
-          - black==24.8.0  # https://github.com/psf/black/releases/latest
+          - black==24.10.0  # https://github.com/psf/black/releases/latest
         args:
           - --target-version=py310  # Minimum required Python version for AA. Update as needed.
 
@@ -278,10 +278,10 @@ repos:
             static/(.*)/libs/
           )
         additional_dependencies:
-          - mdformat-gfm==0.3.6  # Mdformat plugin for GitHub Flavored Markdown compatibility » https://github.com/hukkin/mdformat-gfm/tags
+          - mdformat-gfm==0.3.7  # Mdformat plugin for GitHub Flavored Markdown compatibility » https://github.com/hukkin/mdformat-gfm/tags
           - mdformat-toc==0.3.0  # Mdformat plugin to generate a table of contents » https://github.com/hukkin/mdformat-toc/tags
           - mdformat-black==0.1.1  # Mdformat plugin to Blacken Python code blocks » https://github.com/hukkin/mdformat-black/tags
-          - mdformat-shfmt==0.1.0  # Mdformat plugin to format shell code blocks » https://github.com/hukkin/mdformat-shfmt/tags
+          - mdformat-shfmt==0.2.0  # Mdformat plugin to format shell code blocks » https://github.com/hukkin/mdformat-shfmt/tags
 
   - repo: https://github.com/tox-dev/tox-ini-fmt
     rev: 1.4.1
@@ -299,7 +299,7 @@ repos:
         args:
           - --indent=4
         additional_dependencies:
-          - tox==4.21.2  # https://github.com/tox-dev/tox/releases/latest
+          - tox==4.23.2  # https://github.com/tox-dev/tox/releases/latest
 
   - repo: https://github.com/abravalheri/validate-pyproject
     rev: v0.22
