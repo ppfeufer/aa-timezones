@@ -1,5 +1,11 @@
 name: Tests
 
+env:
+  COVERAGE_DATABASE_VERSION: mariadb:10.11
+  COVERAGE_PYTHON_VERSION: 3.12
+  NODE_VERSION: 22 # [LTS] End of Life: 30 Apr 2027 (https://endoflife.date/nodejs)
+  REDIS_VERSION: latest
+
 on:
   push:
     branches:
@@ -27,17 +33,19 @@ jobs:
         uses: actions/checkout@v4
 
       # Set up Python
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version-file: 'pyproject.toml' # Read the Python version from the pyproject.toml file
+#      - name: Set up Python
+#        uses: actions/setup-python@v5
+#        with:
+#          python-version-file: 'pyproject.toml' # Read the Python version from the pyproject.toml file
 
       # Set up Node.js
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           # https://endoflife.date/nodejs
-          node-version: '20' # [LTS] End of Life: 30 Apr 2026
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+          cache-dependency-path: 'package-lock.json'
       - run: npm install
 
       - name: Run Pre Commit Checks
@@ -45,7 +53,7 @@ jobs:
 
   # Run Test Coverage
   test-coverage:
-    needs: [pre-commit]
+    needs: [ pre-commit ]
     name: AA Latest (Python ${{ matrix.python-version }} with ${{ matrix.database }})
     runs-on: ubuntu-latest
 
@@ -86,11 +94,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      # Install redis
+        # Install redis
       - name: Install redis
         uses: shogo82148/actions-setup-redis@v1
         with:
-          redis-version: "latest"
+          redis-version: ${{ env.REDIS_VERSION }}
 
       # Verify that redis is up
       - name: Verify that redis is up
@@ -128,8 +136,8 @@ jobs:
                 )
               )
               && (
-                matrix.python-version == '3.12'
-                && matrix.database == 'mariadb:10.11'
+                matrix.python-version == env.COVERAGE_PYTHON_VERSION
+                && matrix.database == env.COVERAGE_DATABASE_VERSION
               )
             }}
         uses: codecov/codecov-action@v4
