@@ -128,7 +128,7 @@ repos:
           )
 
   - repo: https://github.com/eslint/eslint
-    rev: v9.14.0
+    rev: v9.16.0
     hooks:
       - id: eslint
         name: ESLint
@@ -141,11 +141,11 @@ repos:
           )
 #        additional_dependencies:
 #          # eslint itself needs to be here when using additional_dependencies.
-#          - eslint@9.14.0  # https://github.com/eslint/eslint/releases/latest
-#          - globals@15.12.0  # https://github.com/sindresorhus/globals/releases/latest
+#          - eslint@9.16.0  # https://github.com/eslint/eslint/releases/latest
+#          - globals@15.13.0  # https://github.com/sindresorhus/globals/releases/latest
 
   - repo: https://github.com/thibaudcolas/pre-commit-stylelint
-    rev: v16.10.0
+    rev: v16.11.0
     hooks:
       - id: stylelint
         name: Stylelint
@@ -160,7 +160,7 @@ repos:
           - --formatter=compact
         additional_dependencies:
           # stylelint itself needs to be here when using additional_dependencies.
-          - stylelint@16.10.0  # https://github.com/stylelint/stylelint/releases/latest
+          - stylelint@16.11.0  # https://github.com/stylelint/stylelint/releases/latest
           - stylelint-config-standard@36.0.1  # https://github.com/stylelint/stylelint-config-standard/releases/latest
 
   - repo: https://github.com/pre-commit/pygrep-hooks
@@ -204,7 +204,7 @@ repos:
           )
 
   - repo: https://github.com/adamchainz/django-upgrade
-    rev: 1.22.1
+    rev: 1.22.2
     hooks:
       - id: django-upgrade
         name: Django upgrade
@@ -270,7 +270,7 @@ repos:
           - --target-version=py310  # Minimum required Python version for AA. Update as needed.
 
   - repo: https://github.com/executablebooks/mdformat
-    rev: 0.7.18
+    rev: 0.7.19
     hooks:
       - id: mdformat
         name: Mdformat
@@ -305,14 +305,14 @@ repos:
           - tox==4.23.2  # https://github.com/tox-dev/tox/releases/latest
 
   - repo: https://github.com/abravalheri/validate-pyproject
-    rev: v0.22
+    rev: v0.23
     hooks:
       - id: validate-pyproject
         name: Validate pyproject.toml
         description: Validate the pyproject.toml file.
 
   - repo: https://github.com/pylint-dev/pylint
-    rev: v3.3.1
+    rev: v3.3.2
     hooks:
       - id: pylint
         name: Pylint
@@ -321,7 +321,7 @@ repos:
           - --py-version=3.10  # Minimum required Python version for AA. Update as needed.
 
   - repo: https://github.com/python-jsonschema/check-jsonschema
-    rev: 0.29.4
+    rev: 0.30.0
     hooks:
       - id: check-github-actions
         name: Check GitHub Actions
