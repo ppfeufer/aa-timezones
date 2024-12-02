@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-03-16 02:05+0100\n"
-"PO-Revision-Date: 2024-05-10 14:13+0000\n"
-"Last-Translator: Anonymous <noreply@weblate.org>\n"
+"PO-Revision-Date: 2024-12-02 17:40+0000\n"
+"Last-Translator: Peter Pfeufer <info@ppfeufer.de>\n"
 "Language-Team: Spanish <https://weblate.ppfeufer.de/projects/"
 "alliance-auth-apps/aa-timezones/es/>\n"
 "Language: es\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.5.3\n"
+"X-Generator: Weblate 5.8.4\n"
 
 #: timezones/__init__.py:9 timezones/templates/timezones/base.html:6
 #: timezones/templates/timezones/base.html:10
@@ -27,19 +27,15 @@ msgstr "Zonas horarias"
 
 #: timezones/admin.py:26
 msgid "Panel name"
-msgstr ""
+msgstr "Nombre del panel"
 
 #: timezones/admin.py:30
-#, fuzzy
-#| msgid "Timezone"
 msgid "Time zone"
 msgstr "Zona horaria"
 
 #: timezones/admin.py:36
-#, fuzzy
-#| msgid "Selected timezone"
 msgid "Activate selected timezones"
-msgstr "Zona horaria seleccionada"
+msgstr "Activar zonas horarias seleccionadas"
 
 #: timezones/admin.py:60 timezones/admin.py:80
 #, python-brace-format
