@@ -1,12 +1,12 @@
 # Apply to all files without committing:
 #   pre-commit run --all-files
 # Update this file:
-#   pre-commit autoupdate
+#   pre-commit autoupdate --freeze
 
+# Set the default language versions for the hooks
 default_language_version:
-  # force all unspecified python hooks to run python3
-  python: python3
-  node: 22.4.1
+  python: python3  # Force all Python hooks to use Python 3
+  node: 22.4.1  # Force all Node hooks to use Node 22.4.1
 
 # https://pre-commit.ci/
 ci:
@@ -22,10 +22,21 @@ ci:
     - eslint  # Fails due to missing node environment in CI
   submodules: false
 
+# Globally exclude files
+# https://pre-commit.com/#top_level-exclude
+exclude: |
+  (?x)(
+    .github/|
+    LICENSE|
+    .min(.css|.css.map|.js|.js.map)|
+    locale/|
+    static/(.*)/libs/
+  )
+
 # pre-commit setup
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v5.0.0
+    rev: cef0300fd0fc4d2a87a85fa2093c6b283ea36f4b  # frozen: v5.0.0
     hooks:
       # Identify invalid files
       - id: check-ast
@@ -106,12 +117,6 @@ repos:
         description: Check for trailing whitespace.
         args:
           - --markdown-linebreak-ext=md
-        exclude: |
-          (?x)(
-            .min(.css|.css.map|.js|.js.map)|
-            locale/|
-            static/(.*)/libs/
-          )
 
       - id: check-executables-have-shebangs
         name: Check for shebangs in executables
@@ -120,42 +125,26 @@ repos:
       - id: end-of-file-fixer
         name: End of file fixer
         description: Ensure that files end with a newline.
-        exclude: |
-          (?x)(
-            .min(.css|.css.map|.js|.js.map)|
-            locale/|
-            static/(.*)/libs/
-          )
 
   - repo: https://github.com/eslint/eslint
-    rev: v9.16.0
+    rev: de2b7986929c5a92de076e4381b8bb05440e78c2  # frozen: v9.16.0
     hooks:
       - id: eslint
         name: ESLint
         description: Check for problems in JavaScript files.
         language: node
-        exclude: |
-          (?x)(
-            .min(.js|.js.map)|
-            static/(.*)/libs/
-          )
 #        additional_dependencies:
 #          # eslint itself needs to be here when using additional_dependencies.
 #          - eslint@9.16.0  # https://github.com/eslint/eslint/releases/latest
 #          - globals@15.13.0  # https://github.com/sindresorhus/globals/releases/latest
 
   - repo: https://github.com/thibaudcolas/pre-commit-stylelint
-    rev: v16.11.0
+    rev: 29cc51ef83ff0b4aaf74595268e022873015bd9b  # frozen: v16.11.0
     hooks:
       - id: stylelint
         name: Stylelint
         description: Check for problems in CSS files.
         language: node
-        exclude: |
-          (?x)(
-            .min(.css|.css.map)|
-            static/(.*)/libs/
-          )
         args:
           - --formatter=compact
         additional_dependencies:
@@ -164,7 +153,7 @@ repos:
           - stylelint-config-standard@36.0.1  # https://github.com/stylelint/stylelint-config-standard/releases/latest
 
   - repo: https://github.com/pre-commit/pygrep-hooks
-    rev: v1.10.0
+    rev: 3a6eb0fadf60b3cccfd80bad9dbb6fae7e47b316  # frozen: v1.10.0
     hooks:
       - id: python-check-blanket-noqa  # Enforce that noqa annotations always occur with specific codes. Sample annotations: # noqa: F401, # noqa: F401,W203
         name: Check for blanket noqa
@@ -191,20 +180,14 @@ repos:
         description: Enforce that python3.6+ type annotations are used instead of type comments.
 
   - repo: https://github.com/editorconfig-checker/editorconfig-checker.python
-    rev: 3.0.3
+    rev: 1a92c0953500d402fc49ceb67ad7fbf7cabad38a  # frozen: 3.0.3
     hooks:
       - id: editorconfig-checker
         name: EditorConfig Checker
         description: Check for compliance with the definitions in the EditorConfig file.
-        exclude: |
-          (?x)(
-            LICENSE|
-            .min(.css|.css.map|.js|.js.map)|
-            static/(.*)/libs/
-          )
 
   - repo: https://github.com/adamchainz/django-upgrade
-    rev: 1.22.2
+    rev: 04b0de71b1b4acc1803e74ab24e722bcbd5ab989  # frozen: 1.22.2
     hooks:
       - id: django-upgrade
         name: Django upgrade
@@ -213,7 +196,7 @@ repos:
           - --target-version=4.2  # Minimum supported Django version for AA. Update as needed.
 
   - repo: https://github.com/asottile/pyupgrade
-    rev: v3.19.0
+    rev: 19364aa1b2ac289ce75e6bbe93994f7b4b9425f6  # frozen: v3.19.0
     hooks:
       - id: pyupgrade
         name: PyUpgrade
@@ -222,35 +205,35 @@ repos:
           - --py310-plus  # Minimum required Python version for AA. Update as needed.
 
   - repo: https://github.com/pycqa/flake8
-    rev: 7.1.1
+    rev: e43806be3607110919eff72939fda031776e885a  # frozen: 7.1.1
     hooks:
       - id: flake8
         name: Flake8
         description: Check for style and complexity issues in Python code.
 
   - repo: https://github.com/asottile/yesqa
-    rev: v1.5.0
+    rev: f2ae90cf9e1661ade79d0881186ce4fd7ba6ee79  # frozen: v1.5.0
     hooks:
       - id: yesqa
         name: YesQA
         description: Check for extraneous `# noqa` comments.
 
   - repo: https://github.com/PyCQA/isort
-    rev: 5.13.2
+    rev: c235f5e450b4b84e58d114ed4c589cbf454175a3  # frozen: 5.13.2
     hooks:
       - id: isort
         name: Isort
         description: Sort imports.
 
   - repo: https://github.com/Pierre-Sassoulas/black-disable-checker/
-    rev: v1.1.3
+    rev: e37d202bbc277a1e0b2ecbdd6ececd74c8b0352e  # frozen: v1.1.3
     hooks:
       - id: black-disable-checker
         name: Black disable checker
         description: Check for black disable comments.
 
   - repo: https://github.com/psf/black
-    rev: 24.10.0
+    rev: 1b2427a2b785cc4aac97c19bb4b9a0de063f9547  # frozen: 24.10.0
     hooks:
       - id: black
         name: Black
@@ -259,7 +242,7 @@ repos:
           - --target-version=py310  # Minimum required Python version for AA. Update as needed.
 
   - repo: https://github.com/asottile/blacken-docs
-    rev: 1.19.1
+    rev: 78a9dcbecf4f755f65d1f3dec556bc249d723600  # frozen: 1.19.1
     hooks:
       - id: blacken-docs
         name: Blacken docs
@@ -270,16 +253,11 @@ repos:
           - --target-version=py310  # Minimum required Python version for AA. Update as needed.
 
   - repo: https://github.com/executablebooks/mdformat
-    rev: 0.7.19
+    rev: 00812cd1850e41aae5c0916645b4b7404f538e8c  # frozen: 0.7.19
     hooks:
       - id: mdformat
         name: Mdformat
         description: Format Markdown files.
-        exclude: |
-          (?x)(
-            .github/|
-            static/(.*)/libs/
-          )
         additional_dependencies:
           - mdformat-gfm==0.3.7  # Mdformat plugin for GitHub Flavored Markdown compatibility » https://github.com/hukkin/mdformat-gfm/tags
           - mdformat-toc==0.3.0  # Mdformat plugin to generate a table of contents » https://github.com/hukkin/mdformat-toc/tags
@@ -287,14 +265,14 @@ repos:
           - mdformat-shfmt==0.2.0  # Mdformat plugin to format shell code blocks » https://github.com/hukkin/mdformat-shfmt/tags
 
   - repo: https://github.com/tox-dev/tox-ini-fmt
-    rev: 1.4.1
+    rev: e37f0af6026312eba791baa690e3e0f57c753b83  # frozen: 1.4.1
     hooks:
       - id: tox-ini-fmt
         name: tox.ini formatter
         description: Format the tox.ini file.
 
   - repo: https://github.com/tox-dev/pyproject-fmt
-    rev: v2.5.0
+    rev: 6b2f3b33754de7a442043dc312fc5a0e473086d2  # frozen: v2.5.0
     hooks:
       - id: pyproject-fmt
         name: pyproject.toml formatter
@@ -305,14 +283,14 @@ repos:
           - tox==4.23.2  # https://github.com/tox-dev/tox/releases/latest
 
   - repo: https://github.com/abravalheri/validate-pyproject
-    rev: v0.23
+    rev: f45606bad11ad90ddac1212fa83ebe2a4d724351  # frozen: v0.23
     hooks:
       - id: validate-pyproject
         name: Validate pyproject.toml
         description: Validate the pyproject.toml file.
 
   - repo: https://github.com/pylint-dev/pylint
-    rev: v3.3.2
+    rev: a5a1bc3a9602d08f15ac90ad12f5b25bde375613  # frozen: v3.3.2
     hooks:
       - id: pylint
         name: Pylint
@@ -321,7 +299,7 @@ repos:
           - --py-version=3.10  # Minimum required Python version for AA. Update as needed.
 
   - repo: https://github.com/python-jsonschema/check-jsonschema
-    rev: 0.30.0
+    rev: cb3c2be894b151dff143b1baf6acbd55f2b7faed  # frozen: 0.30.0
     hooks:
       - id: check-github-actions
         name: Check GitHub Actions

@@ -8,7 +8,7 @@ pre-commit-checks: pre-commit-install
 .PHONY: pre-commit-update
 pre-commit-update:
 	@echo "Updating pre-commit configuration …"
-	@pre-commit autoupdate
+	@pre-commit autoupdate --freeze
 
 # Install pre-commit hook
 .PHONY: pre-commit-install
