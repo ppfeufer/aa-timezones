@@ -35,6 +35,10 @@ Section Order:
 ### Security
 -->
 
+### Fixed
+
+- JS variable declaration in the template. (`const` instead of `let`)
+
 ## [2.2.2] - 2024-12-14
 
 ### Added
