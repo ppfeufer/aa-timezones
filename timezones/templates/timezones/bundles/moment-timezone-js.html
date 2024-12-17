@@ -1,7 +1,8 @@
 {% load static %}
+{% load timezones %}
 
 <script
     src="{% static 'timezones/libs/moment-timezone/0.5.36/moment-timezone-with-data-1970-2030.min.js' %}"
-    integrity="sha512-HdWVl8NTC8n0bl0Ypuw1baRuZvO4bUcnGWhLTiI9yiisXzHbgKxlrmf2AMaa3yaXsi8GVzwonsASxsLs7ffAFw=="
+    integrity="{% timezones_static_integrity_hash 'lib' 'moment-timezone-with-data-1970-2030.min.js' %}"
     crossorigin="anonymous"
 ></script>
