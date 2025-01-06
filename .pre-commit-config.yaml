@@ -6,7 +6,7 @@
 # Set the default language versions for the hooks
 default_language_version:
   python: python3  # Force all Python hooks to use Python 3
-  node: 22.4.1  # Force all Node hooks to use Node 22.4.1
+  node: 22.12.0  # Force all Node hooks to use Node 22.12.0
 
 # https://pre-commit.ci/
 ci:
@@ -127,7 +127,7 @@ repos:
         description: Ensure that files end with a newline.
 
   - repo: https://github.com/eslint/eslint
-    rev: de2b7986929c5a92de076e4381b8bb05440e78c2  # frozen: v9.16.0
+    rev: 3d8028abdbdbc6c59ff6b86c5fe26755db26ee6a  # frozen: v9.17.0
     hooks:
       - id: eslint
         name: ESLint
@@ -135,11 +135,11 @@ repos:
         language: node
 #        additional_dependencies:
 #          # eslint itself needs to be here when using additional_dependencies.
-#          - eslint@9.16.0  # https://github.com/eslint/eslint/releases/latest
-#          - globals@15.13.0  # https://github.com/sindresorhus/globals/releases/latest
+#          - eslint@9.17.0 # https://github.com/eslint/eslint/releases/latest
+#          - globals@15.14.0  # https://github.com/sindresorhus/globals/releases/latest
 
   - repo: https://github.com/thibaudcolas/pre-commit-stylelint
-    rev: 29cc51ef83ff0b4aaf74595268e022873015bd9b  # frozen: v16.11.0
+    rev: 22b126a247292d1efc39bc8d475f4abdddfa713f  # frozen: v16.12.0
     hooks:
       - id: stylelint
         name: Stylelint
@@ -149,7 +149,7 @@ repos:
           - --formatter=compact
         additional_dependencies:
           # stylelint itself needs to be here when using additional_dependencies.
-          - stylelint@16.11.0  # https://github.com/stylelint/stylelint/releases/latest
+          - stylelint@16.12.0  # https://github.com/stylelint/stylelint/releases/latest
           - stylelint-config-standard@36.0.1  # https://github.com/stylelint/stylelint-config-standard/releases/latest
 
   - repo: https://github.com/pre-commit/pygrep-hooks
@@ -196,7 +196,7 @@ repos:
           - --target-version=4.2  # Minimum supported Django version for AA. Update as needed.
 
   - repo: https://github.com/asottile/pyupgrade
-    rev: 19364aa1b2ac289ce75e6bbe93994f7b4b9425f6  # frozen: v3.19.0
+    rev: ce40a160603ab0e7d9c627ae33d7ef3906e2d2b2  # frozen: v3.19.1
     hooks:
       - id: pyupgrade
         name: PyUpgrade
@@ -253,13 +253,13 @@ repos:
           - --target-version=py310  # Minimum required Python version for AA. Update as needed.
 
   - repo: https://github.com/executablebooks/mdformat
-    rev: 00812cd1850e41aae5c0916645b4b7404f538e8c  # frozen: 0.7.19
+    rev: e20b1ac5acb8aba0b49d3a9109c6e6b58684ee83  # frozen: 0.7.21
     hooks:
       - id: mdformat
         name: Mdformat
         description: Format Markdown files.
         additional_dependencies:
-          - mdformat-gfm==0.3.7  # Mdformat plugin for GitHub Flavored Markdown compatibility » https://github.com/hukkin/mdformat-gfm/tags
+          - mdformat-gfm==0.4.1  # Mdformat plugin for GitHub Flavored Markdown compatibility » https://github.com/hukkin/mdformat-gfm/tags
           - mdformat-toc==0.3.0  # Mdformat plugin to generate a table of contents » https://github.com/hukkin/mdformat-toc/tags
           - mdformat-black==0.1.1  # Mdformat plugin to Blacken Python code blocks » https://github.com/hukkin/mdformat-black/tags
           - mdformat-shfmt==0.2.0  # Mdformat plugin to format shell code blocks » https://github.com/hukkin/mdformat-shfmt/tags
@@ -290,7 +290,7 @@ repos:
         description: Validate the pyproject.toml file.
 
   - repo: https://github.com/pylint-dev/pylint
-    rev: a5a1bc3a9602d08f15ac90ad12f5b25bde375613  # frozen: v3.3.2
+    rev: c28580be76fe1ec55a6cac41833c0bd68070d2f7  # frozen: v3.3.3
     hooks:
       - id: pylint
         name: Pylint
