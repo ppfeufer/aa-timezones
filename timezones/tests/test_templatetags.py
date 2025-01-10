@@ -25,13 +25,12 @@ class TestVersionedStatic(TestCase):
 
         context = Context({"version": __version__})
         template_to_render = Template(
-            "{% load timezones %}"
-            "{% timezones_static 'timezones/css/timezones.min.css' %}"
+            "{% load timezones %}" "{% timezones_static 'css/timezones.min.css' %}"
         )
 
         rendered_template = template_to_render.render(context)
 
-        self.assertInHTML(
-            needle=f'/static/timezones/css/timezones.min.css?v={context["version"]}',
-            haystack=rendered_template,
+        self.assertIn(
+            member=f'/static/timezones/css/timezones.min.css?v={context["version"]}',
+            container=rendered_template,
         )

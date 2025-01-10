@@ -1,9 +1,3 @@
-{% load static %}
 {% load timezones %}
 
-<link
-    rel="stylesheet"
-    href="{% static 'timezones/libs/weather-icons/2.0.10/css/weather-icons.min.css' %}"
-    integrity="{% timezones_static_integrity_hash 'lib' 'weather-icons.min.css' %}"
-    crossorigin="anonymous"
->
+{% timezones_static 'libs/weather-icons/2.0.10/css/weather-icons.min.css' %}

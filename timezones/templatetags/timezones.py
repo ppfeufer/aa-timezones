@@ -2,54 +2,73 @@
 Versioned static URLs to break browser caches when changing the app version
 """
 
+# Standard Library
+import os
+
 # Django
 from django.template.defaulttags import register
 from django.templatetags.static import static
+from django.utils.safestring import mark_safe
+
+# Alliance Auth
+from allianceauth.services.hooks import get_extension_logger
+
+# Alliance Auth (External Libs)
+from app_utils.logging import LoggerAddTag
 
 # AA Time Zones
-from timezones import __version__
-from timezones.app_settings import IntegrityHash
+from timezones import __title__, __version__
+from timezones.helper.static_files import calculate_integrity_hash
+
+logger = LoggerAddTag(my_logger=get_extension_logger(__name__), prefix=__title__)
 
 
 @register.simple_tag
-def timezones_static(path: str) -> str:
+def timezones_static(relative_file_path: str) -> str | None:
     """
     Versioned static URL
 
-    :param path: Path to the static file relative to the static folder
-    :type path: str
+    :param relative_file_path: The file path relative to the `aa-timezones/timezones/static/timezones` folder
+    :type relative_file_path: str
     :return: Versioned static URL
     :rtype: str
     """
 
-    static_url = static(path)
-    versioned_url = static_url + "?v=" + __version__
+    logger.debug(f"Getting versioned static URL for: {relative_file_path}")
 
-    return versioned_url
+    file_type = os.path.splitext(relative_file_path)[1][1:]
 
+    logger.debug(f"File extension: {file_type}")
 
-@register.simple_tag
-def timezones_static_integrity_hash(
-    static_file_type: str, relative_file_path: str
-) -> str:
-    """
-    Returns the integrity hash for a file
+    # Only support CSS and JS files
+    if file_type not in ["css", "js"]:
+        raise ValueError(f"Unsupported file type: {file_type}")
 
-    :param static_file_type: The type of static file
-    :type static_file_type: str
-    :param relative_file_path: The file path relative to the `aa-timezones/timezones/static/timezones` folder
-    :type relative_file_path: str
-    :return: Integrity hash
-    :rtype: str
-    """
+    integrity_hash = calculate_integrity_hash(relative_file_path)
+    static_file_path = os.path.join("timezones", relative_file_path)
+    static_url = static(static_file_path)
 
-    if static_file_type == "css":
-        return IntegrityHash.CSS.get(relative_file_path)
+    # Versioned URL for CSS and JS files
+    # Add version query parameter to break browser caches when changing the app version
+    # Do not add version query parameter for libs as they are already versioned through their file path
+    versioned_url = (
+        static_url
+        if relative_file_path.startswith("libs/")
+        else static_url + "?v=" + __version__
+    )
 
-    if static_file_type == "js":
-        return IntegrityHash.JS.get(relative_file_path)
+    # Return the versioned URL with integrity hash for CSS
+    if file_type == "css":
+        logger.debug(f"Integrity hash for {relative_file_path}: {integrity_hash}")
 
-    if static_file_type == "lib":
-        return IntegrityHash.EXTERNAL_LIBS.get(relative_file_path)
+        return mark_safe(
+            f'<link rel="stylesheet" href="{versioned_url}" integrity="{integrity_hash}" crossorigin="anonymous">'
+        )
 
-    raise ValueError(f"Unsupported static file type: {static_file_type}")
+    # Return the versioned URL with integrity hash for JS files
+    if file_type == "js":
+        return mark_safe(
+            f'<script src="{versioned_url}" integrity="{integrity_hash}" crossorigin="anonymous"></script>'
+        )
+
+    return None
