@@ -3,9 +3,11 @@ Helper functions for static integrity calculations
 """
 
 # Standard Library
-import base64
-import hashlib
 import os
+from pathlib import Path
+
+# Third Party
+from sri import Algorithm, calculate_integrity
 
 # Alliance Auth
 from allianceauth.services.hooks import get_extension_logger
@@ -24,6 +26,8 @@ def calculate_integrity_hash(relative_file_path: str) -> str:
     """
     Calculates the integrity hash for a given static file
 
+    :param self:
+    :type self:
     :param relative_file_path: The file path relative to the `aa-timezones/timezones/static/timezones` folder
     :type relative_file_path: str
     :return: The integrity hash
@@ -31,14 +35,6 @@ def calculate_integrity_hash(relative_file_path: str) -> str:
     """
 
     file_path = os.path.join(AA_TIMEZONES_STATIC_DIR, relative_file_path)
-
-    logger.debug(f"Calculating integrity hash for file: {file_path}")
-
-    with open(file=file_path, encoding="utf-8") as static_file:
-        file_hash = hashlib.sha512()
-
-        content = static_file.read()
-        file_hash.update(content.encode("utf-8"))
-        integrity_hash = f"sha512-{base64.b64encode(file_hash.digest()).decode()}"
+    integrity_hash = calculate_integrity(Path(file_path), Algorithm.SHA512)
 
     return integrity_hash

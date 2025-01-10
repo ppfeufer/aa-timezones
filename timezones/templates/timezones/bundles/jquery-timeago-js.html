@@ -1,8 +1,3 @@
-{% load static %}
 {% load timezones %}
 
-<script
-    src="{% static 'timezones/libs/jquery-timeago/1.6.7/jquery.timeago.min.js' %}"
-    integrity="{% timezones_static_integrity_hash 'lib' 'jquery.timeago.min.js' %}"
-    crossorigin="anonymous"
-></script>
+{% timezones_static 'libs/jquery-timeago/1.6.7/jquery.timeago.min.js' %}
