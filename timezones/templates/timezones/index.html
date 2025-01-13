@@ -65,13 +65,15 @@
     {% include 'timezones/partials/timezones/adjust-time.html' %}
 
     <!-- share options with JS part -->
+    {% translate "Already over, you missed it!" as alreadyOver %}
+
     <script>
         const aaTimezonesOptions = {
             base_url: '{% url "timezones:index" %}',
             timestamp: '{{ timestamp }}',
             translation: {
                 days: '{% translate "Days" %}',
-                alreadyOver: '{% translate "Already over, you missed it!" %}'
+                alreadyOver: '{{ alreadyOver|escapejs }}'
             }
         }
     </script>

@@ -37,6 +37,7 @@ Section Order:
 
 ### Fixed
 
+- Escaping translation strings to fix potential issues with French and Italian translations
 - JS variable declaration in the template. (`const` instead of `let`)
 
 ## [2.2.2] - 2024-12-14
