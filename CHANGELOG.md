@@ -35,6 +35,8 @@ Section Order:
 ### Security
 -->
 
+## [2.2.3] - 2025-01-13
+
 ### Fixed
 
 - Escaping translation strings to fix potential issues with French and Italian translations
