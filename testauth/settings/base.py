@@ -14,6 +14,7 @@ from celery.schedules import crontab
 
 # Django
 from django.contrib import messages
+from django.utils.translation import gettext_lazy as _
 
 INSTALLED_APPS = [
     "allianceauth",  # needs to be on top of this list to support favicons in Django admin (see https://gitlab.com/allianceauth/allianceauth/-/issues/1301)
@@ -44,13 +45,16 @@ INSTALLED_APPS = [
     "allianceauth.theme.flatly",
     "allianceauth.theme.materia",
     "allianceauth.custom_css",
+    "allianceauth.crontab",
+    "sri",
 ]
 
+SRI_ALGORITHM = "sha512"
 SECRET_KEY = "wow I'm a really bad default secret key"
 
 # Celery configuration
 BROKER_URL = "redis://localhost:6379/0"
-CELERYBEAT_SCHEDULER = "django_celery_beat.schedulers.DatabaseScheduler"
+CELERYBEAT_SCHEDULER = "allianceauth.crontab.schedulers.OffsetDatabaseScheduler"
 CELERYBEAT_SCHEDULE = {
     "esi_cleanup_callbackredirect": {
         "task": "esi.tasks.cleanup_callbackredirect",
@@ -63,16 +67,19 @@ CELERYBEAT_SCHEDULE = {
     "run_model_update": {
         "task": "allianceauth.eveonline.tasks.run_model_update",
         "schedule": crontab(minute="0", hour="*/6"),
+        "apply_offset": True,
     },
     "check_all_character_ownership": {
         "task": "allianceauth.authentication.tasks.check_all_character_ownership",
         "schedule": crontab(minute="0", hour="*/4"),
+        "apply_offset": True,
     },
     "analytics_daily_stats": {
         "task": "allianceauth.analytics.tasks.analytics_daily_stats",
         "schedule": crontab(minute="0", hour="2"),
     },
 }
+
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -94,19 +101,54 @@ ROOT_URLCONF = "allianceauth.urls"
 
 LOCALE_PATHS = (os.path.join(BASE_DIR, "locale/"),)
 
-LANGUAGES = (
-    ("en", "English"),
-    ("de", "German"),
-    ("es", "Spanish"),
-    ("zh-hans", "Chinese Simplified"),
-    ("ru", "Russian"),
-    ("ko", "Korean"),
-    ("fr", "French"),
-    ("ja", "Japanese"),
-    ("it", "Italian"),
-    ("uk", "Ukrainian"),
-    ("pl", "Polish"),
+LANGUAGES = (  # Sorted by Language Code alphabetical order + English at top
+    ("en", _("English")),
+    # ("cs-cz", _("Czech")), #Not yet at 50% translated
+    ("de", _("German")),
+    ("es", _("Spanish")),
+    ("it-it", _("Italian")),
+    ("ja", _("Japanese")),
+    ("ko-kr", _("Korean")),
+    ("fr-fr", _("French")),
+    ("nl-nl", _("Dutch")),
+    ("pl-pl", _("Polish")),
+    ("ru", _("Russian")),
+    ("uk", _("Ukrainian")),
+    ("zh-hans", _("Simplified Chinese")),
 )
+
+# Django's language codes are different from some of the libraries we use,
+# so we need to map them.
+LANGUAGE_MAPPING = {
+    "DataTables": {
+        "cs-cz": "cs",
+        "de": "de-DE",
+        "es": "es-ES",
+        "fr-fr": "fr-FR",
+        "it-it": "it-IT",
+        "ja": "ja",
+        "ko-kr": "ko",
+        "nl-nl": "nl-NL",
+        "pl-pl": "pl",
+        "ru": "ru",
+        "uk": "uk",
+        "zh-hans": "zh-HANT",
+    },
+    "MomentJS": {
+        "cs-cz": "cs",
+        "de": "de",
+        "es": "es",
+        "fr-fr": "fr",
+        "it-it": "it",
+        "ja": "ja",
+        "ko-kr": "ko",
+        "nl-nl": "nl",
+        "pl-pl": "pl",
+        "ru": "ru",
+        "uk": "uk",
+        "zh-hans": "zh-cn",
+    },
+}
 
 TEMPLATES = [
     {
