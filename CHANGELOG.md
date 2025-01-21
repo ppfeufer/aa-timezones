@@ -35,6 +35,12 @@ Section Order:
 ### Security
 -->
 
+## [2.3.1] - 2025-01-21
+
+### Changed
+
+- `moment-timezone.js` updated to v0.5.46
+
 ## [2.3.0] - 2025-01-21
 
 ### Fixed
