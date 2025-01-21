@@ -1,8 +1,3 @@
-{% load static %}
+{% load timezones %}
 
-<link
-    rel="stylesheet"
-    href="{% static 'timezones/libs/weather-icons/2.0.10/css/weather-icons.min.css' %}"
-    integrity="sha512-DIFdHjUUNaRvJdlgqogTC0kqKpSBBLaa/4cFiwj/WJKaAQCJLBmEuRHddEeJOiTJ1hynZ6/6ZH4ouPhcep+E+g=="
-    crossorigin="anonymous"
->
+{% timezones_static 'libs/weather-icons/2.0.10/css/weather-icons.min.css' %}
