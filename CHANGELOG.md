@@ -35,9 +35,19 @@ Section Order:
 ### Security
 -->
 
+## [2.3.0] - 2025-01-21
+
 ### Fixed
 
 - Panel ID for Australia
+
+### Changed
+
+- Updated translations
+- SRI hash calculation now using `django-sri` package provided by Alliance Auth
+- Minimum requirements:
+  - Alliance Auth >= 4.6.0
+  - pytz >= 2024.2
 
 ## [2.2.3] - 2025-01-13
 

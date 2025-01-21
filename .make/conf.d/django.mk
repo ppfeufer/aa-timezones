@@ -5,9 +5,12 @@
 pot:
 	@echo "Creating or updating .pot file …"
 	@django-admin makemessages \
-		-l en \
+		--locale en \
 		--keep-pot \
-		--ignore 'build/*'
+		--ignore 'build/*' \
+		--ignore 'node_modules/*' \
+		--ignore 'testauth/*' \
+		--ignore 'runtests.py'
 	@current_app_version=$$(pip show $(appname) | grep 'Version: ' | awk '{print $$NF}'); \
 	sed -i "/\"Project-Id-Version: /c\\\"Project-Id-Version: $(appname_verbose) $$current_app_version\\\n\"" $(translation_template); \
 	sed -i "/\"Report-Msgid-Bugs-To: /c\\\"Report-Msgid-Bugs-To: $(git_repository_issues)\\\n\"" $(translation_template);
@@ -18,9 +21,12 @@ add_translation:
 	@echo "Adding a new translation"
 	@read -p "Enter the language code (e.g. 'en_GB'): " language_code; \
 	django-admin makemessages \
-		-l $$language_code \
+		--locale $$language_code \
 		--keep-pot \
-		--ignore 'build/*'; \
+		--ignore 'build/*' \
+		--ignore 'node_modules/*' \
+		--ignore 'testauth/*' \
+		--ignore 'runtests.py'; \
 	current_app_version=$$(pip show $(appname) | grep 'Version: ' | awk '{print $$NF}'); \
 	sed -i "/\"Project-Id-Version: /c\\\"Project-Id-Version: $(appname_verbose) $$current_app_version\\\n\"" $(translation_template); \
 	sed -i "/\"Report-Msgid-Bugs-To: /c\\\"Report-Msgid-Bugs-To: $(git_repository_issues)\\\n\"" $(translation_template); \
@@ -34,21 +40,24 @@ add_translation:
 translations:
 	@echo "Creating or updating translation files"
 	@django-admin makemessages \
-		-l cs_CZ \
-		-l de \
-		-l es \
-		-l fr_FR \
-		-l it_IT \
-		-l ja \
-		-l ko_KR \
-		-l nl_NL \
-		-l pl_PL \
-		-l ru \
-		-l sk \
-		-l uk \
-		-l zh_Hans \
+		--locale cs_CZ \
+		--locale de \
+		--locale es \
+		--locale fr_FR \
+		--locale it_IT \
+		--locale ja \
+		--locale ko_KR \
+		--locale nl_NL \
+		--locale pl_PL \
+		--locale ru \
+		--locale sk \
+		--locale uk \
+		--locale zh_Hans \
 		--keep-pot \
-		--ignore 'build/*'
+		--ignore 'build/*' \
+		--ignore 'node_modules/*' \
+		--ignore 'testauth/*' \
+		--ignore 'runtests.py'
 	@current_app_version=$$(pip show $(appname) | grep 'Version: ' | awk '{print $$NF}'); \
 	sed -i "/\"Project-Id-Version: /c\\\"Project-Id-Version: $(appname_verbose) $$current_app_version\\\n\"" $(translation_template); \
 	sed -i "/\"Report-Msgid-Bugs-To: /c\\\"Report-Msgid-Bugs-To: $(git_repository_issues)\\\n\"" $(translation_template); \
@@ -69,19 +78,19 @@ translations:
 compile_translations:
 	@echo "Compiling translation files"
 	@django-admin compilemessages \
-		-l cs_CZ \
-		-l de \
-		-l es \
-		-l fr_FR \
-		-l it_IT \
-		-l ja \
-		-l ko_KR \
-		-l nl_NL \
-		-l pl_PL \
-		-l ru \
-		-l sk \
-		-l uk \
-		-l zh_Hans
+		--locale cs_CZ \
+		--locale de \
+		--locale es \
+		--locale fr_FR \
+		--locale it_IT \
+		--locale ja \
+		--locale ko_KR \
+		--locale nl_NL \
+		--locale pl_PL \
+		--locale ru \
+		--locale sk \
+		--locale uk \
+		--locale zh_Hans
 
 # Migrate all database changes
 .PHONY: migrate
