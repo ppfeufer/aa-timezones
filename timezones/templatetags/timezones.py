@@ -6,6 +6,7 @@ Versioned static URLs to break browser caches when changing the app version
 import os
 
 # Django
+from django.conf import settings
 from django.template.defaulttags import register
 from django.templatetags.static import static
 from django.utils.safestring import mark_safe
@@ -44,9 +45,15 @@ def timezones_static(relative_file_path: str) -> str | None:
     if file_type not in ["css", "js"]:
         raise ValueError(f"Unsupported file type: {file_type}")
 
-    integrity_hash = calculate_integrity_hash(relative_file_path)
     static_file_path = os.path.join("timezones", relative_file_path)
     static_url = static(static_file_path)
+
+    # Integrity hash calculation only for non-debug mode
+    sri_string = (
+        f' integrity="{calculate_integrity_hash(relative_file_path)}" crossorigin="anonymous"'
+        if not settings.DEBUG
+        else ""
+    )
 
     # Versioned URL for CSS and JS files
     # Add version query parameter to break browser caches when changing the app version
@@ -59,16 +66,10 @@ def timezones_static(relative_file_path: str) -> str | None:
 
     # Return the versioned URL with integrity hash for CSS
     if file_type == "css":
-        logger.debug(f"Integrity hash for {relative_file_path}: {integrity_hash}")
-
-        return mark_safe(
-            f'<link rel="stylesheet" href="{versioned_url}" integrity="{integrity_hash}" crossorigin="anonymous">'
-        )
+        return mark_safe(f'<link rel="stylesheet" href="{versioned_url}"{sri_string}>')
 
     # Return the versioned URL with integrity hash for JS files
     if file_type == "js":
-        return mark_safe(
-            f'<script src="{versioned_url}" integrity="{integrity_hash}" crossorigin="anonymous"></script>'
-        )
+        return mark_safe(f'<script src="{versioned_url}"{sri_string}></script>')
 
     return None
