@@ -70,7 +70,7 @@ AA_TIMEZONE_DEFAULT_PANELS: list[dict[str, str | dict[str, str]]] = [
         "panel_name": "Australia / Sydney",
         "timezone": {
             "timezone_name": "Australia/ACT",
-            "panel_id": "australia-atc",
+            "panel_id": "australia-act",
         },
     },
 ]
