@@ -35,6 +35,10 @@ Section Order:
 ### Security
 -->
 
+### Fixed
+
+- Panel ID for Australia
+
 ## [2.2.3] - 2025-01-13
 
 ### Fixed
