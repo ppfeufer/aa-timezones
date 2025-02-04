@@ -180,7 +180,7 @@ repos:
         description: Enforce that python3.6+ type annotations are used instead of type comments.
 
   - repo: https://github.com/editorconfig-checker/editorconfig-checker.python
-    rev: 1a92c0953500d402fc49ceb67ad7fbf7cabad38a  # frozen: 3.0.3
+    rev: c764d820bfc7d772ae9cc86b4696c375aee944a4  # frozen: 3.2.0
     hooks:
       - id: editorconfig-checker
         name: EditorConfig Checker
@@ -219,7 +219,7 @@ repos:
         description: Check for extraneous `# noqa` comments.
 
   - repo: https://github.com/PyCQA/isort
-    rev: c235f5e450b4b84e58d114ed4c589cbf454175a3  # frozen: 5.13.2
+    rev: 0a0b7a830386ba6a31c2ec8316849ae4d1b8240d  # frozen: 6.0.0
     hooks:
       - id: isort
         name: Isort
@@ -233,7 +233,7 @@ repos:
         description: Check for black disable comments.
 
   - repo: https://github.com/psf/black
-    rev: 1b2427a2b785cc4aac97c19bb4b9a0de063f9547  # frozen: 24.10.0
+    rev: 8a737e727ac5ab2f1d4cf5876720ed276dc8dc4b  # frozen: 25.1.0
     hooks:
       - id: black
         name: Black
@@ -248,12 +248,12 @@ repos:
         name: Blacken docs
         description: Format Python code in documentation files.
         additional_dependencies:
-          - black==24.10.0  # https://github.com/psf/black/releases/latest
+          - black==25.1.0  # https://github.com/psf/black/releases/latest
         args:
           - --target-version=py310  # Minimum required Python version for AA. Update as needed.
 
   - repo: https://github.com/executablebooks/mdformat
-    rev: e20b1ac5acb8aba0b49d3a9109c6e6b58684ee83  # frozen: 0.7.21
+    rev: ff29be1a1ba8029d9375882aa2c812b62112a593  # frozen: 0.7.22
     hooks:
       - id: mdformat
         name: Mdformat
@@ -265,7 +265,7 @@ repos:
           - mdformat-shfmt==0.2.0  # Mdformat plugin to format shell code blocks » https://github.com/hukkin/mdformat-shfmt/tags
 
   - repo: https://github.com/tox-dev/tox-ini-fmt
-    rev: e37f0af6026312eba791baa690e3e0f57c753b83  # frozen: 1.4.1
+    rev: e732f664aa3fd7b32cce3de8abbac43f4c3c375d  # frozen: 1.5.0
     hooks:
       - id: tox-ini-fmt
         name: tox.ini formatter
@@ -280,7 +280,7 @@ repos:
         args:
           - --indent=4
         additional_dependencies:
-          - tox==4.23.2  # https://github.com/tox-dev/tox/releases/latest
+          - tox==4.24.1  # https://github.com/tox-dev/tox/releases/latest
 
   - repo: https://github.com/abravalheri/validate-pyproject
     rev: f45606bad11ad90ddac1212fa83ebe2a4d724351  # frozen: v0.23
@@ -290,7 +290,7 @@ repos:
         description: Validate the pyproject.toml file.
 
   - repo: https://github.com/pylint-dev/pylint
-    rev: c28580be76fe1ec55a6cac41833c0bd68070d2f7  # frozen: v3.3.3
+    rev: c2b01c3d0b6410d4c93eb1f32fb28f2116b1e68f  # frozen: v3.3.4
     hooks:
       - id: pylint
         name: Pylint
@@ -299,7 +299,7 @@ repos:
           - --py-version=3.10  # Minimum required Python version for AA. Update as needed.
 
   - repo: https://github.com/python-jsonschema/check-jsonschema
-    rev: cb3c2be894b151dff143b1baf6acbd55f2b7faed  # frozen: 0.30.0
+    rev: a20fe80ebdd4aec6791598c9ff559985580f91ea  # frozen: 0.31.1
     hooks:
       - id: check-github-actions
         name: Check GitHub Actions
