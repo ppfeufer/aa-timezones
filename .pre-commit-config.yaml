@@ -6,7 +6,7 @@
 # Set the default language versions for the hooks
 default_language_version:
   python: python3  # Force all Python hooks to use Python 3
-  node: 22.12.0  # Force all Node hooks to use Node 22.12.0
+  node: 22.13.1  # Force all Node hooks to use Node LTS latest
 
 # https://pre-commit.ci/
 ci:
@@ -135,8 +135,8 @@ repos:
         language: node
 #        additional_dependencies:
 #          # eslint itself needs to be here when using additional_dependencies.
-#          - eslint@9.19.0 # https://github.com/eslint/eslint/releases/latest
-#          - globals@15.14.0  # https://github.com/sindresorhus/globals/releases/latest
+#          - eslint@9.21.0 # https://github.com/eslint/eslint/releases/latest
+#          - globals@16.0.0  # https://github.com/sindresorhus/globals/releases/latest
 
   - repo: https://github.com/thibaudcolas/pre-commit-stylelint
     rev: 1a160bc61f659e8f9071d6ae8b5f5fce98ce7898  # frozen: v16.15.0
@@ -149,7 +149,7 @@ repos:
           - --formatter=compact
         additional_dependencies:
           # stylelint itself needs to be here when using additional_dependencies.
-          - stylelint@16.14.1  # https://github.com/stylelint/stylelint/releases/latest
+          - stylelint@16.15.0  # https://github.com/stylelint/stylelint/releases/latest
           - stylelint-config-standard@37.0.0  # https://github.com/stylelint/stylelint-config-standard/releases/latest
 
   - repo: https://github.com/pre-commit/pygrep-hooks

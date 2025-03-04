@@ -72,4 +72,4 @@ def timezones_static(relative_file_path: str) -> str | None:
     if file_type == "js":
         return mark_safe(f'<script src="{versioned_url}"{sri_string}></script>')
 
-    return None
+    return None  # pragma: no cover
