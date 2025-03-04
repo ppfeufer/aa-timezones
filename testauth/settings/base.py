@@ -119,7 +119,12 @@ LANGUAGES = (  # Sorted by Language Code alphabetical order + English at top
 
 # Django's language codes are different from some of the libraries we use,
 # so we need to map them.
+# When adding a new language, please remember to add it to the mapping
+# and add the language files to their respective directories under `allianceauth/static/allianceauth/libs/`.
 LANGUAGE_MAPPING = {
+    # See https://github.com/DataTables/Plugins/tree/master/i18n for available languages
+    # (We use the JSON files)
+    # `allianceauth/static/allianceauth/libs/DataTables/Plugins/{version}/i18n/` for the files
     "DataTables": {
         "cs-cz": "cs",
         "de": "de-DE",
@@ -134,6 +139,8 @@ LANGUAGE_MAPPING = {
         "uk": "uk",
         "zh-hans": "zh-HANT",
     },
+    # See https://github.com/moment/moment/tree/master/locale for available languages
+    # `allianceauth/static/allianceauth/libs/moment.js/{version}/locale/` for the files
     "MomentJS": {
         "cs-cz": "cs",
         "de": "de",

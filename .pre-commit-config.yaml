@@ -6,7 +6,7 @@
 # Set the default language versions for the hooks
 default_language_version:
   python: python3  # Force all Python hooks to use Python 3
-  node: 22.12.0  # Force all Node hooks to use Node 22.12.0
+  node: 22.13.1  # Force all Node hooks to use Node LTS latest
 
 # https://pre-commit.ci/
 ci:
@@ -127,7 +127,7 @@ repos:
         description: Ensure that files end with a newline.
 
   - repo: https://github.com/eslint/eslint
-    rev: 66b0d0d0841c83f8c7b600246e94a7a76ed77ca6  # frozen: v9.19.0
+    rev: 3e8a9a55e101c07933d045677682783f6583a0ee  # frozen: v9.21.0
     hooks:
       - id: eslint
         name: ESLint
@@ -135,11 +135,11 @@ repos:
         language: node
 #        additional_dependencies:
 #          # eslint itself needs to be here when using additional_dependencies.
-#          - eslint@9.19.0 # https://github.com/eslint/eslint/releases/latest
-#          - globals@15.14.0  # https://github.com/sindresorhus/globals/releases/latest
+#          - eslint@9.21.0 # https://github.com/eslint/eslint/releases/latest
+#          - globals@16.0.0  # https://github.com/sindresorhus/globals/releases/latest
 
   - repo: https://github.com/thibaudcolas/pre-commit-stylelint
-    rev: adbd5eb765476b51bf2d2621a7492053153a4d06  # frozen: v16.14.1
+    rev: 1a160bc61f659e8f9071d6ae8b5f5fce98ce7898  # frozen: v16.15.0
     hooks:
       - id: stylelint
         name: Stylelint
@@ -149,7 +149,7 @@ repos:
           - --formatter=compact
         additional_dependencies:
           # stylelint itself needs to be here when using additional_dependencies.
-          - stylelint@16.14.1  # https://github.com/stylelint/stylelint/releases/latest
+          - stylelint@16.15.0  # https://github.com/stylelint/stylelint/releases/latest
           - stylelint-config-standard@37.0.0  # https://github.com/stylelint/stylelint-config-standard/releases/latest
 
   - repo: https://github.com/pre-commit/pygrep-hooks
@@ -187,7 +187,7 @@ repos:
         description: Check for compliance with the definitions in the EditorConfig file.
 
   - repo: https://github.com/adamchainz/django-upgrade
-    rev: 04b0de71b1b4acc1803e74ab24e722bcbd5ab989  # frozen: 1.22.2
+    rev: 43c3c16dc6ee2c9dcedcca6930974b47f415c8b2  # frozen: 1.23.1
     hooks:
       - id: django-upgrade
         name: Django upgrade
@@ -205,7 +205,7 @@ repos:
           - --py310-plus  # Minimum required Python version for AA. Update as needed.
 
   - repo: https://github.com/pycqa/flake8
-    rev: e43806be3607110919eff72939fda031776e885a  # frozen: 7.1.1
+    rev: bddd87797f8dfc07d2a10c894776018d9bec590b  # frozen: 7.1.2
     hooks:
       - id: flake8
         name: Flake8
@@ -219,7 +219,7 @@ repos:
         description: Check for extraneous `# noqa` comments.
 
   - repo: https://github.com/PyCQA/isort
-    rev: 0a0b7a830386ba6a31c2ec8316849ae4d1b8240d  # frozen: 6.0.0
+    rev: c8ab4a5b21bac924d106e3103dd7c979fdd0f9bc  # frozen: 6.0.1
     hooks:
       - id: isort
         name: Isort
@@ -272,7 +272,7 @@ repos:
         description: Format the tox.ini file.
 
   - repo: https://github.com/tox-dev/pyproject-fmt
-    rev: 6b2f3b33754de7a442043dc312fc5a0e473086d2  # frozen: v2.5.0
+    rev: 57b6ff7bf72affdd12c7f3fd6de761ba18a33b3a  # frozen: v2.5.1
     hooks:
       - id: pyproject-fmt
         name: pyproject.toml formatter
@@ -299,7 +299,7 @@ repos:
           - --py-version=3.10  # Minimum required Python version for AA. Update as needed.
 
   - repo: https://github.com/python-jsonschema/check-jsonschema
-    rev: a20fe80ebdd4aec6791598c9ff559985580f91ea  # frozen: 0.31.1
+    rev: 828a213a1dd17aa9862aab706e3162c13281ff93  # frozen: 0.31.2
     hooks:
       - id: check-github-actions
         name: Check GitHub Actions
