@@ -2,21 +2,22 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # Kristof <kristof@teh.ninja>, 2023, 2024.
-# Peter Pfeufer <info@ppfeufer.de>, 2023, 2024.
+# Peter Pfeufer <info@ppfeufer.de>, 2023, 2024, 2025.
+# M <skrypets@gmail.com>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: AA Timezones 2.2.1\n"
 "Report-Msgid-Bugs-To: https://github.com/ppfeufer/aa-timezones/issues\n"
-"POT-Creation-Date: 2025-01-13 15:33+0100\n"
-"PO-Revision-Date: 2024-10-04 18:10+0000\n"
-"Last-Translator: Peter Pfeufer <info@ppfeufer.de>\n"
+"POT-Creation-Date: 2025-03-12 13:17+0100\n"
+"PO-Revision-Date: 2025-03-08 15:17+0000\n"
+"Last-Translator: M <skrypets@gmail.com>\n"
 "Language-Team: Ukrainian <https://weblate.ppfeufer.de/projects/alliance-auth-apps/aa-timezones/uk/>\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=n==1 ? 3 : (n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.7.2\n"
+"X-Generator: Weblate 5.10.2\n"
 
 #: timezones/__init__.py:9 timezones/templates/timezones/base.html:6
 #: timezones/templates/timezones/base.html:10
@@ -29,8 +30,6 @@ msgid "Panel name"
 msgstr "Назва панелі"
 
 #: timezones/admin.py:30
-#, fuzzy
-#| msgid "Timezone"
 msgid "Time zone"
 msgstr "Часовий пояс"
 
@@ -64,24 +63,24 @@ msgstr "Деактивувати обрані часові пояси"
 #, python-brace-format
 msgid "Failed to deactivate {failed} timezone"
 msgid_plural "Failed to deactivate {failed} timezones"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "Не вдалось деактивувати {failed} часовий пояс"
+msgstr[1] "Не вдалось деактивувати {failed} часові пояси"
+msgstr[2] "Не вдалось деактивувати {failed} часових поясів"
+msgstr[3] "Не вдалось деактивувати {failed} часовий поя"
 
 #: timezones/admin.py:121
 #, python-brace-format
 msgid "Deactivated {notifications_count} timezone"
 msgid_plural "Deactivated {notifications_count} timezones"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "Деактивовано {notifications_count} часовий пояс"
+msgstr[1] "Деактивовано {notifications_count} часові пояси"
+msgstr[2] "Деактивовано {notifications_count} часових поясів"
+msgstr[3] "Деактивовано {notifications_count} часовий пояс"
 
 #: timezones/apps.py:20
 #, python-brace-format
 msgid "Time Zones v{__version__}"
-msgstr ""
+msgstr "Часові пояси v{__version__}"
 
 #: timezones/models.py:16
 msgid "Name of the timezone"
@@ -96,8 +95,6 @@ msgid "ID of the timezone panel in frontend"
 msgstr "Ідентифікатор панелі часових поясів у фронтенді"
 
 #: timezones/models.py:41 timezones/models.py:42
-#, fuzzy
-#| msgid "Timezone Data"
 msgid "Timezone data"
 msgstr "Дані часового поясу"
 
@@ -123,8 +120,6 @@ msgstr "Часові пояси"
 
 #: timezones/templates/timezones/index.html:12
 #: timezones/templates/timezones/partials/timezones/adjust-time.html:249
-#, fuzzy
-#| msgid "Local Time"
 msgid "Local time"
 msgstr "Місцевий час"
 
@@ -137,7 +132,7 @@ msgstr "завантаження"
 #: timezones/templates/timezones/index.html:32
 #: timezones/templates/timezones/partials/timezones/adjust-time.html:251
 msgid "Eve time"
-msgstr ""
+msgstr "Час за Eve"
 
 #: timezones/templates/timezones/index.html:68
 msgid "Already over, you missed it!"
@@ -157,8 +152,6 @@ msgid "Join our team of translators!"
 msgstr "Приєднуйтесь до нашої команди перекладачів!"
 
 #: timezones/templates/timezones/partials/timezones/adjust-time.html:6
-#, fuzzy
-#| msgid "Adjust Time"
 msgid "Adjust time"
 msgstr "Налаштувати час"
 
@@ -176,7 +169,7 @@ msgstr "Перейти до налаштованого часу"
 
 #: timezones/templates/timezones/partials/timezones/adjust-time.html:26
 msgid "Set time to be in"
-msgstr ""
+msgstr "Встановити час"
 
 #: timezones/templates/timezones/partials/timezones/adjust-time.html:71
 msgid "Hours"
@@ -188,8 +181,6 @@ msgstr "Мінут"
 
 #: timezones/templates/timezones/partials/timezones/adjust-time.html:141
 #: timezones/templates/timezones/partials/timezones/adjust-time.html:324
-#, fuzzy
-#| msgid "Set Time"
 msgid "Set time"
 msgstr "Встановити час"
 
