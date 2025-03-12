@@ -7,7 +7,7 @@ from unittest import TestCase
 from unittest.mock import patch
 
 # Django
-from django.test import RequestFactory
+from django.test import RequestFactory, modify_settings
 
 # Alliance Auth
 from allianceauth.services.hooks import MenuItemHook
@@ -80,3 +80,25 @@ class TestRegisterUrls(TestCase):
         self.assertEqual(result.__class__.__name__, "UrlHook")
         self.assertEqual(result.include_pattern.pattern._regex, r"^timezones/")
         self.assertEqual(result.excluded_views, {"timezones.views.index"})
+
+
+class TestRegisterCogs(TestCase):
+    """
+    Tests for the register_cogs function
+    """
+
+    @modify_settings(INSTALLED_APPS={"append": "aadiscordbot"})
+    def test_register_cogs_true(self):
+        """
+        Test register_cogs returns the correct cogs when aadiscordbot is installed
+
+        :return:
+        :rtype:
+        """
+
+        # AA Time Zones
+        from timezones.auth_hooks import register_cogs
+
+        cogs = register_cogs()
+
+        self.assertEqual(cogs, ["timezones.aadiscordbot.cogs.time"])

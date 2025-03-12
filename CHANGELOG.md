@@ -35,6 +35,10 @@ Section Order:
 ### Security
 -->
 
+### Changed
+
+- Templatetag code improved
+
 ## [2.3.1] - 2025-01-21
 
 ### Changed
