@@ -37,6 +37,7 @@ Section Order:
 
 ### Changed
 
+- Timestamp calculations improved
 - Templatetag code improved
 
 ## [2.3.1] - 2025-01-21

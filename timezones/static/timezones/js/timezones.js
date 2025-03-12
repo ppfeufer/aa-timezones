@@ -23,20 +23,14 @@ const showAdjust = () => { // eslint-disable-line no-unused-vars
 };
 
 /**
- * Set time for in x day, y hours, z minutes
+ * Reload to given location
+ *
+ * @param {string} location The location to reload to
  */
-const reloadToTimestamp = () => { // eslint-disable-line no-unused-vars
+const reloadToLocation = (location) => {
     'use strict';
 
-    const timestamp = (
-        new Date()
-            .getTime() / 1000 + jQuery('#tind')
-            .val() * 24 * 60 * 60 + jQuery('#tinh')
-            .val() * 60 * 60 + jQuery('#tinm')
-            .val() * 60
-    );
-
-    window.location.replace(aaTimezonesOptions.base_url + timestamp);
+    window.location.replace(location);
 };
 
 /**
@@ -45,25 +39,48 @@ const reloadToTimestamp = () => { // eslint-disable-line no-unused-vars
 const reloadBasePage = () => { // eslint-disable-line no-unused-vars
     'use strict';
 
-    window.location.replace(aaTimezonesOptions.base_url);
+    reloadToLocation(aaTimezonesOptions.base_url);
 };
 
 /**
- * Set the date
+ * Set time for in x days, y hours, z minutes
  *
- * @param {string} str
- * @param {string} tz
+ * @param {int} days Number of days
+ * @param {int} hours Number of hours
+ * @param {int} minutes Number of minutes
  */
-const setdate = (str, tz) => { // eslint-disable-line no-unused-vars
+const setTimeToBeIn = (days, hours, minutes) => { // eslint-disable-line no-unused-vars
     'use strict';
 
-    if (tz !== '') {
-        window.location.replace(
-            aaTimezonesOptions.base_url + moment.tz(str, tz).unix()
+    // const timestamp = (
+    //     new Date()
+    //         .getTime() / 1000 + jQuery('#tind')
+    //         .val() * 24 * 60 * 60 + jQuery('#tinh')
+    //         .val() * 60 * 60 + jQuery('#tinm')
+    //         .val() * 60
+    // );
+
+    const timestamp = moment().unix() + days * 24 * 60 * 60 + hours * 60 * 60 + minutes * 60;
+
+    reloadToLocation(aaTimezonesOptions.base_url + timestamp);
+};
+
+/**
+ * Set the date, time and time zone
+ *
+ * @param {string} datetime
+ * @param {string} timezone
+ */
+const setDateAndTime = (datetime, timezone) => { // eslint-disable-line no-unused-vars
+    'use strict';
+
+    if (timezone !== '') {
+        reloadToLocation(
+            aaTimezonesOptions.base_url + moment.tz(datetime, timezone).unix()
         );
     } else {
-        window.location.replace(
-            aaTimezonesOptions.base_url + moment(str).unix()
+        reloadToLocation(
+            aaTimezonesOptions.base_url + moment(datetime).unix()
         );
     }
 };
@@ -271,12 +288,12 @@ const switchto = (mode) => {
 const hashchange = () => {
     'use strict';
 
-    const ts = parseInt(aaTimezonesOptions.timestamp);
+    const timestamp = parseInt(aaTimezonesOptions.timestamp);
 
     clockTarget = 0;
 
-    if (!isNaN(ts) && isFinite(ts)) {
-        clockTarget = ts * 1000;
+    if (!isNaN(timestamp) && isFinite(timestamp)) {
+        clockTarget = timestamp * 1000;
 
         const mom = moment.tz(new Date(clockTarget), 'Etc/UTC');
 
