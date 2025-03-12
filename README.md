@@ -19,21 +19,20 @@ App for displaying different time zones with Alliance Auth
 
 ______________________________________________________________________
 
-<!-- mdformat-toc start --slug=github --maxlevel=6 --minlevel=1 -->
+<!-- mdformat-toc start --slug=github --maxlevel=6 --minlevel=2 -->
 
-- [AA Time Zones](#aa-time-zones)
-  - [Installation](#installation)
-    - [Step 1: Install the App](#step-1-install-the-app)
-    - [Step 2: Update Your Alliance Auth Settings](#step-2-update-your-alliance-auth-settings)
-    - [Step 3: Finalizing the Installation](#step-3-finalizing-the-installation)
-  - [(Optional) Public Views](#optional-public-views)
-  - [Updating](#updating)
-  - [Configure the Timezone Panels](#configure-the-timezone-panels)
-  - [Adjusting Time](#adjusting-time)
-  - [Discord Bot Command](#discord-bot-command)
-  - [Changelog](#changelog)
-  - [Translation Status](#translation-status)
-  - [Contributing](#contributing)
+- [Installation](#installation)
+  - [Step 1: Install the App](#step-1-install-the-app)
+  - [Step 2: Update Your Alliance Auth Settings](#step-2-update-your-alliance-auth-settings)
+  - [Step 3: Finalizing the Installation](#step-3-finalizing-the-installation)
+- [(Optional) Public Views](#optional-public-views)
+- [Updating](#updating)
+- [Configure the Timezone Panels](#configure-the-timezone-panels)
+- [Adjusting Time](#adjusting-time)
+- [Discord Bot Command](#discord-bot-command)
+- [Changelog](#changelog)
+- [Translation Status](#translation-status)
+- [Contributing](#contributing)
 
 <!-- mdformat-toc end -->
 

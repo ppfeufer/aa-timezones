@@ -35,6 +35,8 @@ Section Order:
 ### Security
 -->
 
+## [2.3.2] - 2025-03-12
+
 ### Changed
 
 - Timestamp calculations improved
