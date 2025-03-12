@@ -138,7 +138,7 @@
                 </div>
 
                 <div>
-                    <button class="btn btn-info" onclick="reloadToTimestamp(); return false;">{% translate "Set time" %}</button>
+                    <button class="btn btn-info" onclick="setTimeToBeIn(jQuery('#tind').val(), jQuery('#tinh').val(), jQuery('#tinm').val()); return false;">{% translate "Set time" %}</button>
                 </div>
             </div>
         </form>
@@ -319,7 +319,7 @@
                 <div>
                     <button
                         class="btn btn-info"
-                        onclick="setdate(jQuery('#tatyear').val() + '-' + jQuery('#tatmonth').val() + '-' + jQuery('#tatday').val() + ' ' + jQuery('#tathour').val() + ':' + jQuery('#tatminute').val(), jQuery('#tatzone').val()); return false;"
+                        onclick="setDateAndTime(`${jQuery('#tatyear').val()}-${jQuery('#tatmonth').val()}-${jQuery('#tatday').val()} ${jQuery('#tathour').val()}:${jQuery('#tatminute').val()}`, jQuery('#tatzone').val()); return false;"
                     >
                         {% translate "Set time" %}
                     </button>
