@@ -64,7 +64,7 @@ prepare-release: graph_models pot
 #			fi; \
 #		done; \
 #	fi;
-	echo "Updated version in $(TEXT_BOLD)$(package)/__init__.py$(TEXT_BOLD_END)"
+	@echo "Updated version in $(TEXT_BOLD)$(package)/__init__.py$(TEXT_BOLD_END)"
 
 # Help
 .PHONY: help

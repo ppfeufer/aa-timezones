@@ -6,7 +6,6 @@ Versioned static URLs to break browser caches when changing the app version
 import os
 
 # Django
-from django.conf import settings
 from django.template.defaulttags import register
 from django.templatetags.static import static
 from django.utils.safestring import mark_safe
@@ -19,18 +18,22 @@ from app_utils.logging import LoggerAddTag
 
 # AA Time Zones
 from timezones import __title__, __version__
+from timezones.app_settings import debug_enabled
+from timezones.constants import PACKAGE_NAME
 from timezones.helper.static_files import calculate_integrity_hash
 
 logger = LoggerAddTag(my_logger=get_extension_logger(__name__), prefix=__title__)
 
 
 @register.simple_tag
-def timezones_static(relative_file_path: str) -> str | None:
+def timezones_static(relative_file_path: str, script_type: str = None) -> str | None:
     """
     Versioned static URL
 
-    :param relative_file_path: The file path relative to the `aa-timezones/timezones/static/timezones` folder
+    :param relative_file_path: The file path relative to the `{APP_NAME}/{PACKAGE_NAME}/static/{PACKAGE_NAME}` folder
     :type relative_file_path: str
+    :param script_type: The script type
+    :type script_type: str
     :return: Versioned static URL
     :rtype: str
     """
@@ -45,13 +48,13 @@ def timezones_static(relative_file_path: str) -> str | None:
     if file_type not in ["css", "js"]:
         raise ValueError(f"Unsupported file type: {file_type}")
 
-    static_file_path = os.path.join("timezones", relative_file_path)
+    static_file_path = os.path.join(PACKAGE_NAME, relative_file_path)
     static_url = static(static_file_path)
 
     # Integrity hash calculation only for non-debug mode
     sri_string = (
         f' integrity="{calculate_integrity_hash(relative_file_path)}" crossorigin="anonymous"'
-        if not settings.DEBUG
+        if not debug_enabled()
         else ""
     )
 
@@ -64,12 +67,20 @@ def timezones_static(relative_file_path: str) -> str | None:
         else static_url + "?v=" + __version__
     )
 
+    return_value = None
+
     # Return the versioned URL with integrity hash for CSS
     if file_type == "css":
-        return mark_safe(f'<link rel="stylesheet" href="{versioned_url}"{sri_string}>')
+        return_value = mark_safe(
+            f'<link rel="stylesheet" href="{versioned_url}"{sri_string}>'
+        )
 
     # Return the versioned URL with integrity hash for JS files
     if file_type == "js":
-        return mark_safe(f'<script src="{versioned_url}"{sri_string}></script>')
+        js_type = f' type="{script_type}"' if script_type else ""
 
-    return None  # pragma: no cover
+        return_value = mark_safe(
+            f'<script{js_type} src="{versioned_url}"{sri_string}></script>'
+        )
+
+    return return_value
