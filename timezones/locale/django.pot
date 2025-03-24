@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: AA Timezones 2.3.2\n"
 "Report-Msgid-Bugs-To: https://github.com/ppfeufer/aa-timezones/issues\n"
-"POT-Creation-Date: 2025-03-12 13:17+0100\n"
+"POT-Creation-Date: 2025-03-24 14:42+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -122,7 +122,7 @@ msgstr ""
 
 #: timezones/templates/timezones/index.html:32
 #: timezones/templates/timezones/partials/timezones/adjust-time.html:251
-msgid "Eve time"
+msgid "EVE time"
 msgstr ""
 
 #: timezones/templates/timezones/index.html:68
