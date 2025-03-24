@@ -136,7 +136,7 @@ Per default, there are 10 additional time zone panels that are displayed (see fi
 image). If you want to change those, you can create your own set of panels in your
 admin backend.
 
-**NOTE:** "Local Time" and "EVE Time" will always be displayed as the first two panels,
+**NOTE:** "Local time" and "EVE time" will always be displayed as the first two panels,
 no matter what.
 
 ## Adjusting Time<a name="adjusting-time"></a>
@@ -153,9 +153,9 @@ should cover pretty much all timers you can find in Eve Online.
 
 The second one is best suited for pre-planned fleets. Here you can set a fixed date
 and time based on the selected time zone. The default selected time zone is "EVE
-Time" but you can change it to all the available options. Keep in mind the selected
+time" but you can change it to all the available options. Keep in mind the selected
 time zone is the one the time and date will be adjusted to. So if you are going to
-use it to plan fleets, it is recommended to keep this set to "EVE Time".
+use it to plan fleets, it is recommended to keep this set to "EVE time".
 
 To set the adjusted time, simply click on "Set Time" in the row you altered. This
 will then adjust all time zone panels to the time you selected and will also alter
@@ -168,7 +168,7 @@ and running.** ([See this link](https://github.com/pvyParts/allianceauth-discord
 
 | Command | Effect                                                                                                                                                                                                                     |
 | :------ | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `/time` | Displays the current Eve time and what time it is in the configured time zones<br>![Discord Bot Response](https://raw.githubusercontent.com/ppfeufer/aa-timezones/master/docs/images/presentation/discordbot-response.jpg) |
+| `/time` | Displays the current EVE time and what time it is in the configured time zones<br>![Discord Bot Response](https://raw.githubusercontent.com/ppfeufer/aa-timezones/master/docs/images/presentation/discordbot-response.jpg) |
 
 ## Changelog<a name="changelog"></a>
 

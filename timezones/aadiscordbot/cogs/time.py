@@ -89,7 +89,7 @@ class Time(commands.Cog):
         )
 
         embed.add_field(
-            name="Eve Time",
+            name="EVE time",
             value=utc_now.strftime(fmt_utc),
             inline=True,
         )
@@ -151,7 +151,7 @@ class Time(commands.Cog):
     @commands.slash_command(name="time", guild_ids=[int(settings.DISCORD_GUILD_ID)])
     async def time(self, ctx):
         """
-        Returns the Eve time, and the current time in various time zones.
+        Returns the EVE time, and the current time in various time zones.
 
         :param ctx:
         :type ctx:
