@@ -4,20 +4,21 @@
 .PHONY: coverage
 coverage:
 	@echo "Running tests and creating a coverage report …"
-	@rm -rf htmlcov
+#	@rm -rf htmlcov
 	@coverage run ../myauth/manage.py \
 		test \
 		$(package) \
 		--keepdb \
 		--failfast; \
 	coverage html; \
+	coverage xml; \
 	coverage report -m
 
 # Build test
 .PHONY: build_test
 build_test:
 	@echo "Building the package …"
-	@rm -rf dist
+#	@rm -rf dist
 	@python3 -m build
 
 # Tox tests
@@ -26,7 +27,7 @@ tox_tests:
 	@echo "Running tests with tox …"
 	@export USE_MYSQL=False; \
 	tox -v -e allianceauth-latest; \
-	rm -rf .tox/
+#	rm -rf .tox/
 
 # Help message
 .PHONY: help

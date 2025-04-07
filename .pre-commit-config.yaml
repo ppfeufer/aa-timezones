@@ -6,7 +6,7 @@
 # Set the default language versions for the hooks
 default_language_version:
   python: python3  # Force all Python hooks to use Python 3
-  node: 22.13.1  # Force all Node hooks to use Node LTS latest
+  node: 22.13.1  # Force all Node hooks to use the latest Node LTS
 
 # https://pre-commit.ci/
 ci:
@@ -127,19 +127,19 @@ repos:
         description: Ensure that files end with a newline.
 
   - repo: https://github.com/eslint/eslint
-    rev: 3e8a9a55e101c07933d045677682783f6583a0ee  # frozen: v9.21.0
+    rev: 9113105f77e5c3561335ad00788af9e43cb4265f  # frozen: v9.24.0
     hooks:
       - id: eslint
         name: ESLint
         description: Check for problems in JavaScript files.
         language: node
-#        additional_dependencies:
-#          # eslint itself needs to be here when using additional_dependencies.
-#          - eslint@9.21.0 # https://github.com/eslint/eslint/releases/latest
-#          - globals@16.0.0  # https://github.com/sindresorhus/globals/releases/latest
+        additional_dependencies:
+          # eslint itself needs to be here when using additional_dependencies.
+          - eslint@9.24.0 # https://github.com/eslint/eslint/releases/latest
+          - globals@16.0.0  # https://github.com/sindresorhus/globals/releases/latest
 
   - repo: https://github.com/thibaudcolas/pre-commit-stylelint
-    rev: 1a160bc61f659e8f9071d6ae8b5f5fce98ce7898  # frozen: v16.15.0
+    rev: b55acb544b78234ae6384cc09af8337bbba0b499  # frozen: v16.18.0
     hooks:
       - id: stylelint
         name: Stylelint
@@ -149,8 +149,8 @@ repos:
           - --formatter=compact
         additional_dependencies:
           # stylelint itself needs to be here when using additional_dependencies.
-          - stylelint@16.15.0  # https://github.com/stylelint/stylelint/releases/latest
-          - stylelint-config-standard@37.0.0  # https://github.com/stylelint/stylelint-config-standard/releases/latest
+          - stylelint@16.18.0  # https://github.com/stylelint/stylelint/releases/latest
+          - stylelint-config-standard@38.0.0  # https://github.com/stylelint/stylelint-config-standard/releases/latest
 
   - repo: https://github.com/pre-commit/pygrep-hooks
     rev: 3a6eb0fadf60b3cccfd80bad9dbb6fae7e47b316  # frozen: v1.10.0
@@ -180,14 +180,14 @@ repos:
         description: Enforce that python3.6+ type annotations are used instead of type comments.
 
   - repo: https://github.com/editorconfig-checker/editorconfig-checker.python
-    rev: c764d820bfc7d772ae9cc86b4696c375aee944a4  # frozen: 3.2.0
+    rev: 3bea62898235acc3f05c1d9c33023345f6cd3c6f  # frozen: 3.2.1
     hooks:
       - id: editorconfig-checker
         name: EditorConfig Checker
         description: Check for compliance with the definitions in the EditorConfig file.
 
   - repo: https://github.com/adamchainz/django-upgrade
-    rev: 43c3c16dc6ee2c9dcedcca6930974b47f415c8b2  # frozen: 1.23.1
+    rev: 50d352812a07a85c73192ebe6459fab660f9c936  # frozen: 1.24.0
     hooks:
       - id: django-upgrade
         name: Django upgrade
@@ -205,7 +205,7 @@ repos:
           - --py310-plus  # Minimum required Python version for AA. Update as needed.
 
   - repo: https://github.com/pycqa/flake8
-    rev: bddd87797f8dfc07d2a10c894776018d9bec590b  # frozen: 7.1.2
+    rev: 4b5e89b4b108a6c1a000c591d334a99a80d34c7b  # frozen: 7.2.0
     hooks:
       - id: flake8
         name: Flake8
@@ -280,17 +280,17 @@ repos:
         args:
           - --indent=4
         additional_dependencies:
-          - tox==4.24.1  # https://github.com/tox-dev/tox/releases/latest
+          - tox==4.25.0  # https://github.com/tox-dev/tox/releases/latest
 
   - repo: https://github.com/abravalheri/validate-pyproject
-    rev: f45606bad11ad90ddac1212fa83ebe2a4d724351  # frozen: v0.23
+    rev: 78f5e0f104cfa803d0597eaa924b4de3becd3e3e  # frozen: v0.24.1
     hooks:
       - id: validate-pyproject
         name: Validate pyproject.toml
         description: Validate the pyproject.toml file.
 
   - repo: https://github.com/pylint-dev/pylint
-    rev: c2b01c3d0b6410d4c93eb1f32fb28f2116b1e68f  # frozen: v3.3.4
+    rev: 7ac5a4d4f77576df3a00e63f86ca86e0e1780b47  # frozen: v3.3.6
     hooks:
       - id: pylint
         name: Pylint
@@ -299,7 +299,7 @@ repos:
           - --py-version=3.10  # Minimum required Python version for AA. Update as needed.
 
   - repo: https://github.com/python-jsonschema/check-jsonschema
-    rev: 828a213a1dd17aa9862aab706e3162c13281ff93  # frozen: 0.31.2
+    rev: a167de9d5f4e87e1cdb16cb560aa704b79b6f655  # frozen: 0.32.1
     hooks:
       - id: check-github-actions
         name: Check GitHub Actions
