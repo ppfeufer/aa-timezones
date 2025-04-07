@@ -6,7 +6,7 @@
 # Set the default language versions for the hooks
 default_language_version:
   python: python3  # Force all Python hooks to use Python 3
-  node: 22.13.1  # Force all Node hooks to use Node LTS latest
+  node: 22.13.1  # Force all Node hooks to use the latest Node LTS
 
 # https://pre-commit.ci/
 ci:
@@ -133,10 +133,10 @@ repos:
         name: ESLint
         description: Check for problems in JavaScript files.
         language: node
-#        additional_dependencies:
-#          # eslint itself needs to be here when using additional_dependencies.
-#          - eslint@9.21.0 # https://github.com/eslint/eslint/releases/latest
-#          - globals@16.0.0  # https://github.com/sindresorhus/globals/releases/latest
+        additional_dependencies:
+          # eslint itself needs to be here when using additional_dependencies.
+          - eslint@9.24.0 # https://github.com/eslint/eslint/releases/latest
+          - globals@16.0.0  # https://github.com/sindresorhus/globals/releases/latest
 
   - repo: https://github.com/thibaudcolas/pre-commit-stylelint
     rev: b55acb544b78234ae6384cc09af8337bbba0b499  # frozen: v16.18.0
@@ -149,8 +149,8 @@ repos:
           - --formatter=compact
         additional_dependencies:
           # stylelint itself needs to be here when using additional_dependencies.
-          - stylelint@16.15.0  # https://github.com/stylelint/stylelint/releases/latest
-          - stylelint-config-standard@37.0.0  # https://github.com/stylelint/stylelint-config-standard/releases/latest
+          - stylelint@16.18.0  # https://github.com/stylelint/stylelint/releases/latest
+          - stylelint-config-standard@38.0.0  # https://github.com/stylelint/stylelint-config-standard/releases/latest
 
   - repo: https://github.com/pre-commit/pygrep-hooks
     rev: 3a6eb0fadf60b3cccfd80bad9dbb6fae7e47b316  # frozen: v1.10.0
@@ -280,7 +280,7 @@ repos:
         args:
           - --indent=4
         additional_dependencies:
-          - tox==4.24.1  # https://github.com/tox-dev/tox/releases/latest
+          - tox==4.25.0  # https://github.com/tox-dev/tox/releases/latest
 
   - repo: https://github.com/abravalheri/validate-pyproject
     rev: 78f5e0f104cfa803d0597eaa924b4de3becd3e3e  # frozen: v0.24.1

@@ -2,21 +2,20 @@
 
 ______________________________________________________________________
 
-<!-- mdformat-toc start --slug=github --maxlevel=6 --minlevel=1 -->
+<!-- mdformat-toc start --slug=github --maxlevel=6 --minlevel=2 -->
 
-- [Contributing](#contributing)
-  - [Development Environment](#development-environment)
-  - [Code Formatting and Linting](#code-formatting-and-linting)
-    - [Python](#python)
-    - [JavaScript](#javascript)
-      - [Minified JS](#minified-js)
-    - [CSS](#css)
-      - [Minified CSS](#minified-css)
-    - [pre-commit](#pre-commit)
-  - [Branching and Contributing via Pull Requests](#branching-and-contributing-via-pull-requests)
-    - [Tests](#tests)
-    - [Checklist](#checklist)
-  - [Translation](#translation)
+- [Development Environment](#development-environment)
+- [Code Formatting and Linting](#code-formatting-and-linting)
+  - [Python](#python)
+  - [JavaScript](#javascript)
+    - [Minified JS](#minified-js)
+  - [CSS](#css)
+    - [Minified CSS](#minified-css)
+  - [pre-commit](#pre-commit)
+- [Branching and Contributing via Pull Requests](#branching-and-contributing-via-pull-requests)
+  - [Tests](#tests)
+  - [Checklist](#checklist)
+- [Translation](#translation)
 
 <!-- mdformat-toc end -->
 
@@ -25,8 +24,8 @@ ______________________________________________________________________
 ## Development Environment<a name="development-environment"></a>
 
 To develop and test your change, you will need a development environment on your
-local machine. There are many different options to choose from. But please make sure
-that you can run pre-commit checks and tox tests on your local machine.
+local machine. There are different options to choose from. But please make sure
+you can run pre-commit checks and tox tests on your local machine.
 
 If you are on Windows or Linux, you can use the [AA guide for setting up a dev
 environment][aa guide for setting up a dev environment].
@@ -50,7 +49,7 @@ pre-commit run black
 
 The JavaScript code follows [ECMAScript 6 (or ES6 for short)][ecmascript 6] or newer
 rules. The use of arrow functions is preferred and `this` or `$(this)` should be
-prevented. Functions need to be declared before their use and the JavaScript code
+prevented. Functions need to be declared before their use, and the JavaScript code
 should follow `'use strict';`.
 
 Indent size: 4 spaces
@@ -72,7 +71,7 @@ This project uses minified and compressed JavaScript files with source maps crea
 To do so, run:
 
 ```shell
-uglifyjs script.js -o script.min.js --source-map "url='script.min.js.map'" --compress --mangle
+uglifyjs script.js -o script.min.js --source-map "url='script.min.js.map'" --compress reduce_vars=false,templates=false --mangle
 ```
 
 ### CSS<a name="css"></a>
@@ -97,7 +96,7 @@ This project uses minified CSS files with source maps created by [CSSO]. Make su
 to add/update them as well if you add or change CSS.
 
 ```shell
-csso -i styles.css -o styles.min.css  -s file
+csso -i styles.css -o styles.min.css -s file
 ```
 
 ### pre-commit<a name="pre-commit"></a>
@@ -106,7 +105,7 @@ This repository uses [pre-commit] to verify compliance with formatting / linting
 To use:
 
 - Install `pre-commit` to your system.
-- Run' pre-commit install' inside the app's root directory.
+- Run `pre-commit install` inside the app's root directory.
 - You're all done! Code will be checked automatically using git hooks.
 
 You can check if your code to commit adheres to the given style by simply running:
@@ -123,13 +122,13 @@ pre-commit run --all-files
 
 The following will be checked by `pre-commit` (among others):
 
-- No trailing whitespaces (excluded are minified js and css, .po and .mo files and
+- No trailing whitespaces (excluded are minified JS and CSS, PO and MO files, and
   external libs)
-- One, and only one, empty line at the end of every file (excluded are minified js
-  and css, .po and .mo files and external libs)
+- One, and only one, empty line at the end of every file (excluded are minified JS
+  and CSS, PO and MO files, and external libs)
 - Line ending is LF
 - Python code formatted according to black code style
-- Python code blocks in markdown files are formatted to black code style
+- Python code blocks in Markdown files are formatted to black code style
 - Code conforms with flake8
 - Code generally adheres to the editor config
 - Python code is updated to the minimal Python version
@@ -140,8 +139,8 @@ The following will be checked by `pre-commit` (among others):
 
 ## Branching and Contributing via Pull Requests<a name="branching-and-contributing-via-pull-requests"></a>
 
-To contribute code via pull request, make sure that you fork the repository and
-branch your changes from the `master` branch.
+To contribute code via pull request, make sure you fork the repository and branch your
+changes from the `master` branch.
 
 We strongly recommend creating a new branch for every new feature or change you
 plan to be submitting as merge request. Please make sure to keep the `master` branch of
