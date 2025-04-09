@@ -77,7 +77,7 @@ uglifyjs script.js -o script.min.js --source-map "url='script.min.js.map'" --com
 ### CSS<a name="css"></a>
 
 The CSS should be written in a modern manner. Color definitions should be in
-modern RGB(A) (`rgb(255 255 255)`, `rgba(255 255 255 / 50%)`) for example.
+modern RGB notation (e.g., `rgb(255 255 255)`, `rgb(255 255 255 / 50%)`).
 
 A linter configuration is declared as `.stylelintrc.json` in the app's root
 directory. Do not change this file.
