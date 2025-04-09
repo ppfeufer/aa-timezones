@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: AA Timezones 2.2.1\n"
 "Report-Msgid-Bugs-To: https://github.com/ppfeufer/aa-timezones/issues\n"
-"POT-Creation-Date: 2025-03-12 13:17+0100\n"
+"POT-Creation-Date: 2025-04-09 11:57+0200\n"
 "PO-Revision-Date: 2024-12-02 17:40+0000\n"
 "Last-Translator: Peter Pfeufer <info@ppfeufer.de>\n"
 "Language-Team: Spanish <https://weblate.ppfeufer.de/projects/alliance-auth-apps/aa-timezones/es/>\n"
@@ -128,8 +128,10 @@ msgstr "cargando"
 
 #: timezones/templates/timezones/index.html:32
 #: timezones/templates/timezones/partials/timezones/adjust-time.html:251
-msgid "Eve time"
-msgstr ""
+#, fuzzy
+#| msgid "Set Time"
+msgid "EVE time"
+msgstr "Fijar tiempo"
 
 #: timezones/templates/timezones/index.html:68
 msgid "Already over, you missed it!"
