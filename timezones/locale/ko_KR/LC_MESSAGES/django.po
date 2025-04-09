@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: AA Timezones 2.2.1\n"
 "Report-Msgid-Bugs-To: https://github.com/ppfeufer/aa-timezones/issues\n"
-"POT-Creation-Date: 2025-03-12 13:17+0100\n"
+"POT-Creation-Date: 2025-04-09 11:57+0200\n"
 "PO-Revision-Date: 2024-05-10 14:13+0000\n"
 "Last-Translator: Mind of the Raven <okanieva@gmail.com>\n"
 "Language-Team: Korean <https://weblate.ppfeufer.de/projects/alliance-auth-apps/aa-timezones/ko/>\n"
@@ -122,7 +122,9 @@ msgstr "로딩 중"
 
 #: timezones/templates/timezones/index.html:32
 #: timezones/templates/timezones/partials/timezones/adjust-time.html:251
-msgid "Eve time"
+#, fuzzy
+#| msgid "Eve time"
+msgid "EVE time"
 msgstr "이브 표준시간"
 
 #: timezones/templates/timezones/index.html:68
