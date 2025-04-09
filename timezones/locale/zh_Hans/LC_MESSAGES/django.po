@@ -1,22 +1,22 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# Peter Pfeufer <info@ppfeufer.de>, 2023, 2024.
+# Peter Pfeufer <info@ppfeufer.de>, 2023, 2024, 2025.
 # Zeratu <1097222620@qq.com>, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: AA Timezones 2.2.1\n"
 "Report-Msgid-Bugs-To: https://github.com/ppfeufer/aa-timezones/issues\n"
-"POT-Creation-Date: 2025-03-12 13:17+0100\n"
-"PO-Revision-Date: 2024-05-10 14:13+0000\n"
+"POT-Creation-Date: 2025-04-09 11:57+0200\n"
+"PO-Revision-Date: 2025-03-25 14:24+0000\n"
 "Last-Translator: Peter Pfeufer <info@ppfeufer.de>\n"
-"Language-Team: Chinese (Simplified) <https://weblate.ppfeufer.de/projects/alliance-auth-apps/aa-timezones/zh_Hans/>\n"
+"Language-Team: Chinese (Simplified Han script) <https://weblate.ppfeufer.de/projects/alliance-auth-apps/aa-timezones/zh_Hans/>\n"
 "Language: zh_Hans\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.5.3\n"
+"X-Generator: Weblate 5.10.4\n"
 
 #: timezones/__init__.py:9 timezones/templates/timezones/base.html:6
 #: timezones/templates/timezones/base.html:10
@@ -108,7 +108,7 @@ msgstr "时区"
 #: timezones/templates/timezones/index.html:12
 #: timezones/templates/timezones/partials/timezones/adjust-time.html:249
 msgid "Local time"
-msgstr "当地时间"
+msgstr "本地时间"
 
 #: timezones/templates/timezones/index.html:20
 #: timezones/templates/timezones/index.html:40
@@ -118,8 +118,8 @@ msgstr "加载中"
 
 #: timezones/templates/timezones/index.html:32
 #: timezones/templates/timezones/partials/timezones/adjust-time.html:251
-msgid "Eve time"
-msgstr "EVE 时间"
+msgid "EVE time"
+msgstr "EVE时间"
 
 #: timezones/templates/timezones/index.html:68
 msgid "Already over, you missed it!"
