@@ -13,6 +13,14 @@ git_repository_issues = $(git_repository)/issues
 # Default goal
 .DEFAULT_GOAL := help
 
+# Check if Python virtual environment is active
+.PHONY: check-python-venv
+check-python-venv:
+	@if [ -z "$(VIRTUAL_ENV)" ]; then \
+		echo "$(TEXT_COLOR_RED)$(TEXT_BOLD)Python virtual environment is NOT active!$(TEXT_RESET)" ; \
+		exit 1; \
+	fi
+
 # Confirm action
 .PHONY: confirm-action
 confirm-action:

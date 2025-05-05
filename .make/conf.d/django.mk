@@ -2,7 +2,7 @@
 
 # Create or update translation template (.pot file)
 .PHONY: pot
-pot:
+pot: check-python-venv
 	@echo "Creating or updating .pot file …"
 	@django-admin makemessages \
 		--locale en \
@@ -17,7 +17,7 @@ pot:
 
 # Add a new translation
 .PHONY: add_translation
-add_translation:
+add_translation: check-python-venv
 	@echo "Adding a new translation"
 	@read -p "Enter the language code (e.g. 'en_GB'): " language_code; \
 	django-admin makemessages \
@@ -37,7 +37,7 @@ add_translation:
 
 # Translation files
 .PHONY: translations
-translations:
+translations: check-python-venv
 	@echo "Creating or updating translation files"
 	@django-admin makemessages \
 		--locale cs_CZ \
@@ -75,7 +75,7 @@ translations:
 
 # Compile translation files
 .PHONY: compile_translations
-compile_translations:
+compile_translations: check-python-venv
 	@echo "Compiling translation files"
 	@django-admin compilemessages \
 		--locale cs_CZ \
@@ -94,13 +94,13 @@ compile_translations:
 
 # Migrate all database changes
 .PHONY: migrate
-migrate:
+migrate: check-python-venv
 	@echo "Migrating the database"
 	@python ../myauth/manage.py migrate $(package)
 
 # Make migrations for the app
 .PHONY: migrations
-migrations:
+migrations: check-python-venv
 	@echo "Creating or updating migrations"
 	@python ../myauth/manage.py makemigrations $(package)
 
