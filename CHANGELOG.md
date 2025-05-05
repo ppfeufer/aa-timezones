@@ -35,6 +35,10 @@ Section Order:
 ### Security
 -->
 
+### Changed
+
+- Use `text-bg-*` instead of `bg-*` to make use of Bootstraps native color contrast detection
+
 ## [2.3.3] - 2025-04-09
 
 ### Fixed
