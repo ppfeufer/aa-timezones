@@ -127,7 +127,7 @@ repos:
         description: Ensure that files end with a newline.
 
   - repo: https://github.com/eslint/eslint
-    rev: 9113105f77e5c3561335ad00788af9e43cb4265f  # frozen: v9.24.0
+    rev: 9f8178610fb6fbdb8f6c7bb9b15ec30bb2b138bc  # frozen: v9.26.0
     hooks:
       - id: eslint
         name: ESLint
@@ -139,7 +139,7 @@ repos:
           - globals@16.0.0  # https://github.com/sindresorhus/globals/releases/latest
 
   - repo: https://github.com/thibaudcolas/pre-commit-stylelint
-    rev: b55acb544b78234ae6384cc09af8337bbba0b499  # frozen: v16.18.0
+    rev: c273c0d42ec19f7c368cae6702dbc9da3becaa5c  # frozen: v16.19.1
     hooks:
       - id: stylelint
         name: Stylelint
@@ -290,7 +290,7 @@ repos:
         description: Validate the pyproject.toml file.
 
   - repo: https://github.com/pylint-dev/pylint
-    rev: 7ac5a4d4f77576df3a00e63f86ca86e0e1780b47  # frozen: v3.3.6
+    rev: f798a4a3508bcbb8ad0773ae14bf32d28dcfdcbe  # frozen: v3.3.7
     hooks:
       - id: pylint
         name: Pylint
@@ -299,7 +299,7 @@ repos:
           - --py-version=3.10  # Minimum required Python version for AA. Update as needed.
 
   - repo: https://github.com/python-jsonschema/check-jsonschema
-    rev: a167de9d5f4e87e1cdb16cb560aa704b79b6f655  # frozen: 0.32.1
+    rev: 06e4cc849d03f3a59ca223a4046f4bb5bb2aba6d  # frozen: 0.33.0
     hooks:
       - id: check-github-actions
         name: Check GitHub Actions
