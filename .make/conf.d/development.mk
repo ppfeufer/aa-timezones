@@ -1,10 +1,10 @@
 PHONY: dev-install
-dev-install:
+dev-install: check-python-venv
 	@echo "Installing $(appname) as editable package …"
 	@pip install -e .
 
 PHONY: dev-uninstall
-dev-uninstall:
+dev-uninstall: check-python-venv
 	@echo "Uninstalling $(appname) …"
 	@pip uninstall -y $(appname)
 

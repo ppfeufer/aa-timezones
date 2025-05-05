@@ -2,7 +2,7 @@
 
 # Coverage
 .PHONY: coverage
-coverage:
+coverage: check-python-venv
 	@echo "Running tests and creating a coverage report …"
 #	@rm -rf htmlcov
 	@coverage run ../myauth/manage.py \
@@ -16,14 +16,14 @@ coverage:
 
 # Build test
 .PHONY: build_test
-build_test:
+build_test: check-python-venv
 	@echo "Building the package …"
 #	@rm -rf dist
 	@python3 -m build
 
 # Tox tests
 .PHONY: tox_tests
-tox_tests:
+tox_tests: check-python-venv
 	@echo "Running tests with tox …"
 	@export USE_MYSQL=False; \
 	tox -v -e allianceauth-latest; \
