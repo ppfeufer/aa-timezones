@@ -43,13 +43,7 @@ class TestAccess(TestCase):
             </li>
         """
 
-        cls.header = """
-            <div class="aa-timezones-header">
-                <h1 class="page-header text-center mb-3">Time Zones</h1>
-            </div>
-        """
-
-        cls.header_logged_in_user = """
+        cls.header_nav_brand = """
             <div class="navbar-brand">Time Zones</div>
         """
 
@@ -67,9 +61,7 @@ class TestAccess(TestCase):
 
         self.assertEqual(first=response.status_code, second=HTTPStatus.OK)
         self.assertContains(response=response, text=self.html_menu, html=True)
-        self.assertContains(
-            response=response, text=self.header_logged_in_user, html=True
-        )
+        self.assertContains(response=response, text=self.header_nav_brand, html=True)
 
     def test_access_to_index_as_public_page(self):
         """
@@ -82,4 +74,4 @@ class TestAccess(TestCase):
         response = self.client.get(path=reverse(viewname="timezones:index"))
 
         self.assertEqual(first=response.status_code, second=HTTPStatus.OK)
-        self.assertContains(response=response, text=self.header, html=True)
+        self.assertContains(response=response, text=self.header_nav_brand, html=True)

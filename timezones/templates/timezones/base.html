@@ -12,13 +12,6 @@
 
 {% block content %}
     <div class="aa-timezones">
-        {% if not user.is_authenticated %}
-            <div class="aa-timezones-header">
-                {% translate "Time Zones" as page_header %}
-                {% include "framework/header/page-header.html" with title=page_header %}
-            </div>
-        {% endif %}
-
         <div class="aa-timezones-body">
             {% block aa_timezones_body %}{% endblock %}
         </div>
