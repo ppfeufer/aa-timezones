@@ -35,6 +35,10 @@ Section Order:
 ### Security
 -->
 
+### Changed
+
+- Weather Icons CSS updated to v2.0.10 (properly this time)
+
 ### Removed
 
 - Redundant header from public views
