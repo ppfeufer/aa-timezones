@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: AA Timezones 2.2.1\n"
 "Report-Msgid-Bugs-To: https://github.com/ppfeufer/aa-timezones/issues\n"
-"POT-Creation-Date: 2025-05-06 01:13+0200\n"
+"POT-Creation-Date: 2025-06-03 14:24+0200\n"
 "PO-Revision-Date: 2024-05-10 14:13+0000\n"
 "Last-Translator: Mind of the Raven <okanieva@gmail.com>\n"
 "Language-Team: Korean <https://weblate.ppfeufer.de/projects/alliance-auth-apps/aa-timezones/ko/>\n"
@@ -22,7 +22,6 @@ msgstr ""
 
 #: timezones/__init__.py:9 timezones/templates/timezones/base.html:6
 #: timezones/templates/timezones/base.html:10
-#: timezones/templates/timezones/base.html:17
 msgid "Time Zones"
 msgstr "시간대"
 
