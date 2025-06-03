@@ -127,7 +127,7 @@ repos:
         description: Ensure that files end with a newline.
 
   - repo: https://github.com/eslint/eslint
-    rev: 9f8178610fb6fbdb8f6c7bb9b15ec30bb2b138bc  # frozen: v9.26.0
+    rev: e81ba92a6d86968cacab5d06f83a7c9b154e5906  # frozen: v9.28.0
     hooks:
       - id: eslint
         name: ESLint
@@ -135,11 +135,11 @@ repos:
         language: node
         additional_dependencies:
           # eslint itself needs to be here when using additional_dependencies.
-          - eslint@9.26.0 # https://github.com/eslint/eslint/releases/latest
-          - globals@16.0.0  # https://github.com/sindresorhus/globals/releases/latest
+          - eslint@9.28.0 # https://github.com/eslint/eslint/releases/latest
+          - globals@16.2.0  # https://github.com/sindresorhus/globals/releases/latest
 
   - repo: https://github.com/thibaudcolas/pre-commit-stylelint
-    rev: c273c0d42ec19f7c368cae6702dbc9da3becaa5c  # frozen: v16.19.1
+    rev: 2aae575fddbe3f26961115860542dbd9d0e8f91d  # frozen: v16.20.0
     hooks:
       - id: stylelint
         name: Stylelint
@@ -149,7 +149,7 @@ repos:
           - --formatter=compact
         additional_dependencies:
           # stylelint itself needs to be here when using additional_dependencies.
-          - stylelint@16.19.1  # https://github.com/stylelint/stylelint/releases/latest
+          - stylelint@16.20.0  # https://github.com/stylelint/stylelint/releases/latest
           - stylelint-config-standard@38.0.0  # https://github.com/stylelint/stylelint-config-standard/releases/latest
 
   - repo: https://github.com/pre-commit/pygrep-hooks
@@ -187,7 +187,7 @@ repos:
         description: Check for compliance with the definitions in the EditorConfig file.
 
   - repo: https://github.com/adamchainz/django-upgrade
-    rev: 50d352812a07a85c73192ebe6459fab660f9c936  # frozen: 1.24.0
+    rev: 700530171ecf380bc829a64388f49d14ecd61c53  # frozen: 1.25.0
     hooks:
       - id: django-upgrade
         name: Django upgrade
@@ -196,7 +196,7 @@ repos:
           - --target-version=4.2  # Minimum supported Django version for AA. Update as needed.
 
   - repo: https://github.com/asottile/pyupgrade
-    rev: ce40a160603ab0e7d9c627ae33d7ef3906e2d2b2  # frozen: v3.19.1
+    rev: 37bfa06d791fd38fb4e54910b36a2ff57641b074  # frozen: v3.20.0
     hooks:
       - id: pyupgrade
         name: PyUpgrade
@@ -272,7 +272,7 @@ repos:
         description: Format the tox.ini file.
 
   - repo: https://github.com/tox-dev/pyproject-fmt
-    rev: 57b6ff7bf72affdd12c7f3fd6de761ba18a33b3a  # frozen: v2.5.1
+    rev: 8184a5b72f4a8fcd003b041ecb04c41a9f34fd2b  # frozen: v2.6.0
     hooks:
       - id: pyproject-fmt
         name: pyproject.toml formatter
@@ -280,7 +280,7 @@ repos:
         args:
           - --indent=4
         additional_dependencies:
-          - tox==4.25.0  # https://github.com/tox-dev/tox/releases/latest
+          - tox==4.26.0  # https://github.com/tox-dev/tox/releases/latest
 
   - repo: https://github.com/abravalheri/validate-pyproject
     rev: 78f5e0f104cfa803d0597eaa924b4de3becd3e3e  # frozen: v0.24.1
