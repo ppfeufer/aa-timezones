@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: AA Timezones 2.2.1\n"
 "Report-Msgid-Bugs-To: https://github.com/ppfeufer/aa-timezones/issues\n"
-"POT-Creation-Date: 2025-05-06 01:13+0200\n"
+"POT-Creation-Date: 2025-06-03 14:24+0200\n"
 "PO-Revision-Date: 2024-08-06 11:28+0000\n"
 "Last-Translator: Peter Pfeufer <info@ppfeufer.de>\n"
 "Language-Team: Czech <https://weblate.ppfeufer.de/projects/alliance-auth-apps/aa-timezones/cs/>\n"
@@ -19,7 +19,6 @@ msgstr ""
 
 #: timezones/__init__.py:9 timezones/templates/timezones/base.html:6
 #: timezones/templates/timezones/base.html:10
-#: timezones/templates/timezones/base.html:17
 msgid "Time Zones"
 msgstr ""
 
