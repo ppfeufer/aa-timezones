@@ -35,6 +35,8 @@ Section Order:
 ### Security
 -->
 
+## [2.4.0] - 2025-06-03
+
 ### Changed
 
 - Weather Icons CSS updated to v2.0.10 (properly this time)
