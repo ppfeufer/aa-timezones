@@ -127,7 +127,7 @@ repos:
         description: Ensure that files end with a newline.
 
   - repo: https://github.com/eslint/eslint
-    rev: e81ba92a6d86968cacab5d06f83a7c9b154e5906  # frozen: v9.28.0
+    rev: d71ebb3dd2a0d73188c13f47f93d3ec1f9006737  # frozen: v9.30.1
     hooks:
       - id: eslint
         name: ESLint
@@ -139,7 +139,7 @@ repos:
           - globals@16.2.0  # https://github.com/sindresorhus/globals/releases/latest
 
   - repo: https://github.com/thibaudcolas/pre-commit-stylelint
-    rev: 2aae575fddbe3f26961115860542dbd9d0e8f91d  # frozen: v16.20.0
+    rev: 92e3fdcc01235f241dad20cd8891cb414600ba15  # frozen: v16.21.1
     hooks:
       - id: stylelint
         name: Stylelint
@@ -205,7 +205,7 @@ repos:
           - --py310-plus  # Minimum required Python version for AA. Update as needed.
 
   - repo: https://github.com/pycqa/flake8
-    rev: 4b5e89b4b108a6c1a000c591d334a99a80d34c7b  # frozen: 7.2.0
+    rev: d93590f5be797aabb60e3b09f2f52dddb02f349f  # frozen: 7.3.0
     hooks:
       - id: flake8
         name: Flake8
@@ -299,7 +299,7 @@ repos:
           - --py-version=3.10  # Minimum required Python version for AA. Update as needed.
 
   - repo: https://github.com/python-jsonschema/check-jsonschema
-    rev: 06e4cc849d03f3a59ca223a4046f4bb5bb2aba6d  # frozen: 0.33.0
+    rev: 54da05914997e6b04e4db33ed6757d744984c68b  # frozen: 0.33.2
     hooks:
       - id: check-github-actions
         name: Check GitHub Actions
