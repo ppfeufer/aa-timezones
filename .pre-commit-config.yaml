@@ -127,7 +127,7 @@ repos:
         description: Ensure that files end with a newline.
 
   - repo: https://github.com/eslint/eslint
-    rev: d71ebb3dd2a0d73188c13f47f93d3ec1f9006737  # frozen: v9.30.1
+    rev: 6fcb7c22adb3508a6809c63c20903190ac0b8994  # frozen: v9.32.0
     hooks:
       - id: eslint
         name: ESLint
@@ -135,11 +135,11 @@ repos:
         language: node
         additional_dependencies:
           # eslint itself needs to be here when using additional_dependencies.
-          - eslint@9.30.1 # https://github.com/eslint/eslint/releases/latest
+          - eslint@9.32.0 # https://github.com/eslint/eslint/releases/latest
           - globals@16.3.0  # https://github.com/sindresorhus/globals/releases/latest
 
   - repo: https://github.com/thibaudcolas/pre-commit-stylelint
-    rev: 92e3fdcc01235f241dad20cd8891cb414600ba15  # frozen: v16.21.1
+    rev: 5c31281b64ff045bad639f8f994dd48f0c0494cf  # frozen: v16.23.0
     hooks:
       - id: stylelint
         name: Stylelint
@@ -149,8 +149,8 @@ repos:
           - --formatter=compact
         additional_dependencies:
           # stylelint itself needs to be here when using additional_dependencies.
-          - stylelint@16.21.1  # https://github.com/stylelint/stylelint/releases/latest
-          - stylelint-config-standard@38.0.0  # https://github.com/stylelint/stylelint-config-standard/releases/latest
+          - stylelint@16.23.0  # https://github.com/stylelint/stylelint/releases/latest
+          - stylelint-config-standard@39.0.0  # https://github.com/stylelint/stylelint-config-standard/releases/latest
 
   - repo: https://github.com/pre-commit/pygrep-hooks
     rev: 3a6eb0fadf60b3cccfd80bad9dbb6fae7e47b316  # frozen: v1.10.0
@@ -265,7 +265,7 @@ repos:
           - mdformat-shfmt==0.2.0  # Mdformat plugin to format shell code blocks » https://github.com/hukkin/mdformat-shfmt/tags
 
   - repo: https://github.com/tox-dev/tox-ini-fmt
-    rev: e732f664aa3fd7b32cce3de8abbac43f4c3c375d  # frozen: 1.5.0
+    rev: 4e2cb0e98735e1a57a027d9440b91663e31d10b0  # frozen: 1.6.0
     hooks:
       - id: tox-ini-fmt
         name: tox.ini formatter
@@ -280,7 +280,7 @@ repos:
         args:
           - --indent=4
         additional_dependencies:
-          - tox==4.27.0  # https://github.com/tox-dev/tox/releases/latest
+          - tox==4.28.4  # https://github.com/tox-dev/tox/releases/latest
 
   - repo: https://github.com/abravalheri/validate-pyproject
     rev: 78f5e0f104cfa803d0597eaa924b4de3becd3e3e  # frozen: v0.24.1
