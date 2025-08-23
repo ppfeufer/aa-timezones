@@ -66,12 +66,12 @@ pre-commit run eslint
 #### Minified JS<a name="minified-js"></a>
 
 This project uses minified and compressed JavaScript files with source maps created by
-[UglifyJS]. Make sure to add/update them as well if you add or change JavaScript.
+[Terser]. Make sure to add/update them as well if you add or change JavaScript.
 
 To do so, run:
 
 ```shell
-uglifyjs script.js -o script.min.js --source-map "url='script.min.js.map'" --compress reduce_vars=false,templates=false --mangle
+terser script.js -o script.min.js --source-map "url='script.min.js.map'" --compress reduce_vars=false --mangle --format quote_style=1
 ```
 
 ### CSS<a name="css"></a>
@@ -194,7 +194,7 @@ register on my [Weblate] instance and start translating.
 [pre-commit]: https://github.com/pre-commit/pre-commit "pre-commit"
 [python unittest]: https://docs.python.org/3/library/unittest.html "Python Unittests"
 [request-mock]: https://requests-mock.readthedocs.io/en/latest/ "request-mock"
+[terser]: https://github.com/terser/terser "Terser"
 [tox]: https://tox.wiki/en/latest/ "tox"
-[uglifyjs]: https://github.com/mishoo/UglifyJS "UglifyJS"
 [weblate]: https://weblate.ppfeufer.de/ "Weblate"
 [webtest]: https://docs.pylonsproject.org/projects/webtest/en/latest/ "Webtest"
