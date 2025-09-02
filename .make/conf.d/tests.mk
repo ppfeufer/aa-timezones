@@ -33,7 +33,7 @@ tox_tests: check-python-venv
 .PHONY: help
 help::
 	@echo "  $(TEXT_UNDERLINE)Tests:$(TEXT_UNDERLINE_END)"
-	@echo "    build_test               Build the package"
-	@echo "    coverage                 Run tests and create a coverage report"
-	@echo "    tox_tests                Run tests with tox"
+	@echo "    build_test                  Build the package"
+	@echo "    coverage                    Run tests and create a coverage report"
+	@echo "    tox_tests                   Run tests with tox"
 	@echo ""
