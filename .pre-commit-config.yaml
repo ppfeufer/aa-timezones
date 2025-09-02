@@ -36,7 +36,7 @@ exclude: |
 # pre-commit setup
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: cef0300fd0fc4d2a87a85fa2093c6b283ea36f4b  # frozen: v5.0.0
+    rev: 3e8a8703264a2f4a69428a0aa4dcb512790b2c8c  # frozen: v6.0.0
     hooks:
       # Identify invalid files
       - id: check-ast
@@ -91,12 +91,6 @@ repos:
         name: Fix requirements.txt
         description: Fix the formatting of requirements.txt files.
 
-      - id: fix-encoding-pragma
-        name: Fix encoding pragma
-        description: Fix the encoding pragma in Python files.
-        args:
-          - --remove
-
       - id: fix-byte-order-marker
         name: Fix byte order marker
         description: Fix the byte order marker in Python files.
@@ -127,7 +121,7 @@ repos:
         description: Ensure that files end with a newline.
 
   - repo: https://github.com/eslint/eslint
-    rev: 6fcb7c22adb3508a6809c63c20903190ac0b8994  # frozen: v9.32.0
+    rev: d9a5ee2de55337d1fbe5897657b681e20d8a9825  # frozen: v9.34.0
     hooks:
       - id: eslint
         name: ESLint
@@ -135,11 +129,11 @@ repos:
         language: node
         additional_dependencies:
           # eslint itself needs to be here when using additional_dependencies.
-          - eslint@9.32.0 # https://github.com/eslint/eslint/releases/latest
+          - eslint@9.34.0 # https://github.com/eslint/eslint/releases/latest
           - globals@16.3.0  # https://github.com/sindresorhus/globals/releases/latest
 
   - repo: https://github.com/thibaudcolas/pre-commit-stylelint
-    rev: 5c31281b64ff045bad639f8f994dd48f0c0494cf  # frozen: v16.23.0
+    rev: ac48b246d065e0ff6d35463ad8605870d4557779  # frozen: v16.23.1
     hooks:
       - id: stylelint
         name: Stylelint
@@ -149,7 +143,7 @@ repos:
           - --formatter=compact
         additional_dependencies:
           # stylelint itself needs to be here when using additional_dependencies.
-          - stylelint@16.23.0  # https://github.com/stylelint/stylelint/releases/latest
+          - stylelint@16.23.1  # https://github.com/stylelint/stylelint/releases/latest
           - stylelint-config-standard@39.0.0  # https://github.com/stylelint/stylelint-config-standard/releases/latest
 
   - repo: https://github.com/pre-commit/pygrep-hooks
@@ -180,14 +174,14 @@ repos:
         description: Enforce that python3.6+ type annotations are used instead of type comments.
 
   - repo: https://github.com/editorconfig-checker/editorconfig-checker.python
-    rev: 3bea62898235acc3f05c1d9c33023345f6cd3c6f  # frozen: 3.2.1
+    rev: 61529b21391331d7cfd1f191df6293534a1fd79a  # frozen: 3.4.0
     hooks:
       - id: editorconfig-checker
         name: EditorConfig Checker
         description: Check for compliance with the definitions in the EditorConfig file.
 
   - repo: https://github.com/adamchainz/django-upgrade
-    rev: 700530171ecf380bc829a64388f49d14ecd61c53  # frozen: 1.25.0
+    rev: 801c22cf0b32793544572cb0a81655e51879f561  # frozen: 1.27.0
     hooks:
       - id: django-upgrade
         name: Django upgrade
@@ -280,7 +274,7 @@ repos:
         args:
           - --indent=4
         additional_dependencies:
-          - tox==4.28.4  # https://github.com/tox-dev/tox/releases/latest
+          - tox==4.29.0  # https://github.com/tox-dev/tox/releases/latest
 
   - repo: https://github.com/abravalheri/validate-pyproject
     rev: 78f5e0f104cfa803d0597eaa924b4de3becd3e3e  # frozen: v0.24.1
@@ -290,7 +284,7 @@ repos:
         description: Validate the pyproject.toml file.
 
   - repo: https://github.com/pylint-dev/pylint
-    rev: f798a4a3508bcbb8ad0773ae14bf32d28dcfdcbe  # frozen: v3.3.7
+    rev: 98942ba4126a6fe1657bad77027bcc11016d16da  # frozen: v3.3.8
     hooks:
       - id: pylint
         name: Pylint
@@ -299,7 +293,7 @@ repos:
           - --py-version=3.10  # Minimum required Python version for AA. Update as needed.
 
   - repo: https://github.com/python-jsonschema/check-jsonschema
-    rev: 54da05914997e6b04e4db33ed6757d744984c68b  # frozen: 0.33.2
+    rev: 9b9df9f1d3bd9a5e7a52d8f61a3be3e29e73d127  # frozen: 0.33.3
     hooks:
       - id: check-github-actions
         name: Check GitHub Actions
