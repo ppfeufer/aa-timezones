@@ -11,6 +11,6 @@ dev-uninstall: check-python-venv
 .PHONY: help
 help::
 	@echo "  $(TEXT_UNDERLINE)Development:$(TEXT_UNDERLINE_END)"
-	@echo "    dev-install               Install the app as editable package"
-	@echo "    dev-uninstall             Uninstall the app"
+	@echo "    dev-install                 Install the app as editable package"
+	@echo "    dev-uninstall               Uninstall the app"
 	@echo ""

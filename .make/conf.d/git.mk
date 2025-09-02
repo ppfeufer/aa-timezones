@@ -20,8 +20,8 @@ git-housekeeping: git-clean-untracked git-prune git-garbage-collection
 .PHONY: help
 help::
 	@echo "  $(TEXT_UNDERLINE)Git:$(TEXT_UNDERLINE_END)"
-	@echo "    git-clean-untracked       Cleaning untracked files and directories"
-	@echo "    git-garbage-collection    Optimizing the repository with garbage collection"
-	@echo "    git-prune                 Pruning unreachable objects"
-	@echo "    git-housekeeping          Run all git housekeeping commands"
+	@echo "    git-clean-untracked         Cleaning untracked files and directories"
+	@echo "    git-garbage-collection      Optimizing the repository with garbage collection"
+	@echo "    git-prune                   Pruning unreachable objects"
+	@echo "    git-housekeeping            Run all git housekeeping commands"
 	@echo ""

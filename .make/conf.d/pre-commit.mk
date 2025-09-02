@@ -26,8 +26,8 @@ pre-commit-uninstall:
 .PHONY: help
 help::
 	@echo "  $(TEXT_UNDERLINE)pre-commit:$(TEXT_UNDERLINE_END)"
-	@echo "    pre-commit-checks         Run pre-commit checks"
-	@echo "    pre-commit-install        Install pre-commit hook"
-	@echo "    pre-commit-uninstall      Uninstall pre-commit hook"
-	@echo "    pre-commit-update         Update pre-commit configuration"
+	@echo "    pre-commit-checks           Run pre-commit checks"
+	@echo "    pre-commit-install          Install pre-commit hook"
+	@echo "    pre-commit-uninstall        Uninstall pre-commit hook"
+	@echo "    pre-commit-update           Update pre-commit configuration"
 	@echo ""
