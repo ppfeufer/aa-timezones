@@ -12,7 +12,7 @@ ignore_errors = True
 omit =
     setup.py
     */tests.py
-    */tests/*.py
+    */tests/*
     */migrations/*
     doc/*
     */scripts/*
