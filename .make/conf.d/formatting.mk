@@ -1,3 +1,5 @@
+# Makefile fragment for text formatting in terminal output
+
 # Text formatting
 TEXT_BOLD := $(shell printf "\033[1m")
 TEXT_BOLD_END := $(shell printf "\033[22m")

@@ -1,3 +1,5 @@
+# Makefile fragment for managing pre-commit hooks
+
 # Run pre-commit checks
 .PHONY: pre-commit-checks
 pre-commit-checks: pre-commit-install
