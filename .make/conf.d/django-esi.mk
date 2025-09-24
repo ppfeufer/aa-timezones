@@ -1,18 +1,30 @@
 # Makefile fragment for django-esi related tasks
 
+# Get compatibility dates from ESI API and allow user to select one
 .PHONY: get-compatibility-dates
 get-compatibility-dates:
+	@if ! command -v jq >/dev/null 2>&1; \
+		then \
+			echo ""; \
+			echo "$(TEXT_COLOR_RED)$(TEXT_BOLD)ERROR:$(TEXT_RESET) jq is required but not installed. Please install jq first."; \
+			echo ""; \
+			exit 1; \
+	fi;
 	@echo "Fetching compatibility dates for ESI API..."; \
 	response=$$(curl -s "https://esi.evetech.net/meta/compatibility-dates"); \
 	if [ $$? -ne 0 ]; \
 		then \
-			echo "Error: Failed to fetch compatibility dates"; \
+			echo ""; \
+			echo "$(TEXT_COLOR_RED)$(TEXT_BOLD)ERROR:$(TEXT_RESET) Failed to fetch compatibility dates"; \
+			echo ""; \
 			exit 1; \
 	fi; \
 	dates=$$(echo "$$response" | jq -r '.compatibility_dates[]' | sort -r); \
 	if [ -z "$$dates" ]; \
 		then \
-			echo "Error: No dates found or invalid response"; \
+			echo ""; \
+			echo "$(TEXT_COLOR_RED)$(TEXT_BOLD)ERROR:$(TEXT_RESET) No dates found or invalid response"; \
+			echo ""; \
 			exit 1; \
 	fi; \
 	echo ""; \
@@ -45,16 +57,18 @@ get-compatibility-dates:
 		echo ""; \
 	fi
 
+# Generate ESI stubs using the selected compatibility date
 .PHONY: generate-esi-stubs
 generate-esi-stubs: check-python-venv get-compatibility-dates
 	@echo "Generating ESI stubs …"
 	@echo ""
 	@esi_date=$$(cat .esi-compatibility-date 2>/dev/null || exit 0); \
-	python ../myauth/manage.py generate_esi_stubs --compatibility_date="$$esi_date"
+	python $(myauth_path)/manage.py generate_esi_stubs --compatibility_date="$$esi_date"
 	@echo "ESI stubs generated."
 
+# Update the compatibility date in the package's __init__.py
 .PHONY: update-compatibility-date
-update-compatibility-date: check-python-venv get-compatibility-dates
+update-compatibility-date: check-python-venv generate-esi-stubs
 	@echo "Updating ESI compatibility date..."
 	@echo ""
 	@esi_date=$$(cat .esi-compatibility-date 2>/dev/null || exit 0); \

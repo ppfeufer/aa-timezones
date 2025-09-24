@@ -2,8 +2,7 @@
 
 All notable changes to this project will be documented in this file.
 
-The format is based on [Keep a Changelog](http://keepachangelog.com/)
-and this project adheres to [Semantic Versioning](http://semver.org/).
+The format is based on [Keep a Changelog] and this project adheres to [Semantic Versioning].
 
 <!--
 GitHub MD Syntax:
@@ -15,11 +14,17 @@ https://docs.github.com/assets/cb-41128/mw-1440/images/help/writing/alerts-rende
 > [!NOTE]
 > Highlights information that users should take into account, even when skimming.
 
+> [!TIP]
+> Optional information to help a user be more successful.
+
 > [!IMPORTANT]
 > Crucial information necessary for users to succeed.
 
 > [!WARNING]
-> Critical content demanding immediate user attention due to potential risks.
+> Urgent info that needs immediate user attention to avoid problems.
+
+> [!CAUTION]
+> Advised about risks or negative outcomes of certain actions.
 -->
 
 ## [In Development] - Unreleased
@@ -34,6 +39,8 @@ Section Order:
 ### Removed
 ### Security
 -->
+
+<!-- Your changes go here -->
 
 ### Changed
 
@@ -622,4 +629,65 @@ Section Order:
 
 <!-- Links -->
 
+[0.1.0]: https://github.com/ppfeufer/aa-timezones/commits/v0.1.0 "v0.1.0"
+[0.1.1]: https://github.com/ppfeufer/aa-timezones/compare/v0.1.0...v0.1.1 "v0.1.1"
+[0.1.2]: https://github.com/ppfeufer/aa-timezones/compare/v0.1.1...v0.1.2 "v0.1.2"
+[0.1.3]: https://github.com/ppfeufer/aa-timezones/compare/v0.1.2...v0.1.3 "v0.1.3"
+[0.1.4]: https://github.com/ppfeufer/aa-timezones/compare/v0.1.3...v0.1.4 "v0.1.4"
+[0.1.5]: https://github.com/ppfeufer/aa-timezones/compare/v0.1.4...v0.1.5 "v0.1.5"
+[0.1.6]: https://github.com/ppfeufer/aa-timezones/compare/v0.1.5...v0.1.6 "v0.1.6"
+[0.1.7]: https://github.com/ppfeufer/aa-timezones/compare/v0.1.6...v0.1.7 "v0.1.7"
+[0.1.8]: https://github.com/ppfeufer/aa-timezones/compare/v0.1.7...v0.1.8 "v0.1.8"
+[0.1.9]: https://github.com/ppfeufer/aa-timezones/compare/v0.1.8...v0.1.9 "v0.1.9"
+[1.0.0]: https://github.com/ppfeufer/aa-timezones/compare/v0.1.9...v1.0.0 "v1.0.0"
+[1.1.0]: https://github.com/ppfeufer/aa-timezones/compare/v1.0.0...v1.1.0 "v1.1.0"
+[1.10.0]: https://github.com/ppfeufer/aa-timezones/compare/v1.9.0...v1.10.0 "v1.10.0"
+[1.10.1]: https://github.com/ppfeufer/aa-timezones/compare/v1.10.0...v1.10.1 "v1.10.1"
+[1.11.0]: https://github.com/ppfeufer/aa-timezones/compare/v1.10.1...v1.11.0 "v1.11.0"
+[1.12.0]: https://github.com/ppfeufer/aa-timezones/compare/v1.11.0...v1.12.0 "v1.12.0"
+[1.12.1]: https://github.com/ppfeufer/aa-timezones/compare/v1.12.0...v1.12.1 "v1.12.1"
+[1.13.0]: https://github.com/ppfeufer/aa-timezones/compare/v1.12.1...v1.13.0 "v1.13.0"
+[1.13.1]: https://github.com/ppfeufer/aa-timezones/compare/v1.13.0...v1.13.1 "v1.13.1"
+[1.13.2]: https://github.com/ppfeufer/aa-timezones/compare/v1.13.1...v1.13.2 "v1.13.2"
+[1.14.0]: https://github.com/ppfeufer/aa-timezones/compare/v1.13.2...v1.14.0 "v1.14.0"
+[1.14.1]: https://github.com/ppfeufer/aa-timezones/compare/v1.14.0...v1.14.1 "v1.14.1"
+[1.15.0]: https://github.com/ppfeufer/aa-timezones/compare/v1.14.1...v1.15.0 "v1.15.0"
+[1.16.0]: https://github.com/ppfeufer/aa-timezones/compare/v1.15.0...v1.16.0 "v1.16.0"
+[1.16.1]: https://github.com/ppfeufer/aa-timezones/compare/v1.16.0...v1.16.1 "v1.16.1"
+[1.16.2]: https://github.com/ppfeufer/aa-timezones/compare/v1.16.1...v1.16.2 "v1.16.2"
+[1.2.0]: https://github.com/ppfeufer/aa-timezones/compare/v1.1.0...v1.2.0 "v1.2.0"
+[1.2.1]: https://github.com/ppfeufer/aa-timezones/compare/v1.2.0...v1.2.1 "v1.2.1"
+[1.2.2]: https://github.com/ppfeufer/aa-timezones/compare/v1.2.1...v1.2.2 "v1.2.2"
+[1.3.0]: https://github.com/ppfeufer/aa-timezones/compare/v1.2.2...v1.3.0 "v1.3.0"
+[1.3.1]: https://github.com/ppfeufer/aa-timezones/compare/v1.3.0...v1.3.1 "v1.3.1"
+[1.3.2]: https://github.com/ppfeufer/aa-timezones/compare/v1.3.1...v1.3.2 "v1.3.2"
+[1.3.3]: https://github.com/ppfeufer/aa-timezones/compare/v1.3.2...v1.3.3 "v1.3.3"
+[1.3.4]: https://github.com/ppfeufer/aa-timezones/compare/v1.3.3...v1.3.4 "v1.3.4"
+[1.3.5]: https://github.com/ppfeufer/aa-timezones/compare/v1.3.4...v1.3.5 "v1.3.5"
+[1.3.6]: https://github.com/ppfeufer/aa-timezones/compare/v1.3.5...v1.3.6 "v1.3.6"
+[1.4.0]: https://github.com/ppfeufer/aa-timezones/compare/v1.3.6...v1.4.0 "v1.4.0"
+[1.5.0]: https://github.com/ppfeufer/aa-timezones/compare/v1.4.0...v1.5.0 "v1.5.0"
+[1.6.0]: https://github.com/ppfeufer/aa-timezones/compare/v1.5.0...v1.6.0 "v1.6.0"
+[1.7.0]: https://github.com/ppfeufer/aa-timezones/compare/v1.6.0...v1.7.0 "v1.7.0"
+[1.7.1]: https://github.com/ppfeufer/aa-timezones/compare/v1.7.0...v1.7.1 "v1.7.1"
+[1.8.0]: https://github.com/ppfeufer/aa-timezones/compare/v1.7.1...v1.8.0 "v1.8.0"
+[1.9.0]: https://github.com/ppfeufer/aa-timezones/compare/v1.8.0...v1.9.0 "v1.9.0"
+[2.0.0]: https://github.com/ppfeufer/aa-timezones/compare/v1.16.2...v2.0.0 "v2.0.0"
+[2.0.0-beta.1]: https://github.com/ppfeufer/aa-timezones/compare/v1.16.2...v2.0.0-beta.1 "v2.0.0-beta.1"
+[2.0.1]: https://github.com/ppfeufer/aa-timezones/compare/v2.0.0...v2.0.1 "v2.0.1"
+[2.1.0]: https://github.com/ppfeufer/aa-timezones/compare/v2.0.1...v2.1.0 "v2.1.0"
+[2.2.0]: https://github.com/ppfeufer/aa-timezones/compare/v2.1.0...v2.2.0 "v2.2.0"
+[2.2.1]: https://github.com/ppfeufer/aa-timezones/compare/v2.2.0...v2.2.1 "v2.2.1"
+[2.2.2]: https://github.com/ppfeufer/aa-timezones/compare/v2.2.1...v2.2.2 "v2.2.2"
+[2.2.3]: https://github.com/ppfeufer/aa-timezones/compare/v2.2.2...v2.2.3 "v2.2.3"
+[2.3.0]: https://github.com/ppfeufer/aa-timezones/compare/v2.2.3...v2.3.0 "v2.3.0"
+[2.3.1]: https://github.com/ppfeufer/aa-timezones/compare/v2.3.0...v2.3.1 "v2.3.1"
+[2.3.2]: https://github.com/ppfeufer/aa-timezones/compare/v2.3.1...v2.3.2 "v2.3.2"
+[2.3.3]: https://github.com/ppfeufer/aa-timezones/compare/v2.3.2...v2.3.3 "v2.3.3"
+[2.3.4]: https://github.com/ppfeufer/aa-timezones/compare/v2.3.3...v2.3.4 "v2.3.4"
+[2.4.0]: https://github.com/ppfeufer/aa-timezones/compare/v2.3.4...v2.4.0 "v2.4.0"
+[2.4.1]: https://github.com/ppfeufer/aa-timezones/compare/v2.4.0...v2.4.1 "v2.4.1"
+[in development]: https://github.com/ppfeufer/aa-timezones/compare/v2.4.1...HEAD "In Development"
+[keep a changelog]: http://keepachangelog.com/ "Keep a Changelog"
 [readme]: https://github.com/ppfeufer/aa-timezones/blob/master/README.md "README.md"
+[semantic versioning]: http://semver.org/ "Semantic Versioning"
