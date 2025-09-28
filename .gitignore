@@ -16,3 +16,5 @@ __pycache__
 alliance_auth.sqlite3
 
 /timezones/locale/en/
+.esi-compatibility-date
+.make/myauth-path
