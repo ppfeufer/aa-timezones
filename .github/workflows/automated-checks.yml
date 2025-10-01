@@ -34,7 +34,7 @@ jobs:
 
       # Set up Python
 #      - name: Set up Python
-#        uses: actions/setup-python@v5
+#        uses: actions/setup-python@v6
 #        with:
 #          python-version-file: 'pyproject.toml' # Read the Python version from the pyproject.toml file
 
@@ -107,7 +107,7 @@ jobs:
 
       # Set up Python
       - name: Setup Python ${{ matrix.python-version }}
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: ${{ matrix.python-version }}
 
@@ -165,7 +165,7 @@ jobs:
 
       # Set up Python
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version-file: 'pyproject.toml' # Read the Python version from the pyproject.toml file
 
