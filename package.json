@@ -2,9 +2,9 @@
     "type": "module",
     "devDependencies": {
         "csso-cli": "^4.0.2",
-        "eslint": "^9.34.0",
-        "globals": "^16.3.0",
-        "stylelint": "^16.23.1",
+        "eslint": "^9.36.0",
+        "globals": "^16.4.0",
+        "stylelint": "^16.24.0",
         "stylelint-config-standard": "^39.0.0",
         "terser": "^5.44.0"
     }
