@@ -4,7 +4,7 @@ https://github.com/pvyParts/allianceauth-discordbot
 """
 
 # Standard Library
-from datetime import datetime
+import datetime as dt
 
 # Third Party
 import pytz
@@ -76,7 +76,7 @@ class Time(commands.Cog):
 
         fmt_utc = "%H:%M:%S (UTC)\n%A %d. %b %Y"
         fmt = "%H:%M:%S (UTC %z)\n%A %d. %b %Y"
-        utc_now = datetime.utcnow()
+        utc_now = dt.datetime.now(dt.timezone.utc)
         utc_timestamp = utc_now.strftime("%s")
 
         embed = Embed(title="Time")
@@ -124,7 +124,7 @@ class Time(commands.Cog):
                 embed.add_field(
                     name=configured_timezone["panel_name"],
                     value=(
-                        datetime.utcnow()
+                        dt.datetime.now(dt.timezone.utc)
                         .astimezone(
                             pytz.timezone(
                                 configured_timezone["timezone"]["timezone_name"]

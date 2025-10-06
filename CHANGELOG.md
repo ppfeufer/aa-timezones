@@ -42,6 +42,10 @@ Section Order:
 
 <!-- Your changes go here -->
 
+### Fixed
+
+- Deprecated `utcnow` usage in favor of `now` with timezone argument
+
 ### Changed
 
 - Switch to Terser for JavaScript compression
