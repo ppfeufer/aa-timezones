@@ -58,7 +58,7 @@ Make sure you're in the virtual environment (venv) of your Alliance Auth install
 Then install the latest version:
 
 ```bash
-pip install aa-timezones==2.4.1
+pip install aa-timezones==2.4.2
 ```
 
 ### Step 2: Update Your Alliance Auth Settings<a name="step-2-update-your-alliance-auth-settings"></a>
@@ -117,7 +117,7 @@ Then run the following commands from your AA project directory (the one that
 contains `manage.py`).
 
 ```bash
-pip install aa-timezones==2.4.1
+pip install aa-timezones==2.4.2
 ```
 
 ```bash
