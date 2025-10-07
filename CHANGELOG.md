@@ -42,6 +42,8 @@ Section Order:
 
 <!-- Your changes go here -->
 
+## [2.4.2] - 2025-10-07
+
 ### Fixed
 
 - Deprecated `utcnow` usage in favor of `now` with timezone argument
@@ -691,7 +693,8 @@ Section Order:
 [2.3.4]: https://github.com/ppfeufer/aa-timezones/compare/v2.3.3...v2.3.4 "v2.3.4"
 [2.4.0]: https://github.com/ppfeufer/aa-timezones/compare/v2.3.4...v2.4.0 "v2.4.0"
 [2.4.1]: https://github.com/ppfeufer/aa-timezones/compare/v2.4.0...v2.4.1 "v2.4.1"
-[in development]: https://github.com/ppfeufer/aa-timezones/compare/v2.4.1...HEAD "In Development"
+[2.4.2]: https://github.com/ppfeufer/aa-timezones/compare/v2.4.1...v2.4.2 "v2.4.2"
+[in development]: https://github.com/ppfeufer/aa-timezones/compare/v2.4.2...HEAD "In Development"
 [keep a changelog]: http://keepachangelog.com/ "Keep a Changelog"
 [readme]: https://github.com/ppfeufer/aa-timezones/blob/master/README.md "README.md"
 [semantic versioning]: http://semver.org/ "Semantic Versioning"
