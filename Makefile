@@ -15,7 +15,7 @@ git_repository = https://github.com/ppfeufer/$(appname)
 git_repository_issues = $(git_repository)/issues
 
 # Set myauth path or default to ../myauth if config file (.make/myauth-path) does not exist
-myauth_path = $(shell cat .make/myauth-path 2>/dev/null || echo "../myauth")
+myauth_path = $(shell path=$$(cat .make/myauth-path 2>/dev/null | grep . || echo "../myauth"); echo "$${path%/}")
 
 # Default goal
 .DEFAULT_GOAL := help
@@ -25,6 +25,15 @@ myauth_path = $(shell cat .make/myauth-path 2>/dev/null || echo "../myauth")
 check-python-venv:
 	@if [ -z "$(VIRTUAL_ENV)" ]; then \
 		echo "$(TEXT_COLOR_RED)$(TEXT_BOLD)Python virtual environment is NOT active!$(TEXT_RESET)" ; \
+		exit 1; \
+	fi
+
+# Check if the 'myauth' path exists
+.PHONY: check-myauth-path
+check-myauth-path:
+	@if [ ! -d "$(myauth_path)" ]; then \
+		echo "$(TEXT_COLOR_RED)$(TEXT_BOLD)Error: '$(myauth_path)' does not exist!$(TEXT_RESET)"; \
+		echo "Please set the absolute path to your 'myauth' directory in the '.make/myauth-path' file."; \
 		exit 1; \
 	fi
 
@@ -50,7 +59,7 @@ confirm:
 
 # Graph models
 .PHONY: graph-models
-graph-models: check-python-venv
+graph-models: check-python-venv check-myauth-path
 	@echo "Creating a graph of the models …"
 	@python $(myauth_path)/manage.py \
 		graph_models \
@@ -96,6 +105,7 @@ prepare-release: pot graph-models
 help::
 	@echo ""
 	@echo "$(TEXT_BOLD)$(appname_verbose)$(TEXT_BOLD_END) Makefile"
+	@echo "('myauth_path' is set to '$(myauth_path)')"
 	@echo ""
 	@echo "$(TEXT_BOLD)Usage:$(TEXT_BOLD_END)"
 	@echo "  make [command]"

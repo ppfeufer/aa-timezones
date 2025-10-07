@@ -84,13 +84,13 @@ compile-translations: check-python-venv
 
 # Migrate all database changes
 .PHONY: migrate
-migrate: check-python-venv
+migrate: check-python-venv check-myauth-path
 	@echo "Migrating the database"
 	@python $(myauth_path)/manage.py migrate $(package)
 
 # Make migrations for the app
 .PHONY: migrations
-migrations: check-python-venv
+migrations: check-python-venv check-myauth-path
 	@echo "Creating or updating migrations"
 	@python $(myauth_path)/manage.py makemigrations $(package)
 
