@@ -2,7 +2,7 @@
 
 # Coverage
 .PHONY: coverage
-coverage: check-python-venv
+coverage: check-python-venv check-myauth-path
 	@echo "Running tests and creating a coverage report …"
 	@coverage run $(myauth_path)/manage.py \
 		test \
