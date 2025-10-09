@@ -1,3 +1,11 @@
+# Release to PyPI using Trusted Publishing
+# This workflow is triggered when a release is published on GitHub.
+#
+# https://docs.pypi.org/trusted-publishers/
+# https://docs.pypi.org/trusted-publishers/adding-a-publisher/
+# https://docs.pypi.org/trusted-publishers/creating-a-project-through-oidc/
+# https://docs.github.com/en/actions/how-tos/deploy/configure-and-manage-deployments/manage-environments
+
 name: Release
 
 on:
@@ -10,6 +18,11 @@ jobs:
     # Release
     name: Release
     runs-on: ubuntu-latest
+    environment:
+      name: pypi-release
+    permissions:
+      id-token: write  # IMPORTANT: this permission is mandatory for trusted publishing
+      contents: write
 
     steps:
       # Checkout the repository
@@ -27,17 +40,12 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           python -m pip install --upgrade build
-          python -m pip install --upgrade setuptools wheel twine
+          python -m pip install --upgrade setuptools wheel
 
-      # Package and Upload to PyPI
-      - name: Package and Upload to PyPI
-        env:
-          STACKMANAGER_VERSION: ${{ github.event.release.tag_name }}
-          TWINE_USERNAME: __token__
-          TWINE_PASSWORD: ${{ secrets.PYPI_APIKEY }}
+      # Build Package
+      - name: Package
         run: |
           python -m build
-          python -m twine upload dist/*
 
       # Add Assets to Release on GitHub
       - name: Add Assets to Release on GitHub
@@ -47,3 +55,7 @@ jobs:
           # The name of the file(s) to upload
           files: |
             dist/*
+
+      # Publish to PyPI using Trusted Publishing
+      - name: Upload to PyPI
+        uses: pypa/gh-action-pypi-publish@release/v1
