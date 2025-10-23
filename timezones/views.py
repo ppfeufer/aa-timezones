@@ -6,7 +6,7 @@ The views
 from django.shortcuts import render
 
 # AA Time Zones
-from timezones import __title__
+from timezones import __title_translated__
 from timezones.constants import AA_TIMEZONE_DEFAULT_PANELS
 from timezones.models import Timezones
 
@@ -29,7 +29,11 @@ def index(request, timestamp: str = None):
     if not timezones:
         timezones = AA_TIMEZONE_DEFAULT_PANELS
 
-    context = {"title": __title__, "timezones": timezones, "timestamp": timestamp}
+    context = {
+        "title": __title_translated__,
+        "timezones": timezones,
+        "timestamp": timestamp,
+    }
 
     return render(
         request=request, template_name="timezones/index.html", context=context

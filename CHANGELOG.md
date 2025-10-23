@@ -42,6 +42,10 @@ Section Order:
 
 <!-- Your changes go here -->
 
+### Fixed
+
+- Use translated name as menu item and header
+
 ## [2.4.2] - 2025-10-07
 
 ### Fixed

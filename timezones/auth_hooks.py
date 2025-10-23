@@ -7,7 +7,7 @@ from allianceauth import hooks
 from allianceauth.services.hooks import MenuItemHook, UrlHook
 
 # AA Time Zones
-from timezones import __title__, urls
+from timezones import __title_translated__, urls
 from timezones.app_settings import allianceauth_discordbot_installed
 
 
@@ -20,7 +20,7 @@ class AaTimezonesMenuItem(MenuItemHook):  # pylint: disable=too-few-public-metho
         # Set up menu entry for sidebar
         MenuItemHook.__init__(
             self,
-            __title__,
+            __title_translated__,
             "fa-regular fa-clock fa-fw",
             "timezones:index",
             navactive=["timezones:"],
