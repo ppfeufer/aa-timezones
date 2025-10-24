@@ -49,11 +49,13 @@ optional-dependencies.tests-allianceauth-latest = [
     "django-webtest",
 ]
 urls.Changelog = "https://github.com/ppfeufer/aa-timezones/blob/master/CHANGELOG.md"
+urls.Codecov = "https://codecov.io/gh/ppfeufer/aa-timezones"
+urls.Discord = "https://discord.gg/fjnHAmk"
 urls.Documentation = "https://github.com/ppfeufer/aa-timezones/blob/master/README.md"
-urls.Donations = "https://ko-fi.com/ppfeufer"
-urls.Homepage = "https://github.com/ppfeufer/aa-timezones"
-urls.Source = "https://github.com/ppfeufer/aa-timezones.git"
+urls.Donation = "https://ko-fi.com/ppfeufer"
+urls.GitHub = "https://github.com/ppfeufer/aa-timezones"
 urls.Tracker = "https://github.com/ppfeufer/aa-timezones/issues"
+urls.Translation = "https://weblate.ppfeufer.de/projects/alliance-auth-apps/aa-timezones/"
 
 [tool.hatch.build]
 include = [
