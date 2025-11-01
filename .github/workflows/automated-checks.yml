@@ -40,7 +40,7 @@ jobs:
 
       # Set up Node.js
       - name: Setup Node.js
-        uses: actions/setup-node@v5
+        uses: actions/setup-node@v6
         with:
           # https://endoflife.date/nodejs
           node-version: ${{ env.NODE_VERSION }}
