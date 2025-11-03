@@ -121,7 +121,7 @@ repos:
         description: Ensure that files end with a newline.
 
   - repo: https://github.com/eslint/eslint
-    rev: 9f5e19d6fcc79e1181e6c3617d8f7173e0814435  # frozen: v9.37.0
+    rev: 840140f27a115a5d5f16c2dfc4fbe7af9160adb2  # frozen: v9.39.0
     hooks:
       - id: eslint
         name: ESLint
@@ -174,14 +174,14 @@ repos:
         description: Enforce that python3.6+ type annotations are used instead of type comments.
 
   - repo: https://github.com/editorconfig-checker/editorconfig-checker.python
-    rev: 61529b21391331d7cfd1f191df6293534a1fd79a  # frozen: 3.4.0
+    rev: 62dcf364a52192458d66c0dba3a0a1fdb78e4fbe  # frozen: 3.4.1
     hooks:
       - id: editorconfig-checker
         name: EditorConfig Checker
         description: Check for compliance with the definitions in the EditorConfig file.
 
   - repo: https://github.com/adamchainz/django-upgrade
-    rev: c03f1b1e703cd967c5fd94e29c61f111e8b0eaf0  # frozen: 1.29.0
+    rev: 553731fe59437e0bd2cf18b10144116422bed259  # frozen: 1.29.1
     hooks:
       - id: django-upgrade
         name: Django upgrade
@@ -190,7 +190,7 @@ repos:
           - --target-version=4.2  # Minimum supported Django version for AA. Update as needed.
 
   - repo: https://github.com/asottile/pyupgrade
-    rev: 37bfa06d791fd38fb4e54910b36a2ff57641b074  # frozen: v3.20.0
+    rev: f90119b1b8bd9e46949d9592972b2c4c27d62a97  # frozen: v3.21.0
     hooks:
       - id: pyupgrade
         name: PyUpgrade
@@ -213,7 +213,7 @@ repos:
         description: Check for extraneous `# noqa` comments.
 
   - repo: https://github.com/PyCQA/isort
-    rev: ec0efaee4acfce198521e43caa3029b06cedd64a  # frozen: 6.1.0
+    rev: 0a09c783808cfe77bb3269250f663ff733d23302  # frozen: 7.0.0
     hooks:
       - id: isort
         name: Isort
@@ -247,7 +247,7 @@ repos:
           - --target-version=py310  # Minimum required Python version for AA. Update as needed.
 
   - repo: https://github.com/executablebooks/mdformat
-    rev: ff29be1a1ba8029d9375882aa2c812b62112a593  # frozen: 0.7.22
+    rev: 2d496dbc18e31b83a1596685347ffe0b6041daf0  # frozen: 1.0.0
     hooks:
       - id: mdformat
         name: Mdformat
@@ -259,14 +259,14 @@ repos:
           - mdformat-shfmt==0.2.0  # Mdformat plugin to format shell code blocks » https://github.com/hukkin/mdformat-shfmt/tags
 
   - repo: https://github.com/tox-dev/tox-ini-fmt
-    rev: 4e2cb0e98735e1a57a027d9440b91663e31d10b0  # frozen: 1.6.0
+    rev: be26ee0d710a48f7c1acc1291d84082036207bd3  # frozen: 1.7.0
     hooks:
       - id: tox-ini-fmt
         name: tox.ini formatter
         description: Format the tox.ini file.
 
   - repo: https://github.com/tox-dev/pyproject-fmt
-    rev: 8a22e281b3f6d1bb298aaabfc165a943a943882c  # frozen: v2.7.0
+    rev: 68b1ed526e7533ac54a2e42874b99ae6c26807a2  # frozen: v2.11.0
     hooks:
       - id: pyproject-fmt
         name: pyproject.toml formatter
@@ -284,7 +284,7 @@ repos:
         description: Validate the pyproject.toml file.
 
   - repo: https://github.com/pylint-dev/pylint
-    rev: 4cab7ca4eae88b75960fcf2479b8ddd377dd4ce2  # frozen: v3.3.9
+    rev: 0eb92d25fd38ba5bad2f8d2ea7df63ad23e18ae3  # frozen: v4.0.2
     hooks:
       - id: pylint
         name: Pylint
@@ -293,7 +293,7 @@ repos:
           - --py-version=3.10  # Minimum required Python version for AA. Update as needed.
 
   - repo: https://github.com/python-jsonschema/check-jsonschema
-    rev: 83987cd6ad8943c7f029b500b14aaf82c00a01fa  # frozen: 0.34.0
+    rev: 83b816d020105076daac266dbf6bfed199a2da93  # frozen: 0.34.1
     hooks:
       - id: check-github-actions
         name: Check GitHub Actions
