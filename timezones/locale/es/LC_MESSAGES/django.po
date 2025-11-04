@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: AA Timezones 2.2.1\n"
 "Report-Msgid-Bugs-To: https://github.com/ppfeufer/aa-timezones/issues\n"
-"POT-Creation-Date: 2025-08-05 13:32+0200\n"
+"POT-Creation-Date: 2025-11-04 15:35+0100\n"
 "PO-Revision-Date: 2025-07-29 20:18+0000\n"
 "Last-Translator: Peter Pfeufer <info@ppfeufer.de>\n"
 "Language-Team: Spanish <https://weblate.ppfeufer.de/projects/alliance-auth-apps/aa-timezones/es/>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 5.12.2\n"
 
-#: timezones/__init__.py:9 timezones/templates/timezones/base.html:6
+#: timezones/__init__.py:10 timezones/templates/timezones/base.html:6
 #: timezones/templates/timezones/base.html:10
 msgid "Time Zones"
 msgstr "Zonas horarias"
@@ -68,11 +68,6 @@ msgid "Deactivated {notifications_count} timezone"
 msgid_plural "Deactivated {notifications_count} timezones"
 msgstr[0] ""
 msgstr[1] ""
-
-#: timezones/apps.py:20
-#, python-brace-format
-msgid "Time Zones v{__version__}"
-msgstr ""
 
 #: timezones/models.py:16
 msgid "Name of the timezone"
