@@ -8,7 +8,7 @@ from django.urls import path
 # AA Time Zones
 from timezones import views
 
-app_name: str = "timezones"
+app_name: str = "timezones"  # pylint: disable=invalid-name
 
 urlpatterns = [
     path("", views.index, name="index"),
