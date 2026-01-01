@@ -185,7 +185,7 @@ jobs:
 
       # Upload Build Artifacts
       - name: Upload Build Artifacts
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v6
         with:
           name: build-${{ github.event_name }}-${{ github.sha }}
           path: dist
