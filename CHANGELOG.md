@@ -42,6 +42,12 @@ Section Order:
 
 <!-- Your changes go here -->
 
+## [2.4.4] - 2026-01-05
+
+### Changed
+
+- Translations updated
+
 ## [2.4.3] - 2025-11-04
 
 ### Fixed
@@ -705,7 +711,8 @@ Section Order:
 [2.4.1]: https://github.com/ppfeufer/aa-timezones/compare/v2.4.0...v2.4.1 "v2.4.1"
 [2.4.2]: https://github.com/ppfeufer/aa-timezones/compare/v2.4.1...v2.4.2 "v2.4.2"
 [2.4.3]: https://github.com/ppfeufer/aa-timezones/compare/v2.4.2...v2.4.3 "v2.4.3"
-[in development]: https://github.com/ppfeufer/aa-timezones/compare/v2.4.3...HEAD "In Development"
+[2.4.4]: https://github.com/ppfeufer/aa-timezones/compare/v2.4.3...v2.4.4 "v2.4.4"
+[in development]: https://github.com/ppfeufer/aa-timezones/compare/v2.4.4...HEAD "In Development"
 [keep a changelog]: http://keepachangelog.com/ "Keep a Changelog"
 [readme]: https://github.com/ppfeufer/aa-timezones/blob/master/README.md "README.md"
 [semantic versioning]: http://semver.org/ "Semantic Versioning"
