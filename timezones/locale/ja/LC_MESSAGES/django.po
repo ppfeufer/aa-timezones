@@ -1,22 +1,23 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# Peter Pfeufer <info@ppfeufer.de>, 2023, 2024.
+# Peter Pfeufer <info@ppfeufer.de>, 2023, 2024, 2025.
 # Anata_no_Usiro <yt23542354m@gmail.com>, 2024.
+# Dexsar <dexsar.paf@gmail.com>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: AA Timezones 2.2.1\n"
 "Report-Msgid-Bugs-To: https://github.com/ppfeufer/aa-timezones/issues\n"
-"POT-Creation-Date: 2025-11-04 15:35+0100\n"
-"PO-Revision-Date: 2024-08-05 10:10+0000\n"
-"Last-Translator: Anata_no_Usiro <yt23542354m@gmail.com>\n"
+"POT-Creation-Date: 2026-01-05 23:37+0100\n"
+"PO-Revision-Date: 2025-12-02 08:22+0000\n"
+"Last-Translator: Dexsar <dexsar.paf@gmail.com>\n"
 "Language-Team: Japanese <https://weblate.ppfeufer.de/projects/alliance-auth-apps/aa-timezones/ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.6.2\n"
+"X-Generator: Weblate 5.14.3\n"
 
 #: timezones/__init__.py:10 timezones/templates/timezones/base.html:6
 #: timezones/templates/timezones/base.html:10
@@ -65,109 +66,109 @@ msgstr[0] "無効化された{notifications_count} タイムゾーン"
 
 #: timezones/models.py:16
 msgid "Name of the timezone"
-msgstr ""
+msgstr "タイムゾーン名"
 
 #: timezones/models.py:23
 msgid "UTC offset of the timezone"
-msgstr ""
+msgstr "タイムゾーンのUTC時差"
 
 #: timezones/models.py:30
 msgid "ID of the timezone panel in frontend"
-msgstr ""
+msgstr "フロントエンドにおけるタイムゾーンパネルのID"
 
 #: timezones/models.py:41 timezones/models.py:42
 msgid "Timezone data"
-msgstr ""
+msgstr "タイムゾーンデータ"
 
 #: timezones/models.py:55
 msgid "Name of the timezone panel"
-msgstr ""
+msgstr "タイムゾーンパネルの名前"
 
 #: timezones/models.py:62
 msgid "Selected timezone"
-msgstr ""
+msgstr "選択されたタイムゾーン"
 
 #: timezones/models.py:67
 msgid "Whether this timezone is enabled or not"
-msgstr ""
+msgstr "このタイムゾーンが有効かどうか"
 
 #: timezones/models.py:78
 msgid "Timezone"
-msgstr ""
+msgstr "タイムゾーン"
 
 #: timezones/models.py:79
 msgid "Timezones"
-msgstr ""
+msgstr "タイムゾーン"
 
 #: timezones/templates/timezones/index.html:12
 #: timezones/templates/timezones/partials/timezones/adjust-time.html:249
 msgid "Local time"
-msgstr ""
+msgstr "現地時間"
 
 #: timezones/templates/timezones/index.html:20
 #: timezones/templates/timezones/index.html:40
 #: timezones/templates/timezones/partials/timezones/timezone-panel.html:15
 msgid "loading"
-msgstr ""
+msgstr "ロード中"
 
 #: timezones/templates/timezones/index.html:32
 #: timezones/templates/timezones/partials/timezones/adjust-time.html:251
 msgid "EVE time"
-msgstr ""
+msgstr "EVE時間（ET）"
 
 #: timezones/templates/timezones/index.html:68
 msgid "Already over, you missed it!"
-msgstr ""
+msgstr "終了済み、またの参加を！"
 
 #: timezones/templates/timezones/index.html:75
 #: timezones/templates/timezones/partials/timezones/adjust-time.html:41
 msgid "Days"
-msgstr ""
+msgstr "日"
 
 #: timezones/templates/timezones/partials/footer/app-translation-footer.html:5
 msgid "Do you want to help translate this app into your language or improve the existing translation?"
-msgstr ""
+msgstr "このアプリをあなたの言語に翻訳するお手伝いをしたり、既存の翻訳を改善したりしませんか？"
 
 #: timezones/templates/timezones/partials/footer/app-translation-footer.html:8
 msgid "Join our team of translators!"
-msgstr ""
+msgstr "翻訳者チームに参加しましょう！"
 
 #: timezones/templates/timezones/partials/timezones/adjust-time.html:6
 msgid "Adjust time"
-msgstr ""
+msgstr "時刻調整"
 
 #: timezones/templates/timezones/partials/timezones/adjust-time.html:10
 msgid "Remove"
-msgstr ""
+msgstr "削除"
 
 #: timezones/templates/timezones/partials/timezones/adjust-time.html:14
 msgid "Switch to current time"
-msgstr ""
+msgstr "現在の時刻に切り替える"
 
 #: timezones/templates/timezones/partials/timezones/adjust-time.html:18
 msgid "Switch to adjusted time"
-msgstr ""
+msgstr "調整済み時刻に切り替える"
 
 #: timezones/templates/timezones/partials/timezones/adjust-time.html:26
 msgid "Set time to be in"
-msgstr ""
+msgstr "X時間後に設定"
 
 #: timezones/templates/timezones/partials/timezones/adjust-time.html:71
 msgid "Hours"
-msgstr ""
+msgstr "時"
 
 #: timezones/templates/timezones/partials/timezones/adjust-time.html:137
 msgid "Minutes"
-msgstr ""
+msgstr "分"
 
 #: timezones/templates/timezones/partials/timezones/adjust-time.html:141
 #: timezones/templates/timezones/partials/timezones/adjust-time.html:324
 msgid "Set time"
-msgstr ""
+msgstr "時間を設定する"
 
 #: timezones/templates/timezones/partials/timezones/adjust-time.html:150
 msgid "Set time to be at a specific time and date"
-msgstr ""
+msgstr "特定の時間と日付に設定する"
 
 #: timezones/templates/timezones/partials/timezones/adjust-time.html:269
 msgid "January"
@@ -219,4 +220,4 @@ msgstr "12月"
 
 #: timezones/templates/timezones/partials/timezones/time-until.html:5
 msgid "Time left"
-msgstr ""
+msgstr "残り時間"
