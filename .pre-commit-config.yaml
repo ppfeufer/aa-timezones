@@ -121,7 +121,7 @@ repos:
         description: Ensure that files end with a newline.
 
   - repo: https://github.com/eslint/eslint
-    rev: c081400644df15454b0ae1a2db03fcfbdfd27621  # frozen: v10.0.0-beta.0
+    rev: v9.39.2
     hooks:
       - id: eslint
         name: ESLint
@@ -129,8 +129,8 @@ repos:
         language: node
         additional_dependencies:
           # eslint itself needs to be here when using additional_dependencies.
-          - eslint@9.39.1 # https://github.com/eslint/eslint/releases/latest
-          - globals@16.5.0  # https://github.com/sindresorhus/globals/releases/latest
+          - eslint@9.39.2 # https://github.com/eslint/eslint/releases/latest
+          - globals@17.0.0  # https://github.com/sindresorhus/globals/releases/latest
 
   - repo: https://github.com/thibaudcolas/pre-commit-stylelint
     rev: 5550a364f2b5d3a9e731a9f4e231c5dc8c5f2e5b  # frozen: v16.26.1
@@ -242,7 +242,7 @@ repos:
         name: Blacken docs
         description: Format Python code in documentation files.
         additional_dependencies:
-          - black==25.9.0  # https://github.com/psf/black/releases/latest
+          - black==25.12.0  # https://github.com/psf/black/releases/latest
         args:
           - --target-version=py310  # Minimum required Python version for AA. Update as needed.
 
@@ -274,7 +274,7 @@ repos:
         args:
           - --indent=4
         additional_dependencies:
-          - tox==4.32.0  # https://github.com/tox-dev/tox/releases/latest
+          - tox==4.33.0  # https://github.com/tox-dev/tox/releases/latest
 
   - repo: https://github.com/abravalheri/validate-pyproject
     rev: 78f5e0f104cfa803d0597eaa924b4de3becd3e3e  # frozen: v0.24.1
