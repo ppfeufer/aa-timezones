@@ -42,9 +42,13 @@ Section Order:
 
 <!-- Your changes go here -->
 
+### Changed
+
+- Moment Timezone library updated
+
 ### Removed
 
-- Dependency to `jquery-timeago` library, which hasn't seen any updates in 7 years …
+- Dependency on `jquery-timeago` library, which hasn't seen any updates in 7 years …
 
 ## [2.4.4] - 2026-01-05
 
