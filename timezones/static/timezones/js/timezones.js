@@ -52,14 +52,6 @@ const reloadBasePage = () => { // eslint-disable-line no-unused-vars
 const setTimeToBeIn = (days, hours, minutes) => { // eslint-disable-line no-unused-vars
     'use strict';
 
-    // const timestamp = (
-    //     new Date()
-    //         .getTime() / 1000 + jQuery('#tind')
-    //         .val() * 24 * 60 * 60 + jQuery('#tinh')
-    //         .val() * 60 * 60 + jQuery('#tinm')
-    //         .val() * 60
-    // );
-
     const timestamp = moment().unix() + days * 24 * 60 * 60 + hours * 60 * 60 + minutes * 60;
 
     reloadToLocation(aaTimezonesOptions.base_url + timestamp);
@@ -233,7 +225,7 @@ const clockTick = () => {
 };
 
 /**
- * Switch between time-adh´just mode and normal view mode
+ * Switch between time-adjust mode and normal view mode
  *
  * @param {int} mode
  */
@@ -282,31 +274,24 @@ const switchto = (mode) => {
     }
 };
 
-/**
- * Timestamp has changed
- */
-const hashchange = () => {
-    'use strict';
-
-    const timestamp = parseInt(aaTimezonesOptions.timestamp);
-
-    clockTarget = 0;
-
-    if (!isNaN(timestamp) && isFinite(timestamp)) {
-        clockTarget = timestamp * 1000;
-
-        const mom = moment.tz(new Date(clockTarget), 'Etc/UTC');
-
-        jQuery('#timestamp').attr(
-            'datetime', mom.format('YYYY-MM-DDTHH:mm:00Z0000')
-        ).timeago('update', new Date(clockTarget));
-    }
-
-    switchto(clockTarget);
-};
-
 jQuery(document).ready(($) => {
     'use strict';
+
+    /**
+     * Timestamp has changed
+     */
+    const hashchange = () => {
+
+        const timestamp = parseInt(aaTimezonesOptions.timestamp);
+
+        clockTarget = 0;
+
+        if (!isNaN(timestamp) && isFinite(timestamp)) {
+            clockTarget = timestamp * 1000;
+        }
+
+        switchto(clockTarget);
+    };
 
     window.addEventListener('hashchange', hashchange, false);
 
@@ -320,13 +305,6 @@ jQuery(document).ready(($) => {
     for (i = year - 4; i < year + 5; i++) {
         $('#tatyear').append($('<option>', {i: i}).text(i));
     }
-
-    $.timeago.settings.allowFuture = true;
-    $.timeago.settings.allowPast = true;
-
-    setInterval(() => {
-        $('#timestamp').timeago('update', new Date(clockTarget));
-    }, 10000);
 
     hashchange();
 });
