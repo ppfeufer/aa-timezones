@@ -121,7 +121,7 @@ repos:
         description: Ensure that files end with a newline.
 
   - repo: https://github.com/eslint/eslint
-    rev: v9.39.2
+    rev: v10.0.0-rc.2
     hooks:
       - id: eslint
         name: ESLint
@@ -133,7 +133,7 @@ repos:
           - globals@17.0.0  # https://github.com/sindresorhus/globals/releases/latest
 
   - repo: https://github.com/thibaudcolas/pre-commit-stylelint
-    rev: 5550a364f2b5d3a9e731a9f4e231c5dc8c5f2e5b  # frozen: v16.26.1
+    rev: 05fae982df4a486b2a8e8f1d0e6ff6817f230957  # frozen: v17.1.0
     hooks:
       - id: stylelint
         name: Stylelint
@@ -227,7 +227,7 @@ repos:
         description: Check for black disable comments.
 
   - repo: https://github.com/psf/black-pre-commit-mirror
-    rev: 831207fd435b47aeffdf6af853097e64322b4d44  # frozen: 25.12.0
+    rev: ea488cebbfd88a5f50b8bd95d5c829d0bb76feb8  # frozen: 26.1.0
     hooks:
       - id: black
         name: Black
@@ -266,7 +266,7 @@ repos:
         description: Format the tox.ini file.
 
   - repo: https://github.com/tox-dev/pyproject-fmt
-    rev: d252a2a7678b47d1f2eea2f6b846ddfdcd012759  # frozen: v2.11.1
+    rev: 2a892e1706c9e0e1f853be3f34a9e04f0d5c86d9  # frozen: v2.12.1
     hooks:
       - id: pyproject-fmt
         name: pyproject.toml formatter
@@ -293,7 +293,7 @@ repos:
           - --py-version=3.10  # Minimum required Python version for AA. Update as needed.
 
   - repo: https://github.com/python-jsonschema/check-jsonschema
-    rev: b035497fb64e3f9faa91e833331688cc185891e6  # frozen: 0.36.0
+    rev: ccf21790019848af3eb4464be2a9d5efed6358f3  # frozen: 0.36.1
     hooks:
       - id: check-github-actions
         name: Check GitHub Actions
