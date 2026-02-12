@@ -6,13 +6,14 @@
 # AKA Patrick <hsc844766246@gmail.com>, 2025.
 # LichenKass <yuanchengwei_sz@163.com>, 2025.
 # nm l <mmttyyluo@gmail.com>, 2026.
+# shkno <l13244536339@163.com>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: AA Timezones 2.2.1\n"
 "Report-Msgid-Bugs-To: https://github.com/ppfeufer/aa-timezones/issues\n"
 "POT-Creation-Date: 2026-02-03 15:48+0100\n"
-"PO-Revision-Date: 2026-01-26 02:17+0000\n"
-"Last-Translator: nm l <mmttyyluo@gmail.com>\n"
+"PO-Revision-Date: 2026-02-12 06:23+0000\n"
+"Last-Translator: shkno <l13244536339@163.com>\n"
 "Language-Team: Chinese (Simplified Han script) <https://weblate.ppfeufer.de/projects/alliance-auth-apps/aa-timezones/zh_Hans/>\n"
 "Language: zh_Hans\n"
 "MIME-Version: 1.0\n"
@@ -153,24 +154,24 @@ msgstr "切换至调整后的时间"
 
 #: timezones/templates/timezones/partials/timezones/adjust-time.html:26
 msgid "Set time to be in"
-msgstr ""
+msgstr "输入时间"
 
 #: timezones/templates/timezones/partials/timezones/adjust-time.html:71
 msgid "Hours"
-msgstr ""
+msgstr "小时"
 
 #: timezones/templates/timezones/partials/timezones/adjust-time.html:137
 msgid "Minutes"
-msgstr ""
+msgstr "分"
 
 #: timezones/templates/timezones/partials/timezones/adjust-time.html:141
 #: timezones/templates/timezones/partials/timezones/adjust-time.html:324
 msgid "Set time"
-msgstr ""
+msgstr "设置时间"
 
 #: timezones/templates/timezones/partials/timezones/adjust-time.html:150
 msgid "Set time to be at a specific time and date"
-msgstr ""
+msgstr "输入具体时间"
 
 #: timezones/templates/timezones/partials/timezones/adjust-time.html:269
 msgid "January"
@@ -222,7 +223,7 @@ msgstr "十二月"
 
 #: timezones/templates/timezones/partials/timezones/time-until.html:5
 msgid "Time left"
-msgstr ""
+msgstr "剩余时间"
 
 #, python-brace-format
 #~ msgid "Time Zones v{__version__}"
