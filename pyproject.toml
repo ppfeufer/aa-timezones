@@ -39,9 +39,9 @@ dynamic = [
     "version",
 ]
 dependencies = [
-    "allianceauth>=4.6,<5",
+    "allianceauth>=4.6",
     "allianceauth-app-utils>=1.25",
-    "pytz>=2024.2",
+    "pytz>=2025.2",
 ]
 optional-dependencies.tests-allianceauth-latest = [
     "allianceauth-discordbot",
