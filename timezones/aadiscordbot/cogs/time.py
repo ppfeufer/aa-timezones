@@ -15,11 +15,9 @@ from discord.ext import commands
 # Django
 from django.conf import settings
 
-# Alliance Auth (External Libs)
-from app_utils.urls import reverse_absolute
-
 # AA Time Zones
 from timezones.constants import AA_TIMEZONE_DEFAULT_PANELS
+from timezones.helper.urls import reverse_absolute
 from timezones.models import Timezones
 
 

@@ -42,6 +42,10 @@ Section Order:
 
 <!-- Your changes go here -->
 
+### Removed
+
+- Dependency on `allianceauth-app-utils`
+
 ## [2.4.5] - 2026-02-03
 
 ### Changed
