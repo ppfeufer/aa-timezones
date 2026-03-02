@@ -47,15 +47,6 @@ jobs:
         run: |
           python -m build
 
-      # Add Assets to Release on GitHub
-      - name: Add Assets to Release on GitHub
-        uses: softprops/action-gh-release@v2
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          # The name of the file(s) to upload
-          files: |
-            dist/*
-
       # Publish to PyPI using Trusted Publishing
       - name: Upload to PyPI
         uses: pypa/gh-action-pypi-publish@release/v1
