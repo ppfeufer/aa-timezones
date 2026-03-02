@@ -121,7 +121,7 @@ repos:
         description: Ensure that files end with a newline.
 
   - repo: https://github.com/eslint/eslint
-    rev: v9.39.2
+    rev: v10.0.2
     hooks:
       - id: eslint
         name: ESLint
@@ -133,7 +133,7 @@ repos:
           - globals@17.3.0  # https://github.com/sindresorhus/globals/releases/latest
 
   - repo: https://github.com/thibaudcolas/pre-commit-stylelint
-    rev: 05fae982df4a486b2a8e8f1d0e6ff6817f230957  # frozen: v17.1.0
+    rev: 622d6a0c638b9cd333a6a9511bab8e82ee95f854  # frozen: v17.4.0
     hooks:
       - id: stylelint
         name: Stylelint
@@ -181,7 +181,7 @@ repos:
         description: Check for compliance with the definitions in the EditorConfig file.
 
   - repo: https://github.com/adamchainz/django-upgrade
-    rev: 553731fe59437e0bd2cf18b10144116422bed259  # frozen: 1.29.1
+    rev: 4864562a5d05a7ff3bce99bc31f892eeb396fc00  # frozen: 1.30.0
     hooks:
       - id: django-upgrade
         name: Django upgrade
@@ -213,7 +213,7 @@ repos:
         description: Check for extraneous `# noqa` comments.
 
   - repo: https://github.com/PyCQA/isort
-    rev: 0a09c783808cfe77bb3269250f663ff733d23302  # frozen: 7.0.0
+    rev: a333737ed43df02b18e6c95477ea1b285b3de15a  # frozen: 8.0.1
     hooks:
       - id: isort
         name: Isort
@@ -266,7 +266,7 @@ repos:
         description: Format the tox.ini file.
 
   - repo: https://github.com/tox-dev/pyproject-fmt
-    rev: 2a892e1706c9e0e1f853be3f34a9e04f0d5c86d9  # frozen: v2.12.1
+    rev: 51905ea0435df7e0b1dacf8108081e6a14b620bd  # frozen: v2.16.2
     hooks:
       - id: pyproject-fmt
         name: pyproject.toml formatter
@@ -277,14 +277,14 @@ repos:
           - tox==4.34.1  # https://github.com/tox-dev/tox/releases/latest
 
   - repo: https://github.com/abravalheri/validate-pyproject
-    rev: 78f5e0f104cfa803d0597eaa924b4de3becd3e3e  # frozen: v0.24.1
+    rev: 4b2e70d08cb2ccd26d1fba73588de41c7a5d50b7  # frozen: v0.25
     hooks:
       - id: validate-pyproject
         name: Validate pyproject.toml
         description: Validate the pyproject.toml file.
 
   - repo: https://github.com/pylint-dev/pylint
-    rev: e16f942166511d6fb4427e503a734152fae0c4fe  # frozen: v4.0.4
+    rev: 88e1ab7545a4af4aea15c305a154c164a95ab842  # frozen: v4.0.5
     hooks:
       - id: pylint
         name: Pylint
@@ -293,7 +293,7 @@ repos:
           - --py-version=3.10  # Minimum required Python version for AA. Update as needed.
 
   - repo: https://github.com/python-jsonschema/check-jsonschema
-    rev: ccf21790019848af3eb4464be2a9d5efed6358f3  # frozen: 0.36.1
+    rev: 8db279a37c552206d2df62269ff6f9d31125815a  # frozen: 0.37.0
     hooks:
       - id: check-github-actions
         name: Check GitHub Actions
