@@ -6,7 +6,7 @@
 # Set the default language versions for the hooks
 default_language_version:
   python: python3  # Force all Python hooks to use Python 3
-  node: 22.13.1  # Force all Node hooks to use this specific Node version
+  node: 24.11.1  # Force all Node hooks to use this specific Node version
 
 # https://pre-commit.ci/
 ci:
@@ -121,7 +121,7 @@ repos:
         description: Ensure that files end with a newline.
 
   - repo: https://github.com/eslint/eslint
-    rev: v10.0.2
+    rev: 2e350d6441ed9e7c5d599861514c2439b5b21b12  # frozen: v10.0.2
     hooks:
       - id: eslint
         name: ESLint
@@ -129,8 +129,8 @@ repos:
         language: node
         additional_dependencies:
           # eslint itself needs to be here when using additional_dependencies.
-          - eslint@9.39.2 # https://github.com/eslint/eslint/releases/latest
-          - globals@17.3.0  # https://github.com/sindresorhus/globals/releases/latest
+          - eslint@10.0.2 # https://github.com/eslint/eslint/releases/latest
+          - globals@17.4.0  # https://github.com/sindresorhus/globals/releases/latest
 
   - repo: https://github.com/thibaudcolas/pre-commit-stylelint
     rev: 622d6a0c638b9cd333a6a9511bab8e82ee95f854  # frozen: v17.4.0
@@ -143,7 +143,7 @@ repos:
           - --formatter=compact
         additional_dependencies:
           # stylelint itself needs to be here when using additional_dependencies.
-          - stylelint@17.1.0  # https://github.com/stylelint/stylelint/releases/latest
+          - stylelint@17.4.0  # https://github.com/stylelint/stylelint/releases/latest
           - stylelint-config-standard@40.0.0  # https://github.com/stylelint/stylelint-config-standard/releases/latest
 
   - repo: https://github.com/pre-commit/pygrep-hooks
@@ -274,7 +274,7 @@ repos:
         args:
           - --indent=4
         additional_dependencies:
-          - tox==4.34.1  # https://github.com/tox-dev/tox/releases/latest
+          - tox==4.47.0  # https://github.com/tox-dev/tox/releases/latest
 
   - repo: https://github.com/abravalheri/validate-pyproject
     rev: 4b2e70d08cb2ccd26d1fba73588de41c7a5d50b7  # frozen: v0.25
