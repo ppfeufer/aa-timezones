@@ -3,7 +3,7 @@ name: Tests
 env:
   COVERAGE_DATABASE_VERSION: mariadb:10.11
   COVERAGE_PYTHON_VERSION: 3.12
-  NODE_VERSION: 22 # [LTS] End of Life: 30 Apr 2027 (https://endoflife.date/nodejs)
+  NODE_VERSION: 24 # [LTS] End of Life: 30 Apr 2028 (https://endoflife.date/nodejs)
   REDIS_VERSION: latest
 
 on:
