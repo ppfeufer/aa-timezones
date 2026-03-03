@@ -42,6 +42,12 @@ Section Order:
 
 <!-- Your changes go here -->
 
+## [2.5.0] - 2026-03-03
+
+### Changed
+
+- Translations updated
+
 ### Removed
 
 - Dependency on `allianceauth-app-utils`
@@ -728,7 +734,8 @@ Section Order:
 [2.4.3]: https://github.com/ppfeufer/aa-timezones/compare/v2.4.2...v2.4.3 "v2.4.3"
 [2.4.4]: https://github.com/ppfeufer/aa-timezones/compare/v2.4.3...v2.4.4 "v2.4.4"
 [2.4.5]: https://github.com/ppfeufer/aa-timezones/compare/v2.4.4...v2.4.5 "v2.4.5"
-[in development]: https://github.com/ppfeufer/aa-timezones/compare/v2.4.5...HEAD "In Development"
+[2.5.0]: https://github.com/ppfeufer/aa-timezones/compare/v2.4.5...v2.5.0 "v2.5.0"
+[in development]: https://github.com/ppfeufer/aa-timezones/compare/v2.5.0...HEAD "In Development"
 [keep a changelog]: http://keepachangelog.com/ "Keep a Changelog"
 [readme]: https://github.com/ppfeufer/aa-timezones/blob/master/README.md "README.md"
 [semantic versioning]: http://semver.org/ "Semantic Versioning"
