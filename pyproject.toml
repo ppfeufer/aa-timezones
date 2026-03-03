@@ -56,10 +56,8 @@ urls.GitHub = "https://github.com/ppfeufer/aa-timezones"
 urls.Tracker = "https://github.com/ppfeufer/aa-timezones/issues"
 urls.Translation = "https://weblate.ppfeufer.de/projects/alliance-auth-apps/aa-timezones/"
 
-[tool.hatch.build]
-include = [
+[tool.hatch]
+build.include = [
     "/timezones",
 ]
-
-[tool.hatch.version]
-path = "timezones/__init__.py"
+version.path = "timezones/__init__.py"
