@@ -42,6 +42,10 @@ Section Order:
 
 <!-- Your changes go here -->
 
+### Changed
+
+- `moment-timezone.js` library updated to v0.6.1
+
 ## [2.5.0] - 2026-03-03
 
 ### Changed
