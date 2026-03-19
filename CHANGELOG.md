@@ -42,6 +42,10 @@ Section Order:
 
 <!-- Your changes go here -->
 
+### Removed
+
+- Unnecessary template variables and CSS classes
+
 ## [2.6.0] - 2026-03-18
 
 ### Changed
