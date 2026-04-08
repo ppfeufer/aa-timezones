@@ -6,7 +6,7 @@
 # Set the default language versions for the hooks
 default_language_version:
   python: python3  # Force all Python hooks to use Python 3
-  node: 24.11.1  # Force all Node hooks to use this specific Node version
+  node: 24.14.0  # Force all Node hooks to use this specific Node version
 
 # https://pre-commit.ci/
 ci:
@@ -121,7 +121,7 @@ repos:
         description: Ensure that files end with a newline.
 
   - repo: https://github.com/eslint/eslint
-    rev: 2e350d6441ed9e7c5d599861514c2439b5b21b12  # frozen: v10.0.2
+    rev: 2656772377429ba90ade21adc69661e4ae3a4625  # frozen: v10.2.0
     hooks:
       - id: eslint
         name: ESLint
@@ -129,11 +129,11 @@ repos:
         language: node
         additional_dependencies:
           # eslint itself needs to be here when using additional_dependencies.
-          - eslint@10.0.2 # https://github.com/eslint/eslint/releases/latest
+          - eslint@10.2.0 # https://github.com/eslint/eslint/releases/latest
           - globals@17.4.0  # https://github.com/sindresorhus/globals/releases/latest
 
   - repo: https://github.com/thibaudcolas/pre-commit-stylelint
-    rev: 622d6a0c638b9cd333a6a9511bab8e82ee95f854  # frozen: v17.4.0
+    rev: c5ea22efe1dcff25ec53dd5b88540d6e922e3076  # frozen: v17.6.0
     hooks:
       - id: stylelint
         name: Stylelint
@@ -143,7 +143,7 @@ repos:
           - --formatter=compact
         additional_dependencies:
           # stylelint itself needs to be here when using additional_dependencies.
-          - stylelint@17.4.0  # https://github.com/stylelint/stylelint/releases/latest
+          - stylelint@17.6.0  # https://github.com/stylelint/stylelint/releases/latest
           - stylelint-config-standard@40.0.0  # https://github.com/stylelint/stylelint-config-standard/releases/latest
 
   - repo: https://github.com/pre-commit/pygrep-hooks
@@ -174,7 +174,7 @@ repos:
         description: Enforce that python3.6+ type annotations are used instead of type comments.
 
   - repo: https://github.com/editorconfig-checker/editorconfig-checker.python
-    rev: 11ea70506fd878d26129b2b87746fd1a1f6b561b  # frozen: 3.6.0
+    rev: bebfac867564fbd992e5b45379b4b0568d5cb85b  # frozen: 3.6.1
     hooks:
       - id: editorconfig-checker
         name: EditorConfig Checker
@@ -227,7 +227,7 @@ repos:
         description: Check for black disable comments.
 
   - repo: https://github.com/psf/black-pre-commit-mirror
-    rev: ea488cebbfd88a5f50b8bd95d5c829d0bb76feb8  # frozen: 26.1.0
+    rev: fa505ab9c3e0fedafe1709fd7ac2b5f8996c670d  # frozen: 26.3.1
     hooks:
       - id: black
         name: Black
@@ -242,7 +242,7 @@ repos:
         name: Blacken docs
         description: Format Python code in documentation files.
         additional_dependencies:
-          - black==26.1.0  # https://github.com/psf/black/releases/latest
+          - black==26.3.1  # https://github.com/psf/black/releases/latest
         args:
           - --target-version=py310  # Minimum required Python version for AA. Update as needed.
 
@@ -266,7 +266,7 @@ repos:
         description: Format the tox.ini file.
 
   - repo: https://github.com/tox-dev/pyproject-fmt
-    rev: 51905ea0435df7e0b1dacf8108081e6a14b620bd  # frozen: v2.16.2
+    rev: 6e10264313f53d6247a8b1b984f5b5ccf50ba539  # frozen: v2.21.0
     hooks:
       - id: pyproject-fmt
         name: pyproject.toml formatter
@@ -274,7 +274,7 @@ repos:
         args:
           - --indent=4
         additional_dependencies:
-          - tox==4.47.0  # https://github.com/tox-dev/tox/releases/latest
+          - tox==4.52.0  # https://github.com/tox-dev/tox/releases/latest
 
   - repo: https://github.com/abravalheri/validate-pyproject
     rev: 4b2e70d08cb2ccd26d1fba73588de41c7a5d50b7  # frozen: v0.25
@@ -293,7 +293,7 @@ repos:
           - --py-version=3.10  # Minimum required Python version for AA. Update as needed.
 
   - repo: https://github.com/python-jsonschema/check-jsonschema
-    rev: 8db279a37c552206d2df62269ff6f9d31125815a  # frozen: 0.37.0
+    rev: ed81924a8b1cecdaa570b072528fa80c9c4d6ccd  # frozen: 0.37.1
     hooks:
       - id: check-github-actions
         name: Check GitHub Actions
