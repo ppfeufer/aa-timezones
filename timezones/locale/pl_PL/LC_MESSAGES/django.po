@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: AA Timezones 2.2.1\n"
 "Report-Msgid-Bugs-To: https://github.com/ppfeufer/aa-timezones/issues\n"
-"POT-Creation-Date: 2026-03-18 18:31+0100\n"
+"POT-Creation-Date: 2026-04-08 14:03+0200\n"
 "PO-Revision-Date: 2025-07-29 19:30+0000\n"
 "Last-Translator: Peter Pfeufer <info@ppfeufer.de>\n"
 "Language-Team: Polish <https://weblate.ppfeufer.de/projects/alliance-auth-apps/aa-timezones/pl/>\n"
@@ -133,7 +133,7 @@ msgstr "Czas Gry"
 msgid "Already over, you missed it!"
 msgstr ""
 
-#: timezones/templates/timezones/index.html:75
+#: timezones/templates/timezones/index.html:69
 #: timezones/templates/timezones/partials/timezones/adjust-time.html:41
 msgid "Days"
 msgstr ""
