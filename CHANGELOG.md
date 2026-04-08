@@ -42,6 +42,12 @@ Section Order:
 
 <!-- Your changes go here -->
 
+## [2.6.1] - 2026-04-08
+
+### Changed
+
+- Translations updated
+
 ### Removed
 
 - Unnecessary template variables and CSS classes
@@ -746,7 +752,8 @@ Section Order:
 [2.4.5]: https://github.com/ppfeufer/aa-timezones/compare/v2.4.4...v2.4.5 "v2.4.5"
 [2.5.0]: https://github.com/ppfeufer/aa-timezones/compare/v2.4.5...v2.5.0 "v2.5.0"
 [2.6.0]: https://github.com/ppfeufer/aa-timezones/compare/v2.5.0...v2.6.0 "v2.6.0"
-[in development]: https://github.com/ppfeufer/aa-timezones/compare/v2.6.0...HEAD "In Development"
+[2.6.1]: https://github.com/ppfeufer/aa-timezones/compare/v2.6.0...v2.6.1 "v2.6.1"
+[in development]: https://github.com/ppfeufer/aa-timezones/compare/v2.6.1...HEAD "In Development"
 [keep a changelog]: http://keepachangelog.com/ "Keep a Changelog"
 [readme]: https://github.com/ppfeufer/aa-timezones/blob/master/README.md "README.md"
 [semantic versioning]: http://semver.org/ "Semantic Versioning"
