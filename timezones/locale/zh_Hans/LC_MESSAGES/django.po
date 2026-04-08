@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: AA Timezones 2.2.1\n"
 "Report-Msgid-Bugs-To: https://github.com/ppfeufer/aa-timezones/issues\n"
-"POT-Creation-Date: 2026-03-18 18:31+0100\n"
+"POT-Creation-Date: 2026-04-08 14:03+0200\n"
 "PO-Revision-Date: 2026-02-12 06:23+0000\n"
 "Last-Translator: shkno <l13244536339@163.com>\n"
 "Language-Team: Chinese (Simplified Han script) <https://weblate.ppfeufer.de/projects/alliance-auth-apps/aa-timezones/zh_Hans/>\n"
@@ -123,7 +123,7 @@ msgstr "EVE时间"
 msgid "Already over, you missed it!"
 msgstr "已经结束了，你错过了！"
 
-#: timezones/templates/timezones/index.html:75
+#: timezones/templates/timezones/index.html:69
 #: timezones/templates/timezones/partials/timezones/adjust-time.html:41
 msgid "Days"
 msgstr "天"
