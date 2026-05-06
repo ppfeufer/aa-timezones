@@ -43,6 +43,16 @@ Section Order:
 
 <!-- Your changes go here -->
 
+## [2.6.2] - 2026-05-06
+
+### Changed
+
+- Translations updated
+
+### Miscellaneous
+
+- Ready for Alliance Auth v5
+
 ## [2.6.1] - 2026-04-08
 
 ### Changed
@@ -754,7 +764,8 @@ Section Order:
 [2.5.0]: https://github.com/ppfeufer/aa-timezones/compare/v2.4.5...v2.5.0 "v2.5.0"
 [2.6.0]: https://github.com/ppfeufer/aa-timezones/compare/v2.5.0...v2.6.0 "v2.6.0"
 [2.6.1]: https://github.com/ppfeufer/aa-timezones/compare/v2.6.0...v2.6.1 "v2.6.1"
-[in development]: https://github.com/ppfeufer/aa-timezones/compare/v2.6.1...HEAD "In Development"
+[2.6.2]: https://github.com/ppfeufer/aa-timezones/compare/v2.6.1...v2.6.2 "v2.6.2"
+[in development]: https://github.com/ppfeufer/aa-timezones/compare/v2.6.2...HEAD "In Development"
 [keep a changelog]: http://keepachangelog.com/ "Keep a Changelog"
 [readme]: https://github.com/ppfeufer/aa-timezones/blob/master/README.md "README.md"
 [semantic versioning]: http://semver.org/ "Semantic Versioning"
