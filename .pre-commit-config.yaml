@@ -129,8 +129,8 @@ repos:
         language: node
         additional_dependencies:
           # eslint itself needs to be here when using additional_dependencies.
-          - eslint@10.2.0 # https://github.com/eslint/eslint/releases/latest
-          - globals@17.4.0  # https://github.com/sindresorhus/globals/releases/latest
+          - eslint@10.3.0 # https://github.com/eslint/eslint/releases/latest
+          - globals@17.6.0 # https://github.com/sindresorhus/globals/releases/latest
 
   - repo: https://github.com/thibaudcolas/pre-commit-stylelint
     rev: 8b94b3ea55a821d67fa8a86c898b7874bfebc47d  # frozen: v17.10.0
@@ -143,7 +143,7 @@ repos:
           - --formatter=compact
         additional_dependencies:
           # stylelint itself needs to be here when using additional_dependencies.
-          - stylelint@17.6.0  # https://github.com/stylelint/stylelint/releases/latest
+          - stylelint@17.10.0  # https://github.com/stylelint/stylelint/releases/latest
           - stylelint-config-standard@40.0.0  # https://github.com/stylelint/stylelint-config-standard/releases/latest
 
   - repo: https://github.com/pre-commit/pygrep-hooks
@@ -274,7 +274,7 @@ repos:
         args:
           - --indent=4
         additional_dependencies:
-          - tox==4.52.0  # https://github.com/tox-dev/tox/releases/latest
+          - tox==4.53.1  # https://github.com/tox-dev/tox/releases/latest
 
   - repo: https://github.com/abravalheri/validate-pyproject
     rev: 4b2e70d08cb2ccd26d1fba73588de41c7a5d50b7  # frozen: v0.25
