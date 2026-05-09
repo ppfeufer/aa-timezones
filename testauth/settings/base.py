@@ -27,11 +27,11 @@ INSTALLED_APPS = [
     "django.contrib.humanize",
     "django_celery_beat",
     "solo",
-    "bootstrapform",
     "django_bootstrap5",  # https://github.com/zostera/django-bootstrap5
     "sortedm2m",
     "esi",
     "allianceauth.framework",
+    "allianceauth.admin_status",
     "allianceauth.authentication",
     "allianceauth.services",
     "allianceauth.eveonline",
@@ -60,9 +60,10 @@ CELERYBEAT_SCHEDULE = {
         "task": "esi.tasks.cleanup_callbackredirect",
         "schedule": crontab(minute="0", hour="*/4"),
     },
-    "esi_cleanup_token": {
-        "task": "esi.tasks.cleanup_token",
-        "schedule": crontab(minute="0", hour="0"),
+    "esi_cleanup_token": {  # 1/48th * 1hr = 48Hr/2Day Refresh Cycles.
+        "task": "esi.tasks.cleanup_token_subset",
+        "schedule": crontab(minute="0", hour="*"),
+        "apply_offset": True,
     },
     "run_model_update": {
         "task": "allianceauth.eveonline.tasks.run_model_update",
@@ -89,6 +90,7 @@ MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "allianceauth.authentication.middleware.UserSettingsMiddleware",
+    "allianceauth.middleware.DeviceDetectionMiddleware",
     "django.middleware.locale.LocaleMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -218,6 +220,15 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
+STORAGES = {
+    "default": {
+        "BACKEND": "django.core.files.storage.FileSystemStorage",
+    },
+    "staticfiles": {
+        "BACKEND": "allianceauth.framework.staticfiles.storage.AaManifestStaticFilesStorage",
+    },
+}
+
 STATIC_URL = "/static/"
 STATICFILES_DIRS = [
     os.path.join(PROJECT_DIR, "static"),
@@ -237,6 +248,7 @@ CACHES = {
 SESSION_ENGINE = "django.contrib.sessions.backends.cached_db"
 
 DEBUG = True
+DISPLAY_DEBUG = True
 ALLOWED_HOSTS = ["*"]
 DATABASES = {
     "default": {
@@ -248,7 +260,6 @@ DATABASES = {
 SITE_NAME = "Alliance Auth"
 
 DEFAULT_THEME = "allianceauth.theme.flatly.auth_hooks.FlatlyThemeHook"
-DEFAULT_THEME_DARK = "allianceauth.theme.darkly.auth_hooks.DarklyThemeHook"  # Legacy AAv3 user.profile.night_mode=1
 
 LOGIN_URL = "auth_login_user"  # view that handles login logic
 
@@ -297,35 +308,66 @@ LOGGING = {
             "maxBytes": 1024 * 1024 * 5,  # edit this line to change max log file size
             "backupCount": 5,  # edit this line to change number of log backups
         },
+        "mumble_authenticator_file": {
+            "level": "INFO",
+            "class": "logging.handlers.RotatingFileHandler",
+            "filename": os.path.join(BASE_DIR, "log/mumble_authenticator.log"),
+            "formatter": "verbose",
+            "maxBytes": 1024 * 1024 * 5,  # edit this line to change max log file size
+            "backupCount": 5,  # edit this line to change number of log backups
+        },
         "console": {
             "level": "DEBUG",  # edit this line to change logging level to console
             "class": "logging.StreamHandler",
             "formatter": "verbose",
         },
-        "notifications": {  # creates notifications for users with logging_notifications permission
-            "level": "ERROR",  # edit this line to change logging level to notifications
-            "class": "allianceauth.notifications.handlers.NotificationHandler",
-            "formatter": "verbose",
-        },
     },
     "loggers": {
         "allianceauth": {
-            "handlers": ["log_file", "console", "notifications"],
+            "handlers": [
+                "log_file",
+                "console",
+            ],
             "level": "DEBUG",
         },
         "extensions": {
-            "handlers": ["extension_file", "console"],
+            "handlers": [
+                "extension_file",
+                "console",
+            ],
+            "level": "DEBUG",
+        },
+        "mumble_authenticator": {
+            "handlers": [
+                "mumble_authenticator_file",
+                "console",
+            ],
             "level": "DEBUG",
         },
         "django": {
-            "handlers": ["log_file", "console"],
+            "handlers": [
+                "log_file",
+                "console",
+            ],
             "level": "ERROR",
         },
         "esi": {
-            "handlers": ["log_file", "console"],
+            "handlers": [
+                "log_file",
+                "console",
+            ],
             "level": "DEBUG",
         },
     },
 }
 
 DEFAULT_AUTO_FIELD = "django.db.models.AutoField"
+
+# https://docs.djangoproject.com/en/6.0/ref/settings/#security
+CSRF_COOKIE_SECURE = True
+# CSRF_COOKIE_HTTPONLY = True # Only here for security Auditors, refer to django docs on why this is unneccessary
+SESSION_COOKIE_SECURE = True
+# HSTS Should be set either in the Apache/nginx as a reverse proxy or NPM for docker installs.
+# Here for documentary purposes for non-standard installs that dont use reverse proxies.
+# SECURE_HSTS_SECONDS = 31536000
+# SECURE_HSTS_INCLUDE_SUBDOMAINS = True
