@@ -58,7 +58,7 @@ urls.Tracker = "https://github.com/ppfeufer/aa-timezones/issues"
 urls.Translation = "https://weblate.ppfeufer.de/projects/alliance-auth-apps/aa-timezones/"
 
 [tool.hatch]
+version.path = "timezones/__init__.py"
 build.include = [
     "/timezones",
 ]
-version.path = "timezones/__init__.py"
