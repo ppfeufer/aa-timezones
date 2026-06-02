@@ -19,7 +19,7 @@ django_locales = \
 # Create or update translation template (.pot file)
 .PHONY: pot
 pot: check-python-venv
-	@echo "Creating or updating .pot file …"
+	@echo "Creating or updating .pot file…"
 	@django-admin makemessages \
 		--locale en \
 		--keep-pot \

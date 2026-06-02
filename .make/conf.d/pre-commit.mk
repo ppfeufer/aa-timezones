@@ -3,25 +3,25 @@
 # Run pre-commit checks
 .PHONY: pre-commit-checks
 pre-commit-checks: pre-commit-install
-	@echo "Running pre-commit checks …"
+	@echo "Running pre-commit checks…"
 	@pre-commit run --all-files
 
 # Update pre-commit configuration
 .PHONY: pre-commit-update
 pre-commit-update:
-	@echo "Updating pre-commit configuration …"
+	@echo "Updating pre-commit configuration…"
 	@pre-commit autoupdate --freeze
 
 # Install pre-commit hook
 .PHONY: pre-commit-install
 pre-commit-install:
-	@echo "Installing pre-commit hook …"
+	@echo "Installing pre-commit hook…"
 	@pre-commit install
 
 # Uninstall pre-commit hook
 .PHONY: pre-commit-uninstall
 pre-commit-uninstall:
-	@echo "Uninstalling pre-commit hook …"
+	@echo "Uninstalling pre-commit hook…"
 	@pre-commit uninstall
 
 # Help message for the Pre-Commit commands
