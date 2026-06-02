@@ -60,7 +60,7 @@ confirm:
 # Graph models
 .PHONY: graph-models
 graph-models: check-python-venv check-myauth-path
-	@echo "Creating a graph of the models …"
+	@echo "Creating a graph of the models…"
 	@python $(myauth_path)/manage.py \
 		graph_models \
 		$(package) \
@@ -71,7 +71,7 @@ graph-models: check-python-venv check-myauth-path
 # Update the graph of the models, translation files and the version in the package
 .PHONY: prepare-release
 prepare-release: pot graph-models
-	@echo "Preparing a release …"
+	@echo "Preparing a release…"
 	@read -p "New Version Number: " new_version; \
 	if ! grep -qE "^## \[$$new_version\]" CHANGELOG.md; then \
 		previos_version=$$(grep -m 1 -E '^## \[[0-9]+(\.[0-9]+){0,2}\] - ' CHANGELOG.md | sed -E 's/^## \[([0-9]+(\.[0-9]+){0,2})\].*$$/\1/');  \
