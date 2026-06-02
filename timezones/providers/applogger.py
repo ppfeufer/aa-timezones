@@ -1,9 +1,12 @@
 """
-Providers for the AA Timezones app.
+AppLogger provider
 """
 
 # Standard Library
 import logging
+
+# AA Time Zones
+from timezones import __title__
 
 
 class AppLogger(logging.LoggerAdapter):
@@ -14,19 +17,17 @@ class AppLogger(logging.LoggerAdapter):
     Credits to: Erik Kalkoken
     """
 
-    def __init__(self, my_logger, prefix):
+    def __init__(self, my_logger: logging.Logger):
         """
         Initializes the AppLogger with a logger and a prefix.
 
         :param my_logger: Logger instance
         :type my_logger: logging.Logger
-        :param prefix: Prefix string to add to log messages
-        :type prefix: str
         """
 
         super().__init__(my_logger, {})
 
-        self.prefix = prefix
+        self.prefix = __title__
 
     def process(self, msg, kwargs):
         """
