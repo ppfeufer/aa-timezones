@@ -22,7 +22,6 @@ requires-python = ">=3.10,<3.14"
 classifiers = [
     "Environment :: Web Environment",
     "Framework :: Django",
-    "Framework :: Django :: 4.2",
     "Framework :: Django :: 5.2",
     "Intended Audience :: Developers",
     "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
@@ -40,8 +39,8 @@ dynamic = [
     "version",
 ]
 dependencies = [
-    "allianceauth>=4.6",
-    "pytz>=2025.2",
+    "allianceauth>=5,<6",
+    "pytz>=2026.2",
 ]
 optional-dependencies.tests-allianceauth-latest = [
     "allianceauth-discordbot",
