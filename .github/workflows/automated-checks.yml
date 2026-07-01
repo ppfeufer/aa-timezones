@@ -30,7 +30,7 @@ jobs:
     steps:
       # Checkout the repository
       - name: Checkout
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
 
       # Set up Python
 #      - name: Set up Python
@@ -94,7 +94,7 @@ jobs:
     steps:
       # Checkout the repository
       - name: Checkout
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
 
         # Install redis
       - name: Install redis
@@ -196,7 +196,7 @@ jobs:
 #    steps:
 #      # Checkout the repository
 #      - name: Checkout
-#        uses: actions/checkout@v6
+#        uses: actions/checkout@v7
 #
 #        # Install redis
 #      - name: Install redis
@@ -239,7 +239,7 @@ jobs:
     steps:
       # Checkout the repository
       - name: Checkout
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
 
       # Set up Python
       - name: Set up Python
