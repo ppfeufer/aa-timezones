@@ -142,7 +142,7 @@ jobs:
                 && matrix.database == env.COVERAGE_DATABASE_VERSION
               )
             }}
-        uses: codecov/codecov-action@v6
+        uses: codecov/codecov-action@v7
         with:
 #          token: ${{ secrets.CODECOV_TOKEN }}
           files: coverage.xml # optional
