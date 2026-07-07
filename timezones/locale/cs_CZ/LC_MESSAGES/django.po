@@ -1,14 +1,14 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# Peter Pfeufer <info@ppfeufer.de>, 2024.
+# Peter Pfeufer <info@ppfeufer.de>, 2024, 2026.
 # Automatic translation add-on <noreply-addon-autotranslate@weblate.org>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: AA Timezones 2.2.1\n"
 "Report-Msgid-Bugs-To: https://github.com/ppfeufer/aa-timezones/issues\n"
-"POT-Creation-Date: 2026-05-06 11:30+0200\n"
-"PO-Revision-Date: 2026-05-04 20:32+0000\n"
+"POT-Creation-Date: 2026-07-07 11:22+0200\n"
+"PO-Revision-Date: 2026-07-07 09:29+0000\n"
 "Last-Translator: Automatic translation add-on <noreply-addon-autotranslate@weblate.org>\n"
 "Language-Team: Czech <https://weblate.ppfeufer.de/projects/alliance-auth-apps/aa-timezones/cs/>\n"
 "Language: cs_CZ\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n >= 2 && n <= 4 && n % 1 == 0) ? 1: (n % 1 != 0 ) ? 2 : 3;\n"
-"X-Generator: Weblate 5.17.1\n"
+"X-Generator: Weblate 2026.7\n"
 
 #: timezones/__init__.py:10 timezones/templates/timezones/base.html:6
 #: timezones/templates/timezones/base.html:10
