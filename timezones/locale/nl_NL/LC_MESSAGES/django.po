@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: AA Timezones 2.2.1\n"
 "Report-Msgid-Bugs-To: https://github.com/ppfeufer/aa-timezones/issues\n"
-"POT-Creation-Date: 2026-05-06 11:30+0200\n"
-"PO-Revision-Date: 2026-05-04 20:32+0000\n"
+"POT-Creation-Date: 2026-07-07 11:22+0200\n"
+"PO-Revision-Date: 2026-07-07 09:29+0000\n"
 "Last-Translator: Automatic translation add-on <noreply-addon-autotranslate@weblate.org>\n"
 "Language-Team: Dutch <https://weblate.ppfeufer.de/projects/alliance-auth-apps/aa-timezones/nl/>\n"
 "Language: nl_NL\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.17.1\n"
+"X-Generator: Weblate 2026.7\n"
 
 #: timezones/__init__.py:10 timezones/templates/timezones/base.html:6
 #: timezones/templates/timezones/base.html:10
@@ -203,7 +203,7 @@ msgstr "Juli"
 
 #: timezones/templates/timezones/partials/timezones/adjust-time.html:276
 msgid "August"
-msgstr ""
+msgstr "Augustus"
 
 #: timezones/templates/timezones/partials/timezones/adjust-time.html:277
 msgid "September"
