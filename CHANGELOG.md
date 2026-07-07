@@ -43,6 +43,16 @@ Section Order:
 
 <!-- Your changes go here -->
 
+## [3.0.1] - 2026-07-07
+
+### Added
+
+- Support for Python 3.14
+
+### Changed
+
+- Translations updated
+
 ## [3.0.0] - 2026-06-07
 
 > [!IMPORTANT]
@@ -779,7 +789,8 @@ Section Order:
 [2.6.1]: https://github.com/ppfeufer/aa-timezones/compare/v2.6.0...v2.6.1 "v2.6.1"
 [2.6.2]: https://github.com/ppfeufer/aa-timezones/compare/v2.6.1...v2.6.2 "v2.6.2"
 [3.0.0]: https://github.com/ppfeufer/aa-timezones/compare/v2.6.2...v3.0.0 "v3.0.0"
-[in development]: https://github.com/ppfeufer/aa-timezones/compare/v3.0.0...HEAD "In Development"
+[3.0.1]: https://github.com/ppfeufer/aa-timezones/compare/v3.0.0...v3.0.1 "v3.0.1"
+[in development]: https://github.com/ppfeufer/aa-timezones/compare/v3.0.1...HEAD "In Development"
 [keep a changelog]: http://keepachangelog.com/ "Keep a Changelog"
 [readme]: https://github.com/ppfeufer/aa-timezones/blob/master/README.md "README.md"
 [semantic versioning]: http://semver.org/ "Semantic Versioning"
