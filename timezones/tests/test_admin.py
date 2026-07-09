@@ -7,8 +7,10 @@ from unittest.mock import Mock
 
 # Django
 from django.contrib import admin
-from django.contrib.auth.models import User
 from django.test import TestCase
+
+# Alliance Auth
+from allianceauth.authentication.models import User
 
 # AA Time Zones
 from timezones.admin import TimezonesAdmin

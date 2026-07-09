@@ -40,7 +40,7 @@ dynamic = [
     "version",
 ]
 dependencies = [
-    "allianceauth>=5,<6",
+    "allianceauth>=5.2,<6",
     "pytz>=2026.2",
 ]
 optional-dependencies.tests-allianceauth-latest = [
