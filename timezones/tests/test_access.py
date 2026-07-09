@@ -10,7 +10,7 @@ from django.test import TestCase
 from django.urls import reverse
 
 # AA Time Zones
-from timezones.tests.utils import create_fake_user
+from timezones.tests.utils import create_fake_user, random_id
 
 
 class TestAccess(TestCase):
@@ -31,7 +31,7 @@ class TestAccess(TestCase):
 
         # User
         cls.user_1001 = create_fake_user(
-            character_id=1001, character_name="Peter Parker"
+            character_id=random_id(), character_name="Peter Parker"
         )
 
         cls.html_menu = f"""

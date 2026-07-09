@@ -3,14 +3,16 @@ Test checks for access to timezones
 """
 
 # Django
-from django.contrib.auth.models import Group
 from django.test import TestCase
 from django.urls import reverse
+
+# Alliance Auth
+from allianceauth.groupmanagement.models import Group
 
 # AA Time Zones
 from timezones.constants import AA_TIMEZONE_DEFAULT_PANELS
 from timezones.models import TimezoneData, Timezones
-from timezones.tests.utils import create_fake_user
+from timezones.tests.utils import create_fake_user, random_id
 
 
 class TestAccess(TestCase):
@@ -32,7 +34,7 @@ class TestAccess(TestCase):
         cls.group = Group.objects.create(name="Superhero")
 
         cls.user_1002 = create_fake_user(
-            character_id=1002, character_name="Bruce Wayne"
+            character_id=random_id(), character_name="Bruce Wayne"
         )
 
     def test_default_timezones(self):
