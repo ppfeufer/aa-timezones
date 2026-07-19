@@ -43,6 +43,8 @@ Section Order:
 
 <!-- Your changes go here -->
 
+## [3.1.0] - 2026-07-19
+
 > [!IMPORTANT]
 >
 > **This version needs Alliance Auth v5.2.0 or newer!**
@@ -802,7 +804,8 @@ Section Order:
 [2.6.2]: https://github.com/ppfeufer/aa-timezones/compare/v2.6.1...v2.6.2 "v2.6.2"
 [3.0.0]: https://github.com/ppfeufer/aa-timezones/compare/v2.6.2...v3.0.0 "v3.0.0"
 [3.0.1]: https://github.com/ppfeufer/aa-timezones/compare/v3.0.0...v3.0.1 "v3.0.1"
-[in development]: https://github.com/ppfeufer/aa-timezones/compare/v3.0.1...HEAD "In Development"
+[3.1.0]: https://github.com/ppfeufer/aa-timezones/compare/v3.0.1...v3.1.0 "v3.1.0"
+[in development]: https://github.com/ppfeufer/aa-timezones/compare/v3.1.0...HEAD "In Development"
 [keep a changelog]: http://keepachangelog.com/ "Keep a Changelog"
 [readme]: https://github.com/ppfeufer/aa-timezones/blob/master/README.md "README.md"
 [semantic versioning]: http://semver.org/ "Semantic Versioning"
