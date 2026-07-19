@@ -58,4 +58,5 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           # The name of the file(s) to upload
           files: |
-            dist/*
+            dist/*.tar.gz
+            dist/*.whl

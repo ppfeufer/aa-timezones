@@ -52,6 +52,7 @@ Section Order:
 
 ### Changed
 
+- `moment-timezone.js` library updated to v0.6.3
 - Migrated to Alliance Auth proxy models for `Permission`, `User` and `Group`
 
 ## [3.0.1] - 2026-07-07
