@@ -6,7 +6,7 @@
 # Set the default language versions for the hooks
 default_language_version:
   python: python3  # Force all Python hooks to use Python 3
-  node: 24.14.0  # Force all Node hooks to use this specific Node version
+  node: 26.3.0  # Force all Node hooks to use this specific Node version
 
 # https://pre-commit.ci/
 ci:
@@ -68,7 +68,7 @@ repos:
         name: Check for large files
         description: Check for large files that were added to the repository.
         args:
-          - --maxkb=1000
+          - --maxkb=2048  # 2 MB
 
       - id: detect-private-key
         name: Detect private key
@@ -120,8 +120,10 @@ repos:
         name: End of file fixer
         description: Ensure that files end with a newline.
 
-  - repo: https://github.com/eslint/eslint
-    rev: 9089853a593d6c7c0f11367da08a829e0ddfe092  # frozen: v10.6.0
+#  - repo: https://github.com/eslint/eslint
+#    rev: 9089853a593d6c7c0f11367da08a829e0ddfe092  # frozen: v10.6.0
+  - repo: https://github.com/pre-commit/mirrors-eslint
+    rev: 8763fc929b6232999d541a3d8eb49965a6b71afb  # frozen: v10.6.0
     hooks:
       - id: eslint
         name: ESLint

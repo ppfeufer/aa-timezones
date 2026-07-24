@@ -85,7 +85,7 @@ class TestTimezonesAdmin(TestCase):
         self.timezone.save()
         request = Mock()
         self.admin.mark_as_active(
-            request, Timezones.objects.filter(id=self.timezone.id)
+            request, Timezones.objects.filter(pk=self.timezone.pk)
         )
         self.timezone.refresh_from_db()
         self.assertTrue(self.timezone.is_enabled)
@@ -102,7 +102,7 @@ class TestTimezonesAdmin(TestCase):
         self.timezone.save()
         request = Mock()
         self.admin.mark_as_inactive(
-            request, Timezones.objects.filter(id=self.timezone.id)
+            request, Timezones.objects.filter(pk=self.timezone.pk)
         )
         self.timezone.refresh_from_db()
         self.assertFalse(self.timezone.is_enabled)
