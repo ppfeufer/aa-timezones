@@ -22,7 +22,7 @@
             }
         ],
         "no-descending-specificity": null,
-        "media-feature-range-notation": "prefix",
+        "media-feature-range-notation": "context",
         "selector-class-pattern": [
             "_?[a-z0-9]+(-[a-z0-9]+)*$",
             {

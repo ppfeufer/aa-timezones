@@ -22,7 +22,7 @@ ______________________________________________________________________
 - [Development](#development)
   - [License Agreements](#license-agreements)
     - [Project License](#project-license)
-    - [CCP](#ccp)
+    - [Fenris Creations](#fenris-creations)
   - [Development Environment](#development-environment)
   - [Make Targets](#make-targets)
     - [General](#general)
@@ -68,10 +68,10 @@ This project is licensed under the GNU General Public License v3.0 (GPLv3). See 
 By contributing code to this project, you agree that your contributions will be
 licensed under the same license as the project itself.
 
-#### CCP<a name="ccp"></a>
+#### Fenris Creations<a name="fenris-creations"></a>
 
-This project is not affiliated with CCP Games in any way. All EVE Online related
-content is the property of CCP Games.
+This project is not affiliated with Fenris Creations in any way. All EVE Online related
+content is the property of Fenris Creations.
 
 Please make sure you have signed the [Developer License Agreement]
 by logging in at [EVE: Developers Portal] before contributing any code.
@@ -211,11 +211,11 @@ pre-commit run stylelint
 
 ##### Minified CSS<a name="minified-css"></a>
 
-This project uses minified CSS files with source maps created by [CSSO]. Make sure
+This project uses minified CSS files with source maps created by [SASS]. Make sure
 to add/update them as well if you add or change CSS.
 
 ```shell
-csso -i styles.css -o styles.min.css -s file
+sass --style=compressed styles.css:styles.min.css
 ```
 
 #### pre-commit<a name="pre-commit"></a>
@@ -303,13 +303,13 @@ Before you submit a pull request, please make sure that:
 [black code style]: https://black.readthedocs.io/en/latest/l "Black Code Style"
 [code of conduct]: CODE_OF_CONDUCT.md "Code of Conduct"
 [coverage]: https://coverage.readthedocs.io/en/latest/ "coverage"
-[csso]: https://github.com/css/csso "CSSO (CSS Optimizer)"
 [developer license agreement]: https://developers.eveonline.com/license-agreement "Developer License Agreement"
 [ecmascript 6]: https://www.w3schools.com/js/js_es6.asp "JavaScript ECMAScript 6"
 [eve: developers portal]: https://developers.eveonline.com/ "EVE: Developers Portal"
 [pre-commit]: https://github.com/pre-commit/pre-commit "pre-commit"
 [python unittest]: https://docs.python.org/3/library/unittest.html "Python Unittests"
 [requests-mock]: https://requests-mock.readthedocs.io/en/latest/ "request-mock"
+[sass]: https://www.npmjs.com/package/sass "SASS"
 [terser]: https://github.com/terser/terser "Terser"
 [tox]: https://tox.wiki/en/latest/ "tox"
 [weblate]: https://weblate.ppfeufer.de/ "Weblate"
