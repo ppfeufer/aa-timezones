@@ -98,7 +98,7 @@ jobs:
 
         # Install redis
       - name: Install redis
-        uses: shogo82148/actions-setup-redis@v1
+        uses: shogo82148/actions-setup-redis@v1.55.0
         with:
           redis-version: ${{ env.REDIS_VERSION }}
 
@@ -200,7 +200,7 @@ jobs:
 #
 #        # Install redis
 #      - name: Install redis
-#        uses: shogo82148/actions-setup-redis@v1
+#        uses: shogo82148/actions-setup-redis@v1.55.0
 #        with:
 #          redis-version: ${{ env.REDIS_VERSION }}
 #
