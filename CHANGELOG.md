@@ -12,18 +12,23 @@ Highlighting:
 https://docs.github.com/assets/cb-41128/mw-1440/images/help/writing/alerts-rendered.webp
 
 > [!NOTE]
+>
 > Highlights information that users should take into account, even when skimming.
 
 > [!TIP]
+>
 > Optional information to help a user be more successful.
 
 > [!IMPORTANT]
+>
 > Crucial information necessary for users to succeed.
 
 > [!WARNING]
+>
 > Urgent info that needs immediate user attention to avoid problems.
 
 > [!CAUTION]
+>
 > Advised about risks or negative outcomes of certain actions.
 -->
 
@@ -43,10 +48,12 @@ Section Order:
 
 <!-- Your changes go here -->
 
+## [3.2.0] - 2026-08-04
+
 ### Changed
 
 - Use `pk` instead of `id` when referring to the primary key of a model instance, since `id` is not guaranteed to be the primary key in Django.
-- CSS modernized
+- CSS modernized (If you have an older browser that can't handle the new CSS, update your browser…)
 
 ## [3.1.0] - 2026-07-19
 
@@ -810,7 +817,8 @@ Section Order:
 [3.0.0]: https://github.com/ppfeufer/aa-timezones/compare/v2.6.2...v3.0.0 "v3.0.0"
 [3.0.1]: https://github.com/ppfeufer/aa-timezones/compare/v3.0.0...v3.0.1 "v3.0.1"
 [3.1.0]: https://github.com/ppfeufer/aa-timezones/compare/v3.0.1...v3.1.0 "v3.1.0"
-[in development]: https://github.com/ppfeufer/aa-timezones/compare/v3.1.0...HEAD "In Development"
+[3.2.0]: https://github.com/ppfeufer/aa-timezones/compare/v3.1.0...v3.2.0 "v3.2.0"
+[in development]: https://github.com/ppfeufer/aa-timezones/compare/v3.2.0...HEAD "In Development"
 [keep a changelog]: http://keepachangelog.com/ "Keep a Changelog"
 [readme]: https://github.com/ppfeufer/aa-timezones/blob/master/README.md "README.md"
 [semantic versioning]: http://semver.org/ "Semantic Versioning"
