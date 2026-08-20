@@ -48,6 +48,10 @@ Section Order:
 
 <!-- Your changes go here -->
 
+### Changed
+
+- Allow slash command to be used on all available Discord servers
+
 ## [3.2.0] - 2026-08-04
 
 ### Changed

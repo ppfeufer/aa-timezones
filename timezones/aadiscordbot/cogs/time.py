@@ -8,12 +8,10 @@ import datetime as dt
 
 # Third Party
 import pytz
+from aadiscordbot.app_settings import get_all_servers
 from discord.colour import Color
 from discord.embeds import Embed
 from discord.ext import commands
-
-# Django
-from django.conf import settings
 
 # AA Time Zones
 from timezones.constants import AA_TIMEZONE_DEFAULT_PANELS
@@ -146,7 +144,7 @@ class Time(commands.Cog):
 
         return embed
 
-    @commands.slash_command(name="time", guild_ids=[int(settings.DISCORD_GUILD_ID)])
+    @commands.slash_command(name="time", guild_ids=get_all_servers())
     async def time(self, ctx):
         """
         Returns the EVE time, and the current time in various time zones.
