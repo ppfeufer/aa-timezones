@@ -63,7 +63,7 @@ generate-esi-stubs: check-python-venv get-compatibility-dates check-myauth-path
 	@echo "Generating ESI stubs…"
 	@echo ""
 	@esi_date=$$(cat .esi-compatibility-date 2>/dev/null || exit 0); \
-	python $(myauth_path)/manage.py generate_esi_stubs --compatibility_date="$$esi_date"
+	$(PYTHON__EXECUTABLE) $(DJANGO__MYAUTH_PATH)/manage.py generate_esi_stubs --compatibility_date="$$esi_date"
 	@echo "ESI stubs generated."
 
 # Update the compatibility date in the package's __init__.py
@@ -72,7 +72,7 @@ update-compatibility-date: check-python-venv generate-esi-stubs
 	@echo "Updating ESI compatibility date..."
 	@echo ""
 	@esi_date=$$(cat .esi-compatibility-date 2>/dev/null || exit 0); \
-	sed -i "/__esi_compatibility_date__ = /c\__esi_compatibility_date__ = \"$$esi_date\"" $(package)/__init__.py
+	sed -i "/__esi_compatibility_date__ = /c\__esi_compatibility_date__ = \"$$esi_date\"" $(GENERAL__PACKAGE)/__init__.py
 
 # Help message
 help::

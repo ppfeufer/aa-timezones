@@ -17,7 +17,7 @@ redis-status:
 
 .PHONY: help
 help::
-	@echo "  $(TEXT_UNDERLINE)Redis Commands:$(TEXT_UNDERLINE_END)"
+	@echo "  $(TEXT_UNDERLINE)Redis:$(TEXT_UNDERLINE_END)"
 	@echo "    redis-flushall              Flush all Redis keys"
 	@echo "    redis-status                Check Redis status"
 	@echo ""
