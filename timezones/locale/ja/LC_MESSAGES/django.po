@@ -7,12 +7,13 @@
 # Deleted User <noreply+44@weblate.org>, 2026.
 msgid ""
 msgstr ""
-"Project-Id-Version: AA Timezones 2.2.1\n"
-"Report-Msgid-Bugs-To: https://github.com/ppfeufer/aa-timezones/issues\n"
-"POT-Creation-Date: 2026-08-04 07:58+0200\n"
+"Project-Id-Version: AA Timezones\n"
+"Report-Msgid-Bugs-To: https://weblate.ppfeufer.de/projects/alliance-auth-apps/aa-timezones/\n"
+"POT-Creation-Date: 2026-09-08 11:33+0200\n"
 "PO-Revision-Date: 2026-07-07 09:29+0000\n"
 "Last-Translator: Peter Pfeufer <info@ppfeufer.de>\n"
-"Language-Team: Japanese <https://weblate.ppfeufer.de/projects/alliance-auth-apps/aa-timezones/ja/>\n"
+"Language-Team: Japanese <https://weblate.ppfeufer.de/projects/alliance-auth-"
+"apps/aa-timezones/ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -127,8 +128,12 @@ msgid "Days"
 msgstr "日"
 
 #: timezones/templates/timezones/partials/footer/app-translation-footer.html:5
-msgid "Do you want to help translate this app into your language or improve the existing translation?"
-msgstr "このアプリをあなたの言語に翻訳するお手伝いをしたり、既存の翻訳を改善したりしませんか？"
+msgid ""
+"Do you want to help translate this app into your language or improve the "
+"existing translation?"
+msgstr ""
+"このアプリをあなたの言語に翻訳するお手伝いをしたり、既存の翻訳を改善したりし"
+"ませんか？"
 
 #: timezones/templates/timezones/partials/footer/app-translation-footer.html:8
 msgid "Join our team of translators!"

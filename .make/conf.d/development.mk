@@ -3,14 +3,14 @@
 # Install the app as an editable package in the current Python environment
 PHONY: dev-install
 dev-install: check-python-venv
-	@echo "Installing $(appname) as editable package…"
-	@pip install -e .
+	@echo "Installing $(GENERAL__APPNAME) as editable package…"
+	@pip install -e $(DEVELOPMENT__BASE_DIR)
 
 # Uninstall the app from the current Python environment
 PHONY: dev-uninstall
 dev-uninstall: check-python-venv
-	@echo "Uninstalling $(appname)…"
-	@pip uninstall -y $(appname)
+	@echo "Uninstalling $(GENERAL__APPNAME)…"
+	@pip uninstall -y $(GENERAL__APPNAME)
 
 .PHONY: help
 help::

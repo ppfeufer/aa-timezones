@@ -4,9 +4,9 @@
 .PHONY: coverage
 coverage: check-python-venv check-myauth-path
 	@echo "Running tests and creating a coverage report…"
-	@coverage run $(myauth_path)/manage.py \
+	@coverage run $(DJANGO__MYAUTH_PATH)/manage.py \
 		test \
-		$(package) \
+		$(GENERAL__PACKAGE) \
 		--keepdb \
 		--failfast; \
 	coverage html; \
@@ -17,7 +17,7 @@ coverage: check-python-venv check-myauth-path
 .PHONY: build-test
 build-test: check-python-venv
 	@echo "Building the package…"
-	@python3 -m build
+	@$(PYTHON__EXECUTABLE) -m build
 
 # Tox tests
 .PHONY: tox-tests
