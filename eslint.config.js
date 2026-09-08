@@ -21,7 +21,9 @@ export default defineConfig([
         },
         rules: {
             ...js.configs.recommended.rules,
-            indent: ['error', 4],
+            indent: ['error', 4, {
+                'SwitchCase': 1
+            }],
             quotes: ['error', 'single', {
                 avoidEscape: true,
                 allowTemplateLiterals: true

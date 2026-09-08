@@ -4,6 +4,8 @@ AppLogger provider
 
 # Standard Library
 import logging
+from collections.abc import MutableMapping
+from typing import Any
 
 # AA Time Zones
 from timezones import __title__
@@ -29,14 +31,14 @@ class AppLogger(logging.LoggerAdapter):
 
         self.prefix = __title__
 
-    def process(self, msg, kwargs):
+    def process(self, msg: str, kwargs: MutableMapping[str, Any]):
         """
         Prepares the log message by adding the prefix.
 
         :param msg: Log message
         :type msg: str
         :param kwargs: Additional keyword arguments
-        :type kwargs: dict
+        :type kwargs: MutableMapping[str, Any]
         :return: Prefixed log message and kwargs
         :rtype: tuple
         """
