@@ -48,6 +48,8 @@ Section Order:
 
 <!-- Your changes go here -->
 
+## [3.2.1] - 2026-09-08
+
 ### Changed
 
 - Allow slash command to be used on all Discord servers available to the Alliance Auth instance
@@ -822,7 +824,8 @@ Section Order:
 [3.0.1]: https://github.com/ppfeufer/aa-timezones/compare/v3.0.0...v3.0.1 "v3.0.1"
 [3.1.0]: https://github.com/ppfeufer/aa-timezones/compare/v3.0.1...v3.1.0 "v3.1.0"
 [3.2.0]: https://github.com/ppfeufer/aa-timezones/compare/v3.1.0...v3.2.0 "v3.2.0"
-[in development]: https://github.com/ppfeufer/aa-timezones/compare/v3.2.0...HEAD "In Development"
+[3.2.1]: https://github.com/ppfeufer/aa-timezones/compare/v3.2.0...v3.2.1 "v3.2.1"
+[in development]: https://github.com/ppfeufer/aa-timezones/compare/v3.2.1...HEAD "In Development"
 [keep a changelog]: http://keepachangelog.com/ "Keep a Changelog"
 [readme]: https://github.com/ppfeufer/aa-timezones/blob/master/README.md "README.md"
 [semantic versioning]: http://semver.org/ "Semantic Versioning"
