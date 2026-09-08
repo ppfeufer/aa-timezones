@@ -12,8 +12,7 @@ msgstr ""
 "POT-Creation-Date: 2026-09-08 11:33+0200\n"
 "PO-Revision-Date: 2026-07-07 09:29+0000\n"
 "Last-Translator: Mind of the Raven <okanieva@gmail.com>\n"
-"Language-Team: Korean <https://weblate.ppfeufer.de/projects/alliance-auth-"
-"apps/aa-timezones/ko/>\n"
+"Language-Team: Korean <https://weblate.ppfeufer.de/projects/alliance-auth-apps/aa-timezones/ko/>\n"
 "Language: ko_KR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -132,9 +131,7 @@ msgid "Days"
 msgstr "일"
 
 #: timezones/templates/timezones/partials/footer/app-translation-footer.html:5
-msgid ""
-"Do you want to help translate this app into your language or improve the "
-"existing translation?"
+msgid "Do you want to help translate this app into your language or improve the existing translation?"
 msgstr "이 앱을 번역하거나 기존 번역을 개선하고 싶으신가요?"
 
 #: timezones/templates/timezones/partials/footer/app-translation-footer.html:8

@@ -14,8 +14,7 @@ msgstr ""
 "POT-Creation-Date: 2026-09-08 11:33+0200\n"
 "PO-Revision-Date: 2026-07-07 09:29+0000\n"
 "Last-Translator: LichenKass <yuanchengwei_sz@163.com>\n"
-"Language-Team: Chinese (Simplified Han script) <https://weblate.ppfeufer.de/"
-"projects/alliance-auth-apps/aa-timezones/zh_Hans/>\n"
+"Language-Team: Chinese (Simplified Han script) <https://weblate.ppfeufer.de/projects/alliance-auth-apps/aa-timezones/zh_Hans/>\n"
 "Language: zh_Hans\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -130,9 +129,7 @@ msgid "Days"
 msgstr "天"
 
 #: timezones/templates/timezones/partials/footer/app-translation-footer.html:5
-msgid ""
-"Do you want to help translate this app into your language or improve the "
-"existing translation?"
+msgid "Do you want to help translate this app into your language or improve the existing translation?"
 msgstr "您想帮助将此应用程序翻译成您的母语或改进现有的翻译吗?"
 
 #: timezones/templates/timezones/partials/footer/app-translation-footer.html:8
