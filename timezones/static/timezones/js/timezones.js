@@ -281,7 +281,6 @@ jQuery(document).ready(($) => {
      * Timestamp has changed
      */
     const hashchange = () => {
-
         const timestamp = parseInt(aaTimezonesOptions.timestamp);
 
         clockTarget = 0;

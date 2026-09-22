@@ -27,6 +27,10 @@ npm-audit-fix:
 # Run a specific npm script
 .PHONY: npm-run
 npm-run:
+	@if [ -z "$(script)" ]; then \
+		echo "Error: Please specify the npm script to run using 'make npm-run script=<script>'."; \
+		exit 1; \
+	fi
 	@echo "Running npm script…"
 	@npm run $(script)
 
