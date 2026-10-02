@@ -14,13 +14,13 @@ ParsedConfigFiles := $(ConfigFile) $(wildcard $(ConfigFileOverride))
 # Extract all config values from $(ConfigFile) and export them as Makefile variables
 ifneq ($(wildcard $(ConfigFile)),)
 TMPFILE := $(shell mkdir -p $(dir $(ConfigFile)) && mktemp $(dir $(ConfigFile))/make_vars.XXXXXX)
-$(shell /usr/bin/env python3 .make/parse_ini_interpolate.py --mode=make $(ParsedConfigFiles) > $(TMPFILE))
+$(shell /usr/bin/env python3 .make/parse_config.py --mode=make $(ParsedConfigFiles) > $(TMPFILE))
 include $(TMPFILE)
 $(shell rm -f $(TMPFILE))
 
 # Also capture the list of variable NAMES (for show-config output).
 # Use the Python parser to normalize names (keeps behavior consistent with interpolation)
-ConfigVars := $(shell /usr/bin/env python3 .make/parse_ini_interpolate.py --mode=names $(ParsedConfigFiles) | sort -u)
+ConfigVars := $(shell /usr/bin/env python3 .make/parse_config.py --mode=names $(ParsedConfigFiles) | sort -u)
 else
 # Notify the user that no config file was found.
 $(error Config file '$(ConfigFile)' not found. To configure the project, create '$(ConfigFile)')
@@ -169,9 +169,9 @@ show-parsed-config-files:
 		override="$(ConfigFileOverride)"; \
 		base_tmp=$$(mktemp); \
 		ovr_tmp=$$(mktemp); \
-		/usr/bin/env python3 .make/parse_ini_interpolate.py --mode=pair "$$base" > "$$base_tmp"; \
+		/usr/bin/env python3 .make/parse_config.py --mode=pair "$$base" > "$$base_tmp"; \
 		if [ -f "$$override" ]; then \
-			/usr/bin/env python3 .make/parse_ini_interpolate.py --mode=pair "$$override" > "$$ovr_tmp"; \
+			/usr/bin/env python3 .make/parse_config.py --mode=pair "$$override" > "$$ovr_tmp"; \
 			if [ -s "$$ovr_tmp" ]; then \
 				echo "$(TEXT_UNDERLINE)Overridden variables:$(TEXT_RESET)"; \
 				base_sorted="$$base_tmp.sorted"; \
