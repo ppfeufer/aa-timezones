@@ -48,6 +48,8 @@ Section Order:
 
 <!-- Your changes go here -->
 
+## [3.2.2] - 2026-10-06
+
 ### Changed
 
 - `moment-timezone.js` library updated to v0.6.5
@@ -829,7 +831,8 @@ Section Order:
 [3.1.0]: https://github.com/ppfeufer/aa-timezones/compare/v3.0.1...v3.1.0 "v3.1.0"
 [3.2.0]: https://github.com/ppfeufer/aa-timezones/compare/v3.1.0...v3.2.0 "v3.2.0"
 [3.2.1]: https://github.com/ppfeufer/aa-timezones/compare/v3.2.0...v3.2.1 "v3.2.1"
-[in development]: https://github.com/ppfeufer/aa-timezones/compare/v3.2.1...HEAD "In Development"
+[3.2.2]: https://github.com/ppfeufer/aa-timezones/compare/v3.2.1...v3.2.2 "v3.2.2"
+[in development]: https://github.com/ppfeufer/aa-timezones/compare/v3.2.2...HEAD "In Development"
 [keep a changelog]: http://keepachangelog.com/ "Keep a Changelog"
 [readme]: https://github.com/ppfeufer/aa-timezones/blob/master/README.md "README.md"
 [semantic versioning]: http://semver.org/ "Semantic Versioning"

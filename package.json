@@ -1,6 +1,6 @@
 {
     "name": "@ppfeufer/aa-timezones",
-    "version": "3.2.1",
+    "version": "3.2.2",
     "type": "module",
     "devDependencies": {
         "@eslint/js": "^10.0.1",
