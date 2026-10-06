@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: AA Timezones\n"
 "Report-Msgid-Bugs-To: https://weblate.ppfeufer.de/projects/alliance-auth-apps/aa-timezones/\n"
-"POT-Creation-Date: 2026-09-08 11:33+0200\n"
+"POT-Creation-Date: 2026-10-06 16:05+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -129,9 +129,7 @@ msgid "Days"
 msgstr ""
 
 #: timezones/templates/timezones/partials/footer/app-translation-footer.html:5
-msgid ""
-"Do you want to help translate this app into your language or improve the "
-"existing translation?"
+msgid "Do you want to help translate this app into your language or improve the existing translation?"
 msgstr ""
 
 #: timezones/templates/timezones/partials/footer/app-translation-footer.html:8
