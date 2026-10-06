@@ -120,10 +120,8 @@ repos:
         name: End of file fixer
         description: Ensure that files end with a newline.
 
-#  - repo: https://github.com/eslint/eslint
-#    rev: 9089853a593d6c7c0f11367da08a829e0ddfe092  # frozen: v10.6.0
   - repo: https://github.com/pre-commit/mirrors-eslint
-    rev: 8ba198123f6fb414e19d879a1270d6d72116d89b  # frozen: v10.10.0
+    rev: 10e29bbf6681d33cb90d555ea2f7ea71e162d259  # frozen: v10.12.0
     hooks:
       - id: eslint
         name: ESLint
@@ -131,11 +129,11 @@ repos:
         language: node
         additional_dependencies:
           # eslint itself needs to be here when using additional_dependencies.
-          - eslint@10.10.0 # https://github.com/eslint/eslint/releases/latest
-          - globals@17.12.0 # https://github.com/sindresorhus/globals/releases/latest
+          - eslint@10.12.0 # https://github.com/eslint/eslint/releases/latest
+          - globals@17.13.0 # https://github.com/sindresorhus/globals/releases/latest
 
   - repo: https://github.com/thibaudcolas/pre-commit-stylelint
-    rev: d6d653746a0a510b098377a8919bea816eea3c09  # frozen: v17.15.0
+    rev: a43d64a23287d2dc2e02289bd3b2cb0da5eddfb1  # frozen: v17.16.0
     hooks:
       - id: stylelint
         name: Stylelint
@@ -145,7 +143,7 @@ repos:
           - --formatter=compact
         additional_dependencies:
           # stylelint itself needs to be here when using additional_dependencies.
-          - stylelint@17.15.0  # https://github.com/stylelint/stylelint/releases/latest
+          - stylelint@17.16.0  # https://github.com/stylelint/stylelint/releases/latest
           - stylelint-config-standard@40.0.0  # https://github.com/stylelint/stylelint-config-standard/releases/latest
 
   - repo: https://github.com/pre-commit/pygrep-hooks
@@ -183,7 +181,7 @@ repos:
         description: Check for compliance with the definitions in the EditorConfig file.
 
   - repo: https://github.com/adamchainz/django-upgrade
-    rev: e668ea858b908d23a9702b24214f4fc5d07ed50f  # frozen: 1.32.0
+    rev: 5a815b88d9286ba45b8c1a4b56e695ff5645c65e  # frozen: 1.33.0
     hooks:
       - id: django-upgrade
         name: Django upgrade
@@ -201,7 +199,7 @@ repos:
           - --py310-plus  # Minimum required Python version for AA. Update as needed.
 
   - repo: https://github.com/pycqa/flake8
-    rev: d93590f5be797aabb60e3b09f2f52dddb02f349f  # frozen: 7.3.0
+    rev: cfbbfdeb2391c14a37e101e92a77f54f329e1726  # frozen: 7.4.1
     hooks:
       - id: flake8
         name: Flake8
@@ -215,7 +213,7 @@ repos:
         description: Check for extraneous `# noqa` comments.
 
   - repo: https://github.com/PyCQA/isort
-    rev: 131f4adcd5582bfc53928ab0d740eceb8b506b6c  # frozen: 9.0.1
+    rev: 9f905615631c545f5aea2516508109350d1d2f7d  # frozen: 9.0.2
     hooks:
       - id: isort
         name: Isort
@@ -229,7 +227,7 @@ repos:
         description: Check for black disable comments.
 
   - repo: https://github.com/psf/black-pre-commit-mirror
-    rev: 4160603246a6b365d4a2af661c6d71b0a0f50478  # frozen: 26.5.1
+    rev: 96ae3e5802f3fe2d551e703e18f0a367d1a81ac2  # frozen: 26.10.0
     hooks:
       - id: black
         name: Black
@@ -244,7 +242,7 @@ repos:
         name: Blacken docs
         description: Format Python code in documentation files.
         additional_dependencies:
-          - black==26.5.1  # https://github.com/psf/black/releases/latest
+          - black==26.10.0  # https://github.com/psf/black/releases/latest
         args:
           - --target-version=py310  # Minimum required Python version for AA. Update as needed.
 
@@ -268,7 +266,7 @@ repos:
         description: Format the tox.ini file.
 
   - repo: https://github.com/tox-dev/pyproject-fmt
-    rev: 3b42b9776870badc9eaffdef9a4a0834b764d87c  # frozen: v2.29.3
+    rev: a72ae8edd6eeddb9d942168912362945651212f8  # frozen: v2.30.1
     hooks:
       - id: pyproject-fmt
         name: pyproject.toml formatter
@@ -276,7 +274,7 @@ repos:
         args:
           - --indent=4
         additional_dependencies:
-          - tox==4.61.2  # https://github.com/tox-dev/tox/releases/latest
+          - tox==4.64.9  # https://github.com/tox-dev/tox/releases/latest
 
   - repo: https://github.com/abravalheri/validate-pyproject
     rev: 17e12779811926f000bdfa1795f9e3735dd71ac3  # frozen: 0.26
@@ -286,7 +284,7 @@ repos:
         description: Validate the pyproject.toml file.
 
   - repo: https://github.com/pylint-dev/pylint
-    rev: 4e1125d0149c638ca073c3dc7f1648a5c9459a3d  # frozen: v4.0.8
+    rev: 40be3a2f729cdf667eae46272369aeffe1abf651  # frozen: v4.1.2
     hooks:
       - id: pylint
         name: Pylint
@@ -295,7 +293,7 @@ repos:
           - --py-version=3.10  # Minimum required Python version for AA. Update as needed.
 
   - repo: https://github.com/python-jsonschema/check-jsonschema
-    rev: c4654a7e007c9619a5eb63c39a456572a0fa1851  # frozen: 0.38.0
+    rev: 4f85d46a92dc17713078e5de73f8a13190edf6fc  # frozen: 0.38.2
     hooks:
       - id: check-github-actions
         name: Check GitHub Actions
