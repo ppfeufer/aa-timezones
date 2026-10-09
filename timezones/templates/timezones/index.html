@@ -78,15 +78,15 @@
             }
         }
     </script>
-{% endblock %}
+{% endblock aa_timezones_body %}
 
 {% block extra_javascript %}
     {% include 'bundles/moment-js.html' with locale=True %}
     {% include "timezones/bundles/moment-timezone-js.html" %}
     {% include "timezones/bundles/aa-timezones-js.html" %}
-{% endblock %}
+{% endblock extra_javascript %}
 
 {% block extra_css %}
     {% include "timezones/bundles/weather-icons-css.html" %}
     {% include "timezones/bundles/aa-timezones-css.html" %}
-{% endblock %}
+{% endblock extra_css %}
