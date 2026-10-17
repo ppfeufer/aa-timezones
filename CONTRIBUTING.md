@@ -43,6 +43,7 @@ ______________________________________________________________________
       - [Minified CSS](#minified-css)
     - [pre-commit](#pre-commit)
   - [Branching and Pull Requests](#branching-and-pull-requests)
+    - [Please Do NOT](#please-do-not)
     - [Tests](#tests-1)
     - [Checklist](#checklist)
 
@@ -91,12 +92,16 @@ project root to see all available targets.
 
 Some make targets for Django related tasks use the `manage.py` file.
 You probably need to provide the absolute path to your `myauth` directory for it to work.
-You can do so by providing a `.make/myauth-path` file in the project root with the
-following content:
+You can do so by providing a `.make/config-overrides.ini` file with the following
+content:
 
-```makefile
-/absolute/path/to/myauth
+```ini
+[Django]
+myauth_path = /absolute/path/to/myauth
 ```
+
+In this file you can override any other settings as well. See the `.make/config.ini`
+file for all available settings.
 
 #### General<a name="general"></a>
 
@@ -262,22 +267,32 @@ To contribute code via pull request, make sure you fork the repository and branc
 changes from the `master` branch.
 
 We strongly recommend creating a new branch for every new feature or change you
-plan to be submitting as merge request. Please make sure to keep the `master` branch of
+plan to be submitting as pull request. Please make sure to keep the `master` branch of
 your fork in sync with the main repository to avoid conflicts.
 
 Before you start working on a new feature, please open an Issue (Type: Feature
 Request) and start a discussion if your idea is generally wanted and considered a
 good addition to the app in general.
 
-Please feel free to create your merge request early and while you are still not
-finished developing to flag that you are working on a specific topic. Merge requests
+Please feel free to create your pull request early and while you are still not
+finished developing to flag that you are working on a specific topic. Pull requests
 that are not yet ready to review should be marked as DRAFT. You can signal others
-that your merge request is ready for review by removing the DRAFT flag again.
+that your pull request is ready for review by removing the DRAFT flag again.
+
+#### Please Do NOT<a name="please-do-not"></a>
+
+- Create a pull request for a new feature without prior discussion in an Issue
+- Update the version number in `__init__.py` yourself, this will be done by the
+  maintainer when a new release is made
+- Update the `CHANGELOG.md` yourself, this will be done by the maintainer when your
+  contribution is merged
+- Update the translation template file yourself, this will be done by the maintainer
+  when your contribution is merged
 
 #### Tests<a name="tests-1"></a>
 
 Please update existing or provide additional unit tests for your changes. Note that
-your merge request might fail if it reduces the current level of test coverage.
+your pull request might fail if it reduces the current level of test coverage.
 
 We are using [Python unittest] with the Django `TestCase` class for all tests. In
 addition, we are using some following third party test tools:
@@ -300,7 +315,7 @@ Before you submit a pull request, please make sure that:
 <!-- Links -->
 
 [aa guide for setting up a dev environment]: https://allianceauth.readthedocs.io/en/latest/development/dev_setup/aa-dev-setup-wsl-vsc-v2.html "AA Guide for Setting up a Dev Environment"
-[black code style]: https://black.readthedocs.io/en/latest/l "Black Code Style"
+[black code style]: https://black.readthedocs.io/en/latest/ "Black Code Style"
 [code of conduct]: CODE_OF_CONDUCT.md "Code of Conduct"
 [coverage]: https://coverage.readthedocs.io/en/latest/ "coverage"
 [developer license agreement]: https://developers.eveonline.com/license-agreement "Developer License Agreement"

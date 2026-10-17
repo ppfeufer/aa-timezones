@@ -205,7 +205,7 @@ repos:
         name: PyUpgrade
         description: Upgrade syntax to newer versions of Python.
         args:
-          - --py310-plus  # Minimum required Python version for AA. Update as needed.
+          - --py311-plus  # Minimum required Python version for AA. Update as needed.
 
   - repo: https://github.com/pycqa/flake8
     rev: cfbbfdeb2391c14a37e101e92a77f54f329e1726  # frozen: 7.4.1
@@ -242,7 +242,7 @@ repos:
         name: Black
         description: Format Python code.
         args:
-          - --target-version=py310  # Minimum required Python version for AA. Update as needed.
+          - --target-version=py311  # Minimum required Python version for AA. Update as needed.
 
   - repo: https://github.com/asottile/blacken-docs
     rev: dda8db18cfc68df532abf33b185ecd12d5b7b326  # frozen: 1.20.0
@@ -253,7 +253,7 @@ repos:
         additional_dependencies:
           - black==26.10.0  # https://github.com/psf/black/releases/latest
         args:
-          - --target-version=py310  # Minimum required Python version for AA. Update as needed.
+          - --target-version=py311  # Minimum required Python version for AA. Update as needed.
 
   - repo: https://github.com/executablebooks/mdformat
     rev: 2d496dbc18e31b83a1596685347ffe0b6041daf0  # frozen: 1.0.0
@@ -299,7 +299,7 @@ repos:
         name: Pylint
         description: Check for errors and code smells in Python code.
         args:
-          - --py-version=3.10  # Minimum required Python version for AA. Update as needed.
+          - --py-version=3.11  # Minimum required Python version for AA. Update as needed.
 
   - repo: https://github.com/python-jsonschema/check-jsonschema
     rev: 4f85d46a92dc17713078e5de73f8a13190edf6fc  # frozen: 0.38.2

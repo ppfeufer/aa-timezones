@@ -62,7 +62,6 @@ jobs:
       matrix:
         python-version:
           # https://endoflife.date/python
-          - '3.10'  # [EOL] End of Life: 31 Oct 2026
           - '3.11'  # [EOL] End of Life: 31 Dec 2027
           - '3.12'  # [EOL] End of Life: 31 Dec 2028
           - '3.13'  # [EOL] End of Life: 31 Oct 2029
@@ -98,7 +97,7 @@ jobs:
 
         # Install redis
       - name: Install redis
-        uses: shogo82148/actions-setup-redis@v1.57.0
+        uses: shogo82148/actions-setup-redis@v1.58.0
         with:
           redis-version: ${{ env.REDIS_VERSION }}
 
@@ -200,7 +199,7 @@ jobs:
 #
 #        # Install redis
 #      - name: Install redis
-#        uses: shogo82148/actions-setup-redis@v1.57.0
+#        uses: shogo82148/actions-setup-redis@v1.58.0
 #        with:
 #          redis-version: ${{ env.REDIS_VERSION }}
 #
