@@ -13,7 +13,7 @@ ParsedConfigFiles := $(ConfigFile) $(wildcard $(ConfigFileOverride))
 
 # Extract all config values from $(ConfigFile) and export them as Makefile variables
 ifneq ($(wildcard $(ConfigFile)),)
-TMPFILE := $(shell mkdir -p $(dir $(ConfigFile)) && mktemp $(dir $(ConfigFile))/make_vars.XXXXXX)
+TMPFILE := $(shell mktemp "$${TMPDIR:-/tmp}/make_vars.XXXXXX")
 $(shell /usr/bin/env python3 .make/parse_config.py --mode=make $(ParsedConfigFiles) > $(TMPFILE))
 include $(TMPFILE)
 $(shell rm -f $(TMPFILE))
