@@ -129,11 +129,11 @@ repos:
         language: node
         additional_dependencies:
           # eslint itself needs to be here when using additional_dependencies.
-          - eslint@10.12.0 # https://github.com/eslint/eslint/releases/latest
-          - globals@17.13.0 # https://github.com/sindresorhus/globals/releases/latest
+          - eslint@10.14.0 # https://github.com/eslint/eslint/releases/latest
+          - globals@17.14.0 # https://github.com/sindresorhus/globals/releases/latest
 
   - repo: https://github.com/thibaudcolas/pre-commit-stylelint
-    rev: bacbac2f275dc567b794653e730860ce646040d3  # frozen: v18.0.0-next.0
+    rev: a43d64a23287d2dc2e02289bd3b2cb0da5eddfb1  # frozen: v17.16.0
     hooks:
       - id: stylelint
         name: Stylelint
@@ -251,7 +251,7 @@ repos:
         name: Blacken docs
         description: Format Python code in documentation files.
         additional_dependencies:
-          - black==26.10.0  # https://github.com/psf/black/releases/latest
+          - black==26.10.1  # https://github.com/psf/black/releases/latest
         args:
           - --target-version=py311  # Minimum required Python version for AA. Update as needed.
 
@@ -283,7 +283,7 @@ repos:
         args:
           - --indent=4
         additional_dependencies:
-          - tox==4.64.9  # https://github.com/tox-dev/tox/releases/latest
+          - tox==4.67.7  # https://github.com/tox-dev/tox/releases/latest
 
   - repo: https://github.com/abravalheri/validate-pyproject
     rev: 82d21874c3242e4dc27bb47641c996902ef64eef  # frozen: v0.27
