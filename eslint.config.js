@@ -40,8 +40,23 @@ export default defineConfig([
             }],
             // https://eslint.style/rules/indent-binary-ops
             '@stylistic/indent-binary-ops': ['error', 4],
-            // https://eslint.style/rules/object-curly-spacing
-            '@stylistic/object-curly-spacing': ['error', 'never'],
+            // https://eslint.style/rules/list-style
+            '@stylistic/list-style': ['error', {
+                empty: 'never',
+                multiLine: {
+                    minItems: 1
+                },
+                singleLine: {
+                    spacing: 'never'
+                },
+                overrides: {
+                    '{}': {
+                        singleLine: {
+                            spacing: 'never'
+                        }
+                    }
+                }
+            }],
             // https://eslint.style/rules/quotes
             '@stylistic/quotes': ['error', 'single', {
                 allowTemplateLiterals: 'avoidEscape',
